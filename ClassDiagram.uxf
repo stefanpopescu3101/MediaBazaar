@@ -4,23 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>848</x>
-      <y>0</y>
-      <w>232</w>
-      <h>112</h>
-    </coordinates>
-    <panel_attributes>ApplicationManager
---
-+ GetProductManager() : ProductManager
-+ GetUserManager() : UserManager
-+ GetDepartmentManager() : DepartmentManager</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>808</x>
-      <y>400</y>
+      <x>704</x>
+      <y>224</y>
       <w>296</w>
       <h>144</h>
     </coordinates>
@@ -39,8 +24,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>808</x>
-      <y>184</y>
+      <x>704</x>
+      <y>8</y>
       <w>296</w>
       <h>104</h>
     </coordinates>
@@ -55,8 +40,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>432</x>
-      <y>320</y>
+      <x>328</x>
+      <y>144</y>
       <w>248</w>
       <h>248</h>
     </coordinates>
@@ -83,8 +68,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>568</x>
-      <y>616</y>
+      <x>1064</x>
+      <y>848</y>
       <w>168</w>
       <h>72</h>
     </coordinates>
@@ -98,22 +83,22 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1200</x>
-      <y>184</y>
+      <x>1096</x>
+      <y>8</y>
       <w>176</w>
       <h>56</h>
     </coordinates>
     <panel_attributes>DepartmentManager
 --
-
+-departmentType: string
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1152</x>
-      <y>616</y>
+      <x>928</x>
+      <y>416</y>
       <w>224</w>
       <h>328</h>
     </coordinates>
@@ -122,11 +107,11 @@
 - firstName : string
 - lastName : string
 - email : string
-- gender : Gender
+- gender : string
 - dateOfFirstWokingDay : string
 - dateOfLastWorkingDay : string
 - birthDate : string
-- contractType : EmployeeContractType
+- contractType : string
 - id : int
 - hourlyWage : double
 - hoursPerWeek : int
@@ -145,42 +130,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1440</x>
-      <y>184</y>
-      <w>144</w>
-      <h>120</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;Enumeration&gt;&gt;
-Department
---
-Logistics
-Hr
-Security
-CustomerService
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>1424</x>
-      <y>744</y>
-      <w>152</w>
-      <h>88</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;Enumeration&gt;&gt;
-Gender
---
-Male
-Female
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>752</x>
-      <y>616</y>
+      <x>464</x>
+      <y>840</y>
       <w>184</w>
       <h>56</h>
     </coordinates>
@@ -194,8 +145,8 @@ Female
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>952</x>
-      <y>616</y>
+      <x>768</x>
+      <y>848</y>
       <w>184</w>
       <h>56</h>
     </coordinates>
@@ -207,26 +158,8 @@ Female
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1432</x>
-      <y>608</y>
-      <w>152</w>
-      <h>112</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;Enumeration&gt;&gt;
-ContractType
---
-FullTime
-PartTime
-Pending
-Terminated
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>496</x>
-      <y>176</y>
+      <x>392</x>
+      <y>0</y>
       <w>168</w>
       <h>72</h>
     </coordinates>
@@ -240,97 +173,20 @@ Terminated
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>944</x>
-      <y>536</y>
-      <w>24</w>
-      <h>64</h>
+      <x>840</x>
+      <y>360</y>
+      <w>216</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;30.0;250.0;30.0;250.0;70.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>848</x>
-      <y>560</y>
-      <w>232</w>
-      <h>72</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes>10.0;30.0;270.0;30.0;270.0;70.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>640</x>
-      <y>560</y>
-      <w>232</w>
-      <h>72</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes>270.0;30.0;10.0;30.0;10.0;70.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1056</x>
-      <y>560</y>
-      <w>232</w>
-      <h>72</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes>10.0;30.0;270.0;30.0;270.0;70.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>824</x>
-      <y>576</y>
-      <w>24</w>
-      <h>56</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1368</x>
-      <y>648</y>
-      <w>80</w>
-      <h>24</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;40.0;10.0;80.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1368</x>
-      <y>784</y>
-      <w>72</w>
-      <h>24</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;70.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1368</x>
-      <y>192</y>
-      <w>88</w>
-      <h>24</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;90.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>944</x>
-      <y>280</y>
-      <w>64</w>
+      <x>840</x>
+      <y>104</y>
+      <w>56</w>
       <h>136</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
@@ -341,9 +197,9 @@ m1=0..n
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>576</x>
-      <y>240</y>
-      <w>80</w>
+      <x>472</x>
+      <y>64</y>
+      <w>72</w>
       <h>96</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
@@ -352,39 +208,126 @@ m1=0..n
     <additional_attributes>10.0;100.0;10.0;10.0</additional_attributes>
   </element>
   <element>
-    <id>Relation</id>
+    <id>UMLNote</id>
     <coordinates>
-      <x>944</x>
-      <y>104</y>
-      <w>112</w>
-      <h>96</h>
+      <x>1352</x>
+      <y>424</y>
+      <w>184</w>
+      <h>72</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-
--userManager</panel_attributes>
-    <additional_attributes>10.0;100.0;10.0;10.0</additional_attributes>
+    <panel_attributes>Note..
+bg=blue
+the cotract type, gender and 
+department type are
+setted as string for 
+possible future changes.</panel_attributes>
+    <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>576</x>
-      <y>88</y>
-      <w>288</w>
+      <x>1040</x>
+      <y>736</y>
+      <w>24</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>848</x>
+      <y>760</y>
+      <w>328</w>
       <h>104</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-
--productManager</panel_attributes>
-    <additional_attributes>10.0;110.0;340.0;10.0</additional_attributes>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;390.0;20.0;390.0;110.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1072</x>
-      <y>104</y>
-      <w>224</w>
+      <x>544</x>
+      <y>760</y>
+      <w>328</w>
       <h>96</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-
--departmentManager</panel_attributes>
-    <additional_attributes>260.0;100.0;10.0;10.0</additional_attributes>
+    <panel_attributes/>
+    <additional_attributes>390.0;20.0;10.0;20.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>544</x>
+      <y>760</y>
+      <w>328</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;390.0;20.0;390.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1272</x>
+      <y>848</y>
+      <w>168</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>ShopEmployee
+--
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1064</x>
+      <y>760</y>
+      <w>328</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;390.0;20.0;390.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>608</x>
+      <y>424</y>
+      <w>184</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>Admin
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>680</x>
+      <y>368</y>
+      <w>184</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>210.0;20.0;10.0;20.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>472</x>
+      <y>424</y>
+      <w>112</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>Note..
+bg=blue
+Admins are us</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>
