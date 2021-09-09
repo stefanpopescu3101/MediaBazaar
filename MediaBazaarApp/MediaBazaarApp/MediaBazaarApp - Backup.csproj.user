@@ -22,25 +22,27 @@
     <Compile Update="PendingList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="StockManager.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="StoreManager.cs">
-      <SubType>Form</SubType>
-    </Compile>
+<<<<<<< HEAD
     <Compile Update="TerminateEmployee%27sContract.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Update Department Info.cs">
+=======
+    <Compile Update="StockManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="StoreManager.cs">
+>>>>>>> hristo_prj
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="UpdateEmployee%27s Information.cs">
       <SubType>Form</SubType>
     </Compile>
+<<<<<<< HEAD
     <Compile Update="ViewEmployees.cs">
-      <SubType>Form</SubType>
-    </Compile>
+=======
     <Compile Update="ViewProductForm.cs">
+>>>>>>> hristo_prj
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
