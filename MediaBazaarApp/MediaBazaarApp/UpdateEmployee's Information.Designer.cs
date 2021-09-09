@@ -37,7 +37,6 @@ namespace MediaBazaarApp
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -49,7 +48,6 @@ namespace MediaBazaarApp
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dtpFirstDate = new System.Windows.Forms.DateTimePicker();
-            this.dtpLastDate = new System.Windows.Forms.DateTimePicker();
             this.dtpBdate = new System.Windows.Forms.DateTimePicker();
             this.cbContractType = new System.Windows.Forms.ComboBox();
             this.cbRole = new System.Windows.Forms.ComboBox();
@@ -65,6 +63,8 @@ namespace MediaBazaarApp
             this.tbTown = new System.Windows.Forms.TextBox();
             this.tbCountry = new System.Windows.Forms.TextBox();
             this.tbUsername = new System.Windows.Forms.TextBox();
+            this.dtpLastDate = new System.Windows.Forms.DateTimePicker();
+            this.label11 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -138,15 +138,6 @@ namespace MediaBazaarApp
             this.label13.Size = new System.Drawing.Size(92, 20);
             this.label13.TabIndex = 66;
             this.label13.Text = "Department:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(55, 589);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(129, 20);
-            this.label11.TabIndex = 65;
-            this.label11.Text = "Last working date:";
             // 
             // label10
             // 
@@ -245,13 +236,6 @@ namespace MediaBazaarApp
             this.dtpFirstDate.Size = new System.Drawing.Size(250, 27);
             this.dtpFirstDate.TabIndex = 54;
             // 
-            // dtpLastDate
-            // 
-            this.dtpLastDate.Location = new System.Drawing.Point(189, 589);
-            this.dtpLastDate.Name = "dtpLastDate";
-            this.dtpLastDate.Size = new System.Drawing.Size(250, 27);
-            this.dtpLastDate.TabIndex = 53;
-            // 
             // dtpBdate
             // 
             this.dtpBdate.Location = new System.Drawing.Point(189, 491);
@@ -261,6 +245,7 @@ namespace MediaBazaarApp
             // 
             // cbContractType
             // 
+            this.cbContractType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbContractType.FormattingEnabled = true;
             this.cbContractType.Location = new System.Drawing.Point(189, 390);
             this.cbContractType.Name = "cbContractType";
@@ -269,6 +254,7 @@ namespace MediaBazaarApp
             // 
             // cbRole
             // 
+            this.cbRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbRole.FormattingEnabled = true;
             this.cbRole.Location = new System.Drawing.Point(189, 440);
             this.cbRole.Name = "cbRole";
@@ -277,6 +263,7 @@ namespace MediaBazaarApp
             // 
             // cbDepartment
             // 
+            this.cbDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDepartment.FormattingEnabled = true;
             this.cbDepartment.Location = new System.Drawing.Point(554, 359);
             this.cbDepartment.Name = "cbDepartment";
@@ -285,6 +272,7 @@ namespace MediaBazaarApp
             // 
             // cbGender
             // 
+            this.cbGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbGender.FormattingEnabled = true;
             this.cbGender.Location = new System.Drawing.Point(189, 293);
             this.cbGender.Name = "cbGender";
@@ -361,6 +349,22 @@ namespace MediaBazaarApp
             this.tbUsername.Size = new System.Drawing.Size(125, 27);
             this.tbUsername.TabIndex = 38;
             // 
+            // dtpLastDate
+            // 
+            this.dtpLastDate.Location = new System.Drawing.Point(189, 589);
+            this.dtpLastDate.Name = "dtpLastDate";
+            this.dtpLastDate.Size = new System.Drawing.Size(250, 27);
+            this.dtpLastDate.TabIndex = 53;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(55, 589);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(129, 20);
+            this.label11.TabIndex = 65;
+            this.label11.Text = "Last working date:";
+            // 
             // UpdateEmployee_s_Information
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -419,7 +423,6 @@ namespace MediaBazaarApp
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
@@ -431,7 +434,6 @@ namespace MediaBazaarApp
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dtpFirstDate;
-        private System.Windows.Forms.DateTimePicker dtpLastDate;
         private System.Windows.Forms.DateTimePicker dtpBdate;
         private System.Windows.Forms.ComboBox cbContractType;
         private System.Windows.Forms.ComboBox cbRole;
@@ -447,5 +449,7 @@ namespace MediaBazaarApp
         private System.Windows.Forms.TextBox tbTown;
         private System.Windows.Forms.TextBox tbCountry;
         private System.Windows.Forms.TextBox tbUsername;
+        private System.Windows.Forms.DateTimePicker dtpLastDate;
+        private System.Windows.Forms.Label label11;
     }
 }

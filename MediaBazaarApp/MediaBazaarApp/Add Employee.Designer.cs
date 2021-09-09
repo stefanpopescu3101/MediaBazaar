@@ -43,7 +43,6 @@ namespace MediaBazaarApp
             this.cbRole = new System.Windows.Forms.ComboBox();
             this.cbContractType = new System.Windows.Forms.ComboBox();
             this.dtpBdate = new System.Windows.Forms.DateTimePicker();
-            this.dtpLastDate = new System.Windows.Forms.DateTimePicker();
             this.dtpFirstDate = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -55,7 +54,6 @@ namespace MediaBazaarApp
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -132,6 +130,7 @@ namespace MediaBazaarApp
             // 
             // cbGender
             // 
+            this.cbGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbGender.FormattingEnabled = true;
             this.cbGender.Location = new System.Drawing.Point(139, 277);
             this.cbGender.Name = "cbGender";
@@ -140,6 +139,7 @@ namespace MediaBazaarApp
             // 
             // cbDepartment
             // 
+            this.cbDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDepartment.FormattingEnabled = true;
             this.cbDepartment.Location = new System.Drawing.Point(504, 343);
             this.cbDepartment.Name = "cbDepartment";
@@ -148,6 +148,7 @@ namespace MediaBazaarApp
             // 
             // cbRole
             // 
+            this.cbRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbRole.FormattingEnabled = true;
             this.cbRole.Location = new System.Drawing.Point(139, 424);
             this.cbRole.Name = "cbRole";
@@ -156,6 +157,7 @@ namespace MediaBazaarApp
             // 
             // cbContractType
             // 
+            this.cbContractType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbContractType.FormattingEnabled = true;
             this.cbContractType.Location = new System.Drawing.Point(139, 374);
             this.cbContractType.Name = "cbContractType";
@@ -168,13 +170,6 @@ namespace MediaBazaarApp
             this.dtpBdate.Name = "dtpBdate";
             this.dtpBdate.Size = new System.Drawing.Size(250, 27);
             this.dtpBdate.TabIndex = 15;
-            // 
-            // dtpLastDate
-            // 
-            this.dtpLastDate.Location = new System.Drawing.Point(139, 573);
-            this.dtpLastDate.Name = "dtpLastDate";
-            this.dtpLastDate.Size = new System.Drawing.Size(250, 27);
-            this.dtpLastDate.TabIndex = 16;
             // 
             // dtpFirstDate
             // 
@@ -274,15 +269,6 @@ namespace MediaBazaarApp
             this.label10.TabIndex = 27;
             this.label10.Text = "Surname:";
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(5, 573);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(129, 20);
-            this.label11.TabIndex = 28;
-            this.label11.Text = "Last working date:";
-            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -375,7 +361,6 @@ namespace MediaBazaarApp
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -387,7 +372,6 @@ namespace MediaBazaarApp
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtpFirstDate);
-            this.Controls.Add(this.dtpLastDate);
             this.Controls.Add(this.dtpBdate);
             this.Controls.Add(this.cbContractType);
             this.Controls.Add(this.cbRole);
@@ -426,7 +410,6 @@ namespace MediaBazaarApp
         private System.Windows.Forms.ComboBox cbRole;
         private System.Windows.Forms.ComboBox cbContractType;
         private System.Windows.Forms.DateTimePicker dtpBdate;
-        private System.Windows.Forms.DateTimePicker dtpLastDate;
         private System.Windows.Forms.DateTimePicker dtpFirstDate;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -438,7 +421,6 @@ namespace MediaBazaarApp
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
