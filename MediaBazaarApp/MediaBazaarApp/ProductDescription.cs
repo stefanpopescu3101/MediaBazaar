@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace MediaBazaarApp
 {
-    public partial class ViewProductForm : Form
+    public partial class ProductDescription : Form
     {
-        public ViewProductForm()
+        public ProductDescription()
         {
             InitializeComponent();
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

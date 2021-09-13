@@ -5,6 +5,7 @@ C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\bin\Debug\net5.
 C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\bin\Debug\net5.0-windows\MediaBazaarApp.dll
 C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\bin\Debug\net5.0-windows\ref\MediaBazaarApp.dll
 C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\bin\Debug\net5.0-windows\MediaBazaarApp.pdb
+C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\obj\Debug\net5.0-windows\MediaBazaarApp.csproj.AssemblyReference.cache
 C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\obj\Debug\net5.0-windows\MediaBazaarApp.Add_Department.resources
 C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\obj\Debug\net5.0-windows\MediaBazaarApp.Add_Employee.resources
 C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\obj\Debug\net5.0-windows\MediaBazaarApp.Form1.resources
@@ -22,9 +23,3 @@ C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\obj\Debug\net5.
 C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\obj\Debug\net5.0-windows\MediaBazaarApp.genruntimeconfig.cache
 C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\obj\Debug\net5.0-windows\MediaBazaarApp.TerminateEmployee_sContract.resources
 C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\obj\Debug\net5.0-windows\MediaBazaarApp.ViewEmployees.resources
-C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\obj\Debug\net5.0-windows\MediaBazaarApp.AddProduct.resources
-C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\obj\Debug\net5.0-windows\MediaBazaarApp.EditProduct.resources
-C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\obj\Debug\net5.0-windows\MediaBazaarApp.LogInForm.resources
-C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\obj\Debug\net5.0-windows\MediaBazaarApp.StockManager.resources
-C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\obj\Debug\net5.0-windows\MediaBazaarApp.StoreManager.resources
-C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\obj\Debug\net5.0-windows\MediaBazaarApp.ViewProductForm.resources

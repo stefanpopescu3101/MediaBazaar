@@ -16,10 +16,5 @@ namespace MediaBazaarApp
         {
             InitializeComponent();
         }
-
-        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
