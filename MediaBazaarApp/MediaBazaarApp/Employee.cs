@@ -34,6 +34,14 @@ namespace MediaBazaarApp
             get { return departureReason; }
             set { departureReason = value; }
         }
+        public int ID
+        {
+            get { return id; }
+        }
+        public string Name
+        {
+            get { return firstName+" "+lastName; }
+        }
         public Employee(string username,string password, string firstName, string lastName, int BSN, string email,
             string gender, string firstWorkingDate, string lastWorkingDate, string birthdate,
             string contractType, double hourlyWage, string streetName, int streetNumber, string zipCode, string town, string country,

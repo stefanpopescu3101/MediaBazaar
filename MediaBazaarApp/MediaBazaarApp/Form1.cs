@@ -28,28 +28,32 @@ namespace MediaBazaarApp
 
         private void btnViewPendingList_Click(object sender, EventArgs e)
         {
-           
+        
         }
 
         private void btnAddDepartment_Click(object sender, EventArgs e)
         {
-          
-
+       
         }
 
         private void btnUpdateDepartment_Click(object sender, EventArgs e)
         {
-      
+         
         }
 
         private void btnTerminate_Click(object sender, EventArgs e)
         {
-            TerminateEmployee_sContract terminate = new TerminateEmployee_sContract();
-            terminate.Show();
+       
         }
 
         private void btnViewEmployeesOfDepartment_Click(object sender, EventArgs e)
         {
+        
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
