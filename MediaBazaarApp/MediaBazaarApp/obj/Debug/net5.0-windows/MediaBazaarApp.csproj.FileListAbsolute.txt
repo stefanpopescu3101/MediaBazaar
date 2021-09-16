@@ -11,3 +11,14 @@ C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\obj\Debug\net5.
 C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\obj\Debug\net5.0-windows\MediaBazaarApp.AssemblyInfoInputs.cache
 C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\obj\Debug\net5.0-windows\MediaBazaarApp.AssemblyInfo.cs
 C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\obj\Debug\net5.0-windows\MediaBazaarApp.csproj.CoreCompileInputs.cache
+C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\bin\Debug\net5.0-windows\MediaBazaarApp.exe
+C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\bin\Debug\net5.0-windows\MediaBazaarApp.deps.json
+C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\bin\Debug\net5.0-windows\MediaBazaarApp.runtimeconfig.json
+C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\bin\Debug\net5.0-windows\MediaBazaarApp.runtimeconfig.dev.json
+C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\bin\Debug\net5.0-windows\MediaBazaarApp.dll
+C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\bin\Debug\net5.0-windows\ref\MediaBazaarApp.dll
+C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\bin\Debug\net5.0-windows\MediaBazaarApp.pdb
+C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\obj\Debug\net5.0-windows\MediaBazaarApp.dll
+C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\obj\Debug\net5.0-windows\ref\MediaBazaarApp.dll
+C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\obj\Debug\net5.0-windows\MediaBazaarApp.pdb
+C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\obj\Debug\net5.0-windows\MediaBazaarApp.genruntimeconfig.cache
