@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Rawan\\Desktop\\New folder (2)\\Media Bazaar\\MediaBazaarApp\\MediaBazaarApp\\MediaBazaarApp.csproj",
+      "projectUniqueName": "C:\\Users\\Rawan\\Desktop\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarApp\\MediaBazaarApp.csproj",
       "projectName": "MediaBazaarApp",
-      "projectPath": "C:\\Users\\Rawan\\Desktop\\New folder (2)\\Media Bazaar\\MediaBazaarApp\\MediaBazaarApp\\MediaBazaarApp.csproj",
+      "projectPath": "C:\\Users\\Rawan\\Desktop\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarApp\\MediaBazaarApp.csproj",
       "packagesPath": "C:\\Users\\Rawan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Rawan\\Desktop\\New folder (2)\\Media Bazaar\\MediaBazaarApp\\MediaBazaarApp\\obj\\",
+      "outputPath": "C:\\Users\\Rawan\\Desktop\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Rawan\\AppData\\Roaming\\NuGet\\NuGet.Config",
