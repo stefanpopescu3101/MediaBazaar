@@ -44,5 +44,16 @@ namespace MediaBazaarApp
             }
             return employees.ToArray();
         }
+        public Employee GetEmployee(int id)
+        {
+            foreach (Employee emp in GetEmployees())
+            {
+                if (emp.ID==id)
+                {
+                    return emp;
+                }
+            }
+            return null;
+        }
     }
 }
