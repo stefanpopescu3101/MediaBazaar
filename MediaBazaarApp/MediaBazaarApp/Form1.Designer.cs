@@ -31,8 +31,13 @@ namespace MediaBazaarApp
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.tbUsername = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tbPassword = new System.Windows.Forms.TextBox();
             this.btnClear = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnSearchByID = new System.Windows.Forms.Button();
@@ -40,37 +45,8 @@ namespace MediaBazaarApp
             this.label1 = new System.Windows.Forms.Label();
             this.btnUpdateInfo = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnTerminate = new System.Windows.Forms.Button();
-            this.btnRemoveEmployee = new System.Windows.Forms.Button();
-            this.btnAddEmployee = new System.Windows.Forms.Button();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnClearD = new System.Windows.Forms.Button();
-            this.dgvEmployeesOfDepartment = new System.Windows.Forms.DataGridView();
-            this.btnUpdateDepartment = new System.Windows.Forms.Button();
-            this.btnRemoveDepartment = new System.Windows.Forms.Button();
-            this.btnAddDepartment = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.tbPassword = new System.Windows.Forms.TextBox();
-            this.tbFirstName = new System.Windows.Forms.TextBox();
-            this.tbSurname = new System.Windows.Forms.TextBox();
-            this.tbUsername = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.dtpFirstDate = new System.Windows.Forms.DateTimePicker();
-            this.dtpBdate = new System.Windows.Forms.DateTimePicker();
-            this.cbContractType = new System.Windows.Forms.ComboBox();
-            this.cbRole = new System.Windows.Forms.ComboBox();
-            this.cbGender = new System.Windows.Forms.ComboBox();
-            this.tbEmail = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.dtpLastWorkingDate = new System.Windows.Forms.DateTimePicker();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -83,14 +59,38 @@ namespace MediaBazaarApp
             this.tbZipcode = new System.Windows.Forms.TextBox();
             this.tbTown = new System.Windows.Forms.TextBox();
             this.tbCountry = new System.Windows.Forms.TextBox();
-            this.dtpLastWorkingDate = new System.Windows.Forms.DateTimePicker();
-            this.label19 = new System.Windows.Forms.Label();
-            this.btnLogout = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.dtpFirstDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpBdate = new System.Windows.Forms.DateTimePicker();
+            this.cbContractType = new System.Windows.Forms.ComboBox();
+            this.cbRole = new System.Windows.Forms.ComboBox();
+            this.cbGender = new System.Windows.Forms.ComboBox();
+            this.tbEmail = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tbFirstName = new System.Windows.Forms.TextBox();
+            this.tbSurname = new System.Windows.Forms.TextBox();
+            this.btnTerminate = new System.Windows.Forms.Button();
+            this.btnRemoveEmployee = new System.Windows.Forms.Button();
+            this.btnAddEmployee = new System.Windows.Forms.Button();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.lbEmployeesOfDepartment = new System.Windows.Forms.ListBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.tbDepartmentName = new System.Windows.Forms.TextBox();
             this.tbDepartmentManager = new System.Windows.Forms.TextBox();
-            this.lbEmployeesOfDepartment = new System.Windows.Forms.ListBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnClearD = new System.Windows.Forms.Button();
+            this.dgvEmployeesOfDepartment = new System.Windows.Forms.DataGridView();
+            this.btnUpdateDepartment = new System.Windows.Forms.Button();
+            this.btnRemoveDepartment = new System.Windows.Forms.Button();
+            this.btnAddDepartment = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -132,6 +132,16 @@ namespace MediaBazaarApp
             this.tabPage1.Text = "Employee Management";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // btnLogout
+            // 
+            this.btnLogout.Location = new System.Drawing.Point(1041, 6);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(100, 29);
+            this.btnLogout.TabIndex = 10;
+            this.btnLogout.Text = "Log out";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -154,6 +164,38 @@ namespace MediaBazaarApp
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Account Info";
+            // 
+            // tbUsername
+            // 
+            this.tbUsername.Location = new System.Drawing.Point(135, 39);
+            this.tbUsername.Name = "tbUsername";
+            this.tbUsername.Size = new System.Drawing.Size(125, 27);
+            this.tbUsername.TabIndex = 28;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(51, 42);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(78, 20);
+            this.label5.TabIndex = 32;
+            this.label5.Text = "Username:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(56, 90);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(73, 20);
+            this.label4.TabIndex = 33;
+            this.label4.Text = "Password:";
+            // 
+            // tbPassword
+            // 
+            this.tbPassword.Location = new System.Drawing.Point(135, 83);
+            this.tbPassword.Name = "tbPassword";
+            this.tbPassword.Size = new System.Drawing.Size(125, 27);
+            this.tbPassword.TabIndex = 31;
             // 
             // btnClear
             // 
@@ -250,188 +292,119 @@ namespace MediaBazaarApp
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Actions";
             // 
-            // btnTerminate
+            // label19
             // 
-            this.btnTerminate.Location = new System.Drawing.Point(470, 668);
-            this.btnTerminate.Name = "btnTerminate";
-            this.btnTerminate.Size = new System.Drawing.Size(194, 29);
-            this.btnTerminate.TabIndex = 1;
-            this.btnTerminate.Text = "Terminate Employee\'s contract";
-            this.btnTerminate.UseVisualStyleBackColor = true;
-            this.btnTerminate.Click += new System.EventHandler(this.btnTerminate_Click);
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(288, 296);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(129, 20);
+            this.label19.TabIndex = 61;
+            this.label19.Text = "Last working date:";
             // 
-            // btnRemoveEmployee
+            // dtpLastWorkingDate
             // 
-            this.btnRemoveEmployee.Location = new System.Drawing.Point(270, 668);
-            this.btnRemoveEmployee.Name = "btnRemoveEmployee";
-            this.btnRemoveEmployee.Size = new System.Drawing.Size(194, 29);
-            this.btnRemoveEmployee.TabIndex = 2;
-            this.btnRemoveEmployee.Text = "Remove Employee";
-            this.btnRemoveEmployee.UseVisualStyleBackColor = true;
+            this.dtpLastWorkingDate.Location = new System.Drawing.Point(424, 296);
+            this.dtpLastWorkingDate.Name = "dtpLastWorkingDate";
+            this.dtpLastWorkingDate.Size = new System.Drawing.Size(250, 27);
+            this.dtpLastWorkingDate.TabIndex = 60;
             // 
-            // btnAddEmployee
+            // label18
             // 
-            this.btnAddEmployee.Location = new System.Drawing.Point(70, 668);
-            this.btnAddEmployee.Name = "btnAddEmployee";
-            this.btnAddEmployee.Size = new System.Drawing.Size(194, 29);
-            this.btnAddEmployee.TabIndex = 0;
-            this.btnAddEmployee.Text = "Add new Employee";
-            this.btnAddEmployee.UseVisualStyleBackColor = true;
-            this.btnAddEmployee.Click += new System.EventHandler(this.btnAddEmployee_Click);
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(407, 29);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(92, 20);
+            this.label18.TabIndex = 59;
+            this.label18.Text = "Street name:";
             // 
-            // tabPage2
+            // label17
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1147, 722);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Workshift Management";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(424, 63);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(75, 20);
+            this.label17.TabIndex = 58;
+            this.label17.Text = "Street No:";
             // 
-            // tabPage3
+            // label16
             // 
-            this.tabPage3.Controls.Add(this.lbEmployeesOfDepartment);
-            this.tabPage3.Controls.Add(this.label20);
-            this.tabPage3.Controls.Add(this.label21);
-            this.tabPage3.Controls.Add(this.tbDepartmentName);
-            this.tabPage3.Controls.Add(this.tbDepartmentManager);
-            this.tabPage3.Controls.Add(this.label2);
-            this.tabPage3.Controls.Add(this.btnClearD);
-            this.tabPage3.Controls.Add(this.dgvEmployeesOfDepartment);
-            this.tabPage3.Controls.Add(this.btnUpdateDepartment);
-            this.tabPage3.Controls.Add(this.btnRemoveDepartment);
-            this.tabPage3.Controls.Add(this.btnAddDepartment);
-            this.tabPage3.Location = new System.Drawing.Point(4, 29);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1147, 722);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Department Management";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(432, 100);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(67, 20);
+            this.label16.TabIndex = 57;
+            this.label16.Text = "Zipcode:";
             // 
-            // label2
+            // label15
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(262, 31);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(136, 28);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Departments";
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(452, 129);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(47, 20);
+            this.label15.TabIndex = 56;
+            this.label15.Text = "Town:";
             // 
-            // btnClearD
+            // label14
             // 
-            this.btnClearD.Location = new System.Drawing.Point(857, 290);
-            this.btnClearD.Name = "btnClearD";
-            this.btnClearD.Size = new System.Drawing.Size(222, 29);
-            this.btnClearD.TabIndex = 9;
-            this.btnClearD.Text = "Clear";
-            this.btnClearD.UseVisualStyleBackColor = true;
-            this.btnClearD.Click += new System.EventHandler(this.btnViewEmployeesOfDepartment_Click);
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(436, 162);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(63, 20);
+            this.label14.TabIndex = 55;
+            this.label14.Text = "Country:";
             // 
-            // dgvEmployeesOfDepartment
+            // label13
             // 
-            this.dgvEmployeesOfDepartment.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dgvEmployeesOfDepartment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmployeesOfDepartment.Location = new System.Drawing.Point(17, 62);
-            this.dgvEmployeesOfDepartment.Name = "dgvEmployeesOfDepartment";
-            this.dgvEmployeesOfDepartment.RowHeadersWidth = 51;
-            this.dgvEmployeesOfDepartment.RowTemplate.Height = 29;
-            this.dgvEmployeesOfDepartment.Size = new System.Drawing.Size(715, 636);
-            this.dgvEmployeesOfDepartment.TabIndex = 8;
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(22, 285);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(92, 20);
+            this.label13.TabIndex = 54;
+            this.label13.Text = "Department:";
             // 
-            // btnUpdateDepartment
+            // cbDepartment
             // 
-            this.btnUpdateDepartment.Location = new System.Drawing.Point(857, 255);
-            this.btnUpdateDepartment.Name = "btnUpdateDepartment";
-            this.btnUpdateDepartment.Size = new System.Drawing.Size(222, 29);
-            this.btnUpdateDepartment.TabIndex = 7;
-            this.btnUpdateDepartment.Text = "Update ";
-            this.btnUpdateDepartment.UseVisualStyleBackColor = true;
-            this.btnUpdateDepartment.Click += new System.EventHandler(this.btnUpdateDepartment_Click);
+            this.cbDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbDepartment.FormattingEnabled = true;
+            this.cbDepartment.Location = new System.Drawing.Point(120, 282);
+            this.cbDepartment.Name = "cbDepartment";
+            this.cbDepartment.Size = new System.Drawing.Size(125, 28);
+            this.cbDepartment.TabIndex = 53;
             // 
-            // btnRemoveDepartment
+            // tbStreetName
             // 
-            this.btnRemoveDepartment.Location = new System.Drawing.Point(857, 220);
-            this.btnRemoveDepartment.Name = "btnRemoveDepartment";
-            this.btnRemoveDepartment.Size = new System.Drawing.Size(222, 29);
-            this.btnRemoveDepartment.TabIndex = 6;
-            this.btnRemoveDepartment.Text = "Remove Department\r\n";
-            this.btnRemoveDepartment.UseVisualStyleBackColor = true;
+            this.tbStreetName.Location = new System.Drawing.Point(505, 26);
+            this.tbStreetName.Name = "tbStreetName";
+            this.tbStreetName.Size = new System.Drawing.Size(125, 27);
+            this.tbStreetName.TabIndex = 52;
             // 
-            // btnAddDepartment
+            // tbStreetNo
             // 
-            this.btnAddDepartment.Location = new System.Drawing.Point(857, 185);
-            this.btnAddDepartment.Name = "btnAddDepartment";
-            this.btnAddDepartment.Size = new System.Drawing.Size(222, 29);
-            this.btnAddDepartment.TabIndex = 5;
-            this.btnAddDepartment.Text = "Add Department";
-            this.btnAddDepartment.UseVisualStyleBackColor = true;
-            this.btnAddDepartment.Click += new System.EventHandler(this.btnAddDepartment_Click);
+            this.tbStreetNo.Location = new System.Drawing.Point(505, 59);
+            this.tbStreetNo.Name = "tbStreetNo";
+            this.tbStreetNo.Size = new System.Drawing.Size(125, 27);
+            this.tbStreetNo.TabIndex = 51;
             // 
-            // label10
+            // tbZipcode
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(44, 100);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(70, 20);
-            this.label10.TabIndex = 35;
-            this.label10.Text = "Surname:";
+            this.tbZipcode.Location = new System.Drawing.Point(505, 93);
+            this.tbZipcode.Name = "tbZipcode";
+            this.tbZipcode.Size = new System.Drawing.Size(125, 27);
+            this.tbZipcode.TabIndex = 50;
             // 
-            // label3
+            // tbTown
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(31, 56);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 20);
-            this.label3.TabIndex = 34;
-            this.label3.Text = "First Name:";
+            this.tbTown.Location = new System.Drawing.Point(505, 126);
+            this.tbTown.Name = "tbTown";
+            this.tbTown.Size = new System.Drawing.Size(125, 27);
+            this.tbTown.TabIndex = 49;
             // 
-            // label4
+            // tbCountry
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(56, 90);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 20);
-            this.label4.TabIndex = 33;
-            this.label4.Text = "Password:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(51, 42);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(78, 20);
-            this.label5.TabIndex = 32;
-            this.label5.Text = "Username:";
-            // 
-            // tbPassword
-            // 
-            this.tbPassword.Location = new System.Drawing.Point(135, 83);
-            this.tbPassword.Name = "tbPassword";
-            this.tbPassword.Size = new System.Drawing.Size(125, 27);
-            this.tbPassword.TabIndex = 31;
-            // 
-            // tbFirstName
-            // 
-            this.tbFirstName.Location = new System.Drawing.Point(120, 56);
-            this.tbFirstName.Name = "tbFirstName";
-            this.tbFirstName.Size = new System.Drawing.Size(125, 27);
-            this.tbFirstName.TabIndex = 30;
-            // 
-            // tbSurname
-            // 
-            this.tbSurname.Location = new System.Drawing.Point(120, 100);
-            this.tbSurname.Name = "tbSurname";
-            this.tbSurname.Size = new System.Drawing.Size(125, 27);
-            this.tbSurname.TabIndex = 29;
-            // 
-            // tbUsername
-            // 
-            this.tbUsername.Location = new System.Drawing.Point(135, 39);
-            this.tbUsername.Name = "tbUsername";
-            this.tbUsername.Size = new System.Drawing.Size(125, 27);
-            this.tbUsername.TabIndex = 28;
+            this.tbCountry.Location = new System.Drawing.Point(505, 159);
+            this.tbCountry.Name = "tbCountry";
+            this.tbCountry.Size = new System.Drawing.Size(125, 27);
+            this.tbCountry.TabIndex = 48;
             // 
             // label9
             // 
@@ -535,128 +508,105 @@ namespace MediaBazaarApp
             this.tbEmail.Size = new System.Drawing.Size(125, 27);
             this.tbEmail.TabIndex = 36;
             // 
-            // label18
+            // label10
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(407, 29);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(92, 20);
-            this.label18.TabIndex = 59;
-            this.label18.Text = "Street name:";
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(44, 100);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(70, 20);
+            this.label10.TabIndex = 35;
+            this.label10.Text = "Surname:";
             // 
-            // label17
+            // label3
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(424, 63);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(75, 20);
-            this.label17.TabIndex = 58;
-            this.label17.Text = "Street No:";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(31, 56);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(83, 20);
+            this.label3.TabIndex = 34;
+            this.label3.Text = "First Name:";
             // 
-            // label16
+            // tbFirstName
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(432, 100);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(67, 20);
-            this.label16.TabIndex = 57;
-            this.label16.Text = "Zipcode:";
+            this.tbFirstName.Location = new System.Drawing.Point(120, 56);
+            this.tbFirstName.Name = "tbFirstName";
+            this.tbFirstName.Size = new System.Drawing.Size(125, 27);
+            this.tbFirstName.TabIndex = 30;
             // 
-            // label15
+            // tbSurname
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(452, 129);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(47, 20);
-            this.label15.TabIndex = 56;
-            this.label15.Text = "Town:";
+            this.tbSurname.Location = new System.Drawing.Point(120, 100);
+            this.tbSurname.Name = "tbSurname";
+            this.tbSurname.Size = new System.Drawing.Size(125, 27);
+            this.tbSurname.TabIndex = 29;
             // 
-            // label14
+            // btnTerminate
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(436, 162);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(63, 20);
-            this.label14.TabIndex = 55;
-            this.label14.Text = "Country:";
+            this.btnTerminate.Location = new System.Drawing.Point(470, 668);
+            this.btnTerminate.Name = "btnTerminate";
+            this.btnTerminate.Size = new System.Drawing.Size(194, 29);
+            this.btnTerminate.TabIndex = 1;
+            this.btnTerminate.Text = "Terminate Employee\'s contract";
+            this.btnTerminate.UseVisualStyleBackColor = true;
+            this.btnTerminate.Click += new System.EventHandler(this.btnTerminate_Click);
             // 
-            // label13
+            // btnRemoveEmployee
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(22, 285);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(92, 20);
-            this.label13.TabIndex = 54;
-            this.label13.Text = "Department:";
+            this.btnRemoveEmployee.Location = new System.Drawing.Point(270, 668);
+            this.btnRemoveEmployee.Name = "btnRemoveEmployee";
+            this.btnRemoveEmployee.Size = new System.Drawing.Size(194, 29);
+            this.btnRemoveEmployee.TabIndex = 2;
+            this.btnRemoveEmployee.Text = "Remove Employee";
+            this.btnRemoveEmployee.UseVisualStyleBackColor = true;
             // 
-            // cbDepartment
+            // btnAddEmployee
             // 
-            this.cbDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbDepartment.FormattingEnabled = true;
-            this.cbDepartment.Location = new System.Drawing.Point(120, 282);
-            this.cbDepartment.Name = "cbDepartment";
-            this.cbDepartment.Size = new System.Drawing.Size(125, 28);
-            this.cbDepartment.TabIndex = 53;
+            this.btnAddEmployee.Location = new System.Drawing.Point(70, 668);
+            this.btnAddEmployee.Name = "btnAddEmployee";
+            this.btnAddEmployee.Size = new System.Drawing.Size(194, 29);
+            this.btnAddEmployee.TabIndex = 0;
+            this.btnAddEmployee.Text = "Add new Employee";
+            this.btnAddEmployee.UseVisualStyleBackColor = true;
+            this.btnAddEmployee.Click += new System.EventHandler(this.btnAddEmployee_Click);
             // 
-            // tbStreetName
+            // tabPage2
             // 
-            this.tbStreetName.Location = new System.Drawing.Point(505, 26);
-            this.tbStreetName.Name = "tbStreetName";
-            this.tbStreetName.Size = new System.Drawing.Size(125, 27);
-            this.tbStreetName.TabIndex = 52;
+            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1147, 722);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Workshift Management";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // tbStreetNo
+            // tabPage3
             // 
-            this.tbStreetNo.Location = new System.Drawing.Point(505, 59);
-            this.tbStreetNo.Name = "tbStreetNo";
-            this.tbStreetNo.Size = new System.Drawing.Size(125, 27);
-            this.tbStreetNo.TabIndex = 51;
+            this.tabPage3.Controls.Add(this.lbEmployeesOfDepartment);
+            this.tabPage3.Controls.Add(this.label20);
+            this.tabPage3.Controls.Add(this.label21);
+            this.tabPage3.Controls.Add(this.tbDepartmentName);
+            this.tabPage3.Controls.Add(this.tbDepartmentManager);
+            this.tabPage3.Controls.Add(this.label2);
+            this.tabPage3.Controls.Add(this.btnClearD);
+            this.tabPage3.Controls.Add(this.dgvEmployeesOfDepartment);
+            this.tabPage3.Controls.Add(this.btnUpdateDepartment);
+            this.tabPage3.Controls.Add(this.btnRemoveDepartment);
+            this.tabPage3.Controls.Add(this.btnAddDepartment);
+            this.tabPage3.Location = new System.Drawing.Point(4, 29);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(1147, 722);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Department Management";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // tbZipcode
+            // lbEmployeesOfDepartment
             // 
-            this.tbZipcode.Location = new System.Drawing.Point(505, 93);
-            this.tbZipcode.Name = "tbZipcode";
-            this.tbZipcode.Size = new System.Drawing.Size(125, 27);
-            this.tbZipcode.TabIndex = 50;
-            // 
-            // tbTown
-            // 
-            this.tbTown.Location = new System.Drawing.Point(505, 126);
-            this.tbTown.Name = "tbTown";
-            this.tbTown.Size = new System.Drawing.Size(125, 27);
-            this.tbTown.TabIndex = 49;
-            // 
-            // tbCountry
-            // 
-            this.tbCountry.Location = new System.Drawing.Point(505, 159);
-            this.tbCountry.Name = "tbCountry";
-            this.tbCountry.Size = new System.Drawing.Size(125, 27);
-            this.tbCountry.TabIndex = 48;
-            // 
-            // dtpLastWorkingDate
-            // 
-            this.dtpLastWorkingDate.Location = new System.Drawing.Point(424, 296);
-            this.dtpLastWorkingDate.Name = "dtpLastWorkingDate";
-            this.dtpLastWorkingDate.Size = new System.Drawing.Size(250, 27);
-            this.dtpLastWorkingDate.TabIndex = 60;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(288, 296);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(129, 20);
-            this.label19.TabIndex = 61;
-            this.label19.Text = "Last working date:";
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.Location = new System.Drawing.Point(1041, 6);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(100, 29);
-            this.btnLogout.TabIndex = 10;
-            this.btnLogout.Text = "Log out";
-            this.btnLogout.UseVisualStyleBackColor = true;
+            this.lbEmployeesOfDepartment.FormattingEnabled = true;
+            this.lbEmployeesOfDepartment.ItemHeight = 20;
+            this.lbEmployeesOfDepartment.Location = new System.Drawing.Point(756, 459);
+            this.lbEmployeesOfDepartment.Name = "lbEmployeesOfDepartment";
+            this.lbEmployeesOfDepartment.Size = new System.Drawing.Size(359, 244);
+            this.lbEmployeesOfDepartment.TabIndex = 40;
             // 
             // label20
             // 
@@ -690,14 +640,65 @@ namespace MediaBazaarApp
             this.tbDepartmentManager.Size = new System.Drawing.Size(169, 27);
             this.tbDepartmentManager.TabIndex = 36;
             // 
-            // lbEmployeesOfDepartment
+            // label2
             // 
-            this.lbEmployeesOfDepartment.FormattingEnabled = true;
-            this.lbEmployeesOfDepartment.ItemHeight = 20;
-            this.lbEmployeesOfDepartment.Location = new System.Drawing.Point(756, 459);
-            this.lbEmployeesOfDepartment.Name = "lbEmployeesOfDepartment";
-            this.lbEmployeesOfDepartment.Size = new System.Drawing.Size(359, 244);
-            this.lbEmployeesOfDepartment.TabIndex = 40;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(262, 31);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(136, 28);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Departments";
+            // 
+            // btnClearD
+            // 
+            this.btnClearD.Location = new System.Drawing.Point(857, 290);
+            this.btnClearD.Name = "btnClearD";
+            this.btnClearD.Size = new System.Drawing.Size(222, 29);
+            this.btnClearD.TabIndex = 9;
+            this.btnClearD.Text = "Clear";
+            this.btnClearD.UseVisualStyleBackColor = true;
+            this.btnClearD.Click += new System.EventHandler(this.btnViewEmployeesOfDepartment_Click);
+            // 
+            // dgvEmployeesOfDepartment
+            // 
+            this.dgvEmployeesOfDepartment.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dgvEmployeesOfDepartment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEmployeesOfDepartment.Location = new System.Drawing.Point(17, 62);
+            this.dgvEmployeesOfDepartment.Name = "dgvEmployeesOfDepartment";
+            this.dgvEmployeesOfDepartment.RowHeadersWidth = 51;
+            this.dgvEmployeesOfDepartment.RowTemplate.Height = 29;
+            this.dgvEmployeesOfDepartment.Size = new System.Drawing.Size(715, 636);
+            this.dgvEmployeesOfDepartment.TabIndex = 8;
+            // 
+            // btnUpdateDepartment
+            // 
+            this.btnUpdateDepartment.Location = new System.Drawing.Point(857, 255);
+            this.btnUpdateDepartment.Name = "btnUpdateDepartment";
+            this.btnUpdateDepartment.Size = new System.Drawing.Size(222, 29);
+            this.btnUpdateDepartment.TabIndex = 7;
+            this.btnUpdateDepartment.Text = "Update ";
+            this.btnUpdateDepartment.UseVisualStyleBackColor = true;
+            this.btnUpdateDepartment.Click += new System.EventHandler(this.btnUpdateDepartment_Click);
+            // 
+            // btnRemoveDepartment
+            // 
+            this.btnRemoveDepartment.Location = new System.Drawing.Point(857, 220);
+            this.btnRemoveDepartment.Name = "btnRemoveDepartment";
+            this.btnRemoveDepartment.Size = new System.Drawing.Size(222, 29);
+            this.btnRemoveDepartment.TabIndex = 6;
+            this.btnRemoveDepartment.Text = "Remove Department\r\n";
+            this.btnRemoveDepartment.UseVisualStyleBackColor = true;
+            // 
+            // btnAddDepartment
+            // 
+            this.btnAddDepartment.Location = new System.Drawing.Point(857, 185);
+            this.btnAddDepartment.Name = "btnAddDepartment";
+            this.btnAddDepartment.Size = new System.Drawing.Size(222, 29);
+            this.btnAddDepartment.TabIndex = 5;
+            this.btnAddDepartment.Text = "Add Department";
+            this.btnAddDepartment.UseVisualStyleBackColor = true;
+            this.btnAddDepartment.Click += new System.EventHandler(this.btnAddDepartment_Click);
             // 
             // Form1
             // 

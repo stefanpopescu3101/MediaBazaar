@@ -19,39 +19,66 @@ namespace MediaBazaarApp
 
         private void btnAddEmployee_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
           
+=======
+     
+>>>>>>> eee35dff3cb90118c4740fcb8be633556a986877
         }
 
         private void btnUpdateInfo_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             
+=======
+>>>>>>> eee35dff3cb90118c4740fcb8be633556a986877
         }
 
         private void btnViewPendingList_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
            
+=======
+        
+>>>>>>> eee35dff3cb90118c4740fcb8be633556a986877
         }
 
         private void btnAddDepartment_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
           
 
+=======
+       
+>>>>>>> eee35dff3cb90118c4740fcb8be633556a986877
         }
 
         private void btnUpdateDepartment_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
            
+=======
+         
+>>>>>>> eee35dff3cb90118c4740fcb8be633556a986877
         }
 
         private void btnTerminate_Click(object sender, EventArgs e)
         {
-            TerminateEmployee_sContract terminate = new TerminateEmployee_sContract();
-            terminate.Show();
+       
         }
 
         private void btnViewEmployeesOfDepartment_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
            
+=======
+        
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+>>>>>>> eee35dff3cb90118c4740fcb8be633556a986877
         }
     }
 }
