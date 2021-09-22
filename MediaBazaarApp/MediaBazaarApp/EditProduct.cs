@@ -10,11 +10,9 @@ using System.Windows.Forms;
 
 namespace MediaBazaarApp
 {
-
-    public partial class LoginForm : Form
+    public partial class EditProduct : Form
     {
-        public LoginForm()
-
+        public EditProduct()
         {
             InitializeComponent();
         }

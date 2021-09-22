@@ -121,5 +121,6 @@ namespace MediaBazaarApp
         private System.Windows.Forms.Button btnRemoveShelf;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnLogOut;
     }
 }

@@ -29,6 +29,7 @@ namespace MediaBazaarApp
         /// </summary>
         private void InitializeComponent()
         {
+
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -48,10 +49,12 @@ namespace MediaBazaarApp
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(1096, 445);
             this.dataGridView1.TabIndex = 0;
+
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
+
             this.comboBox1.Location = new System.Drawing.Point(120, 516);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(151, 28);
@@ -110,11 +113,13 @@ namespace MediaBazaarApp
             this.btnLogout.TabIndex = 7;
             this.btnLogout.Text = "Log out";
             this.btnLogout.UseVisualStyleBackColor = true;
+
             // 
             // StockManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+
             this.ClientSize = new System.Drawing.Size(1134, 644);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnRemoveProduct);
@@ -124,15 +129,19 @@ namespace MediaBazaarApp
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.dataGridView1);
+
             this.Name = "StockManager";
             this.Text = "StockManager";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+
             this.PerformLayout();
+
 
         }
 
         #endregion
+
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ComboBox comboBox1;
@@ -142,5 +151,6 @@ namespace MediaBazaarApp
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnRemoveProduct;
         private System.Windows.Forms.Button btnLogout;
+
     }
 }
