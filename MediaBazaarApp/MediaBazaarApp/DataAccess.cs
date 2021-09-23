@@ -19,7 +19,7 @@ namespace MediaBazaarApp
 
         public DataAccess()
         {
-            string database = "Server=studmysql01.fhict.local;Uid=dbi467287;Database=dbi467287;Pwd=prj;";
+            string database = "Server=studmysql01.fhict.local;Uid=dbi467287;Database=dbi467287;Pwd=prj; SSL Mode=None;";
 
             this.connection = new MySqlConnection(database);
         }
