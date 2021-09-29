@@ -28,5 +28,10 @@ namespace MediaBazaarApp
                 return false;
             }
         }
+
+        public string CreateUsername(int id,string firstName, string lastName)
+        {
+            return $"{firstName}{lastName}{id}";
+        }
     }
 }
