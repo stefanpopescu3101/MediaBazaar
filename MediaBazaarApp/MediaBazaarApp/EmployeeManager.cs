@@ -32,7 +32,17 @@ namespace MediaBazaarApp
         {
             employeesMediator.RemoveEmployee(id);
         }
-
+        public Employee GetEmployee(int id)
+        {
+            foreach (Employee emp in employees)
+            {
+                if (emp.ID==id)
+                {
+                    return emp;
+                }
+            }
+            return null;
+        }
         public List<Employee> GetEmployees()
         {
             return employeesMediator.GetEmployees();

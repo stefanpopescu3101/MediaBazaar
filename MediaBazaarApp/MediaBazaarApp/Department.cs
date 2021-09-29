@@ -28,11 +28,14 @@ namespace MediaBazaarApp
         public Department(string departmentName, int Managerid)
         {
             this.departmentName = departmentName;
-            UserManager user = new UserManager();
-           if(user.GetEmployee(managerID) != null)
+            EmployeeManager employee = new EmployeeManager();
+            foreach (Employee emp in employee.GetEmployees())
             {
-                this.managerName = user.GetEmployee(managerID).Name;
-                this.managerID = Managerid;
+                if (emp.ID==Managerid)
+                {
+                    this.managerName = emp.Name;
+                    this.managerID = Managerid;
+                }
             }
          
         }

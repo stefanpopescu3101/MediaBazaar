@@ -44,11 +44,11 @@ namespace MediaBazaarApp
             this.btnRemoveEmployee = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.lDepartmentManager = new System.Windows.Forms.Label();
             this.lbEmployeesOfDepartment = new System.Windows.Forms.ListBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.tbDepartmentName = new System.Windows.Forms.TextBox();
-            this.tbDepartmentManager = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnClearD = new System.Windows.Forms.Button();
             this.dgvDepartments = new System.Windows.Forms.DataGridView();
@@ -211,11 +211,11 @@ namespace MediaBazaarApp
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.lDepartmentManager);
             this.tabPage3.Controls.Add(this.lbEmployeesOfDepartment);
             this.tabPage3.Controls.Add(this.label20);
             this.tabPage3.Controls.Add(this.label21);
             this.tabPage3.Controls.Add(this.tbDepartmentName);
-            this.tabPage3.Controls.Add(this.tbDepartmentManager);
             this.tabPage3.Controls.Add(this.label2);
             this.tabPage3.Controls.Add(this.btnClearD);
             this.tabPage3.Controls.Add(this.dgvDepartments);
@@ -229,6 +229,15 @@ namespace MediaBazaarApp
             this.tabPage3.Text = "Department Management";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // lDepartmentManager
+            // 
+            this.lDepartmentManager.AutoSize = true;
+            this.lDepartmentManager.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lDepartmentManager.Location = new System.Drawing.Point(919, 418);
+            this.lDepartmentManager.Name = "lDepartmentManager";
+            this.lDepartmentManager.Size = new System.Drawing.Size(0, 23);
+            this.lDepartmentManager.TabIndex = 41;
+            // 
             // lbEmployeesOfDepartment
             // 
             this.lbEmployeesOfDepartment.FormattingEnabled = true;
@@ -237,6 +246,7 @@ namespace MediaBazaarApp
             this.lbEmployeesOfDepartment.Name = "lbEmployeesOfDepartment";
             this.lbEmployeesOfDepartment.Size = new System.Drawing.Size(359, 244);
             this.lbEmployeesOfDepartment.TabIndex = 40;
+            this.lbEmployeesOfDepartment.SelectedIndexChanged += new System.EventHandler(this.lbEmployeesOfDepartment_SelectedIndexChanged);
             // 
             // label20
             // 
@@ -262,13 +272,6 @@ namespace MediaBazaarApp
             this.tbDepartmentName.Name = "tbDepartmentName";
             this.tbDepartmentName.Size = new System.Drawing.Size(169, 27);
             this.tbDepartmentName.TabIndex = 37;
-            // 
-            // tbDepartmentManager
-            // 
-            this.tbDepartmentManager.Location = new System.Drawing.Point(910, 415);
-            this.tbDepartmentManager.Name = "tbDepartmentManager";
-            this.tbDepartmentManager.Size = new System.Drawing.Size(169, 27);
-            this.tbDepartmentManager.TabIndex = 36;
             // 
             // label2
             // 
@@ -300,6 +303,7 @@ namespace MediaBazaarApp
             this.dgvDepartments.RowTemplate.Height = 29;
             this.dgvDepartments.Size = new System.Drawing.Size(715, 636);
             this.dgvDepartments.TabIndex = 8;
+            this.dgvDepartments.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDepartments_CellContentClick);
             // 
             // btnUpdateDepartment
             // 
@@ -376,9 +380,9 @@ namespace MediaBazaarApp
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox tbDepartmentName;
-        private System.Windows.Forms.TextBox tbDepartmentManager;
         private System.Windows.Forms.ListBox lbEmployeesOfDepartment;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Label lDepartmentManager;
     }
 }
 

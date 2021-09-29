@@ -83,7 +83,7 @@ namespace MediaBazaarApp
         }
         public string Department
         {
-            get { return department; }
+            get { return department; }set { department = value;  }
         }
         public string Role
         {

@@ -19,7 +19,7 @@ namespace MediaBazaarApp
 
         public bool Add(Department department)
         {
-            foreach (Department d in departments)
+            foreach (Department d in GetDepartments())
             {
                 if (d.DepartmentName!=department.DepartmentName)
                 {
@@ -49,7 +49,7 @@ namespace MediaBazaarApp
         }
         public Department GetDepartment(string name)
         {
-            foreach (Department d in departments)
+            foreach (Department d in GetDepartments())
             {
                 if (d.DepartmentName==name)
                 {
