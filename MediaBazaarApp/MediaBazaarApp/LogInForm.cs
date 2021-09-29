@@ -10,11 +10,23 @@ using System.Windows.Forms;
 
 namespace MediaBazaarApp
 {
-    public partial class LogInForm : Form
+
+    public partial class LoginForm : Form
     {
-        public LogInForm()
+        private UserManager user = new UserManager();
+       
+       
+        public LoginForm()
+
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        
     }
 }

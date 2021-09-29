@@ -30,24 +30,28 @@ namespace MediaBazaarApp
         private void InitializeComponent()
         {
             this.label9 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.cbProductCategory = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.cbProductSize = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbProductDescription = new System.Windows.Forms.TextBox();
+            this.tbProductBrand = new System.Windows.Forms.TextBox();
+            this.tbProductBoughtFor = new System.Windows.Forms.TextBox();
+            this.tbProductSellingFor = new System.Windows.Forms.TextBox();
+            this.tbProductName = new System.Windows.Forms.TextBox();
+            this.btnEditProduct = new System.Windows.Forms.Button();
+            this.tbMaxCapacity = new System.Windows.Forms.TextBox();
+            this.tbThreshold = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.tbMeasurements = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label9
@@ -60,36 +64,27 @@ namespace MediaBazaarApp
             this.label9.TabIndex = 19;
             this.label9.Text = "Edit product data:";
             // 
-            // button2
+            // btnCancel
             // 
-            this.button2.Location = new System.Drawing.Point(391, 578);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(94, 29);
-            this.button2.TabIndex = 27;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnCancel.Location = new System.Drawing.Point(671, 421);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(94, 29);
+            this.btnCancel.TabIndex = 27;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // cbProductCategory
             // 
-            this.button1.Location = new System.Drawing.Point(12, 546);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(161, 61);
-            this.button1.TabIndex = 26;
-            this.button1.Text = "Save product";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(138, 498);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(203, 28);
-            this.comboBox2.TabIndex = 43;
+            this.cbProductCategory.FormattingEnabled = true;
+            this.cbProductCategory.Location = new System.Drawing.Point(562, 334);
+            this.cbProductCategory.Name = "cbProductCategory";
+            this.cbProductCategory.Size = new System.Drawing.Size(203, 28);
+            this.cbProductCategory.TabIndex = 43;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(58, 506);
+            this.label8.Location = new System.Drawing.Point(482, 342);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(72, 20);
             this.label8.TabIndex = 42;
@@ -98,40 +93,23 @@ namespace MediaBazaarApp
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(84, 445);
+            this.label7.Location = new System.Drawing.Point(508, 281);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(39, 20);
             this.label7.TabIndex = 41;
             this.label7.Text = "Size:";
             // 
-            // comboBox1
+            // cbProductSize
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbProductSize.FormattingEnabled = true;
+            this.cbProductSize.Items.AddRange(new object[] {
             "Big",
             "Medium",
             "Small"});
-            this.comboBox1.Location = new System.Drawing.Point(138, 442);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(203, 28);
-            this.comboBox1.TabIndex = 40;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(24, 397);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(108, 20);
-            this.label6.TabIndex = 39;
-            this.label6.Text = "Measurements:";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(138, 394);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.PlaceholderText = "\t5.78 x 2.82 x 0.29 in.";
-            this.textBox6.Size = new System.Drawing.Size(203, 27);
-            this.textBox6.TabIndex = 38;
+            this.cbProductSize.Location = new System.Drawing.Point(562, 278);
+            this.cbProductSize.Name = "cbProductSize";
+            this.cbProductSize.Size = new System.Drawing.Size(203, 28);
+            this.cbProductSize.TabIndex = 40;
             // 
             // label5
             // 
@@ -178,72 +156,134 @@ namespace MediaBazaarApp
             this.label1.TabIndex = 33;
             this.label1.Text = "Name:";
             // 
-            // textBox5
+            // tbProductDescription
             // 
-            this.textBox5.Location = new System.Drawing.Point(138, 268);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.PlaceholderText = "The best in class battery, high -technology software and user friendly interface " +
+            this.tbProductDescription.Location = new System.Drawing.Point(138, 268);
+            this.tbProductDescription.Multiline = true;
+            this.tbProductDescription.Name = "tbProductDescription";
+            this.tbProductDescription.PlaceholderText = "The best in class battery, high -technology software and user friendly interface " +
     "make Philips mobile phones ideal devices for any tasks such as everyday activiti" +
     "es, communication and entertainment.";
-            this.textBox5.Size = new System.Drawing.Size(335, 94);
-            this.textBox5.TabIndex = 32;
+            this.tbProductDescription.Size = new System.Drawing.Size(335, 94);
+            this.tbProductDescription.TabIndex = 32;
             // 
-            // textBox4
+            // tbProductBrand
             // 
-            this.textBox4.Location = new System.Drawing.Point(134, 220);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.PlaceholderText = "Philips";
-            this.textBox4.Size = new System.Drawing.Size(203, 27);
-            this.textBox4.TabIndex = 31;
+            this.tbProductBrand.Location = new System.Drawing.Point(134, 220);
+            this.tbProductBrand.Name = "tbProductBrand";
+            this.tbProductBrand.PlaceholderText = "Philips";
+            this.tbProductBrand.Size = new System.Drawing.Size(203, 27);
+            this.tbProductBrand.TabIndex = 31;
             // 
-            // textBox3
+            // tbProductBoughtFor
             // 
-            this.textBox3.Location = new System.Drawing.Point(134, 171);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.PlaceholderText = "200$";
-            this.textBox3.Size = new System.Drawing.Size(203, 27);
-            this.textBox3.TabIndex = 30;
+            this.tbProductBoughtFor.Location = new System.Drawing.Point(134, 171);
+            this.tbProductBoughtFor.Name = "tbProductBoughtFor";
+            this.tbProductBoughtFor.PlaceholderText = "200$";
+            this.tbProductBoughtFor.Size = new System.Drawing.Size(203, 27);
+            this.tbProductBoughtFor.TabIndex = 30;
             // 
-            // textBox2
+            // tbProductSellingFor
             // 
-            this.textBox2.Location = new System.Drawing.Point(134, 122);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PlaceholderText = "450$";
-            this.textBox2.Size = new System.Drawing.Size(203, 27);
-            this.textBox2.TabIndex = 29;
+            this.tbProductSellingFor.Location = new System.Drawing.Point(134, 122);
+            this.tbProductSellingFor.Name = "tbProductSellingFor";
+            this.tbProductSellingFor.PlaceholderText = "450$";
+            this.tbProductSellingFor.Size = new System.Drawing.Size(203, 27);
+            this.tbProductSellingFor.TabIndex = 29;
             // 
-            // textBox1
+            // tbProductName
             // 
-            this.textBox1.Location = new System.Drawing.Point(134, 74);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PlaceholderText = "Smart Phone";
-            this.textBox1.Size = new System.Drawing.Size(203, 27);
-            this.textBox1.TabIndex = 28;
+            this.tbProductName.Location = new System.Drawing.Point(134, 74);
+            this.tbProductName.Name = "tbProductName";
+            this.tbProductName.PlaceholderText = "Smart Phone";
+            this.tbProductName.Size = new System.Drawing.Size(203, 27);
+            this.tbProductName.TabIndex = 28;
+            // 
+            // btnEditProduct
+            // 
+            this.btnEditProduct.Location = new System.Drawing.Point(32, 394);
+            this.btnEditProduct.Name = "btnEditProduct";
+            this.btnEditProduct.Size = new System.Drawing.Size(136, 56);
+            this.btnEditProduct.TabIndex = 44;
+            this.btnEditProduct.Text = "Save Changes";
+            this.btnEditProduct.UseVisualStyleBackColor = true;
+            this.btnEditProduct.Click += new System.EventHandler(this.btnEditProduct_Click);
+            // 
+            // tbMaxCapacity
+            // 
+            this.tbMaxCapacity.Location = new System.Drawing.Point(508, 70);
+            this.tbMaxCapacity.Name = "tbMaxCapacity";
+            this.tbMaxCapacity.Size = new System.Drawing.Size(203, 27);
+            this.tbMaxCapacity.TabIndex = 45;
+            // 
+            // tbThreshold
+            // 
+            this.tbThreshold.Location = new System.Drawing.Point(508, 119);
+            this.tbThreshold.Name = "tbThreshold";
+            this.tbThreshold.Size = new System.Drawing.Size(203, 27);
+            this.tbThreshold.TabIndex = 46;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(401, 73);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(101, 20);
+            this.label6.TabIndex = 47;
+            this.label6.Text = "Max Capacity:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(415, 122);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(77, 20);
+            this.label10.TabIndex = 48;
+            this.label10.Text = "Threshold:";
+            // 
+            // tbMeasurements
+            // 
+            this.tbMeasurements.Location = new System.Drawing.Point(508, 167);
+            this.tbMeasurements.Name = "tbMeasurements";
+            this.tbMeasurements.Size = new System.Drawing.Size(203, 27);
+            this.tbMeasurements.TabIndex = 49;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(394, 171);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(108, 20);
+            this.label11.TabIndex = 50;
+            this.label11.Text = "Measurements:";
             // 
             // EditProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(497, 619);
-            this.Controls.Add(this.comboBox2);
+            this.ClientSize = new System.Drawing.Size(798, 470);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.tbMeasurements);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.tbThreshold);
+            this.Controls.Add(this.tbMaxCapacity);
+            this.Controls.Add(this.btnEditProduct);
+            this.Controls.Add(this.cbProductCategory);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.cbProductSize);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.tbProductDescription);
+            this.Controls.Add(this.tbProductBrand);
+            this.Controls.Add(this.tbProductBoughtFor);
+            this.Controls.Add(this.tbProductSellingFor);
+            this.Controls.Add(this.tbProductName);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.label9);
             this.Name = "EditProduct";
             this.Text = "EditProduct";
@@ -255,23 +295,27 @@ namespace MediaBazaarApp
         #endregion
 
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.ComboBox cbProductCategory;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.ComboBox cbProductSize;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbProductDescription;
+        private System.Windows.Forms.TextBox tbProductBrand;
+        private System.Windows.Forms.TextBox tbProductBoughtFor;
+        private System.Windows.Forms.TextBox tbProductSellingFor;
+        private System.Windows.Forms.TextBox tbProductName;
+        private System.Windows.Forms.Button btnEditProduct;
+        private System.Windows.Forms.TextBox tbMaxCapacity;
+        private System.Windows.Forms.TextBox tbThreshold;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox tbMeasurements;
+        private System.Windows.Forms.Label label11;
     }
 }

@@ -29,82 +29,85 @@ namespace MediaBazaarApp
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.dgvShelfs = new System.Windows.Forms.DataGridView();
             this.btnAddShelf = new System.Windows.Forms.Button();
-            this.btnEditShelf = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.btnRemoveShelf = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnLogOut = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvShelfs)).BeginInit();
             this.SuspendLayout();
             // 
-            // listBox1
+            // dgvShelfs
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(35, 40);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(250, 344);
-            this.listBox1.TabIndex = 0;
+            this.dgvShelfs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvShelfs.Location = new System.Drawing.Point(30, 50);
+            this.dgvShelfs.Name = "dgvShelfs";
+            this.dgvShelfs.RowHeadersWidth = 51;
+            this.dgvShelfs.RowTemplate.Height = 29;
+            this.dgvShelfs.Size = new System.Drawing.Size(434, 487);
+            this.dgvShelfs.TabIndex = 0;
             // 
             // btnAddShelf
             // 
-            this.btnAddShelf.Location = new System.Drawing.Point(346, 96);
+            this.btnAddShelf.Location = new System.Drawing.Point(540, 126);
             this.btnAddShelf.Name = "btnAddShelf";
-            this.btnAddShelf.Size = new System.Drawing.Size(156, 54);
+            this.btnAddShelf.Size = new System.Drawing.Size(234, 58);
             this.btnAddShelf.TabIndex = 1;
             this.btnAddShelf.Text = "Add shelf";
             this.btnAddShelf.UseVisualStyleBackColor = true;
             // 
-            // btnEditShelf
+            // btnUpdate
             // 
-            this.btnEditShelf.Location = new System.Drawing.Point(346, 171);
-            this.btnEditShelf.Name = "btnEditShelf";
-            this.btnEditShelf.Size = new System.Drawing.Size(156, 54);
-            this.btnEditShelf.TabIndex = 2;
-            this.btnEditShelf.Text = "Edit shelf";
-            this.btnEditShelf.UseVisualStyleBackColor = true;
+            this.btnUpdate.Location = new System.Drawing.Point(540, 289);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(234, 58);
+            this.btnUpdate.TabIndex = 2;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
             // 
             // btnRemoveShelf
             // 
-            this.btnRemoveShelf.Location = new System.Drawing.Point(346, 244);
+            this.btnRemoveShelf.Location = new System.Drawing.Point(540, 207);
             this.btnRemoveShelf.Name = "btnRemoveShelf";
-            this.btnRemoveShelf.Size = new System.Drawing.Size(156, 54);
+            this.btnRemoveShelf.Size = new System.Drawing.Size(234, 58);
             this.btnRemoveShelf.TabIndex = 3;
             this.btnRemoveShelf.Text = "Remove shelf";
             this.btnRemoveShelf.UseVisualStyleBackColor = true;
             // 
+            // btnLogout
+            // 
+            this.btnLogout.Location = new System.Drawing.Point(685, 511);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(107, 41);
+            this.btnLogout.TabIndex = 4;
+            this.btnLogout.Text = "Log out";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(125, 17);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(205, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 20);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Shelfs:";
-            // 
-            // btnLogOut
-            // 
-            this.btnLogOut.Location = new System.Drawing.Point(458, 409);
-            this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(94, 29);
-            this.btnLogOut.TabIndex = 5;
-            this.btnLogOut.Text = "Log out";
-            this.btnLogOut.UseVisualStyleBackColor = true;
+            this.label1.Size = new System.Drawing.Size(63, 25);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Shelfs";
             // 
             // StoreManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(564, 450);
-            this.Controls.Add(this.btnLogOut);
+            this.ClientSize = new System.Drawing.Size(823, 564);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnRemoveShelf);
-            this.Controls.Add(this.btnEditShelf);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAddShelf);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.dgvShelfs);
             this.Name = "StoreManager";
-            this.Text = "StoreManager";
+            this.Text = "Store Manager";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvShelfs)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -112,10 +115,11 @@ namespace MediaBazaarApp
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.DataGridView dgvShelfs;
         private System.Windows.Forms.Button btnAddShelf;
-        private System.Windows.Forms.Button btnEditShelf;
+        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnRemoveShelf;
+        private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnLogOut;
     }

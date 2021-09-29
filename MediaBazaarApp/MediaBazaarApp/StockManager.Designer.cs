@@ -29,176 +29,236 @@ namespace MediaBazaarApp
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnProduct = new System.Windows.Forms.Button();
-            this.btnEditProduct = new System.Windows.Forms.Button();
+            this.DGVProducts = new System.Windows.Forms.DataGridView();
+            this.cBShelfCategories = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnAddProduct = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.btnRemoveProduct = new System.Windows.Forms.Button();
-            this.btnViewProduct = new System.Windows.Forms.Button();
-            this.btnLogOut = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.ColumnID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnSelling = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnBought = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnBrand = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnMeasurements = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.btnRefersh = new System.Windows.Forms.Button();
+            this.ProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductBrand = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductCostPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductSellPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductInStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductMaxCapacity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductThershold = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Measurements = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BoxSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVProducts)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnProduct
+            // DGVProducts
             // 
-            this.btnProduct.Location = new System.Drawing.Point(264, 459);
-            this.btnProduct.Name = "btnProduct";
-            this.btnProduct.Size = new System.Drawing.Size(149, 72);
-            this.btnProduct.TabIndex = 1;
-            this.btnProduct.Text = "Add";
-            this.btnProduct.UseVisualStyleBackColor = true;
+            this.DGVProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVProducts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ProductID,
+            this.ProductName,
+            this.ProductBrand,
+            this.ProductCostPrice,
+            this.ProductSellPrice,
+            this.ProductInStock,
+            this.ProductMaxCapacity,
+            this.ProductThershold,
+            this.Measurements,
+            this.BoxSize});
+            this.DGVProducts.Location = new System.Drawing.Point(215, 22);
+            this.DGVProducts.Name = "DGVProducts";
+            this.DGVProducts.RowHeadersWidth = 51;
+            this.DGVProducts.Size = new System.Drawing.Size(1171, 445);
+            this.DGVProducts.TabIndex = 0;
             // 
-            // btnEditProduct
+            // cBShelfCategories
             // 
-            this.btnEditProduct.Location = new System.Drawing.Point(419, 459);
-            this.btnEditProduct.Name = "btnEditProduct";
-            this.btnEditProduct.Size = new System.Drawing.Size(149, 72);
-            this.btnEditProduct.TabIndex = 2;
-            this.btnEditProduct.Text = "Edit";
-            this.btnEditProduct.UseVisualStyleBackColor = true;
+            this.cBShelfCategories.FormattingEnabled = true;
+            this.cBShelfCategories.Location = new System.Drawing.Point(58, 22);
+            this.cBShelfCategories.Name = "cBShelfCategories";
+            this.cBShelfCategories.Size = new System.Drawing.Size(151, 28);
+            this.cBShelfCategories.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(45, 20);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Shelf:";
+            // 
+            // btnAddProduct
+            // 
+            this.btnAddProduct.Location = new System.Drawing.Point(29, 117);
+            this.btnAddProduct.Name = "btnAddProduct";
+            this.btnAddProduct.Size = new System.Drawing.Size(151, 50);
+            this.btnAddProduct.TabIndex = 3;
+            this.btnAddProduct.Text = "Add Product";
+            this.btnAddProduct.UseVisualStyleBackColor = true;
+            this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(29, 417);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(151, 50);
+            this.btnClear.TabIndex = 4;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(29, 192);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(151, 50);
+            this.btnUpdate.TabIndex = 5;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnRemoveProduct
             // 
-            this.btnRemoveProduct.Location = new System.Drawing.Point(574, 459);
+            this.btnRemoveProduct.Location = new System.Drawing.Point(29, 266);
             this.btnRemoveProduct.Name = "btnRemoveProduct";
-            this.btnRemoveProduct.Size = new System.Drawing.Size(149, 72);
-            this.btnRemoveProduct.TabIndex = 3;
-            this.btnRemoveProduct.Text = "Remove";
+            this.btnRemoveProduct.Size = new System.Drawing.Size(151, 50);
+            this.btnRemoveProduct.TabIndex = 6;
+            this.btnRemoveProduct.Text = "Remove Product";
             this.btnRemoveProduct.UseVisualStyleBackColor = true;
+            this.btnRemoveProduct.Click += new System.EventHandler(this.btnRemoveProduct_Click);
             // 
-            // btnViewProduct
+            // btnLogout
             // 
-            this.btnViewProduct.Location = new System.Drawing.Point(729, 459);
-            this.btnViewProduct.Name = "btnViewProduct";
-            this.btnViewProduct.Size = new System.Drawing.Size(149, 72);
-            this.btnViewProduct.TabIndex = 4;
-            this.btnViewProduct.Text = "View Product";
-            this.btnViewProduct.UseVisualStyleBackColor = true;
+            this.btnLogout.Location = new System.Drawing.Point(1282, 484);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(104, 57);
+            this.btnLogout.TabIndex = 7;
+            this.btnLogout.Text = "Log out";
+            this.btnLogout.UseVisualStyleBackColor = true;
             // 
-            // btnLogOut
+            // btnRefersh
             // 
-            this.btnLogOut.Location = new System.Drawing.Point(979, 559);
-            this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(94, 29);
-            this.btnLogOut.TabIndex = 5;
-            this.btnLogOut.Text = "Log Out";
-            this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnRefersh.Location = new System.Drawing.Point(29, 341);
+            this.btnRefersh.Name = "btnRefersh";
+            this.btnRefersh.Size = new System.Drawing.Size(151, 50);
+            this.btnRefersh.TabIndex = 8;
+            this.btnRefersh.Text = "Refresh";
+            this.btnRefersh.UseVisualStyleBackColor = true;
+            this.btnRefersh.Click += new System.EventHandler(this.btnRefersh_Click);
             // 
-            // dataGridView1
+            // ProductID
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColumnID,
-            this.ColumnName,
-            this.ColumnSelling,
-            this.ColumnBought,
-            this.ColumnBrand,
-            this.ColumnMeasurements,
-            this.ColumnSize});
-            this.dataGridView1.Location = new System.Drawing.Point(28, 55);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(1021, 368);
-            this.dataGridView1.TabIndex = 6;
+            this.ProductID.HeaderText = "ID";
+            this.ProductID.MinimumWidth = 6;
+            this.ProductID.Name = "ProductID";
+            this.ProductID.Width = 125;
             // 
-            // comboBox1
+            // ProductName
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(28, 459);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(218, 28);
-            this.comboBox1.TabIndex = 7;
+            this.ProductName.HeaderText = "Name";
+            this.ProductName.MinimumWidth = 6;
+            this.ProductName.Name = "ProductName";
+            this.ProductName.Width = 125;
             // 
-            // ColumnID
+            // ProductBrand
             // 
-            this.ColumnID.HeaderText = "ID";
-            this.ColumnID.MinimumWidth = 6;
-            this.ColumnID.Name = "ColumnID";
-            this.ColumnID.Width = 125;
+            this.ProductBrand.HeaderText = "Brand";
+            this.ProductBrand.MinimumWidth = 6;
+            this.ProductBrand.Name = "ProductBrand";
+            this.ProductBrand.Width = 125;
             // 
-            // ColumnName
+            // ProductCostPrice
             // 
-            this.ColumnName.HeaderText = "Name";
-            this.ColumnName.MinimumWidth = 6;
-            this.ColumnName.Name = "ColumnName";
-            this.ColumnName.Width = 125;
+            this.ProductCostPrice.HeaderText = "Cost Price";
+            this.ProductCostPrice.MinimumWidth = 6;
+            this.ProductCostPrice.Name = "ProductCostPrice";
+            this.ProductCostPrice.Width = 125;
             // 
-            // ColumnSelling
+            // ProductSellPrice
             // 
-            this.ColumnSelling.HeaderText = "Selling for";
-            this.ColumnSelling.MinimumWidth = 6;
-            this.ColumnSelling.Name = "ColumnSelling";
-            this.ColumnSelling.Width = 125;
+            this.ProductSellPrice.HeaderText = "Sell Price";
+            this.ProductSellPrice.MinimumWidth = 6;
+            this.ProductSellPrice.Name = "ProductSellPrice";
+            this.ProductSellPrice.Width = 125;
             // 
-            // ColumnBought
+            // ProductInStock
             // 
-            this.ColumnBought.HeaderText = "Bought for";
-            this.ColumnBought.MinimumWidth = 6;
-            this.ColumnBought.Name = "ColumnBought";
-            this.ColumnBought.Width = 125;
+            this.ProductInStock.HeaderText = "In Stock";
+            this.ProductInStock.MinimumWidth = 6;
+            this.ProductInStock.Name = "ProductInStock";
+            this.ProductInStock.Width = 125;
             // 
-            // ColumnBrand
+            // ProductMaxCapacity
             // 
-            this.ColumnBrand.HeaderText = "Brand";
-            this.ColumnBrand.MinimumWidth = 6;
-            this.ColumnBrand.Name = "ColumnBrand";
-            this.ColumnBrand.Width = 125;
+            this.ProductMaxCapacity.HeaderText = "Max Capacity";
+            this.ProductMaxCapacity.MinimumWidth = 6;
+            this.ProductMaxCapacity.Name = "ProductMaxCapacity";
+            this.ProductMaxCapacity.Width = 125;
             // 
-            // ColumnMeasurements
+            // ProductThershold
             // 
-            this.ColumnMeasurements.HeaderText = "Measurements";
-            this.ColumnMeasurements.MinimumWidth = 6;
-            this.ColumnMeasurements.Name = "ColumnMeasurements";
-            this.ColumnMeasurements.Width = 125;
+            this.ProductThershold.HeaderText = "Threshold";
+            this.ProductThershold.MinimumWidth = 6;
+            this.ProductThershold.Name = "ProductThershold";
+            this.ProductThershold.Width = 125;
             // 
-            // ColumnSize
+            // Measurements
             // 
-            this.ColumnSize.HeaderText = "Size";
-            this.ColumnSize.MinimumWidth = 6;
-            this.ColumnSize.Name = "ColumnSize";
-            this.ColumnSize.Width = 125;
+            this.Measurements.HeaderText = "Measurements";
+            this.Measurements.MinimumWidth = 6;
+            this.Measurements.Name = "Measurements";
+            this.Measurements.Width = 125;
+            // 
+            // BoxSize
+            // 
+            this.BoxSize.HeaderText = "Box Size";
+            this.BoxSize.MinimumWidth = 6;
+            this.BoxSize.Name = "BoxSize";
+            this.BoxSize.Width = 125;
             // 
             // StockManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1085, 600);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.btnLogOut);
-            this.Controls.Add(this.btnViewProduct);
+            this.ClientSize = new System.Drawing.Size(1398, 546);
+            this.Controls.Add(this.btnRefersh);
+            this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnRemoveProduct);
-            this.Controls.Add(this.btnEditProduct);
-            this.Controls.Add(this.btnProduct);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.btnAddProduct);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cBShelfCategories);
+            this.Controls.Add(this.DGVProducts);
             this.Name = "StockManager";
             this.Text = "StockManager";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVProducts)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+
+        private System.Windows.Forms.DataGridView DGVProducts;
+        private System.Windows.Forms.ComboBox cBShelfCategories;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnAddProduct;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnRemoveProduct;
-        private System.Windows.Forms.Button btnEditProduct;
-        private System.Windows.Forms.Button btnProduct;
-        private System.Windows.Forms.Button btnViewProduct;
-        private System.Windows.Forms.Button btnLogOut;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnSelling;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnBought;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnBrand;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnMeasurements;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnSize;
+        private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Button btnRefersh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductBrand;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductCostPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductSellPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductInStock;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductMaxCapacity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductThershold;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Measurements;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BoxSize;
     }
 }
