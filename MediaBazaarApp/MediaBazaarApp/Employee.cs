@@ -6,26 +6,21 @@ using System.Threading.Tasks;
 
 namespace MediaBazaarApp
 {
-    public class Employee : User
+    public class Employee
     {
+        private int id;
         private string firstName;
         private string lastName;
         private int BSN;
         private string email;
-        private string gender;
         private string firstWorkingDate;
         private string lastWorkingDate;
         private string birthdate;
         private string contractType;
-        private int id;
         private double hourlyWage;
         private string departureReason;
         private int shiftsPerWeek;
-        private string streetName;
-        private int streetNumber;
-        private string zipCode;
-        private string town;
-        private string country;
+        private string address;
         private string department;
         private string role;
 
@@ -42,56 +37,114 @@ namespace MediaBazaarApp
         {
             get { return firstName+" "+lastName; }
         }
-        public Employee(string username,string password, string firstName, string lastName, int BSN, string email,
-            string gender, string firstWorkingDate, string lastWorkingDate, string birthdate,
-            string contractType, double hourlyWage, string streetName, int streetNumber, string zipCode, string town, string country,
-            string department, string role):base(username,password)
+        public string FirstName
         {
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.BSN = BSN;
-            this.email = email;
-            this.gender = gender;
-            this.firstWorkingDate = firstWorkingDate;
-            this.lastWorkingDate = lastWorkingDate;
-            this.birthdate = birthdate;
-            this.contractType = contractType;
-            this.hourlyWage = hourlyWage;
-            this.streetName = streetName;
-            this.streetNumber = streetNumber;
-            this.zipCode = zipCode;
-            this.town = town;
-            this.country = country;
-            this.department = department;
-            this.role = role;
+            get { return firstName; }
         }
-        public void EditDetails(string username, string password, string firstName, string lastName, int BSN, string email,
-            string gender, string firstWorkingDate, string lastWorkingDate, string birthdate,
-            string contractType, double hourlyWage, string streetName, int streetNumber, string zipCode, string town, string country,
-            string department, string role)
+        public string LastName
         {
-            this.username = username;
-            this.password = password;
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.BSN = BSN;
-            this.email = email;
-            this.gender = gender;
-            this.firstWorkingDate = firstWorkingDate;
-            this.lastWorkingDate = lastWorkingDate;
-            this.birthdate = birthdate;
-            this.contractType = contractType;
-            this.hourlyWage = hourlyWage;
-            this.streetName = streetName;
-            this.streetNumber = streetNumber;
-            this.zipCode = zipCode;
-            this.town = town;
-            this.country = country;
-            this.department = department;
-            this.role = role;
+            get { return lastName; }
+        }
+        public int Bsn
+        {
+            get { return BSN; }
+        }
+        public string Email
+        {
+            get { return email; }
+        }
+        public string FirstWorkingDate
+        {
+            get { return firstWorkingDate; }
+        }
+        public string LastWorkingDate
+        {
+            get { return lastWorkingDate; }
+        }
+        public string Birthdate
+        {
+            get { return birthdate; }
+        }
+        public string ContractType
+        {
+            get { return contractType; }
+        }
+        public double HourlyWage
+        {
+            get { return hourlyWage; }
+        }
+        public int ShiftsPerWeek
+        {
+            get { return shiftsPerWeek; }
+        }
+        public string Address
+        {
+            get { return address; }
+        }
+        public string Department
+        {
+            get { return department; }
+        }
+        public string Role
+        {
+            get { return role; }
         }
 
-        public void TerminateContract(string reason,string lastWorkingDate)
+        public Employee(string firstName, string lastName, int BSN, string email,
+            string firstWorkingDate, string lastWorkingDate, string birthdate,
+            string contractType, double hourlyWage, string address,
+            string department)
+        {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.BSN = BSN;
+            this.email = email;
+            this.firstWorkingDate = firstWorkingDate;
+            this.lastWorkingDate = lastWorkingDate;
+            this.birthdate = birthdate;
+            this.contractType = contractType;
+            this.hourlyWage = hourlyWage;
+            this.address = address;
+            this.department = department;
+        }
+        public Employee(int id,string firstName, string lastName, int BSN, string email,
+    string firstWorkingDate, string lastWorkingDate, string birthdate,
+    string contractType, double hourlyWage, string address,
+    string department)
+        {
+            this.id = id;
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.BSN = BSN;
+            this.email = email;
+            this.firstWorkingDate = firstWorkingDate;
+            this.lastWorkingDate = lastWorkingDate;
+            this.birthdate = birthdate;
+            this.contractType = contractType;
+            this.hourlyWage = hourlyWage;
+            this.address = address;
+            this.department = department;
+        }
+
+        public void EditDetails(string firstName, string lastName, int BSN, string email,
+            string firstWorkingDate, string lastWorkingDate, string birthdate,
+            string contractType, double hourlyWage, string address,
+            string department)
+        {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.BSN = BSN;
+            this.email = email;
+            this.firstWorkingDate = firstWorkingDate;
+            this.lastWorkingDate = lastWorkingDate;
+            this.birthdate = birthdate;
+            this.contractType = contractType;
+            this.hourlyWage = hourlyWage;
+            this.address = address;
+            this.department = department;
+        }
+
+        public void TerminateContract(string reason, string lastWorkingDate)
         {
             this.DepartureReason = reason;
             this.lastWorkingDate = lastWorkingDate;

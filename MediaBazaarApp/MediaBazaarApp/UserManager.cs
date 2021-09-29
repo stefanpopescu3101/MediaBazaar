@@ -30,19 +30,19 @@ namespace MediaBazaarApp
             return users.ToArray();
         }
 
-        public Employee[] GetEmployees()
-        {
-            List<Employee> employees = new List<Employee>();
-            foreach (User user in GetAll())
-            {
-                if (user is Employee)
-                {
-                    Employee emp = (Employee)user;
-                    employees.Add(emp);
+        //public Employee[] GetEmployees()
+        //{
+        //    List<Employee> employees = new List<Employee>();
+        //    foreach (User user in GetAll())
+        //    {
+        //        if (user is Employee)
+        //        {
+        //            Employee emp = (Employee)user;
+        //            employees.Add(emp);
 
-                }
-            }
-            return employees.ToArray();
-        }
+        //        }
+        //    }
+        //    return employees.ToArray();
+        //}
     }
 }
