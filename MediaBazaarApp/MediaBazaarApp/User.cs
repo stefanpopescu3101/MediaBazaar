@@ -11,10 +11,10 @@ namespace MediaBazaarApp
         protected string username;
         protected string password;
 
-        public User(string username,string password)
+        public User()
         {
-            this.username = username;
-            this.password = password;
+            //this.username = username;
+            //this.password = password;
         }
 
         public bool CheckDetails(string username, string password)

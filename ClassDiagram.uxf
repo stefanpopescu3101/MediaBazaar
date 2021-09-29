@@ -4,8 +4,13 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
+<<<<<<< HEAD
       <x>792</x>
       <y>432</y>
+=======
+      <x>744</x>
+      <y>282</y>
+>>>>>>> rwn_Branch
       <w>222</w>
       <h>108</h>
     </coordinates>
@@ -24,8 +29,13 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
+<<<<<<< HEAD
       <x>792</x>
       <y>270</y>
+=======
+      <x>744</x>
+      <y>120</y>
+>>>>>>> rwn_Branch
       <w>222</w>
       <h>78</h>
     </coordinates>
@@ -40,8 +50,13 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
+<<<<<<< HEAD
       <x>510</x>
       <y>372</y>
+=======
+      <x>462</x>
+      <y>222</y>
+>>>>>>> rwn_Branch
       <w>186</w>
       <h>186</h>
     </coordinates>
@@ -68,8 +83,13 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
+<<<<<<< HEAD
       <x>1062</x>
       <y>900</y>
+=======
+      <x>1014</x>
+      <y>750</y>
+>>>>>>> rwn_Branch
       <w>126</w>
       <h>54</h>
     </coordinates>
@@ -83,8 +103,13 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
+<<<<<<< HEAD
       <x>1056</x>
       <y>396</y>
+=======
+      <x>1008</x>
+      <y>120</y>
+>>>>>>> rwn_Branch
       <w>132</w>
       <h>42</h>
     </coordinates>
@@ -97,8 +122,13 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
+<<<<<<< HEAD
       <x>960</x>
       <y>576</y>
+=======
+      <x>912</x>
+      <y>426</y>
+>>>>>>> rwn_Branch
       <w>168</w>
       <h>246</h>
     </coordinates>
@@ -130,8 +160,13 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
+<<<<<<< HEAD
       <x>612</x>
       <y>894</y>
+=======
+      <x>564</x>
+      <y>744</y>
+>>>>>>> rwn_Branch
       <w>138</w>
       <h>42</h>
     </coordinates>
@@ -145,8 +180,13 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
+<<<<<<< HEAD
       <x>840</x>
       <y>900</y>
+=======
+      <x>792</x>
+      <y>750</y>
+>>>>>>> rwn_Branch
       <w>138</w>
       <h>42</h>
     </coordinates>
@@ -158,8 +198,13 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
+<<<<<<< HEAD
       <x>558</x>
       <y>264</y>
+=======
+      <x>510</x>
+      <y>114</y>
+>>>>>>> rwn_Branch
       <w>126</w>
       <h>54</h>
     </coordinates>
@@ -173,8 +218,13 @@
   <element>
     <id>Relation</id>
     <coordinates>
+<<<<<<< HEAD
       <x>894</x>
       <y>534</y>
+=======
+      <x>846</x>
+      <y>384</y>
+>>>>>>> rwn_Branch
       <w>162</w>
       <h>54</h>
     </coordinates>
@@ -184,8 +234,13 @@
   <element>
     <id>Relation</id>
     <coordinates>
+<<<<<<< HEAD
       <x>894</x>
       <y>342</y>
+=======
+      <x>846</x>
+      <y>192</y>
+>>>>>>> rwn_Branch
       <w>42</w>
       <h>102</h>
     </coordinates>
@@ -197,8 +252,13 @@ m1=0..n
   <element>
     <id>Relation</id>
     <coordinates>
+<<<<<<< HEAD
       <x>618</x>
       <y>312</y>
+=======
+      <x>570</x>
+      <y>162</y>
+>>>>>>> rwn_Branch
       <w>54</w>
       <h>72</h>
     </coordinates>
@@ -210,8 +270,13 @@ m1=0..n
   <element>
     <id>UMLNote</id>
     <coordinates>
+<<<<<<< HEAD
       <x>1278</x>
       <y>582</y>
+=======
+      <x>1230</x>
+      <y>432</y>
+>>>>>>> rwn_Branch
       <w>138</w>
       <h>54</h>
     </coordinates>
@@ -226,8 +291,13 @@ possible future changes.</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
+<<<<<<< HEAD
       <x>1044</x>
       <y>816</y>
+=======
+      <x>996</x>
+      <y>666</y>
+>>>>>>> rwn_Branch
       <w>18</w>
       <h>42</h>
     </coordinates>
@@ -237,8 +307,13 @@ possible future changes.</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
+<<<<<<< HEAD
       <x>900</x>
       <y>834</y>
+=======
+      <x>852</x>
+      <y>684</y>
+>>>>>>> rwn_Branch
       <w>246</w>
       <h>78</h>
     </coordinates>
@@ -248,8 +323,13 @@ possible future changes.</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
+<<<<<<< HEAD
       <x>672</x>
       <y>834</y>
+=======
+      <x>624</x>
+      <y>684</y>
+>>>>>>> rwn_Branch
       <w>246</w>
       <h>72</h>
     </coordinates>
@@ -259,8 +339,13 @@ possible future changes.</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
+<<<<<<< HEAD
       <x>672</x>
       <y>834</y>
+=======
+      <x>624</x>
+      <y>684</y>
+>>>>>>> rwn_Branch
       <w>246</w>
       <h>78</h>
     </coordinates>
@@ -270,8 +355,13 @@ possible future changes.</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
+<<<<<<< HEAD
       <x>1218</x>
       <y>900</y>
+=======
+      <x>1170</x>
+      <y>750</y>
+>>>>>>> rwn_Branch
       <w>126</w>
       <h>54</h>
     </coordinates>
@@ -285,8 +375,13 @@ possible future changes.</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
+<<<<<<< HEAD
       <x>1062</x>
       <y>834</y>
+=======
+      <x>1014</x>
+      <y>684</y>
+>>>>>>> rwn_Branch
       <w>246</w>
       <h>78</h>
     </coordinates>
@@ -296,8 +391,13 @@ possible future changes.</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
+<<<<<<< HEAD
       <x>720</x>
       <y>582</y>
+=======
+      <x>672</x>
+      <y>432</y>
+>>>>>>> rwn_Branch
       <w>138</w>
       <h>42</h>
     </coordinates>
@@ -309,8 +409,13 @@ possible future changes.</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
+<<<<<<< HEAD
       <x>774</x>
       <y>540</y>
+=======
+      <x>726</x>
+      <y>390</y>
+>>>>>>> rwn_Branch
       <w>138</w>
       <h>54</h>
     </coordinates>
@@ -320,8 +425,13 @@ possible future changes.</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
+<<<<<<< HEAD
       <x>618</x>
       <y>582</y>
+=======
+      <x>570</x>
+      <y>432</y>
+>>>>>>> rwn_Branch
       <w>84</w>
       <h>42</h>
     </coordinates>
@@ -333,8 +443,13 @@ Admins are us</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
+<<<<<<< HEAD
       <x>1110</x>
       <y>432</y>
+=======
+      <x>1062</x>
+      <y>156</y>
+>>>>>>> rwn_Branch
       <w>30</w>
       <h>156</h>
     </coordinates>
@@ -345,8 +460,13 @@ m1=0..n</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
+<<<<<<< HEAD
       <x>318</x>
       <y>414</y>
+=======
+      <x>270</x>
+      <y>264</y>
+>>>>>>> rwn_Branch
       <w>126</w>
       <h>72</h>
     </coordinates>
@@ -362,8 +482,13 @@ m1=0..n</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
+<<<<<<< HEAD
       <x>438</x>
       <y>438</y>
+=======
+      <x>390</x>
+      <y>288</y>
+>>>>>>> rwn_Branch
       <w>84</w>
       <h>30</h>
     </coordinates>
@@ -375,8 +500,13 @@ m1=0..n
   <element>
     <id>UMLClass</id>
     <coordinates>
+<<<<<<< HEAD
       <x>312</x>
       <y>264</y>
+=======
+      <x>264</x>
+      <y>114</y>
+>>>>>>> rwn_Branch
       <w>126</w>
       <h>54</h>
     </coordinates>
@@ -391,8 +521,13 @@ m1=0..n
   <element>
     <id>Relation</id>
     <coordinates>
+<<<<<<< HEAD
       <x>372</x>
       <y>312</y>
+=======
+      <x>324</x>
+      <y>162</y>
+>>>>>>> rwn_Branch
       <w>42</w>
       <h>114</h>
     </coordinates>

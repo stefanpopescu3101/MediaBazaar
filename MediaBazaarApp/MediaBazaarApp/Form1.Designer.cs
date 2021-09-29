@@ -51,7 +51,7 @@ namespace MediaBazaarApp
             this.tbDepartmentManager = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnClearD = new System.Windows.Forms.Button();
-            this.dgvEmployeesOfDepartment = new System.Windows.Forms.DataGridView();
+            this.dgvDepartments = new System.Windows.Forms.DataGridView();
             this.btnUpdateDepartment = new System.Windows.Forms.Button();
             this.btnRemoveDepartment = new System.Windows.Forms.Button();
             this.btnAddDepartment = new System.Windows.Forms.Button();
@@ -60,7 +60,7 @@ namespace MediaBazaarApp
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEmployeesOfDepartment)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDepartments)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -218,7 +218,7 @@ namespace MediaBazaarApp
             this.tabPage3.Controls.Add(this.tbDepartmentManager);
             this.tabPage3.Controls.Add(this.label2);
             this.tabPage3.Controls.Add(this.btnClearD);
-            this.tabPage3.Controls.Add(this.dgvEmployeesOfDepartment);
+            this.tabPage3.Controls.Add(this.dgvDepartments);
             this.tabPage3.Controls.Add(this.btnUpdateDepartment);
             this.tabPage3.Controls.Add(this.btnRemoveDepartment);
             this.tabPage3.Controls.Add(this.btnAddDepartment);
@@ -290,16 +290,16 @@ namespace MediaBazaarApp
             this.btnClearD.UseVisualStyleBackColor = true;
             this.btnClearD.Click += new System.EventHandler(this.btnViewEmployeesOfDepartment_Click);
             // 
-            // dgvEmployeesOfDepartment
+            // dgvDepartments
             // 
-            this.dgvEmployeesOfDepartment.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dgvEmployeesOfDepartment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmployeesOfDepartment.Location = new System.Drawing.Point(17, 62);
-            this.dgvEmployeesOfDepartment.Name = "dgvEmployeesOfDepartment";
-            this.dgvEmployeesOfDepartment.RowHeadersWidth = 51;
-            this.dgvEmployeesOfDepartment.RowTemplate.Height = 29;
-            this.dgvEmployeesOfDepartment.Size = new System.Drawing.Size(715, 636);
-            this.dgvEmployeesOfDepartment.TabIndex = 8;
+            this.dgvDepartments.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dgvDepartments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDepartments.Location = new System.Drawing.Point(17, 62);
+            this.dgvDepartments.Name = "dgvDepartments";
+            this.dgvDepartments.RowHeadersWidth = 51;
+            this.dgvDepartments.RowTemplate.Height = 29;
+            this.dgvDepartments.Size = new System.Drawing.Size(715, 636);
+            this.dgvDepartments.TabIndex = 8;
             // 
             // btnUpdateDepartment
             // 
@@ -319,6 +319,7 @@ namespace MediaBazaarApp
             this.btnRemoveDepartment.TabIndex = 6;
             this.btnRemoveDepartment.Text = "Remove Department\r\n";
             this.btnRemoveDepartment.UseVisualStyleBackColor = true;
+            this.btnRemoveDepartment.Click += new System.EventHandler(this.btnRemoveDepartment_Click);
             // 
             // btnAddDepartment
             // 
@@ -345,7 +346,7 @@ namespace MediaBazaarApp
             this.groupBox2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEmployeesOfDepartment)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDepartments)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -363,7 +364,7 @@ namespace MediaBazaarApp
         private System.Windows.Forms.Button btnRemoveEmployee;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.DataGridView dgvEmployeesOfDepartment;
+        private System.Windows.Forms.DataGridView dgvDepartments;
         private System.Windows.Forms.Button btnUpdateDepartment;
         private System.Windows.Forms.Button btnRemoveDepartment;
         private System.Windows.Forms.Button btnAddDepartment;

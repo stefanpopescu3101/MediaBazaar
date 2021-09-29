@@ -14,6 +14,10 @@ namespace MediaBazaarApp
 
         List<Employee> employees;
         public string DepartmentName { get { return departmentName; } }
+        public int ManagerID { get { return managerID; } }
+        public string ManagerName { get { return managerName; } }
+     
+
         public Department(string departmentName, Employee departmentManager)
         {
             employees = new List<Employee>();
@@ -24,6 +28,12 @@ namespace MediaBazaarApp
         public Department(string departmentName, int Managerid)
         {
             this.departmentName = departmentName;
+            UserManager user = new UserManager();
+           if(user.GetEmployee(managerID) != null)
+            {
+                this.managerName = user.GetEmployee(managerID).Name;
+                this.managerID = Managerid;
+            }
          
         }
         public void EditInfo(string departmentName, Employee departmentManager)

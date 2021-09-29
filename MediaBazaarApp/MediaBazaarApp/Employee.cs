@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MediaBazaarApp
 {
-    public class Employee
+    public class Employee:User
     {
         private int id;
         private string firstName;
