@@ -47,5 +47,14 @@ namespace MediaBazaarApp
         {
             return employeesMediator.GetEmployees();
         }
+        public List<Employee> GetEmployeeOfDepartment(Department depart)
+        {
+            return employeesMediator.GetEmployeesOfDepartment(depart);
+        }
+
+        public void UpdateRoleAndDepartment(Employee emp, string department, string Role)
+        {
+            employeesMediator.UpdateRoleAndDepartment(emp, department, Role);
+        }
     }
 }

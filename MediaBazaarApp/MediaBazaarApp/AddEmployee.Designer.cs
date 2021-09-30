@@ -54,11 +54,15 @@ namespace MediaBazaarApp
             this.label3 = new System.Windows.Forms.Label();
             this.tbFirstName = new System.Windows.Forms.TextBox();
             this.tbSurname = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbHourlyWage = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.tbHourlyWage);
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Controls.Add(this.label22);
             this.groupBox1.Controls.Add(this.tbBSN);
@@ -145,7 +149,7 @@ namespace MediaBazaarApp
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(27, 301);
+            this.label13.Location = new System.Drawing.Point(27, 327);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(92, 20);
             this.label13.TabIndex = 54;
@@ -155,7 +159,7 @@ namespace MediaBazaarApp
             // 
             this.cbDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDepartment.FormattingEnabled = true;
-            this.cbDepartment.Location = new System.Drawing.Point(125, 298);
+            this.cbDepartment.Location = new System.Drawing.Point(125, 324);
             this.cbDepartment.Name = "cbDepartment";
             this.cbDepartment.Size = new System.Drawing.Size(125, 28);
             this.cbDepartment.TabIndex = 53;
@@ -198,7 +202,7 @@ namespace MediaBazaarApp
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(76, 257);
+            this.label7.Location = new System.Drawing.Point(74, 292);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(42, 20);
             this.label7.TabIndex = 45;
@@ -207,7 +211,7 @@ namespace MediaBazaarApp
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 216);
+            this.label6.Location = new System.Drawing.Point(6, 257);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(119, 20);
             this.label6.TabIndex = 44;
@@ -240,7 +244,10 @@ namespace MediaBazaarApp
             // 
             this.cbContractType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbContractType.FormattingEnabled = true;
-            this.cbContractType.Location = new System.Drawing.Point(125, 216);
+            this.cbContractType.Items.AddRange(new object[] {
+            "Full Time",
+            "Part Time"});
+            this.cbContractType.Location = new System.Drawing.Point(125, 254);
             this.cbContractType.Name = "cbContractType";
             this.cbContractType.Size = new System.Drawing.Size(125, 28);
             this.cbContractType.TabIndex = 39;
@@ -254,7 +261,7 @@ namespace MediaBazaarApp
             "General Manager",
             "Stock Manager",
             "Store Manager"});
-            this.cbRole.Location = new System.Drawing.Point(125, 254);
+            this.cbRole.Location = new System.Drawing.Point(125, 289);
             this.cbRole.Name = "cbRole";
             this.cbRole.Size = new System.Drawing.Size(125, 28);
             this.cbRole.TabIndex = 38;
@@ -298,6 +305,22 @@ namespace MediaBazaarApp
             this.tbSurname.Size = new System.Drawing.Size(125, 27);
             this.tbSurname.TabIndex = 29;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(15, 224);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(98, 20);
+            this.label1.TabIndex = 65;
+            this.label1.Text = "Hourly Wage:\r\n";
+            // 
+            // tbHourlyWage
+            // 
+            this.tbHourlyWage.Location = new System.Drawing.Point(125, 221);
+            this.tbHourlyWage.Name = "tbHourlyWage";
+            this.tbHourlyWage.Size = new System.Drawing.Size(125, 27);
+            this.tbHourlyWage.TabIndex = 66;
+            // 
             // AddEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -339,5 +362,7 @@ namespace MediaBazaarApp
         private System.Windows.Forms.TextBox tbFirstName;
         private System.Windows.Forms.TextBox tbSurname;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TextBox tbHourlyWage;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -87,13 +87,13 @@ namespace MediaBazaarApp
         }
         public string Role
         {
-            get { return role; }
+            get { return role; } set { role = value; }
         }
 
         public Employee(string firstName, string lastName, int BSN, string email,
             string firstWorkingDate, string lastWorkingDate, string birthdate,
             string contractType, double hourlyWage, string address,
-            string department)
+            string department,string role)
         {
             this.firstName = firstName;
             this.lastName = lastName;
@@ -106,11 +106,12 @@ namespace MediaBazaarApp
             this.hourlyWage = hourlyWage;
             this.address = address;
             this.department = department;
+            this.role = role;
         }
         public Employee(int id,string firstName, string lastName, int BSN, string email,
     string firstWorkingDate, string lastWorkingDate, string birthdate,
     string contractType, double hourlyWage, string address,
-    string department)
+    string department,string role)
         {
             this.id = id;
             this.firstName = firstName;
@@ -124,12 +125,13 @@ namespace MediaBazaarApp
             this.hourlyWage = hourlyWage;
             this.address = address;
             this.department = department;
+            this.role = role;
         }
 
         public void EditDetails(string firstName, string lastName, int BSN, string email,
             string firstWorkingDate, string lastWorkingDate, string birthdate,
             string contractType, double hourlyWage, string address,
-            string department)
+            string department, string role)
         {
             this.firstName = firstName;
             this.lastName = lastName;
@@ -142,6 +144,7 @@ namespace MediaBazaarApp
             this.hourlyWage = hourlyWage;
             this.address = address;
             this.department = department;
+            this.role = role;
         }
 
         public void TerminateContract(string reason, string lastWorkingDate)

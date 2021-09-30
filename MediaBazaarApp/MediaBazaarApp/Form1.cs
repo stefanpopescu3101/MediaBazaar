@@ -24,6 +24,7 @@ namespace MediaBazaarApp
             employeeManager = new EmployeeManager();
             departmentM = new DepartmentManager();
             userM = new UserManager();
+            departmentM.Load();
             UpdateListInDepartmentManagement();
             UpdateDataGridView();
         }
@@ -31,8 +32,8 @@ namespace MediaBazaarApp
         public void UpdateDataGridView()
         {
             dgvEmployees.Rows.Clear();
-            lbEmployeesOfDepartment.Items.Clear();
-            this.dgvEmployees.ColumnCount = 14;
+            cbDepartmentManager.Items.Clear();
+            this.dgvEmployees.ColumnCount = 13;
             this.dgvEmployees.Columns[0].Name = "ID";
             this.dgvEmployees.Columns[1].Name = "First name";
             this.dgvEmployees.Columns[2].Name = "Last name";
@@ -45,16 +46,17 @@ namespace MediaBazaarApp
             this.dgvEmployees.Columns[9].Name = "Hourly wage";
             this.dgvEmployees.Columns[10].Name = "Address";
             this.dgvEmployees.Columns[11].Name = "Department";
+            this.dgvEmployees.Columns[12].Name = "Role";
 
             foreach (Employee e in employeeManager.GetEmployees())
             {
-                this.dgvEmployees.Rows.Add(e.ID, e.FirstName, e.LastName, e.Bsn, e.Email, e.FirstWorkingDate, e.LastWorkingDate, e.Birthdate, e.ContractType, e.HourlyWage, e.Address, e.Department);
-                lbEmployeesOfDepartment.Items.Add(e);
+                this.dgvEmployees.Rows.Add(e.ID, e.FirstName, e.LastName, e.Bsn, e.Email, e.FirstWorkingDate, e.LastWorkingDate, e.Birthdate, e.ContractType, e.HourlyWage, e.Address, e.Department,e.Role);
+                cbDepartmentManager.Items.Add(e);
             }
         }
         private void UpdateListInDepartmentManagement()
         {
-            lbEmployeesOfDepartment.Items.Clear();
+            cbDepartmentManager.Items.Clear();
             this.dgvDepartments.Rows.Clear();
             this.dgvDepartments.ColumnCount = 3;
             this.dgvDepartments.Columns[0].Name = "Department Name";
@@ -94,7 +96,7 @@ namespace MediaBazaarApp
 
             foreach (Employee employee in employeeManager.GetEmployees())
             {
-                lbEmployeesOfDepartment.Items.Add(employee);
+                cbDepartmentManager.Items.Add(employee);
             }
         }
         private void btnAddEmployee_Click(object sender, EventArgs e)
@@ -115,22 +117,31 @@ namespace MediaBazaarApp
 
         private void btnAddDepartment_Click(object sender, EventArgs e)
         {
-            if (lbEmployeesOfDepartment.SelectedIndex>-1)
+            if (cbDepartmentManager.SelectedIndex>-1)
             {
                 if (tbDepartmentName.Text != "")
                 {
                     string name = tbDepartmentName.Text;
-                    Employee departmentManager = lbEmployeesOfDepartment.SelectedItem as Employee;
+                    Employee departmentManager = cbDepartmentManager.SelectedItem as Employee;
                     Department d = new Department(name, departmentManager);
-                    if (!departmentM.Add(d))
-                    {
-                        MessageBox.Show("this department name already exsist!");
-                    }
-                    else
-                    {
-                        d.AssignEmployee(departmentManager);
-                        departmentManager.Department = d.DepartmentName;
-                    }
+                        if (departmentManager.Role == "Department Manager")
+                        {
+                            MessageBox.Show("This employee is a manager of :" + departmentManager.Department);
+                        }
+                        else
+                        {
+                        if (!departmentM.Add(d))
+                        {
+                            MessageBox.Show("this department already exsists");
+                        }
+                        else
+                        {
+                            d.AssignEmployee(departmentManager);
+                            departmentManager.Department = d.DepartmentName;
+                            departmentManager.Role = "Department Manager";
+                            employeeManager.UpdateRoleAndDepartment(departmentManager, departmentManager.Department, departmentManager.Role);
+                        }
+                        }
 
                 }
                 else
@@ -155,7 +166,7 @@ namespace MediaBazaarApp
                     DataGridViewRow row = this.dgvDepartments.Rows[r];
                     string name = row.Cells["Department Name"].Value.ToString();
                     Department depart = this.departmentM.GetDepartment(name);
-                    depart.EditInfo(tbDepartmentName.Text, lbEmployeesOfDepartment.SelectedItem as Employee);
+                    depart.EditInfo(tbDepartmentName.Text, cbDepartmentManager.SelectedItem as Employee);
 
                 }
                 else
@@ -177,7 +188,9 @@ namespace MediaBazaarApp
 
         private void btnViewEmployeesOfDepartment_Click(object sender, EventArgs e)
         {
-            lbEmployeesOfDepartment.ClearSelected();
+            cbDepartmentManager.SelectedIndex = -1;
+            tbDepartmentName.Text = "";
+            lDepartmentManager.Text = "";
             dgvDepartments.ClearSelection();
             UpdateDataGridView();
         }
@@ -233,8 +246,8 @@ namespace MediaBazaarApp
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            addEmployeeForm = new AddEmployee(this);
-            addEmployeeForm.Show();
+            addEmployeeForm = new AddEmployee(this,departmentM);
+            addEmployeeForm.ShowDialog();
         }
 
         private void btnRemoveDepartment_Click(object sender, EventArgs e)
@@ -264,25 +277,35 @@ namespace MediaBazaarApp
         {
             if (dgvDepartments.SelectedCells.Count>-1)
             {
-                lbEmployeesOfDepartment.Items.Clear();
+                cbDepartmentManager.Items.Clear();
                 int r = this.dgvDepartments.SelectedCells[0].RowIndex;
                 DataGridViewRow row = this.dgvDepartments.Rows[r];
                 string name = row.Cells["Department Name"].Value.ToString();
                 Department depart = this.departmentM.GetDepartment(name);
                 tbDepartmentName.Text = depart.DepartmentName;
                 lDepartmentManager.Text = depart.ManagerName;
-                foreach (Employee employee in depart.GetEmployees())
+                foreach (Employee employee in employeeManager.GetEmployeeOfDepartment(depart))
                 {
-                    lbEmployeesOfDepartment.Items.Add(employee);
+                    cbDepartmentManager.Items.Add(employee);
                 }
             }
         }
 
         private void lbEmployeesOfDepartment_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (lbEmployeesOfDepartment.SelectedIndex>-1)
+           
+        }
+
+        private void tabPage3_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void cbDepartmentManager_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbDepartmentManager.SelectedIndex > -1)
             {
-                Employee emp = lbEmployeesOfDepartment.SelectedItem as Employee;
+                Employee emp = cbDepartmentManager.SelectedItem as Employee;
                 lDepartmentManager.Text = emp.Name;
             }
         }

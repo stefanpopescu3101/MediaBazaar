@@ -19,14 +19,24 @@ namespace MediaBazaarApp
 
         public bool Add(Department department)
         {
-            foreach (Department d in GetDepartments())
+            if (GetDepartments().Length != 0)
             {
-                if (d.DepartmentName!=department.DepartmentName)
+                foreach (Department d in GetDepartments())
                 {
-                    departments.Add(department);
-                    mediator.Add(department);
-                    return true;
+                    if (d.DepartmentName != department.DepartmentName)
+                    {
+                        departments.Add(department);
+                        mediator.Add(department);
+                        return true;
+                    }
                 }
+             
+            }
+            else
+            {
+                departments.Add(department);
+                mediator.Add(department);
+                return true;
             }
             return false;
         }
@@ -45,7 +55,11 @@ namespace MediaBazaarApp
         }
         public Department[] GetDepartments()
         {
-            return mediator.GetAll().ToArray();
+            return departments.ToArray();
+        }
+        public void Load()
+        {
+            departments = mediator.GetAll();
         }
         public Department GetDepartment(string name)
         {
