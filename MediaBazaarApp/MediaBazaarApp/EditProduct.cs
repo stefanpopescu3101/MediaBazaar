@@ -66,7 +66,7 @@ namespace MediaBazaarApp
             this.tbProductDescription.Text = product.Description;
             this.tbMaxCapacity.Text = product.MaxCapacity.ToString();
             this.tbThreshold.Text = product.Threshold.ToString();
-            this.cbProductSize.Text = product.BoxSize.();
+            this.cbProductSize.Text = product.BoxSize.ToString();
             this.tbMeasurements.Text = product.Measurements.ToString();
             
 
