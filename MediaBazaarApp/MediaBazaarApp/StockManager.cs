@@ -31,6 +31,7 @@ namespace MediaBazaarApp
         {
             AddProduct ap = new AddProduct();
             DialogResult r = ap.ShowDialog();
+            this.LoadAllProducts();
 
 
         }
@@ -98,9 +99,6 @@ namespace MediaBazaarApp
             }
         }
 
-        private void btnRefersh_Click(object sender, EventArgs e)
-        {
-            this.LoadAllProducts();   
-        }
+        
     }
 }
