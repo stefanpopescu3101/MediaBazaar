@@ -80,5 +80,9 @@ namespace MediaBazaarApp
             else { return false; }
         }
 
+        public Product[] GetProducts()
+        {
+            return Products.ToArray();
+        }
     }
 }

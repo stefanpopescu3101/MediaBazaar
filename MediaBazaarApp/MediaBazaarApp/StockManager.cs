@@ -20,6 +20,7 @@ namespace MediaBazaarApp
             InitializeComponent();
             this.productManager = new ProductManager();
             LoadAllProducts();
+            productManager.GetProducts();
         }
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
@@ -37,6 +38,7 @@ namespace MediaBazaarApp
         }
         private void LoadAllProducts()
         {
+
             this.DGVProducts.Rows.Clear();
             this.DGVProducts.ColumnCount = 10;
             this.DGVProducts.Columns[0].Name = "ID";
@@ -99,6 +101,9 @@ namespace MediaBazaarApp
             }
         }
 
-        
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -53,6 +53,7 @@ namespace MediaBazaarApp
             // 
             // DGVProducts
             // 
+            this.DGVProducts.AllowUserToDeleteRows = false;
             this.DGVProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVProducts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ProductID,
@@ -67,6 +68,7 @@ namespace MediaBazaarApp
             this.BoxSize});
             this.DGVProducts.Location = new System.Drawing.Point(46, 92);
             this.DGVProducts.Name = "DGVProducts";
+            this.DGVProducts.ReadOnly = true;
             this.DGVProducts.RowHeadersWidth = 51;
             this.DGVProducts.Size = new System.Drawing.Size(1304, 375);
             this.DGVProducts.TabIndex = 0;
@@ -76,6 +78,7 @@ namespace MediaBazaarApp
             this.ProductID.HeaderText = "ID";
             this.ProductID.MinimumWidth = 6;
             this.ProductID.Name = "ProductID";
+            this.ProductID.ReadOnly = true;
             this.ProductID.Width = 125;
             // 
             // ProductName
@@ -83,6 +86,7 @@ namespace MediaBazaarApp
             this.ProductName.HeaderText = "Name";
             this.ProductName.MinimumWidth = 6;
             this.ProductName.Name = "ProductName";
+            this.ProductName.ReadOnly = true;
             this.ProductName.Width = 125;
             // 
             // ProductBrand
@@ -90,6 +94,7 @@ namespace MediaBazaarApp
             this.ProductBrand.HeaderText = "Brand";
             this.ProductBrand.MinimumWidth = 6;
             this.ProductBrand.Name = "ProductBrand";
+            this.ProductBrand.ReadOnly = true;
             this.ProductBrand.Width = 125;
             // 
             // ProductCostPrice
@@ -97,6 +102,7 @@ namespace MediaBazaarApp
             this.ProductCostPrice.HeaderText = "Cost Price";
             this.ProductCostPrice.MinimumWidth = 6;
             this.ProductCostPrice.Name = "ProductCostPrice";
+            this.ProductCostPrice.ReadOnly = true;
             this.ProductCostPrice.Width = 125;
             // 
             // ProductSellPrice
@@ -104,6 +110,7 @@ namespace MediaBazaarApp
             this.ProductSellPrice.HeaderText = "Sell Price";
             this.ProductSellPrice.MinimumWidth = 6;
             this.ProductSellPrice.Name = "ProductSellPrice";
+            this.ProductSellPrice.ReadOnly = true;
             this.ProductSellPrice.Width = 125;
             // 
             // ProductInStock
@@ -111,6 +118,7 @@ namespace MediaBazaarApp
             this.ProductInStock.HeaderText = "In Stock";
             this.ProductInStock.MinimumWidth = 6;
             this.ProductInStock.Name = "ProductInStock";
+            this.ProductInStock.ReadOnly = true;
             this.ProductInStock.Width = 125;
             // 
             // ProductMaxCapacity
@@ -118,6 +126,7 @@ namespace MediaBazaarApp
             this.ProductMaxCapacity.HeaderText = "Max Capacity";
             this.ProductMaxCapacity.MinimumWidth = 6;
             this.ProductMaxCapacity.Name = "ProductMaxCapacity";
+            this.ProductMaxCapacity.ReadOnly = true;
             this.ProductMaxCapacity.Width = 125;
             // 
             // ProductThershold
@@ -125,6 +134,7 @@ namespace MediaBazaarApp
             this.ProductThershold.HeaderText = "Threshold";
             this.ProductThershold.MinimumWidth = 6;
             this.ProductThershold.Name = "ProductThershold";
+            this.ProductThershold.ReadOnly = true;
             this.ProductThershold.Width = 125;
             // 
             // Measurements
@@ -132,6 +142,7 @@ namespace MediaBazaarApp
             this.Measurements.HeaderText = "Measurements";
             this.Measurements.MinimumWidth = 6;
             this.Measurements.Name = "Measurements";
+            this.Measurements.ReadOnly = true;
             this.Measurements.Width = 125;
             // 
             // BoxSize
@@ -139,6 +150,7 @@ namespace MediaBazaarApp
             this.BoxSize.HeaderText = "Box Size";
             this.BoxSize.MinimumWidth = 6;
             this.BoxSize.Name = "BoxSize";
+            this.BoxSize.ReadOnly = true;
             this.BoxSize.Width = 125;
             // 
             // cBShelfCategories
@@ -205,6 +217,7 @@ namespace MediaBazaarApp
             this.btnLogout.TabIndex = 7;
             this.btnLogout.Text = "Log out";
             this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // label2
             // 
