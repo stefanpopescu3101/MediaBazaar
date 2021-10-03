@@ -39,6 +39,7 @@ namespace MediaBazaarApp
                 {
                     Employee emp = (Employee)user;
                     employees.Add(emp);
+
                 }
             }
             return employees.ToArray();
@@ -54,6 +55,7 @@ namespace MediaBazaarApp
                 }
             }
             return null;
+
         }
     }
 }

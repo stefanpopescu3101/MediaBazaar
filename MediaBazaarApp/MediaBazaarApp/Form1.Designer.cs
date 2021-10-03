@@ -31,15 +31,18 @@ namespace MediaBazaarApp
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.dgvEmployees = new System.Windows.Forms.DataGridView();
+
             this.btnClear = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnSearchByID = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnUpdateInfo = new System.Windows.Forms.Button();
+
             this.btnTerminate = new System.Windows.Forms.Button();
             this.btnRemoveEmployee = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -52,15 +55,18 @@ namespace MediaBazaarApp
             this.label2 = new System.Windows.Forms.Label();
             this.btnClearD = new System.Windows.Forms.Button();
             this.dgvDepartments = new System.Windows.Forms.DataGridView();
+
             this.btnUpdateDepartment = new System.Windows.Forms.Button();
             this.btnRemoveDepartment = new System.Windows.Forms.Button();
             this.btnAddDepartment = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDepartments)).BeginInit();
+
             this.SuspendLayout();
             // 
             // tabControl1
@@ -73,9 +79,11 @@ namespace MediaBazaarApp
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1155, 755);
             this.tabControl1.TabIndex = 0;
+           // this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPage1
             // 
+
             this.tabPage1.Controls.Add(this.btnAdd);
             this.tabPage1.Controls.Add(this.btnLogout);
             this.tabPage1.Controls.Add(this.dgvEmployees);
@@ -84,6 +92,7 @@ namespace MediaBazaarApp
             this.tabPage1.Controls.Add(this.btnUpdateInfo);
             this.tabPage1.Controls.Add(this.btnTerminate);
             this.tabPage1.Controls.Add(this.btnRemoveEmployee);
+
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -132,6 +141,7 @@ namespace MediaBazaarApp
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
             // 
+
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnSearchByID);
@@ -158,6 +168,7 @@ namespace MediaBazaarApp
             this.textBox1.Location = new System.Drawing.Point(79, 39);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(140, 27);
+
             this.textBox1.TabIndex = 3;
             // 
             // label1
@@ -171,14 +182,17 @@ namespace MediaBazaarApp
             // 
             // btnUpdateInfo
             // 
+
             this.btnUpdateInfo.Location = new System.Drawing.Point(605, 41);
             this.btnUpdateInfo.Name = "btnUpdateInfo";
             this.btnUpdateInfo.Size = new System.Drawing.Size(101, 37);
+
             this.btnUpdateInfo.TabIndex = 4;
             this.btnUpdateInfo.Text = "Update ";
             this.btnUpdateInfo.UseVisualStyleBackColor = true;
             this.btnUpdateInfo.Click += new System.EventHandler(this.btnUpdateInfo_Click);
             // 
+
             // btnTerminate
             // 
             this.btnTerminate.Location = new System.Drawing.Point(712, 41);
@@ -201,6 +215,7 @@ namespace MediaBazaarApp
             // 
             // tabPage2
             // 
+
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -211,6 +226,7 @@ namespace MediaBazaarApp
             // 
             // tabPage3
             // 
+
             this.tabPage3.Controls.Add(this.cbDepartmentManager);
             this.tabPage3.Controls.Add(this.lDepartmentManager);
             this.tabPage3.Controls.Add(this.label20);
@@ -219,6 +235,7 @@ namespace MediaBazaarApp
             this.tabPage3.Controls.Add(this.label2);
             this.tabPage3.Controls.Add(this.btnClearD);
             this.tabPage3.Controls.Add(this.dgvDepartments);
+
             this.tabPage3.Controls.Add(this.btnUpdateDepartment);
             this.tabPage3.Controls.Add(this.btnRemoveDepartment);
             this.tabPage3.Controls.Add(this.btnAddDepartment);
@@ -336,6 +353,107 @@ namespace MediaBazaarApp
             this.btnAddDepartment.UseVisualStyleBackColor = true;
             this.btnAddDepartment.Click += new System.EventHandler(this.btnAddDepartment_Click);
             // 
+            // lbEmployeesOfDepartment
+            // 
+            //this.lbEmployeesOfDepartment.FormattingEnabled = true;
+            //this.lbEmployeesOfDepartment.ItemHeight = 20;
+            //this.lbEmployeesOfDepartment.Location = new System.Drawing.Point(756, 459);
+            //this.lbEmployeesOfDepartment.Name = "lbEmployeesOfDepartment";
+            //this.lbEmployeesOfDepartment.Size = new System.Drawing.Size(359, 244);
+            //this.lbEmployeesOfDepartment.TabIndex = 40;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(749, 418);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(155, 20);
+            this.label20.TabIndex = 39;
+            this.label20.Text = "Department Manager:";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(768, 374);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(136, 20);
+            this.label21.TabIndex = 38;
+            this.label21.Text = "Department Name:";
+            // 
+            // tbDepartmentName
+            // 
+            this.tbDepartmentName.Location = new System.Drawing.Point(910, 371);
+            this.tbDepartmentName.Name = "tbDepartmentName";
+            this.tbDepartmentName.Size = new System.Drawing.Size(169, 27);
+            this.tbDepartmentName.TabIndex = 37;
+            // 
+            // tbDepartmentManager
+            // 
+            //this.tbDepartmentManager.Location = new System.Drawing.Point(910, 415);
+            //this.tbDepartmentManager.Name = "tbDepartmentManager";
+            //this.tbDepartmentManager.Size = new System.Drawing.Size(169, 27);
+            //this.tbDepartmentManager.TabIndex = 36;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(262, 31);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(136, 28);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Departments";
+            // 
+            // btnClearD
+            // 
+            this.btnClearD.Location = new System.Drawing.Point(857, 290);
+            this.btnClearD.Name = "btnClearD";
+            this.btnClearD.Size = new System.Drawing.Size(222, 29);
+            this.btnClearD.TabIndex = 9;
+            this.btnClearD.Text = "Clear";
+            this.btnClearD.UseVisualStyleBackColor = true;
+            this.btnClearD.Click += new System.EventHandler(this.btnViewEmployeesOfDepartment_Click);
+            // 
+            // dgvEmployeesOfDepartment
+            // 
+            //this.dgvEmployeesOfDepartment.BackgroundColor = System.Drawing.SystemColors.Window;
+            //this.dgvEmployeesOfDepartment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            //this.dgvEmployeesOfDepartment.Location = new System.Drawing.Point(17, 62);
+            //this.dgvEmployeesOfDepartment.Name = "dgvEmployeesOfDepartment";
+            //this.dgvEmployeesOfDepartment.RowHeadersWidth = 51;
+            //this.dgvEmployeesOfDepartment.RowTemplate.Height = 29;
+            //this.dgvEmployeesOfDepartment.Size = new System.Drawing.Size(715, 636);
+            //this.dgvEmployeesOfDepartment.TabIndex = 8;
+            // 
+            // btnUpdateDepartment
+            // 
+            this.btnUpdateDepartment.Location = new System.Drawing.Point(857, 255);
+            this.btnUpdateDepartment.Name = "btnUpdateDepartment";
+            this.btnUpdateDepartment.Size = new System.Drawing.Size(222, 29);
+            this.btnUpdateDepartment.TabIndex = 7;
+            this.btnUpdateDepartment.Text = "Update ";
+            this.btnUpdateDepartment.UseVisualStyleBackColor = true;
+            this.btnUpdateDepartment.Click += new System.EventHandler(this.btnUpdateDepartment_Click);
+            // 
+            // btnRemoveDepartment
+            // 
+            this.btnRemoveDepartment.Location = new System.Drawing.Point(857, 220);
+            this.btnRemoveDepartment.Name = "btnRemoveDepartment";
+            this.btnRemoveDepartment.Size = new System.Drawing.Size(222, 29);
+            this.btnRemoveDepartment.TabIndex = 6;
+            this.btnRemoveDepartment.Text = "Remove Department\r\n";
+            this.btnRemoveDepartment.UseVisualStyleBackColor = true;
+            // 
+            // btnAddDepartment
+            // 
+            this.btnAddDepartment.Location = new System.Drawing.Point(857, 185);
+            this.btnAddDepartment.Name = "btnAddDepartment";
+            this.btnAddDepartment.Size = new System.Drawing.Size(222, 29);
+            this.btnAddDepartment.TabIndex = 5;
+            this.btnAddDepartment.Text = "Add Department";
+            this.btnAddDepartment.UseVisualStyleBackColor = true;
+            this.btnAddDepartment.Click += new System.EventHandler(this.btnAddDepartment_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -346,12 +464,14 @@ namespace MediaBazaarApp
             this.Text = "HR Manager Form";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDepartments)).EndInit();
+
             this.ResumeLayout(false);
 
         }
@@ -364,17 +484,20 @@ namespace MediaBazaarApp
         private System.Windows.Forms.Button btnSearchByID;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
+
         private System.Windows.Forms.Button btnUpdateInfo;
         private System.Windows.Forms.Button btnTerminate;
         private System.Windows.Forms.Button btnRemoveEmployee;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.DataGridView dgvDepartments;
+
         private System.Windows.Forms.Button btnUpdateDepartment;
         private System.Windows.Forms.Button btnRemoveDepartment;
         private System.Windows.Forms.Button btnAddDepartment;
         private System.Windows.Forms.Button btnClearD;
         private System.Windows.Forms.Label label2;
+
         private System.Windows.Forms.DataGridView dgvEmployees;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnLogout;
@@ -384,6 +507,7 @@ namespace MediaBazaarApp
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label lDepartmentManager;
         private System.Windows.Forms.ComboBox cbDepartmentManager;
+
     }
 }
 

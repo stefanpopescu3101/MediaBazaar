@@ -9,16 +9,21 @@ namespace MediaBazaarApp
     public class DepartmentManager
     {
         List<Department> departments;
+
         DepartmentMediator mediator;
+
 
         public DepartmentManager()
         {
             departments = new List<Department>();
+
             mediator = new DepartmentMediator();
+
         }
 
         public bool Add(Department department)
         {
+
             if (GetDepartments().Length != 0)
             {
                 foreach (Department d in GetDepartments())
@@ -37,6 +42,7 @@ namespace MediaBazaarApp
                 departments.Add(department);
                 mediator.Add(department);
                 return true;
+
             }
             return false;
         }
@@ -46,8 +52,10 @@ namespace MediaBazaarApp
             {
                 if (d.DepartmentName == department.DepartmentName)
                 {
+
                     mediator.Remove(d);
                     departments.Remove(d);
+
                     return true;
                 }
             }
@@ -57,6 +65,7 @@ namespace MediaBazaarApp
         {
             return departments.ToArray();
         }
+
         public void Load()
         {
             departments = mediator.GetAll();
@@ -77,5 +86,6 @@ namespace MediaBazaarApp
             d.EditInfo( departmentName, departmentManager);
             mediator.Update(departmentName, departmentManager);
         }
+
     }
 }

@@ -6,21 +6,26 @@ using System.Threading.Tasks;
 
 namespace MediaBazaarApp
 {
+
     public class Employee:User
     {
         private int id;
+
         private string firstName;
         private string lastName;
         private int BSN;
         private string email;
+
         private string firstWorkingDate;
         private string lastWorkingDate;
         private string birthdate;
         private string contractType;
+
         private double hourlyWage;
         private string departureReason;
         private int shiftsPerWeek;
         private string address;
+
         private string department;
         private string role;
 
@@ -37,6 +42,7 @@ namespace MediaBazaarApp
         {
             get { return firstName+" "+lastName; }
         }
+
         public string FirstName
         {
             get { return firstName; }
@@ -94,16 +100,20 @@ namespace MediaBazaarApp
             string firstWorkingDate, string lastWorkingDate, string birthdate,
             string contractType, double hourlyWage, string address,
             string department,string role)
+
         {
             this.firstName = firstName;
             this.lastName = lastName;
             this.BSN = BSN;
             this.email = email;
+
+
             this.firstWorkingDate = firstWorkingDate;
             this.lastWorkingDate = lastWorkingDate;
             this.birthdate = birthdate;
             this.contractType = contractType;
             this.hourlyWage = hourlyWage;
+
             this.address = address;
             this.department = department;
             this.role = role;
@@ -133,21 +143,26 @@ namespace MediaBazaarApp
             string contractType, double hourlyWage, string address,
             string department, string role)
         {
+
             this.firstName = firstName;
             this.lastName = lastName;
             this.BSN = BSN;
             this.email = email;
+
             this.firstWorkingDate = firstWorkingDate;
             this.lastWorkingDate = lastWorkingDate;
             this.birthdate = birthdate;
             this.contractType = contractType;
             this.hourlyWage = hourlyWage;
+
             this.address = address;
+
             this.department = department;
             this.role = role;
         }
 
         public void TerminateContract(string reason, string lastWorkingDate)
+
         {
             this.DepartureReason = reason;
             this.lastWorkingDate = lastWorkingDate;

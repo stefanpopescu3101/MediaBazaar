@@ -115,6 +115,7 @@ namespace MediaBazaarApp
 
         }
 
+
         private void btnAddDepartment_Click(object sender, EventArgs e)
         {
             if (cbDepartmentManager.SelectedIndex>-1)
@@ -207,19 +208,25 @@ namespace MediaBazaarApp
         }
 
         private void label19_Click(object sender, EventArgs e)
+
         {
 
         }
+
 
         private void label9_Click(object sender, EventArgs e)
+
         {
 
         }
+
 
         private void label8_Click(object sender, EventArgs e)
+
         {
 
         }
+
 
         private void dtpFirstDate_ValueChanged(object sender, EventArgs e)
         {
@@ -227,14 +234,18 @@ namespace MediaBazaarApp
         }
 
         private void dtpBdate_ValueChanged(object sender, EventArgs e)
+
         {
 
         }
+
 
         private void tabPage1_Click(object sender, EventArgs e)
+
         {
 
         }
+
 
         private void btnRemoveEmployee_Click(object sender, EventArgs e)
         {
@@ -308,6 +319,7 @@ namespace MediaBazaarApp
                 Employee emp = cbDepartmentManager.SelectedItem as Employee;
                 lDepartmentManager.Text = emp.Name;
             }
+
         }
     }
 }

@@ -11,10 +11,12 @@ namespace MediaBazaarApp
         protected string username;
         protected string password;
 
+
         public User()
         {
             //this.username = username;
             //this.password = password;
+
         }
 
         public bool CheckDetails(string username, string password)
@@ -29,9 +31,11 @@ namespace MediaBazaarApp
             }
         }
 
+
         public string CreateUsername(int id,string firstName, string lastName)
         {
             return $"{firstName}{lastName}{id}";
         }
+
     }
 }

@@ -13,6 +13,7 @@ namespace MediaBazaarApp
 
     public partial class LoginForm : Form
     {
+
         public LoginForm()
 
         {
@@ -22,6 +23,8 @@ namespace MediaBazaarApp
         private void button1_Click(object sender, EventArgs e)
         {
 
+
         }
+
     }
 }

@@ -8,10 +8,13 @@ namespace MediaBazaarApp
 {
     public class StockManagerClass: Employee
     {
+
         public StockManagerClass(string firstName, string lastName, int BSN, string email,
             string firstWorkingDate, string lastWorkingDate, string birthdate,
             string contractType, double hourlyWage, string address,
-            string department,string role) : base(firstName, lastName, BSN, email, firstWorkingDate, lastWorkingDate, birthdate, contractType, hourlyWage,address, department,role)
+            string department, string role) : base(firstName, lastName, BSN, email, firstWorkingDate, lastWorkingDate, birthdate, contractType, 
+                hourlyWage,address,department, role)
+
         {
         }
     }
