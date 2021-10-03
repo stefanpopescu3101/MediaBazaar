@@ -19,8 +19,9 @@ namespace MediaBazaarApp
         {
             InitializeComponent();
             this.productManager = new ProductManager();
+            
+            productManager.Load();
             LoadAllProducts();
-            productManager.GetProducts();
         }
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
@@ -52,7 +53,7 @@ namespace MediaBazaarApp
             this.DGVProducts.Columns[8].Name = "Measurements";
             this.DGVProducts.Columns[9].Name = "Box Size";
 
-            foreach (Product p in productManager.GetAll())
+            foreach (Product p in productManager.GetProducts())
             {
                this.DGVProducts.Rows.Add(p.ID, p.Name, p.Brand, p.CostPrice + " €", p.SellPrice + " €", p.InStock, p.MaxCapacity, p.Threshold, p.Sold, p.Measurements, p.BoxSize + " cm³");
             }

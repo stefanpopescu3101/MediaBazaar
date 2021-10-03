@@ -59,6 +59,7 @@ namespace MediaBazaarApp
 
         private void LoadData(Product product)
         {
+            //products != to null
             this.tbProductName.Text = product.Name;
             this.tbProductBrand.Text = product.Brand;
             this.tbProductBoughtFor.Text = product.CostPrice.ToString();

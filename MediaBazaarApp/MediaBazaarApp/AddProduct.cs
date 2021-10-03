@@ -72,5 +72,10 @@ namespace MediaBazaarApp
                 }
             }
         }
+
+        private void btnCloseWind_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

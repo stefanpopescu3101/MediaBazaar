@@ -210,6 +210,7 @@ namespace MediaBazaarApp
             this.btnCloseWind.TabIndex = 77;
             this.btnCloseWind.Text = "Back";
             this.btnCloseWind.UseVisualStyleBackColor = true;
+            this.btnCloseWind.Click += new System.EventHandler(this.btnCloseWind_Click);
             // 
             // tbInStock
             // 

@@ -49,7 +49,7 @@ namespace MediaBazaarApp
         }
         public Product Get(int id)
         {
-            foreach (Product product in this.GetAll())
+            foreach (Product product in this.GetProducts())
             {
                 if (product.ID == id)
                 {
@@ -59,16 +59,16 @@ namespace MediaBazaarApp
             return null;
         }
 
-        public List<Product> GetAll()
-        {
-            this.Load();
+        //public List<Product> GetAll()
+        //{
+        //    this.Load();
 
-            if (this.Products != null)
-            {
-                return this.Products;
-            }
-            else { return null; }
-        }
+        //    if (this.Products != null)
+        //    {
+        //        return this.Products;
+        //    }
+        //    else { return null; }
+        //}
         public bool Load()
         {
             this.Products = this.productMediator.GetAll();
