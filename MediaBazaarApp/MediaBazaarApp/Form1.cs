@@ -166,8 +166,8 @@ namespace MediaBazaarApp
                     DataGridViewRow row = this.dgvDepartments.Rows[r];
                     string name = row.Cells["Department Name"].Value.ToString();
                     Department depart = this.departmentM.GetDepartment(name);
-                    depart.EditInfo(tbDepartmentName.Text, cbDepartmentManager.SelectedItem as Employee);
-
+                    departmentM.Update(depart, tbDepartmentName.Text, cbDepartmentManager.SelectedItem as Employee);
+                    MessageBox.Show("Updated successfully");
                 }
                 else
                 {

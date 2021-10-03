@@ -72,6 +72,10 @@ namespace MediaBazaarApp
             }
             return null;
         }
-
+        public void Update(Department d,string departmentName, Employee departmentManager)
+        {
+            d.EditInfo( departmentName, departmentManager);
+            mediator.Update(departmentName, departmentManager);
+        }
     }
 }
