@@ -19,11 +19,6 @@ namespace MediaBazaarApp
 
         public void AddEmployee(Employee employee)
         {
-                //if(employee.ID != e.ID)
-                //{
-                //    employees.Add(employee);
-                //    employeesMediator.AddEmployee(employee);
-                //}
             employees.Add(employee);
             employeesMediator.AddEmployee(employee);
         }
@@ -32,17 +27,29 @@ namespace MediaBazaarApp
         {
             employeesMediator.RemoveEmployee(id);
         }
+
+        //public Employee GetEmployee(int id)
+        //{
+        //    foreach (Employee emp in employees)
+        //    {
+        //        if (emp.ID==id)
+        //        {
+        //            return emp;
+
+
         public Employee GetEmployee(int id)
         {
-            foreach (Employee emp in employees)
+            foreach(Employee e in GetEmployees())
             {
-                if (emp.ID==id)
+                if(e.ID == id)
                 {
-                    return emp;
+                    return e;
+
                 }
             }
             return null;
         }
+
         public List<Employee> GetEmployees()
         {
             return employeesMediator.GetEmployees();

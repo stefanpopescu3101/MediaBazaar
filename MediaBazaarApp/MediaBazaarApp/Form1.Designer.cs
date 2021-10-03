@@ -37,10 +37,12 @@ namespace MediaBazaarApp
             this.dgvEmployees = new System.Windows.Forms.DataGridView();
 
             this.btnClear = new System.Windows.Forms.Button();
+
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnSearchByID = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnClear = new System.Windows.Forms.Button();
             this.btnUpdateInfo = new System.Windows.Forms.Button();
 
             this.btnTerminate = new System.Windows.Forms.Button();
@@ -87,7 +89,6 @@ namespace MediaBazaarApp
             this.tabPage1.Controls.Add(this.btnAdd);
             this.tabPage1.Controls.Add(this.btnLogout);
             this.tabPage1.Controls.Add(this.dgvEmployees);
-            this.tabPage1.Controls.Add(this.btnClear);
             this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Controls.Add(this.btnUpdateInfo);
             this.tabPage1.Controls.Add(this.btnTerminate);
@@ -141,12 +142,12 @@ namespace MediaBazaarApp
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
             // 
-
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnSearchByID);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.tbSearch);
             this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.btnClear);
             this.groupBox2.Location = new System.Drawing.Point(20, 6);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(444, 92);
@@ -156,29 +157,48 @@ namespace MediaBazaarApp
             // 
             // btnSearchByID
             // 
-            this.btnSearchByID.Location = new System.Drawing.Point(250, 39);
+            this.btnSearchByID.Location = new System.Drawing.Point(202, 39);
             this.btnSearchByID.Name = "btnSearchByID";
-            this.btnSearchByID.Size = new System.Drawing.Size(120, 29);
+            this.btnSearchByID.Size = new System.Drawing.Size(96, 29);
             this.btnSearchByID.TabIndex = 6;
             this.btnSearchByID.Text = "Search";
             this.btnSearchByID.UseVisualStyleBackColor = true;
+            this.btnSearchByID.Click += new System.EventHandler(this.btnSearchByID_Click);
             // 
-            // textBox1
+            // tbSearch
             // 
-            this.textBox1.Location = new System.Drawing.Point(79, 39);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(140, 27);
 
-            this.textBox1.TabIndex = 3;
+            //this.textBox1.Location = new System.Drawing.Point(79, 39);
+            //this.textBox1.Name = "textBox1";
+            //this.textBox1.Size = new System.Drawing.Size(140, 27);
+
+            //this.textBox1.TabIndex = 3;
+
+            this.tbSearch.Location = new System.Drawing.Point(45, 39);
+            this.tbSearch.Name = "tbSearch";
+            this.tbSearch.Size = new System.Drawing.Size(134, 27);
+            this.tbSearch.TabIndex = 3;
+            this.tbSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(42, 39);
+            this.label1.Location = new System.Drawing.Point(8, 39);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(31, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "ID :";
+            // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(318, 39);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(93, 29);
+            this.btnClear.TabIndex = 8;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnUpdateInfo
             // 
@@ -482,7 +502,7 @@ namespace MediaBazaarApp
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnSearchByID;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbSearch;
         private System.Windows.Forms.Label label1;
 
         private System.Windows.Forms.Button btnUpdateInfo;

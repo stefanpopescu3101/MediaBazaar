@@ -37,12 +37,23 @@ namespace MediaBazaarApp
         }
         private void btnAddEmployee_Click(object sender, EventArgs e)
         {
+
             Employee employee = new Employee(tbFirstName.Text, tbSurname.Text, Convert.ToInt32(tbBSN.Text), tbEmail.Text, dtpFirstDate.Text, dtpLastWorkingDate.Text, dtpBdate.Text, cbContractType.Text,Convert.ToDouble( tbHourlyWage.Text), tbAddress.Text, cbDepartment.Text,cbRole.Text);
 
-            employeeManager.AddEmployee(employee);
-            MessageBox.Show("New employee has been added successfully.");
-            this.Close();
-            this.form1.UpdateDataGridView();
+            int age = DateTime.Today.Year - dtpBdate.Value.Year;
+
+
+            if (age >= 18)
+            {
+                Employee employee = new Employee(tbFirstName.Text, tbSurname.Text, Convert.ToInt32(tbBSN.Text), tbEmail.Text, dtpFirstDate.Text, dtpLastWorkingDate.Text, dtpBdate.Text, "contract", 10, tbAddress.Text, "department");
+
+                employeeManager.AddEmployee(employee);
+                MessageBox.Show("New employee has been added successfully.");
+                this.Close();
+                this.form1.UpdateDataGridView();
+            }
+            else MessageBox.Show("The employee must be at least 18 years old");
+            
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -55,6 +66,11 @@ namespace MediaBazaarApp
             {
                 dtpLastWorkingDate.Enabled = true;
             }
+        }
+
+        private void dtpBdate_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

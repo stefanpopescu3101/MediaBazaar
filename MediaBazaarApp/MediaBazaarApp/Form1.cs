@@ -27,9 +27,21 @@ namespace MediaBazaarApp
             departmentM.Load();
             UpdateListInDepartmentManagement();
             UpdateDataGridView();
+
+            dgvEmployees.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
         public void UpdateDataGridView()
+        {
+            LoadDGVColumns();
+
+            foreach (Employee e in employeeManager.GetEmployees())
+            {
+                this.dgvEmployees.Rows.Add(e.ID, e.FirstName, e.LastName, e.Bsn, e.Email, e.FirstWorkingDate, e.LastWorkingDate, e.Birthdate, e.ContractType, e.HourlyWage, e.Address, e.Department);
+            }
+        }
+
+        public void LoadDGVColumns()
         {
             dgvEmployees.Rows.Clear();
             cbDepartmentManager.Items.Clear();
@@ -53,7 +65,21 @@ namespace MediaBazaarApp
                 this.dgvEmployees.Rows.Add(e.ID, e.FirstName, e.LastName, e.Bsn, e.Email, e.FirstWorkingDate, e.LastWorkingDate, e.Birthdate, e.ContractType, e.HourlyWage, e.Address, e.Department,e.Role);
                 cbDepartmentManager.Items.Add(e);
             }
+
         }
+
+        public void SearchEmployee()
+        {
+            LoadDGVColumns();
+
+            foreach (Employee e in employeeManager.GetEmployees())
+            
+                if(e.ID == Convert.ToInt32(tbSearch.Text))
+                {
+                    this.dgvEmployees.Rows.Add(e.ID, e.FirstName, e.LastName, e.Bsn, e.Email, e.FirstWorkingDate, e.LastWorkingDate, e.Birthdate, e.ContractType, e.HourlyWage, e.Address, e.Department);
+                }
+        }
+
         private void UpdateListInDepartmentManagement()
         {
             cbDepartmentManager.Items.Clear();
@@ -249,7 +275,7 @@ namespace MediaBazaarApp
 
         private void btnRemoveEmployee_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(dgvEmployees.CurrentCell.Value);
+            int id = Convert.ToInt32(dgvEmployees.SelectedRows[0].Cells[0].Value);
             
             employeeManager.RemoveEmployee(id);
             UpdateDataGridView();
@@ -318,8 +344,40 @@ namespace MediaBazaarApp
             {
                 Employee emp = cbDepartmentManager.SelectedItem as Employee;
                 lDepartmentManager.Text = emp.Name;
-            }
+            }          
+        }
 
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e) // search text box
+        {
+
+        }
+
+        private void btnSearchByID_Click(object sender, EventArgs e)
+        {
+            string searchValue = tbSearch.Text;
+
+            dgvEmployees.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            try
+            {
+                foreach (DataGridViewRow row in dgvEmployees.Rows)
+                {
+                    if (row.Cells[0].Value.ToString().Equals(searchValue))
+                    {
+                        SearchEmployee();
+                        break;
+                    }
+                }
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            tbSearch.Text = "";
+            UpdateDataGridView();
         }
     }
 }

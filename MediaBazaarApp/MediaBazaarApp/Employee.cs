@@ -138,6 +138,7 @@ namespace MediaBazaarApp
             this.role = role;
         }
 
+
         public void EditDetails(string firstName, string lastName, int BSN, string email,
             string firstWorkingDate, string lastWorkingDate, string birthdate,
             string contractType, double hourlyWage, string address,
@@ -161,12 +162,42 @@ namespace MediaBazaarApp
             this.role = role;
         }
 
+        //public void EditDetails(string firstName, string lastName, int BSN, string email,
+        //    string firstWorkingDate, string lastWorkingDate, string birthdate,
+        //    string contractType, double hourlyWage, string address,
+        //    string department)
+        //{
+        //    this.firstName = firstName;
+        //    this.lastName = lastName;
+        //    this.BSN = BSN;
+        //    this.email = email;
+        //    this.firstWorkingDate = firstWorkingDate;
+        //    this.lastWorkingDate = lastWorkingDate;
+        //    this.birthdate = birthdate;
+        //    this.contractType = contractType;
+        //    this.hourlyWage = hourlyWage;
+        //    this.address = address;
+        //    this.department = department;
+        //}
+
         public void TerminateContract(string reason, string lastWorkingDate)
 
         {
             this.DepartureReason = reason;
             this.lastWorkingDate = lastWorkingDate;
         }
+
+        public void UpdateInfo(int id)
+        {
+            this.firstName = FirstName;
+            this.lastName = LastName;
+            this.email = Email;
+            this.contractType = ContractType;
+            this.hourlyWage = HourlyWage;
+            this.address = Address;
+            this.department = Department;
+        }
+
         public override string ToString()
         {
             return "ID:" + " " + this.id + " " + "Name: " + this.firstName + " " + this.lastName  + " Contract: " + this.contractType;
