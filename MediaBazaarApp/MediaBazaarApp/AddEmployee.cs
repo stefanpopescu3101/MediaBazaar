@@ -38,14 +38,12 @@ namespace MediaBazaarApp
         private void btnAddEmployee_Click(object sender, EventArgs e)
         {
 
-            Employee employee = new Employee(tbFirstName.Text, tbSurname.Text, Convert.ToInt32(tbBSN.Text), tbEmail.Text, dtpFirstDate.Text, dtpLastWorkingDate.Text, dtpBdate.Text, cbContractType.Text,Convert.ToDouble( tbHourlyWage.Text), tbAddress.Text, cbDepartment.Text,cbRole.Text);
-
             int age = DateTime.Today.Year - dtpBdate.Value.Year;
 
 
             if (age >= 18)
             {
-                Employee employee = new Employee(tbFirstName.Text, tbSurname.Text, Convert.ToInt32(tbBSN.Text), tbEmail.Text, dtpFirstDate.Text, dtpLastWorkingDate.Text, dtpBdate.Text, "contract", 10, tbAddress.Text, "department");
+                Employee employee = new Employee(tbFirstName.Text, tbSurname.Text, Convert.ToInt32(tbBSN.Text), tbEmail.Text, dtpFirstDate.Text, dtpLastWorkingDate.Text, dtpBdate.Text, "contract", 10, tbAddress.Text, "department",cbRole.Text);
 
                 employeeManager.AddEmployee(employee);
                 MessageBox.Show("New employee has been added successfully.");
