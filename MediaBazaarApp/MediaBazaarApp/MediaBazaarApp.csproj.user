@@ -17,13 +17,13 @@
     <Compile Update="LogInForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="StoreManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="ProductDescription.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="StockManager.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="StoreManager.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="TerminateEmployee%27sContract.cs">
