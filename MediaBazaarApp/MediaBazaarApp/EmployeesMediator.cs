@@ -76,13 +76,37 @@ namespace MediaBazaarApp
                     SqlQuery(query);
                     NonQueryEx();
                     dataReader.Close();
-
-
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
+            }
+        }
+
+        public bool Update(int id, Employee employee)
+        {
+            if (ConnOpen())
+            {
+                query = "UPDATE employees SET first_name = @firstName, last_name = @lastName, email = @email, contract_type = @contractType, address = @address, department = @department WHERE id = @id";
+                 
+                SqlQuery(query);
+                AddWithValue("@id", employee.ID);
+                AddWithValue("@firstName", employee.FirstName);
+                AddWithValue("@lastName", employee.LastName);
+                AddWithValue("@email", employee.Email);
+                AddWithValue("@contractType", employee.ContractType);
+                AddWithValue("@address", employee.Address);
+                AddWithValue("@department", employee.Department);
+                NonQueryEx();
+
+                Close();
+                return true;
+            }
+            else
+            {
+                Close();
+                return false;
             }
         }
 

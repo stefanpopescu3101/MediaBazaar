@@ -232,9 +232,12 @@ namespace MediaBazaarApp
             // dtpBdate
             // 
             this.dtpBdate.Location = new System.Drawing.Point(423, 88);
+            this.dtpBdate.MaxDate = new System.DateTime(2021, 10, 3, 0, 0, 0, 0);
             this.dtpBdate.Name = "dtpBdate";
             this.dtpBdate.Size = new System.Drawing.Size(250, 27);
             this.dtpBdate.TabIndex = 40;
+            this.dtpBdate.Value = new System.DateTime(2021, 10, 3, 0, 0, 0, 0);
+            this.dtpBdate.ValueChanged += new System.EventHandler(this.dtpBdate_ValueChanged);
             // 
             // cbContractType
             // 

@@ -21,9 +21,21 @@ namespace MediaBazaarApp
             InitializeComponent();
             employeeManager = new EmployeeManager();
             UpdateDataGridView();
+
+            dgvEmployees.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
         public void UpdateDataGridView()
+        {
+            LoadDGVColumns();
+
+            foreach (Employee e in employeeManager.GetEmployees())
+            {
+                this.dgvEmployees.Rows.Add(e.ID, e.FirstName, e.LastName, e.Bsn, e.Email, e.FirstWorkingDate, e.LastWorkingDate, e.Birthdate, e.ContractType, e.HourlyWage, e.Address, e.Department);
+            }
+        }
+
+        public void LoadDGVColumns()
         {
             dgvEmployees.Rows.Clear();
 
@@ -40,12 +52,18 @@ namespace MediaBazaarApp
             this.dgvEmployees.Columns[9].Name = "Hourly wage";
             this.dgvEmployees.Columns[10].Name = "Address";
             this.dgvEmployees.Columns[11].Name = "Department";
+        }
+
+        public void SearchEmployee()
+        {
+            LoadDGVColumns();
 
             foreach (Employee e in employeeManager.GetEmployees())
-            {
-                this.dgvEmployees.Rows.Add(e.ID, e.FirstName, e.LastName, e.Bsn, e.Email, e.FirstWorkingDate, e.LastWorkingDate, e.Birthdate, e.ContractType, e.HourlyWage, e.Address, e.Department);
-            }
-
+            
+                if(e.ID == Convert.ToInt32(tbSearch.Text))
+                {
+                    this.dgvEmployees.Rows.Add(e.ID, e.FirstName, e.LastName, e.Bsn, e.Email, e.FirstWorkingDate, e.LastWorkingDate, e.Birthdate, e.ContractType, e.HourlyWage, e.Address, e.Department);
+                }
         }
 
         //public string SelectedItemID()
@@ -137,7 +155,7 @@ namespace MediaBazaarApp
 
         private void btnRemoveEmployee_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(dgvEmployees.CurrentCell.Value);
+            int id = Convert.ToInt32(dgvEmployees.SelectedRows[0].Cells[0].Value);
             
             employeeManager.RemoveEmployee(id);
             UpdateDataGridView();
@@ -146,7 +164,40 @@ namespace MediaBazaarApp
         private void btnAdd_Click(object sender, EventArgs e)
         {
             addEmployeeForm = new AddEmployee(this);
-            addEmployeeForm.Show();
+            addEmployeeForm.Show();            
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e) // search text box
+        {
+
+        }
+
+        private void btnSearchByID_Click(object sender, EventArgs e)
+        {
+            string searchValue = tbSearch.Text;
+
+            dgvEmployees.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            try
+            {
+                foreach (DataGridViewRow row in dgvEmployees.Rows)
+                {
+                    if (row.Cells[0].Value.ToString().Equals(searchValue))
+                    {
+                        SearchEmployee();
+                        break;
+                    }
+                }
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            tbSearch.Text = "";
+            UpdateDataGridView();
         }
     }
 }
