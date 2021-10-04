@@ -65,12 +65,6 @@ namespace MediaBazaarApp
             this.dgvEmployees.Columns[11].Name = "Department";
             this.dgvEmployees.Columns[12].Name = "Role";
 
-            foreach (Employee e in employeeManager.GetEmployees())
-            {
-                this.dgvEmployees.Rows.Add(e.ID, e.FirstName, e.LastName, e.Bsn, e.Email, e.FirstWorkingDate, e.LastWorkingDate, e.Birthdate, e.ContractType, e.HourlyWage, e.Address, e.Department,e.Role);
-                cbDepartmentManager.Items.Add(e);
-            }
-
         }
 
         public void SearchEmployee()
@@ -295,6 +289,7 @@ namespace MediaBazaarApp
         {
             addEmployeeForm = new AddEmployee(this,departmentM);
             addEmployeeForm.ShowDialog();
+            UpdateDataGridView();
         }
 
         private void btnRemoveDepartment_Click(object sender, EventArgs e)
