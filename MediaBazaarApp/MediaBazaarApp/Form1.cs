@@ -275,10 +275,17 @@ namespace MediaBazaarApp
 
         private void btnRemoveEmployee_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(dgvEmployees.SelectedRows[0].Cells[0].Value);
+            if (dgvEmployees.SelectedCells.Count > -1)
+            {
+
+                int r = this.dgvEmployees.SelectedCells[0].RowIndex;
+                DataGridViewRow row = this.dgvEmployees.Rows[r];
+                int id = Convert.ToInt32(row.Cells["ID"].Value);
+                Employee emp = this.employeeManager.GetEmployee(id);
+                employeeManager.RemoveEmployee(emp);
+                UpdateDataGridView();
+            }
             
-            employeeManager.RemoveEmployee(id);
-            UpdateDataGridView();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

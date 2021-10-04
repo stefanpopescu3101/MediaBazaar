@@ -64,24 +64,25 @@ namespace MediaBazaarApp
             else return false;
         }
 
-        public void RemoveEmployee(int id)
+        public bool RemoveEmployee(Employee emp)
         {
-            dataAccess.Close();
             if (ConnOpen())
             {
-                try
-                {
-                    query = "DELETE FROM employees WHERE @id = " + id;
-                    MySqlDataReader dataReader = command.ExecuteReader();
-
+               
+                    query = "DELETE from employees WHERE id = @id";
                     SqlQuery(query);
+                    AddWithValue("@id", emp.ID);
                     NonQueryEx();
-                    dataReader.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+
+                    Close();
+                    return true;
+                
+             
+            }
+            else
+            {
+                Close();
+                return false;
             }
         }
 

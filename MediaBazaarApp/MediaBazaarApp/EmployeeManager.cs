@@ -23,9 +23,10 @@ namespace MediaBazaarApp
             employeesMediator.AddEmployee(employee);
         }
 
-        public void RemoveEmployee(int id)
+        public void RemoveEmployee(Employee emp)
         {
-            employeesMediator.RemoveEmployee(id);
+            employeesMediator.RemoveEmployee(emp);
+            employees.Remove(emp);
         }
 
         //public Employee GetEmployee(int id)
@@ -52,7 +53,8 @@ namespace MediaBazaarApp
 
         public List<Employee> GetEmployees()
         {
-            return employeesMediator.GetEmployees();
+            employees = employeesMediator.GetEmployees();
+            return employees;
         }
         public List<Employee> GetEmployeeOfDepartment(Department depart)
         {
