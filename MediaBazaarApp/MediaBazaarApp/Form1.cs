@@ -37,12 +37,15 @@ namespace MediaBazaarApp
 
         public void UpdateDataGridView()
         {
+            cbDepartmentManager.Items.Clear();
             LoadDGVColumns();
             
 
             foreach (Employee e in employeeManager.GetEmployees())
             {
                 this.dgvEmployees.Rows.Add(e.ID, e.FirstName, e.LastName, e.Bsn, e.Email, e.FirstWorkingDate, e.LastWorkingDate, e.Birthdate, e.ContractType, e.HourlyWage, e.Address, e.Department);
+                cbDepartmentManager.Items.Add(e);
+                
             }
         }
 
