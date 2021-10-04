@@ -30,6 +30,8 @@ namespace MediaBazaarApp
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbID = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.cbDepartment = new System.Windows.Forms.ComboBox();
@@ -43,8 +45,6 @@ namespace MediaBazaarApp
             this.label3 = new System.Windows.Forms.Label();
             this.tbFirstName = new System.Windows.Forms.TextBox();
             this.tbSurname = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tbID = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,6 +73,23 @@ namespace MediaBazaarApp
             this.groupBox1.Text = "Update employee\'s info";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(87, 56);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(27, 20);
+            this.label1.TabIndex = 61;
+            this.label1.Text = "ID:";
+            // 
+            // tbID
+            // 
+            this.tbID.Location = new System.Drawing.Point(120, 56);
+            this.tbID.Name = "tbID";
+            this.tbID.ReadOnly = true;
+            this.tbID.Size = new System.Drawing.Size(236, 27);
+            this.tbID.TabIndex = 60;
+            // 
             // label18
             // 
             this.label18.AutoSize = true;
@@ -94,7 +111,6 @@ namespace MediaBazaarApp
             // 
             // cbDepartment
             // 
-            this.cbDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDepartment.FormattingEnabled = true;
             this.cbDepartment.Location = new System.Drawing.Point(120, 279);
             this.cbDepartment.Name = "cbDepartment";
@@ -139,8 +155,10 @@ namespace MediaBazaarApp
             // 
             // cbContractType
             // 
-            this.cbContractType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbContractType.FormattingEnabled = true;
+            this.cbContractType.Items.AddRange(new object[] {
+            "Part Time",
+            "Full Time"});
             this.cbContractType.Location = new System.Drawing.Point(120, 236);
             this.cbContractType.Name = "cbContractType";
             this.cbContractType.Size = new System.Drawing.Size(236, 28);
@@ -184,23 +202,6 @@ namespace MediaBazaarApp
             this.tbSurname.Name = "tbSurname";
             this.tbSurname.Size = new System.Drawing.Size(236, 27);
             this.tbSurname.TabIndex = 29;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(87, 56);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(27, 20);
-            this.label1.TabIndex = 61;
-            this.label1.Text = "ID:";
-            // 
-            // tbID
-            // 
-            this.tbID.Location = new System.Drawing.Point(120, 56);
-            this.tbID.Name = "tbID";
-            this.tbID.ReadOnly = true;
-            this.tbID.Size = new System.Drawing.Size(236, 27);
-            this.tbID.TabIndex = 60;
             // 
             // UpdateEmployee
             // 

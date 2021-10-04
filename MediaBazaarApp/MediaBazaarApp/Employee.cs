@@ -139,28 +139,7 @@ namespace MediaBazaarApp
         }
 
 
-        public void EditDetails(string firstName, string lastName, int BSN, string email,
-            string firstWorkingDate, string lastWorkingDate, string birthdate,
-            string contractType, double hourlyWage, string address,
-            string department, string role)
-        {
-
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.BSN = BSN;
-            this.email = email;
-
-            this.firstWorkingDate = firstWorkingDate;
-            this.lastWorkingDate = lastWorkingDate;
-            this.birthdate = birthdate;
-            this.contractType = contractType;
-            this.hourlyWage = hourlyWage;
-
-            this.address = address;
-
-            this.department = department;
-            this.role = role;
-        }
+      
 
         //public void EditDetails(string firstName, string lastName, int BSN, string email,
         //    string firstWorkingDate, string lastWorkingDate, string birthdate,
@@ -187,15 +166,16 @@ namespace MediaBazaarApp
             this.lastWorkingDate = lastWorkingDate;
         }
 
-        public void UpdateInfo(int id)
+        public void UpdateInfo(string firstName, string lastName, string email,
+            string contractType, string address,
+            string department)
         {
-            this.firstName = FirstName;
-            this.lastName = LastName;
-            this.email = Email;
-            this.contractType = ContractType;
-            this.hourlyWage = HourlyWage;
-            this.address = Address;
-            this.department = Department;
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.email = email;
+            this.contractType = contractType;
+            this.address = address;
+            this.department = department;
         }
 
         public override string ToString()

@@ -76,8 +76,6 @@ namespace MediaBazaarApp
 
                     Close();
                     return true;
-                
-             
             }
             else
             {
@@ -86,7 +84,7 @@ namespace MediaBazaarApp
             }
         }
 
-        public bool Update(int id, Employee employee)
+        public bool Update(Employee employee)
         {
             if (ConnOpen())
             {

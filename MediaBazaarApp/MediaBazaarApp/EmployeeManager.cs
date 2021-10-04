@@ -65,5 +65,13 @@ namespace MediaBazaarApp
         {
             employeesMediator.UpdateRoleAndDepartment(emp, department, Role);
         }
+
+        public void Update(Employee employee, string firstName, string lastName, string email,
+            string contractType, string address,
+            string department)
+        {
+            employee.UpdateInfo(firstName, lastName, email, contractType, address, department);
+            employeesMediator.Update(employee);
+        }
     }
 }

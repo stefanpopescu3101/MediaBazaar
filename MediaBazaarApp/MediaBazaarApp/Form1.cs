@@ -17,6 +17,7 @@ namespace MediaBazaarApp
         private UpdateEmployee updateEmployeeForm;
         DepartmentManager departmentM;
         UserManager userM;
+        public string Id;
 
         public Form1()
         {
@@ -26,6 +27,9 @@ namespace MediaBazaarApp
             userM = new UserManager();
             departmentM.Load();
             UpdateListInDepartmentManagement();
+            dgvEmployees.Rows.Clear();
+            //lblSelectedId.Text = SelectedItemID();
+
             UpdateDataGridView();
 
             dgvEmployees.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -34,6 +38,7 @@ namespace MediaBazaarApp
         public void UpdateDataGridView()
         {
             LoadDGVColumns();
+            
 
             foreach (Employee e in employeeManager.GetEmployees())
             {
@@ -93,22 +98,8 @@ namespace MediaBazaarApp
             this.dgvDepartments.Columns[2].Width = 250;
 
             foreach (Department d in this.departmentM.GetDepartments())
-            {
-                
+            {             
                     this.dgvDepartments.Rows.Add( d.DepartmentName, d.ManagerID, d.ManagerName);
-
-
-        //public string SelectedItemID()
-        //{
-        //    if (dgvEmployees.SelectedRows.Count > 0)
-        //    {
-        //        var item = dgvEmployees.SelectedCells;
-        //        Id = item.Text;
-        //        return Id;
-        //    }
-        //    return "";
-        //}
-
             }
             foreach (DataGridViewColumn c in dgvDepartments.Columns)
             {
@@ -125,6 +116,18 @@ namespace MediaBazaarApp
                 cbDepartmentManager.Items.Add(employee);
             }
         }
+
+        public string SelectedItemID()
+        {
+            if (dgvEmployees.SelectedRows.Count > 0)
+            {
+                var item = dgvEmployees.CurrentRow.Cells[0];
+                Id = item.Value.ToString();
+                return Id;
+            }
+            return "";
+        }
+
         private void btnAddEmployee_Click(object sender, EventArgs e)
         {
 			
@@ -132,7 +135,7 @@ namespace MediaBazaarApp
 
         private void btnUpdateInfo_Click(object sender, EventArgs e)
         {
-            updateEmployeeForm = new UpdateEmployee(this);
+            updateEmployeeForm = new UpdateEmployee(this,this.departmentM);
             updateEmployeeForm.Show();
         }
 
@@ -385,6 +388,15 @@ namespace MediaBazaarApp
         {
             tbSearch.Text = "";
             UpdateDataGridView();
+        }
+
+        private void dgvEmployees_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+ 
+        }
+
+        private void dgvEmployees_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
+        {
         }
     }
 }
