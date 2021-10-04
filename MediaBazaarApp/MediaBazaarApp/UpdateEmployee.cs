@@ -69,7 +69,7 @@ namespace MediaBazaarApp
             else
             {
                 Employee employee = this.employeeManager.GetEmployee(id);
-                employeeManager.Update(employee, firstName, lastName, email, typeOfContract, department, address);
+                employeeManager.Update(employee, firstName, lastName, email, typeOfContract, address, department);
                 
                 MessageBox.Show("Employee has been updated successfully.");
                 this.Close();

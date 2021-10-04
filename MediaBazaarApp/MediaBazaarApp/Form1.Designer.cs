@@ -304,6 +304,7 @@ namespace MediaBazaarApp
             this.dgvDepartments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDepartments.Location = new System.Drawing.Point(17, 62);
             this.dgvDepartments.Name = "dgvDepartments";
+            this.dgvDepartments.ReadOnly = true;
             this.dgvDepartments.RowHeadersWidth = 51;
             this.dgvDepartments.RowTemplate.Height = 29;
             this.dgvDepartments.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
