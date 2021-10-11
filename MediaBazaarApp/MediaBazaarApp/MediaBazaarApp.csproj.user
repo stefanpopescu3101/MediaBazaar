@@ -1,8 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup>
-    <ShowAllFiles>true</ShowAllFiles>
-  </PropertyGroup>
+  <PropertyGroup />
   <ItemGroup>
     <Compile Update="AddEmployee.cs">
       <SubType>Form</SubType>
@@ -10,10 +8,16 @@
     <Compile Update="AddProduct.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="EditProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="LoginForm.cs">
+    <Compile Update="LogInForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="StoreManager.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="ProductDescription.cs">
@@ -22,13 +26,13 @@
     <Compile Update="StockManager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="StoreManager.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="TerminateEmployee%27sContract.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="UpdateEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ViewProductForm.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

@@ -23,10 +23,20 @@ namespace MediaBazaarApp
             employeesMediator.AddEmployee(employee);
         }
 
-        public void RemoveEmployee(int id)
+        public void RemoveEmployee(Employee emp)
         {
-            employeesMediator.RemoveEmployee(id);
+            employeesMediator.RemoveEmployee(emp);
+            employees.Remove(emp);
         }
+
+        //public Employee GetEmployee(int id)
+        //{
+        //    foreach (Employee emp in employees)
+        //    {
+        //        if (emp.ID==id)
+        //        {
+        //            return emp;
+
 
         public Employee GetEmployee(int id)
         {
@@ -35,6 +45,7 @@ namespace MediaBazaarApp
                 if(e.ID == id)
                 {
                     return e;
+
                 }
             }
             return null;
@@ -42,7 +53,25 @@ namespace MediaBazaarApp
 
         public List<Employee> GetEmployees()
         {
-            return employeesMediator.GetEmployees();
+            employees = employeesMediator.GetEmployees();
+            return employees;
+        }
+        public List<Employee> GetEmployeeOfDepartment(Department depart)
+        {
+            return employeesMediator.GetEmployeesOfDepartment(depart);
+        }
+
+        public void UpdateRoleAndDepartment(Employee emp, string department, string Role)
+        {
+            employeesMediator.UpdateRoleAndDepartment(emp, department, Role);
+        }
+
+        public void Update(Employee employee, string firstName, string lastName, string email,
+            string contractType, string address,
+            string department)
+        {
+            employee.UpdateInfo(firstName, lastName, email, contractType, address, department);
+            employeesMediator.Update(employee);
         }
     }
 }

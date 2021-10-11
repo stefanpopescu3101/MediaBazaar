@@ -32,7 +32,7 @@ namespace MediaBazaarApp
             {
                 try
                 {
-                    query = "INSERT INTO employees (id, first_name, last_name, BSN, email, first_working_date, last_working_date, birthdate, contract_type, hourly_wage, departure_reason, shifts_per_week, address, department) VALUES (@id, @firstName, @lastName, @BSN, @email, @firstWorkingDate, @lastWorkingDate, @birthdate, @contractType, @hourlyWage, @departureReason, @shiftsPerWeek, @address, @department)";
+                    query = "INSERT INTO employees (id, first_name, last_name, BSN, email, first_working_date, last_working_date, birthdate, contract_type, hourly_wage, departure_reason, shifts_per_week, address, department, role) VALUES (@id, @firstName, @lastName, @BSN, @email, @firstWorkingDate, @lastWorkingDate, @birthdate, @contractType, @hourlyWage, @departureReason, @shiftsPerWeek, @address, @department, @role)";
 
                     SqlQuery(query);
                     AddWithValue("@id", employee.ID);
@@ -49,6 +49,7 @@ namespace MediaBazaarApp
                     AddWithValue("@shiftsPerWeek", employee.ShiftsPerWeek);
                     AddWithValue("@address", employee.Address);
                     AddWithValue("@department", employee.Department);
+                    AddWithValue("@role", employee.Role);
                     NonQueryEx();
 
                     Close();
@@ -63,28 +64,27 @@ namespace MediaBazaarApp
             else return false;
         }
 
-        public void RemoveEmployee(int id)
+        public bool RemoveEmployee(Employee emp)
         {
-            dataAccess.Close();
             if (ConnOpen())
             {
-                try
-                {
-                    query = "DELETE FROM employees WHERE @id = " + id;
-                    MySqlDataReader dataReader = command.ExecuteReader();
-
+               
+                    query = "DELETE from employees WHERE id = @id";
                     SqlQuery(query);
+                    AddWithValue("@id", emp.ID);
                     NonQueryEx();
-                    dataReader.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+
+                    Close();
+                    return true;
+            }
+            else
+            {
+                Close();
+                return false;
             }
         }
 
-        public bool Update(int id, Employee employee)
+        public bool Update(Employee employee)
         {
             if (ConnOpen())
             {
@@ -124,7 +124,7 @@ namespace MediaBazaarApp
                     MySqlDataReader dataReader = command.ExecuteReader();
                     while (dataReader.Read())
                     {
-                        Employee employee = employee = new Employee(Convert.ToInt32(dataReader["id"]),dataReader["first_name"].ToString(), dataReader["last_name"].ToString(), Convert.ToInt32(dataReader["BSN"]), dataReader["email"].ToString(), dataReader["first_working_date"].ToString(), dataReader["last_working_date"].ToString(), dataReader["birthdate"].ToString(), dataReader["contract_type"].ToString(), Convert.ToDouble(dataReader["hourly_wage"]), dataReader["address"].ToString(), dataReader["department"].ToString());
+                        Employee employee = employee = new Employee(Convert.ToInt32(dataReader["id"]),dataReader["first_name"].ToString(), dataReader["last_name"].ToString(), Convert.ToInt32(dataReader["BSN"]), dataReader["email"].ToString(), dataReader["first_working_date"].ToString(), dataReader["last_working_date"].ToString(), dataReader["birthdate"].ToString(), dataReader["contract_type"].ToString(), Convert.ToDouble(dataReader["hourly_wage"]), dataReader["address"].ToString(), dataReader["department"].ToString(), dataReader["role"].ToString());
                         employees.Add(employee);
                     }
                     dataReader.Close();
@@ -140,6 +140,58 @@ namespace MediaBazaarApp
                 }
             }
             return employees;
+        }
+        public List<Employee> GetEmployeesOfDepartment(Department depart)
+        {
+            List<Employee> employees = new List<Employee>();
+
+            if (ConnOpen())
+            {
+                try
+                {
+                    query = "SELECT * FROM employees WHERE department =@department";
+                    SqlQuery(query);
+                    this.AddWithValue("@department",depart.DepartmentName );
+                    MySqlDataReader dataReader = command.ExecuteReader();
+                    while (dataReader.Read())
+                    {
+                        Employee employee = employee = new Employee(Convert.ToInt32(dataReader["id"]), dataReader["first_name"].ToString(), dataReader["last_name"].ToString(), Convert.ToInt32(dataReader["BSN"]), dataReader["email"].ToString(), dataReader["first_working_date"].ToString(), dataReader["last_working_date"].ToString(), dataReader["birthdate"].ToString(), dataReader["contract_type"].ToString(), Convert.ToDouble(dataReader["hourly_wage"]), dataReader["address"].ToString(), dataReader["department"].ToString(), dataReader["role"].ToString());
+                        employees.Add(employee);
+                    }
+                    dataReader.Close();
+                    return employees;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    Close();
+                }
+            }
+            return employees;
+        }
+        public bool UpdateRoleAndDepartment(Employee emp, string department, string role)
+        {
+            if (ConnOpen())
+            {
+                query = "UPDATE employees SET department = @department, role = @role WHERE id =@id";
+
+                SqlQuery(query);
+                AddWithValue("@department", department);
+                AddWithValue("@role", role);
+                AddWithValue("@id", emp.ID);
+                NonQueryEx();
+
+                Close();
+                return true;
+            }
+            else
+            {
+                Close();
+                return false;
+            }
         }
     }
 }

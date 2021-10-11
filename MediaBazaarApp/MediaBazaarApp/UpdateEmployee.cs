@@ -15,18 +15,41 @@ namespace MediaBazaarApp
         private Form1 form1;
         EmployeeManager employeeManager;
 
-        public UpdateEmployee(Form1 employeeOverviewForm)
+        DepartmentManager departmentManager;
+        public UpdateEmployee(Form1 employeeOverviewForm,DepartmentManager d)
         {
             InitializeComponent();
             this.form1 = employeeOverviewForm;
+            this.departmentManager = d;
             this.CenterToParent();
 
             employeeManager = new EmployeeManager();
+            FillTextboxes();
+            LoadDepartments();
         }
-
+        private void LoadDepartments()
+        {
+            cbDepartment.Items.Clear();
+            foreach (Department d in departmentManager.GetDepartments())
+            {
+                cbDepartment.Items.Add(d.DepartmentName);
+            }
+        }
         public void FillTextboxes()
         {
-
+            tbID.Text = form1.SelectedItemID();
+             foreach(Employee e in employeeManager.GetEmployees())
+            {
+                if(Convert.ToInt32(tbID.Text) == e.ID)
+                {
+                    tbFirstName.Text = e.FirstName;
+                    tbSurname.Text = e.LastName;
+                    tbEmail.Text = e.Email;
+                    cbContractType.Text = e.ContractType;
+                    cbDepartment.Text = e.Department;
+                    tbAddress.Text = e.Address;
+                }
+            }
         }
 
         private void btnAddEmployee_Click(object sender, EventArgs e)
@@ -46,8 +69,11 @@ namespace MediaBazaarApp
             else
             {
                 Employee employee = this.employeeManager.GetEmployee(id);
-                employee.UpdateInfo(id);
+                employeeManager.Update(employee, firstName, lastName, email, typeOfContract, address, department);
+                
                 MessageBox.Show("Employee has been updated successfully.");
+                this.Close();
+                this.form1.UpdateDataGridView();
             }
         }
 
