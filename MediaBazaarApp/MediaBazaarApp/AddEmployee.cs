@@ -46,6 +46,7 @@ namespace MediaBazaarApp
                 Employee employee = new Employee(tbFirstName.Text, tbSurname.Text, Convert.ToInt32(tbBSN.Text), tbEmail.Text, dtpFirstDate.Text, dtpLastWorkingDate.Text, dtpBdate.Text, cbContractType.Text, Convert.ToInt32(tbHourlyWage.Text), tbAddress.Text, cbDepartment.Text,cbRole.Text);
 
                 employeeManager.AddEmployee(employee);
+                employeeManager.GenerateUsernameAndPassword(employee);
                 MessageBox.Show("New employee has been added successfully.");
                 this.Close();
                 this.form1.UpdateDataGridView();

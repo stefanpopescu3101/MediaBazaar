@@ -8,6 +8,7 @@ namespace MediaBazaarApp
 {
     class EmployeeManager
     {
+        private static int id = 0;
         List<Employee> employees;
         EmployeesMediator employeesMediator;
 
@@ -16,7 +17,25 @@ namespace MediaBazaarApp
             employees = new List<Employee>();
             employeesMediator = new EmployeesMediator();
         }
+        public void GenerateUsernameAndPassword(Employee emp)
+        {
+            string userName = emp.FirstName.Substring(0, 1) + emp.LastName.Substring(0, 1) + emp.ID;
+            emp.UserName = userName;
+            emp.Password = emp.ID + id++.ToString();
+            employeesMediator.UpdateUsernameAndPassword(emp);
 
+        }
+        public Employee CheckCredentials(string username,string password)
+        {
+            foreach (Employee emp in employees)
+            {
+                if (emp.UserName==username && emp.Password==password)
+                {
+                    return emp;
+                }
+            }
+            return null;
+        }
         public void AddEmployee(Employee employee)
         {
             employees.Add(employee);
@@ -55,6 +74,10 @@ namespace MediaBazaarApp
         {
             employees = employeesMediator.GetEmployees();
             return employees;
+        }
+        public void Load()
+        {
+            employees = employeesMediator.GetEmployees();
         }
         public List<Employee> GetEmployeeOfDepartment(Department depart)
         {

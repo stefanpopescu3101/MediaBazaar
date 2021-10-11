@@ -43,7 +43,7 @@ namespace MediaBazaarApp
 
             foreach (Employee e in employeeManager.GetEmployees())
             {
-                this.dgvEmployees.Rows.Add(e.ID, e.FirstName, e.LastName, e.Bsn, e.Email, e.FirstWorkingDate, e.LastWorkingDate, e.Birthdate, e.ContractType, e.HourlyWage, e.Address, e.Department);
+                this.dgvEmployees.Rows.Add(e.ID, e.FirstName, e.LastName, e.Bsn, e.Email, e.FirstWorkingDate, e.LastWorkingDate, e.Birthdate, e.ContractType, e.HourlyWage, e.Address, e.Department, e.Role);
                 cbDepartmentManager.Items.Add(e);
                 
             }
@@ -78,7 +78,7 @@ namespace MediaBazaarApp
             
                 if(e.ID == Convert.ToInt32(tbSearch.Text))
                 {
-                    this.dgvEmployees.Rows.Add(e.ID, e.FirstName, e.LastName, e.Bsn, e.Email, e.FirstWorkingDate, e.LastWorkingDate, e.Birthdate, e.ContractType, e.HourlyWage, e.Address, e.Department);
+                    this.dgvEmployees.Rows.Add(e.ID, e.FirstName, e.LastName, e.Bsn, e.Email, e.FirstWorkingDate, e.LastWorkingDate, e.Birthdate, e.ContractType, e.HourlyWage, e.Address, e.Department,e.Role);
                 }
         }
 
@@ -169,7 +169,7 @@ namespace MediaBazaarApp
                             employeeManager.UpdateRoleAndDepartment(departmentManager, departmentManager.Department, departmentManager.Role);
                         }
                         }
-
+                    UpdateDataGridView();
                 }
                 else
                 {
@@ -194,6 +194,9 @@ namespace MediaBazaarApp
                     string name = row.Cells["Department Name"].Value.ToString();
                     Department depart = this.departmentM.GetDepartment(name);
                     departmentM.Update(depart, tbDepartmentName.Text, cbDepartmentManager.SelectedItem as Employee);
+                    Employee emp = cbDepartmentManager.SelectedItem as Employee;
+                    emp.Role = "Department Manager";
+                    employeeManager.UpdateRoleAndDepartment(emp, tbDepartmentName.Text, emp.Role);
                     MessageBox.Show("Updated successfully");
                 }
                 else
@@ -205,7 +208,9 @@ namespace MediaBazaarApp
             {
                 MessageBox.Show("please select a department!");
             }
+            UpdateDataGridView();
             UpdateListInDepartmentManagement();
+            cbDepartmentManager.Text = "";
         }
 
         private void btnTerminate_Click(object sender, EventArgs e)
@@ -282,7 +287,15 @@ namespace MediaBazaarApp
                 DataGridViewRow row = this.dgvEmployees.Rows[r];
                 int id = Convert.ToInt32(row.Cells["ID"].Value);
                 Employee emp = this.employeeManager.GetEmployee(id);
-                employeeManager.RemoveEmployee(emp);
+                if(emp.Role== "Department Manager")
+                {
+                    MessageBox.Show("This employee is a manager of " + emp.Department + ", you cannot remove until you change the role");
+                }
+                else
+                {
+                    employeeManager.RemoveEmployee(emp);
+                }
+        
                 UpdateDataGridView();
             }
             

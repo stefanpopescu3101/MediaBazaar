@@ -37,6 +37,7 @@ namespace MediaBazaarApp
         public int ID
         {
             get { return id; }
+            set { id = value; }
         }
         public string Name
         {
@@ -95,7 +96,6 @@ namespace MediaBazaarApp
         {
             get { return role; } set { role = value; }
         }
-
         public Employee(string firstName, string lastName, int BSN, string email,
             string firstWorkingDate, string lastWorkingDate, string birthdate,
             string contractType, double hourlyWage, string address,
@@ -121,7 +121,7 @@ namespace MediaBazaarApp
         public Employee(int id,string firstName, string lastName, int BSN, string email,
     string firstWorkingDate, string lastWorkingDate, string birthdate,
     string contractType, double hourlyWage, string address,
-    string department,string role)
+    string department,string role,string username, string password)
         {
             this.id = id;
             this.firstName = firstName;
@@ -136,6 +136,8 @@ namespace MediaBazaarApp
             this.address = address;
             this.department = department;
             this.role = role;
+            this.username = username;
+            this.password = password;
         }
 
 
