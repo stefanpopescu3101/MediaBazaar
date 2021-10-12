@@ -29,6 +29,7 @@ namespace MediaBazaarApp
         /// </summary>
         private void InitializeComponent()
         {
+
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -46,6 +47,13 @@ namespace MediaBazaarApp
             this.label1 = new System.Windows.Forms.Label();
             this.rtbDescription = new System.Windows.Forms.RichTextBox();
             this.btnAddP = new System.Windows.Forms.Button();
+            this.btnCloseWind = new System.Windows.Forms.Button();
+            this.tbInStock = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tbThreshold = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tbMaxCapacity = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label18
@@ -60,7 +68,7 @@ namespace MediaBazaarApp
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(25, 99);
+            this.label17.Location = new System.Drawing.Point(25, 135);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(93, 20);
             this.label17.TabIndex = 72;
@@ -69,7 +77,7 @@ namespace MediaBazaarApp
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(35, 132);
+            this.label16.Location = new System.Drawing.Point(35, 168);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(83, 20);
             this.label16.TabIndex = 71;
@@ -78,7 +86,7 @@ namespace MediaBazaarApp
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(67, 165);
+            this.label15.Location = new System.Drawing.Point(63, 97);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(51, 20);
             this.label15.TabIndex = 70;
@@ -102,21 +110,21 @@ namespace MediaBazaarApp
             // 
             // tbSellingPrice
             // 
-            this.tbSellingPrice.Location = new System.Drawing.Point(129, 96);
+            this.tbSellingPrice.Location = new System.Drawing.Point(129, 132);
             this.tbSellingPrice.Name = "tbSellingPrice";
             this.tbSellingPrice.Size = new System.Drawing.Size(161, 27);
             this.tbSellingPrice.TabIndex = 67;
             // 
             // tbBoughtFor
             // 
-            this.tbBoughtFor.Location = new System.Drawing.Point(129, 129);
+            this.tbBoughtFor.Location = new System.Drawing.Point(129, 165);
             this.tbBoughtFor.Name = "tbBoughtFor";
             this.tbBoughtFor.Size = new System.Drawing.Size(161, 27);
             this.tbBoughtFor.TabIndex = 66;
             // 
             // tbBrand
             // 
-            this.tbBrand.Location = new System.Drawing.Point(129, 162);
+            this.tbBrand.Location = new System.Drawing.Point(129, 94);
             this.tbBrand.Name = "tbBrand";
             this.tbBrand.Size = new System.Drawing.Size(161, 27);
             this.tbBrand.TabIndex = 65;
@@ -150,6 +158,10 @@ namespace MediaBazaarApp
             // 
             this.cbSize.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSize.FormattingEnabled = true;
+            this.cbSize.Items.AddRange(new object[] {
+            "Big",
+            "Medium",
+            "Small\t"});
             this.cbSize.Location = new System.Drawing.Point(129, 246);
             this.cbSize.Name = "cbSize";
             this.cbSize.Size = new System.Drawing.Size(161, 28);
@@ -175,7 +187,7 @@ namespace MediaBazaarApp
             // 
             // rtbDescription
             // 
-            this.rtbDescription.Location = new System.Drawing.Point(124, 360);
+            this.rtbDescription.Location = new System.Drawing.Point(142, 363);
             this.rtbDescription.Name = "rtbDescription";
             this.rtbDescription.Size = new System.Drawing.Size(423, 200);
             this.rtbDescription.TabIndex = 75;
@@ -183,18 +195,86 @@ namespace MediaBazaarApp
             // 
             // btnAddP
             // 
-            this.btnAddP.Location = new System.Drawing.Point(221, 595);
+            this.btnAddP.Location = new System.Drawing.Point(12, 595);
             this.btnAddP.Name = "btnAddP";
-            this.btnAddP.Size = new System.Drawing.Size(132, 29);
+            this.btnAddP.Size = new System.Drawing.Size(132, 40);
             this.btnAddP.TabIndex = 76;
             this.btnAddP.Text = "Done";
             this.btnAddP.UseVisualStyleBackColor = true;
+            this.btnAddP.Click += new System.EventHandler(this.btnAddP_Click);
+            // 
+            // btnCloseWind
+            // 
+            this.btnCloseWind.Location = new System.Drawing.Point(531, 587);
+            this.btnCloseWind.Name = "btnCloseWind";
+            this.btnCloseWind.Size = new System.Drawing.Size(94, 48);
+            this.btnCloseWind.TabIndex = 77;
+            this.btnCloseWind.Text = "Back";
+            this.btnCloseWind.UseVisualStyleBackColor = true;
+            this.btnCloseWind.Click += new System.EventHandler(this.btnCloseWind_Click);
+            // 
+            // tbInStock
+            // 
+            this.tbInStock.Location = new System.Drawing.Point(413, 61);
+            this.tbInStock.Name = "tbInStock";
+            this.tbInStock.Size = new System.Drawing.Size(161, 27);
+            this.tbInStock.TabIndex = 78;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(344, 64);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 20);
+            this.label2.TabIndex = 79;
+            this.label2.Text = "In Stock:";
+            // 
+            // tbThreshold
+            // 
+            this.tbThreshold.Location = new System.Drawing.Point(413, 94);
+            this.tbThreshold.Name = "tbThreshold";
+            this.tbThreshold.Size = new System.Drawing.Size(161, 27);
+            this.tbThreshold.TabIndex = 80;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(331, 97);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(77, 20);
+            this.label3.TabIndex = 81;
+            this.label3.Text = "Threshold:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(307, 132);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(101, 20);
+            this.label4.TabIndex = 83;
+            this.label4.Text = "Max Capacity:";
+            // 
+            // tbMaxCapacity
+            // 
+            this.tbMaxCapacity.Location = new System.Drawing.Point(413, 127);
+            this.tbMaxCapacity.Name = "tbMaxCapacity";
+            this.tbMaxCapacity.Size = new System.Drawing.Size(161, 27);
+            this.tbMaxCapacity.TabIndex = 82;
+
             // 
             // AddProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+
             this.ClientSize = new System.Drawing.Size(637, 647);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.tbMaxCapacity);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.tbThreshold);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.tbInStock);
+            this.Controls.Add(this.btnCloseWind);
             this.Controls.Add(this.btnAddP);
             this.Controls.Add(this.rtbDescription);
             this.Controls.Add(this.label1);
@@ -214,12 +294,14 @@ namespace MediaBazaarApp
             this.Controls.Add(this.cbCategory);
             this.Name = "AddProduct";
             this.Text = "Add Product";
+
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
+
 
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
@@ -238,5 +320,13 @@ namespace MediaBazaarApp
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RichTextBox rtbDescription;
         private System.Windows.Forms.Button btnAddP;
+        private System.Windows.Forms.Button btnCloseWind;
+        private System.Windows.Forms.TextBox tbInStock;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox tbThreshold;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox tbMaxCapacity;
+
     }
 }

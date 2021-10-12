@@ -9,24 +9,40 @@ namespace MediaBazaarApp
     public class DepartmentManager
     {
         List<Department> departments;
+
         DepartmentMediator mediator;
+
 
         public DepartmentManager()
         {
             departments = new List<Department>();
+
             mediator = new DepartmentMediator();
+
         }
 
         public bool Add(Department department)
         {
-            foreach (Department d in departments)
+
+            if (GetDepartments().Length != 0)
             {
-                if (d.DepartmentName!=department.DepartmentName)
+                foreach (Department d in GetDepartments())
                 {
-                    departments.Add(department);
-                    mediator.Add(department);
-                    return true;
+                    if (d.DepartmentName != department.DepartmentName)
+                    {
+                        departments.Add(department);
+                        mediator.Add(department);
+                        return true;
+                    }
                 }
+             
+            }
+            else
+            {
+                departments.Add(department);
+                mediator.Add(department);
+                return true;
+
             }
             return false;
         }
@@ -36,8 +52,10 @@ namespace MediaBazaarApp
             {
                 if (d.DepartmentName == department.DepartmentName)
                 {
+
                     mediator.Remove(d);
                     departments.Remove(d);
+
                     return true;
                 }
             }
@@ -45,11 +63,16 @@ namespace MediaBazaarApp
         }
         public Department[] GetDepartments()
         {
-            return mediator.GetAll().ToArray();
+            return departments.ToArray();
+        }
+
+        public void Load()
+        {
+            departments = mediator.GetAll();
         }
         public Department GetDepartment(string name)
         {
-            foreach (Department d in departments)
+            foreach (Department d in GetDepartments())
             {
                 if (d.DepartmentName==name)
                 {
@@ -57,6 +80,11 @@ namespace MediaBazaarApp
                 }
             }
             return null;
+        }
+        public void Update(Department d,string departmentName, Employee departmentManager)
+        {
+            d.EditInfo( departmentName, departmentManager);
+            mediator.Update(departmentName, departmentManager);
         }
 
     }
