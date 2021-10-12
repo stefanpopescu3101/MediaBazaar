@@ -35,12 +35,10 @@ namespace MediaBazaarApp
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.cbProductSize = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.tbProductDescription = new System.Windows.Forms.TextBox();
             this.tbProductBrand = new System.Windows.Forms.TextBox();
             this.tbProductBoughtFor = new System.Windows.Forms.TextBox();
             this.tbProductSellingFor = new System.Windows.Forms.TextBox();
@@ -77,7 +75,7 @@ namespace MediaBazaarApp
             // cbProductCategory
             // 
             this.cbProductCategory.FormattingEnabled = true;
-            this.cbProductCategory.Location = new System.Drawing.Point(562, 334);
+            this.cbProductCategory.Location = new System.Drawing.Point(134, 323);
             this.cbProductCategory.Name = "cbProductCategory";
             this.cbProductCategory.Size = new System.Drawing.Size(203, 28);
             this.cbProductCategory.TabIndex = 43;
@@ -85,7 +83,7 @@ namespace MediaBazaarApp
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(482, 342);
+            this.label8.Location = new System.Drawing.Point(54, 331);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(72, 20);
             this.label8.TabIndex = 42;
@@ -94,7 +92,7 @@ namespace MediaBazaarApp
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(508, 281);
+            this.label7.Location = new System.Drawing.Point(80, 270);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(39, 20);
             this.label7.TabIndex = 41;
@@ -107,19 +105,10 @@ namespace MediaBazaarApp
             "Big",
             "Medium",
             "Small"});
-            this.cbProductSize.Location = new System.Drawing.Point(562, 278);
+            this.cbProductSize.Location = new System.Drawing.Point(134, 267);
             this.cbProductSize.Name = "cbProductSize";
             this.cbProductSize.Size = new System.Drawing.Size(203, 28);
             this.cbProductSize.TabIndex = 40;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(44, 268);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(88, 20);
-            this.label5.TabIndex = 37;
-            this.label5.Text = "Description:";
             // 
             // label4
             // 
@@ -156,17 +145,6 @@ namespace MediaBazaarApp
             this.label1.Size = new System.Drawing.Size(52, 20);
             this.label1.TabIndex = 33;
             this.label1.Text = "Name:";
-            // 
-            // tbProductDescription
-            // 
-            this.tbProductDescription.Location = new System.Drawing.Point(138, 268);
-            this.tbProductDescription.Multiline = true;
-            this.tbProductDescription.Name = "tbProductDescription";
-            this.tbProductDescription.PlaceholderText = "The best in class battery, high -technology software and user friendly interface " +
-    "make Philips mobile phones ideal devices for any tasks such as everyday activiti" +
-    "es, communication and entertainment.";
-            this.tbProductDescription.Size = new System.Drawing.Size(335, 94);
-            this.tbProductDescription.TabIndex = 32;
             // 
             // tbProductBrand
             // 
@@ -236,11 +214,11 @@ namespace MediaBazaarApp
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(415, 122);
+            this.label10.Location = new System.Drawing.Point(371, 122);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(77, 20);
+            this.label10.Size = new System.Drawing.Size(131, 20);
             this.label10.TabIndex = 48;
-            this.label10.Text = "Threshold:";
+            this.label10.Text = "Low quantity alert:";
             // 
             // tbMeasurements
             // 
@@ -274,12 +252,10 @@ namespace MediaBazaarApp
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.cbProductSize);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.tbProductDescription);
             this.Controls.Add(this.tbProductBrand);
             this.Controls.Add(this.tbProductBoughtFor);
             this.Controls.Add(this.tbProductSellingFor);
@@ -301,12 +277,10 @@ namespace MediaBazaarApp
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cbProductSize;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox tbProductDescription;
         private System.Windows.Forms.TextBox tbProductBrand;
         private System.Windows.Forms.TextBox tbProductBoughtFor;
         private System.Windows.Forms.TextBox tbProductSellingFor;

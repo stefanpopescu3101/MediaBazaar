@@ -16,18 +16,12 @@ namespace MediaBazaarApp
         public AddProduct()
         {
             InitializeComponent();
-            
-        }
-
-        private void AddProduct_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void btnAddP_Click(object sender, EventArgs e)
         {
             if (tbName.Text == "" || tbSellingPrice.Text == "" || tbBoughtFor.Text == "" || tbBrand.Text == "" ||
-                tbMeasurements.Text == "" || rtbDescription.Text == "" || tbInStock.Text == "" || tbThreshold.Text == "" || tbMaxCapacity.Text == "" || cbSize.Text == "")//|| cbCategory.SelectedIndex < 0)
+                tbMeasurements.Text == "" || tbInStock.Text == "" || tbThreshold.Text == "" || tbMaxCapacity.Text == "" || cbSize.Text == "")//|| cbCategory.SelectedIndex < 0)
             {
                 MessageBox.Show("Please fill in all of the required fields!");
             }
@@ -43,7 +37,6 @@ namespace MediaBazaarApp
                     int maxCapacity = Convert.ToInt32(tbMaxCapacity.Text);
                      decimal measurements = Convert.ToDecimal(this.tbMeasurements.Text);
                     int threshold = Convert.ToInt32(tbThreshold.Text);
-                    string description = rtbDescription.Text;
                     string boxSize = cbCategory.Text;
                     
                     
@@ -51,7 +44,7 @@ namespace MediaBazaarApp
                     {
                         throw new CapacityExeption();
                     }
-                    Product product = new Product(name, brand, boughtFor, sellingPrice, inStock, maxCapacity, threshold,0, measurements,description, boxSize);
+                    Product product = new Product(name, brand, boughtFor, sellingPrice, inStock, maxCapacity, threshold,0, measurements, boxSize);
                     this.productManager.Add(product);
 
 

@@ -18,11 +18,11 @@ namespace MediaBazaarApp
         public int Threshold { get; private set; }
         public int Sold { get; private set; }
         public decimal Measurements { get; private set; }
-        public string Description { get; private set; }
+       
         public string BoxSize { get; private set; }
 
 
-        public Product (string name, string brand ,decimal costPrice, decimal sellPrice, int inStock, int maxCapacity, int threshold, int sold, decimal measurements, string description, string boxSize)
+        public Product (string name, string brand ,decimal costPrice, decimal sellPrice, int inStock, int maxCapacity, int threshold, int sold, decimal measurements, string boxSize)
         {
             this.Name = name;
             this.Brand = brand;
@@ -33,11 +33,10 @@ namespace MediaBazaarApp
             this.Threshold = threshold;
             this.Sold = sold;
             this.Measurements = measurements;
-            this.Description = description;
             this.BoxSize = boxSize;
         }
 
-        public void EditProduct(string name, string brand,decimal costPrice, decimal sellPrice,int maxCapacity, int threshold,decimal measurements, string description,string boxSize)
+        public void EditProduct(string name, string brand,decimal costPrice, decimal sellPrice,int maxCapacity, int threshold,decimal measurements,string boxSize)
         {
             this.Name = name;
             this.Brand = brand;
@@ -46,7 +45,6 @@ namespace MediaBazaarApp
             this.MaxCapacity = maxCapacity;
             this.Threshold = threshold;
             this.Measurements = measurements;
-            this.Description = description;
             this.BoxSize = boxSize;
         }
 
