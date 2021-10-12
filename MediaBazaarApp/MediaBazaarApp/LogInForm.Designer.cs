@@ -51,6 +51,7 @@ namespace MediaBazaarApp
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.Size = new System.Drawing.Size(224, 27);
             this.tbPassword.TabIndex = 1;
+            this.tbPassword.UseSystemPasswordChar = true;
             // 
             // label1
             // 
