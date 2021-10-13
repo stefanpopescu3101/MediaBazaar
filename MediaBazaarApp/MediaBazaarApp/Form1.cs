@@ -17,6 +17,7 @@ namespace MediaBazaarApp
         private UpdateEmployee updateEmployeeForm;
         DepartmentManager departmentM;
         UserManager userM;
+        public string Id;
 
         public Form1()
         {
@@ -26,10 +27,29 @@ namespace MediaBazaarApp
             userM = new UserManager();
             departmentM.Load();
             UpdateListInDepartmentManagement();
+            dgvEmployees.Rows.Clear();
+            //lblSelectedId.Text = SelectedItemID();
+
             UpdateDataGridView();
+
+            dgvEmployees.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
         public void UpdateDataGridView()
+        {
+            cbDepartmentManager.Items.Clear();
+            LoadDGVColumns();
+            
+
+            foreach (Employee e in employeeManager.GetEmployees())
+            {
+                this.dgvEmployees.Rows.Add(e.ID, e.FirstName, e.LastName, e.Bsn, e.Email, e.FirstWorkingDate, e.LastWorkingDate, e.Birthdate, e.ContractType, e.HourlyWage, e.Address, e.Department, e.Role);
+                cbDepartmentManager.Items.Add(e);
+                
+            }
+        }
+
+        public void LoadDGVColumns()
         {
             dgvEmployees.Rows.Clear();
             cbDepartmentManager.Items.Clear();
@@ -48,12 +68,20 @@ namespace MediaBazaarApp
             this.dgvEmployees.Columns[11].Name = "Department";
             this.dgvEmployees.Columns[12].Name = "Role";
 
-            foreach (Employee e in employeeManager.GetEmployees())
-            {
-                this.dgvEmployees.Rows.Add(e.ID, e.FirstName, e.LastName, e.Bsn, e.Email, e.FirstWorkingDate, e.LastWorkingDate, e.Birthdate, e.ContractType, e.HourlyWage, e.Address, e.Department,e.Role);
-                cbDepartmentManager.Items.Add(e);
-            }
         }
+
+        public void SearchEmployee()
+        {
+            LoadDGVColumns();
+
+            foreach (Employee e in employeeManager.GetEmployees())
+            
+                if(e.ID == Convert.ToInt32(tbSearch.Text))
+                {
+                    this.dgvEmployees.Rows.Add(e.ID, e.FirstName, e.LastName, e.Bsn, e.Email, e.FirstWorkingDate, e.LastWorkingDate, e.Birthdate, e.ContractType, e.HourlyWage, e.Address, e.Department,e.Role);
+                }
+        }
+
         private void UpdateListInDepartmentManagement()
         {
             cbDepartmentManager.Items.Clear();
@@ -67,22 +95,8 @@ namespace MediaBazaarApp
             this.dgvDepartments.Columns[2].Width = 250;
 
             foreach (Department d in this.departmentM.GetDepartments())
-            {
-                
+            {             
                     this.dgvDepartments.Rows.Add( d.DepartmentName, d.ManagerID, d.ManagerName);
-
-
-        //public string SelectedItemID()
-        //{
-        //    if (dgvEmployees.SelectedRows.Count > 0)
-        //    {
-        //        var item = dgvEmployees.SelectedCells;
-        //        Id = item.Text;
-        //        return Id;
-        //    }
-        //    return "";
-        //}
-
             }
             foreach (DataGridViewColumn c in dgvDepartments.Columns)
             {
@@ -99,6 +113,18 @@ namespace MediaBazaarApp
                 cbDepartmentManager.Items.Add(employee);
             }
         }
+
+        public string SelectedItemID()
+        {
+            if (dgvEmployees.SelectedRows.Count > 0)
+            {
+                var item = dgvEmployees.CurrentRow.Cells[0];
+                Id = item.Value.ToString();
+                return Id;
+            }
+            return "";
+        }
+
         private void btnAddEmployee_Click(object sender, EventArgs e)
         {
 			
@@ -106,7 +132,7 @@ namespace MediaBazaarApp
 
         private void btnUpdateInfo_Click(object sender, EventArgs e)
         {
-            updateEmployeeForm = new UpdateEmployee(this);
+            updateEmployeeForm = new UpdateEmployee(this,this.departmentM);
             updateEmployeeForm.Show();
         }
 
@@ -143,7 +169,7 @@ namespace MediaBazaarApp
                             employeeManager.UpdateRoleAndDepartment(departmentManager, departmentManager.Department, departmentManager.Role);
                         }
                         }
-
+                    UpdateDataGridView();
                 }
                 else
                 {
@@ -168,6 +194,9 @@ namespace MediaBazaarApp
                     string name = row.Cells["Department Name"].Value.ToString();
                     Department depart = this.departmentM.GetDepartment(name);
                     departmentM.Update(depart, tbDepartmentName.Text, cbDepartmentManager.SelectedItem as Employee);
+                    Employee emp = cbDepartmentManager.SelectedItem as Employee;
+                    emp.Role = "Department Manager";
+                    employeeManager.UpdateRoleAndDepartment(emp, tbDepartmentName.Text, emp.Role);
                     MessageBox.Show("Updated successfully");
                 }
                 else
@@ -179,7 +208,9 @@ namespace MediaBazaarApp
             {
                 MessageBox.Show("please select a department!");
             }
+            UpdateDataGridView();
             UpdateListInDepartmentManagement();
+            cbDepartmentManager.Text = "";
         }
 
         private void btnTerminate_Click(object sender, EventArgs e)
@@ -249,16 +280,32 @@ namespace MediaBazaarApp
 
         private void btnRemoveEmployee_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(dgvEmployees.CurrentCell.Value);
+            if (dgvEmployees.SelectedCells.Count > -1)
+            {
+
+                int r = this.dgvEmployees.SelectedCells[0].RowIndex;
+                DataGridViewRow row = this.dgvEmployees.Rows[r];
+                int id = Convert.ToInt32(row.Cells["ID"].Value);
+                Employee emp = this.employeeManager.GetEmployee(id);
+                if(emp.Role== "Department Manager")
+                {
+                    MessageBox.Show("This employee is a manager of " + emp.Department + ", you cannot remove until you change the role");
+                }
+                else
+                {
+                    employeeManager.RemoveEmployee(emp);
+                }
+        
+                UpdateDataGridView();
+            }
             
-            employeeManager.RemoveEmployee(id);
-            UpdateDataGridView();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             addEmployeeForm = new AddEmployee(this,departmentM);
             addEmployeeForm.ShowDialog();
+            UpdateDataGridView();
         }
 
         private void btnRemoveDepartment_Click(object sender, EventArgs e)
@@ -318,8 +365,49 @@ namespace MediaBazaarApp
             {
                 Employee emp = cbDepartmentManager.SelectedItem as Employee;
                 lDepartmentManager.Text = emp.Name;
-            }
+            }          
+        }
 
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e) // search text box
+        {
+
+        }
+
+        private void btnSearchByID_Click(object sender, EventArgs e)
+        {
+            string searchValue = tbSearch.Text;
+
+            dgvEmployees.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            try
+            {
+                foreach (DataGridViewRow row in dgvEmployees.Rows)
+                {
+                    if (row.Cells[0].Value.ToString().Equals(searchValue))
+                    {
+                        SearchEmployee();
+                        break;
+                    }
+                }
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            tbSearch.Text = "";
+            UpdateDataGridView();
+        }
+
+        private void dgvEmployees_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+ 
+        }
+
+        private void dgvEmployees_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
+        {
         }
     }
 }

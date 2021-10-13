@@ -18,24 +18,11 @@ namespace MediaBazaarApp
             //this.password = password;
 
         }
-
-        public bool CheckDetails(string username, string password)
-        {
-            if (username==this.username && password==this.password)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+        public string UserName { get { return username; }set { username = value; } }
+        public string Password { get { return password; } set { password = value; } }
+    
 
 
-        public string CreateUsername(int id,string firstName, string lastName)
-        {
-            return $"{firstName}{lastName}{id}";
-        }
 
     }
 }

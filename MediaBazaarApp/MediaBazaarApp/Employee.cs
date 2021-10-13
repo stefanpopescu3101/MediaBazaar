@@ -37,6 +37,7 @@ namespace MediaBazaarApp
         public int ID
         {
             get { return id; }
+            set { id = value; }
         }
         public string Name
         {
@@ -95,7 +96,6 @@ namespace MediaBazaarApp
         {
             get { return role; } set { role = value; }
         }
-
         public Employee(string firstName, string lastName, int BSN, string email,
             string firstWorkingDate, string lastWorkingDate, string birthdate,
             string contractType, double hourlyWage, string address,
@@ -121,7 +121,7 @@ namespace MediaBazaarApp
         public Employee(int id,string firstName, string lastName, int BSN, string email,
     string firstWorkingDate, string lastWorkingDate, string birthdate,
     string contractType, double hourlyWage, string address,
-    string department,string role)
+    string department,string role,string username, string password)
         {
             this.id = id;
             this.firstName = firstName;
@@ -136,30 +136,30 @@ namespace MediaBazaarApp
             this.address = address;
             this.department = department;
             this.role = role;
+            this.username = username;
+            this.password = password;
         }
 
-        public void EditDetails(string firstName, string lastName, int BSN, string email,
-            string firstWorkingDate, string lastWorkingDate, string birthdate,
-            string contractType, double hourlyWage, string address,
-            string department, string role)
-        {
 
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.BSN = BSN;
-            this.email = email;
+      
 
-            this.firstWorkingDate = firstWorkingDate;
-            this.lastWorkingDate = lastWorkingDate;
-            this.birthdate = birthdate;
-            this.contractType = contractType;
-            this.hourlyWage = hourlyWage;
-
-            this.address = address;
-
-            this.department = department;
-            this.role = role;
-        }
+        //public void EditDetails(string firstName, string lastName, int BSN, string email,
+        //    string firstWorkingDate, string lastWorkingDate, string birthdate,
+        //    string contractType, double hourlyWage, string address,
+        //    string department)
+        //{
+        //    this.firstName = firstName;
+        //    this.lastName = lastName;
+        //    this.BSN = BSN;
+        //    this.email = email;
+        //    this.firstWorkingDate = firstWorkingDate;
+        //    this.lastWorkingDate = lastWorkingDate;
+        //    this.birthdate = birthdate;
+        //    this.contractType = contractType;
+        //    this.hourlyWage = hourlyWage;
+        //    this.address = address;
+        //    this.department = department;
+        //}
 
         public void TerminateContract(string reason, string lastWorkingDate)
 
@@ -167,6 +167,19 @@ namespace MediaBazaarApp
             this.DepartureReason = reason;
             this.lastWorkingDate = lastWorkingDate;
         }
+
+        public void UpdateInfo(string firstName, string lastName, string email,
+            string contractType, string address,
+            string department)
+        {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.email = email;
+            this.contractType = contractType;
+            this.address = address;
+            this.department = department;
+        }
+
         public override string ToString()
         {
             return "ID:" + " " + this.id + " " + "Name: " + this.firstName + " " + this.lastName  + " Contract: " + this.contractType;

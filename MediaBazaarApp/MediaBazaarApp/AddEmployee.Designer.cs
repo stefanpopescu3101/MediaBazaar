@@ -30,6 +30,8 @@ namespace MediaBazaarApp
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tbHourlyWage = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label22 = new System.Windows.Forms.Label();
             this.tbBSN = new System.Windows.Forms.TextBox();
@@ -54,8 +56,6 @@ namespace MediaBazaarApp
             this.label3 = new System.Windows.Forms.Label();
             this.tbFirstName = new System.Windows.Forms.TextBox();
             this.tbSurname = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tbHourlyWage = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -93,6 +93,22 @@ namespace MediaBazaarApp
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "New employee";
+            // 
+            // tbHourlyWage
+            // 
+            this.tbHourlyWage.Location = new System.Drawing.Point(125, 221);
+            this.tbHourlyWage.Name = "tbHourlyWage";
+            this.tbHourlyWage.Size = new System.Drawing.Size(125, 27);
+            this.tbHourlyWage.TabIndex = 66;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(15, 224);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(98, 20);
+            this.label1.TabIndex = 65;
+            this.label1.Text = "Hourly Wage:\r\n";
             // 
             // checkBox1
             // 
@@ -236,9 +252,12 @@ namespace MediaBazaarApp
             // dtpBdate
             // 
             this.dtpBdate.Location = new System.Drawing.Point(423, 88);
+            this.dtpBdate.MaxDate = new System.DateTime(2021, 10, 3, 0, 0, 0, 0);
             this.dtpBdate.Name = "dtpBdate";
             this.dtpBdate.Size = new System.Drawing.Size(250, 27);
             this.dtpBdate.TabIndex = 40;
+            this.dtpBdate.Value = new System.DateTime(2021, 10, 3, 0, 0, 0, 0);
+            this.dtpBdate.ValueChanged += new System.EventHandler(this.dtpBdate_ValueChanged);
             // 
             // cbContractType
             // 
@@ -260,7 +279,8 @@ namespace MediaBazaarApp
             "Hr Manager",
             "General Manager",
             "Stock Manager",
-            "Store Manager"});
+            "Store Manager",
+            "Regular Employee"});
             this.cbRole.Location = new System.Drawing.Point(125, 289);
             this.cbRole.Name = "cbRole";
             this.cbRole.Size = new System.Drawing.Size(125, 28);
@@ -304,22 +324,6 @@ namespace MediaBazaarApp
             this.tbSurname.Name = "tbSurname";
             this.tbSurname.Size = new System.Drawing.Size(125, 27);
             this.tbSurname.TabIndex = 29;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 224);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 20);
-            this.label1.TabIndex = 65;
-            this.label1.Text = "Hourly Wage:\r\n";
-            // 
-            // tbHourlyWage
-            // 
-            this.tbHourlyWage.Location = new System.Drawing.Point(125, 221);
-            this.tbHourlyWage.Name = "tbHourlyWage";
-            this.tbHourlyWage.Size = new System.Drawing.Size(125, 27);
-            this.tbHourlyWage.TabIndex = 66;
             // 
             // AddEmployee
             // 

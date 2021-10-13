@@ -38,8 +38,10 @@ namespace MediaBazaarApp
                         throw new CapacityExeption();
                     }
 
+
                     this.product.EditProduct(tbProductName.Name, tbProductBrand.Text, Convert.ToDecimal(tbProductBoughtFor.Text),Convert.ToDecimal(tbProductSellingFor.Text),Convert.ToInt32(tbMaxCapacity.Text),
                         Convert.ToInt32(tbThreshold.Text),Convert.ToDecimal(tbMeasurements.Text), cbProductSize.Text);
+
                     this.productManager.Update(this.product);
                     DialogResult box = MessageBox.Show("Data has been edited successfully.");
                     if (box == DialogResult.OK)

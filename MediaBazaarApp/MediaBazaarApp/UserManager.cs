@@ -13,17 +13,7 @@ namespace MediaBazaarApp
         {
             users = new List<User>();
         }
-        public User LoginCheck(string username, string password)
-        { 
-            foreach (User user in this.GetAll())
-            {
-                if (user.CheckDetails(username, password))
-                {
-                    return user;
-                }
-            }
-            return null;
-        }
+   
 
         public User[] GetAll()
         {

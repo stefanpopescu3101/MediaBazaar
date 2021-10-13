@@ -17,10 +17,17 @@
     <Compile Update="LogInForm.cs">
       <SubType>Form</SubType>
     </Compile>
+<<<<<<< HEAD
     <Compile Update="StockManager.cs">
+=======
+    <Compile Update="StoreManager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="StoreManager.cs">
+    <Compile Update="ProductDescription.cs">
+>>>>>>> 9b46c4b50e757bcdf480b13acd7c133a8421300d
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="StockManager.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="TerminateEmployee%27sContract.cs">

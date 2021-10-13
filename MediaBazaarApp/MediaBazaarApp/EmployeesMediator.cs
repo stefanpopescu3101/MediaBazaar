@@ -50,8 +50,9 @@ namespace MediaBazaarApp
                     AddWithValue("@address", employee.Address);
                     AddWithValue("@department", employee.Department);
                     AddWithValue("@role", employee.Role);
+                    //employee.ID = Convert.ToInt32(command.LastInsertedId);
                     NonQueryEx();
-
+                    employee.ID = Convert.ToInt32(command.LastInsertedId);
                     Close();
                     return true;
                 }
@@ -64,26 +65,70 @@ namespace MediaBazaarApp
             else return false;
         }
 
-        public void RemoveEmployee(int id)
+        public bool RemoveEmployee(Employee emp)
         {
-            dataAccess.Close();
             if (ConnOpen())
             {
-                try
-                {
-                    query = "DELETE FROM employees WHERE @id = " + id;
-                    MySqlDataReader dataReader = command.ExecuteReader();
-
+               
+                    query = "DELETE from employees WHERE id = @id";
                     SqlQuery(query);
+                    AddWithValue("@id", emp.ID);
                     NonQueryEx();
-                    dataReader.Close();
 
+                    Close();
+                    return true;
+            }
+            else
+            {
+                Close();
+                return false;
+            }
+        }
 
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+        public bool Update(Employee employee)
+        {
+            if (ConnOpen())
+            {
+                query = "UPDATE employees SET first_name = @firstName, last_name = @lastName, email = @email, contract_type = @contractType, address = @address, department = @department WHERE id = @id";
+                 
+                SqlQuery(query);
+                AddWithValue("@id", employee.ID);
+                AddWithValue("@firstName", employee.FirstName);
+                AddWithValue("@lastName", employee.LastName);
+                AddWithValue("@email", employee.Email);
+                AddWithValue("@contractType", employee.ContractType);
+                AddWithValue("@address", employee.Address);
+                AddWithValue("@department", employee.Department);
+                NonQueryEx();
+
+                Close();
+                return true;
+            }
+            else
+            {
+                Close();
+                return false;
+            }
+        }
+        public bool UpdateUsernameAndPassword(Employee employee)
+        {
+            if (ConnOpen())
+            {
+                query = "UPDATE employees SET username = @username, password = @password WHERE id = @id";
+
+                SqlQuery(query);
+                AddWithValue("@username", employee.UserName);
+                AddWithValue("@password", employee.Password);
+                AddWithValue("@id", employee.ID);
+                NonQueryEx();
+
+                Close();
+                return true;
+            }
+            else
+            {
+                Close();
+                return false;
             }
         }
 
@@ -101,7 +146,7 @@ namespace MediaBazaarApp
                     MySqlDataReader dataReader = command.ExecuteReader();
                     while (dataReader.Read())
                     {
-                        Employee employee = employee = new Employee(Convert.ToInt32(dataReader["id"]),dataReader["first_name"].ToString(), dataReader["last_name"].ToString(), Convert.ToInt32(dataReader["BSN"]), dataReader["email"].ToString(), dataReader["first_working_date"].ToString(), dataReader["last_working_date"].ToString(), dataReader["birthdate"].ToString(), dataReader["contract_type"].ToString(), Convert.ToDouble(dataReader["hourly_wage"]), dataReader["address"].ToString(), dataReader["department"].ToString(), dataReader["role"].ToString());
+                        Employee employee = employee = new Employee(Convert.ToInt32(dataReader["id"]),dataReader["first_name"].ToString(), dataReader["last_name"].ToString(), Convert.ToInt32(dataReader["BSN"]), dataReader["email"].ToString(), dataReader["first_working_date"].ToString(), dataReader["last_working_date"].ToString(), dataReader["birthdate"].ToString(), dataReader["contract_type"].ToString(), Convert.ToDouble(dataReader["hourly_wage"]), dataReader["address"].ToString(), dataReader["department"].ToString(), dataReader["role"].ToString(),dataReader["username"].ToString(),dataReader["password"].ToString());
                         employees.Add(employee);
                     }
                     dataReader.Close();
@@ -132,7 +177,7 @@ namespace MediaBazaarApp
                     MySqlDataReader dataReader = command.ExecuteReader();
                     while (dataReader.Read())
                     {
-                        Employee employee = employee = new Employee(Convert.ToInt32(dataReader["id"]), dataReader["first_name"].ToString(), dataReader["last_name"].ToString(), Convert.ToInt32(dataReader["BSN"]), dataReader["email"].ToString(), dataReader["first_working_date"].ToString(), dataReader["last_working_date"].ToString(), dataReader["birthdate"].ToString(), dataReader["contract_type"].ToString(), Convert.ToDouble(dataReader["hourly_wage"]), dataReader["address"].ToString(), dataReader["department"].ToString(), dataReader["role"].ToString());
+                        Employee employee = employee = new Employee(Convert.ToInt32(dataReader["id"]), dataReader["first_name"].ToString(), dataReader["last_name"].ToString(), Convert.ToInt32(dataReader["BSN"]), dataReader["email"].ToString(), dataReader["first_working_date"].ToString(), dataReader["last_working_date"].ToString(), dataReader["birthdate"].ToString(), dataReader["contract_type"].ToString(), Convert.ToDouble(dataReader["hourly_wage"]), dataReader["address"].ToString(), dataReader["department"].ToString(), dataReader["role"].ToString(),dataReader["username"].ToString(),dataReader["password"].ToString());
                         employees.Add(employee);
                     }
                     dataReader.Close();
