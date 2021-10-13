@@ -17,6 +17,13 @@
     <Compile Update="LogInForm.cs">
       <SubType>Form</SubType>
     </Compile>
+<<<<<<< HEAD
+    <Compile Update="ProductDescription.cs">
+=======
+    <Compile Update="PendingList.cs">
+>>>>>>> hristo_prj
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="StockManager.cs">
       <SubType>Form</SubType>
     </Compile>

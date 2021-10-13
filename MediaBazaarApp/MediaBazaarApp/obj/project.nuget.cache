@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ILRykvSIoAmiHzcZ6PNyG7SCTECvZQ3bzD+fWZJlUql47zOuml63+D8tkd2YvijqLnC8Jm3w6LZGIFKskEsTLw==",
+  "dgSpecHash": "wREZvuuK7D0xPN2xs3rKr9lO8MqKzVI60tFd8FFcR7+EK3Ge/qFHNF+ZJdu9EL5VuEvhhObtHwKDsihbikW4uQ==",
   "success": true,
-  "projectFilePath": "C:\\xampp\\htdocs\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarApp\\MediaBazaarApp.csproj",
+  "projectFilePath": "C:\\HRISTO TANCHEV\\Fontaka\\Semester 2 take 2\\PRJ\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarApp\\MediaBazaarApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Hristo\\.nuget\\packages\\bouncycastle.netcore\\1.8.5\\bouncycastle.netcore.1.8.5.nupkg.sha512",
     "C:\\Users\\Hristo\\.nuget\\packages\\google.protobuf\\3.14.0\\google.protobuf.3.14.0.nupkg.sha512",

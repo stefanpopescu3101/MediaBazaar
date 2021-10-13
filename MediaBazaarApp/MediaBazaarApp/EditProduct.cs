@@ -25,7 +25,7 @@ namespace MediaBazaarApp
         private void btnEditProduct_Click(object sender, EventArgs e)
         {
             if(tbProductName.Text != "" || tbProductBoughtFor.Text != "" || tbProductSellingFor.Text != "" || tbProductBrand.Text != "" ||
-                tbProductDescription.Text != "" || cbProductSize.Text != "" || tbThreshold.Text != "" || tbMaxCapacity.Text != "" || tbMeasurements.Text != "")
+                cbProductSize.Text != "" || tbThreshold.Text != "" || tbMaxCapacity.Text != "" || tbMeasurements.Text != "")
             {
                 int maxCapacity = 0;
                 int threshold = 0;
@@ -39,7 +39,7 @@ namespace MediaBazaarApp
                     }
 
                     this.product.EditProduct(tbProductName.Name, tbProductBrand.Text, Convert.ToDecimal(tbProductBoughtFor.Text),Convert.ToDecimal(tbProductSellingFor.Text),Convert.ToInt32(tbMaxCapacity.Text),
-                        Convert.ToInt32(tbThreshold.Text),Convert.ToDecimal(tbMeasurements.Text), tbProductDescription.Text, cbProductSize.Text);
+                        Convert.ToInt32(tbThreshold.Text),Convert.ToDecimal(tbMeasurements.Text), cbProductSize.Text);
                     this.productManager.Update(this.product);
                     DialogResult box = MessageBox.Show("Data has been edited successfully.");
                     if (box == DialogResult.OK)
@@ -64,7 +64,6 @@ namespace MediaBazaarApp
             this.tbProductBrand.Text = product.Brand;
             this.tbProductBoughtFor.Text = product.CostPrice.ToString();
             this.tbProductSellingFor.Text = product.SellPrice.ToString();
-            this.tbProductDescription.Text = product.Description;
             this.tbMaxCapacity.Text = product.MaxCapacity.ToString();
             this.tbThreshold.Text = product.Threshold.ToString();
             this.cbProductSize.Text = product.BoxSize.ToString();

@@ -41,7 +41,7 @@ namespace MediaBazaarApp
         {
 
             this.DGVProducts.Rows.Clear();
-            this.DGVProducts.ColumnCount = 10;
+            this.DGVProducts.ColumnCount = 11;
             this.DGVProducts.Columns[0].Name = "ID";
             this.DGVProducts.Columns[1].Name = "Name";
             this.DGVProducts.Columns[2].Name = "Brand";
@@ -50,8 +50,9 @@ namespace MediaBazaarApp
             this.DGVProducts.Columns[5].Name = "In Stock";
             this.DGVProducts.Columns[6].Name = "Max Capacity";
             this.DGVProducts.Columns[7].Name = "Threshold";
-            this.DGVProducts.Columns[8].Name = "Measurements";
-            this.DGVProducts.Columns[9].Name = "Box Size";
+            this.DGVProducts.Columns[8].Name = "Sold";
+            this.DGVProducts.Columns[9].Name = "Measurements";
+            this.DGVProducts.Columns[10].Name = "Box Size";
 
             foreach (Product p in productManager.GetProducts())
             {
@@ -105,6 +106,21 @@ namespace MediaBazaarApp
         private void btnLogout_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnViewProduct_Click(object sender, EventArgs e)
+        {
+            if (this.DGVProducts.SelectedCells.Count > 0)
+            {
+                Product product = this.GetProduct();
+
+                ViewProductForm form = new ViewProductForm(product);
+                DialogResult result = form.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    this.LoadAllProducts();
+                }
+            }
         }
     }
 }
