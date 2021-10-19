@@ -1,19 +1,6 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
-    "C:\\HRISTO TANCHEV\\Fontaka\\Semester 2 take 2\\PRJ\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarApp\\MediaBazaarApp.csproj": {}
-  },
-  "projects": {
-    "C:\\HRISTO TANCHEV\\Fontaka\\Semester 2 take 2\\PRJ\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarApp\\MediaBazaarApp.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\HRISTO TANCHEV\\Fontaka\\Semester 2 take 2\\PRJ\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarApp\\MediaBazaarApp.csproj",
-        "projectName": "MediaBazaarApp",
-        "projectPath": "C:\\HRISTO TANCHEV\\Fontaka\\Semester 2 take 2\\PRJ\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarApp\\MediaBazaarApp.csproj",
-        "packagesPath": "C:\\Users\\Hristo\\.nuget\\packages\\",
-        "outputPath": "C:\\HRISTO TANCHEV\\Fontaka\\Semester 2 take 2\\PRJ\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarApp\\obj\\",
-=======
     "C:\\Users\\Rawan\\Desktop\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarApp\\MediaBazaarApp.csproj": {}
   },
   "projects": {
@@ -25,7 +12,6 @@
         "projectPath": "C:\\Users\\Rawan\\Desktop\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarApp\\MediaBazaarApp.csproj",
         "packagesPath": "C:\\Users\\Rawan\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Rawan\\Desktop\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarApp\\obj\\",
->>>>>>> 9b46c4b50e757bcdf480b13acd7c133a8421300d
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Rawan\\AppData\\Roaming\\NuGet\\NuGet.Config",

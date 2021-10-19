@@ -844,19 +844,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
-      "projectUniqueName": "C:\\HRISTO TANCHEV\\Fontaka\\Semester 2 take 2\\PRJ\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarApp\\MediaBazaarApp.csproj",
-      "projectName": "MediaBazaarApp",
-      "projectPath": "C:\\HRISTO TANCHEV\\Fontaka\\Semester 2 take 2\\PRJ\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarApp\\MediaBazaarApp.csproj",
-      "packagesPath": "C:\\Users\\Hristo\\.nuget\\packages\\",
-      "outputPath": "C:\\HRISTO TANCHEV\\Fontaka\\Semester 2 take 2\\PRJ\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarApp\\obj\\",
-=======
       "projectUniqueName": "C:\\Users\\Rawan\\Desktop\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarApp\\MediaBazaarApp.csproj",
       "projectName": "MediaBazaarApp",
       "projectPath": "C:\\Users\\Rawan\\Desktop\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarApp\\MediaBazaarApp.csproj",
       "packagesPath": "C:\\Users\\Rawan\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Rawan\\Desktop\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarApp\\obj\\",
->>>>>>> 9b46c4b50e757bcdf480b13acd7c133a8421300d
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Rawan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -911,5 +903,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\Rawan\\Desktop\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarApp\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
