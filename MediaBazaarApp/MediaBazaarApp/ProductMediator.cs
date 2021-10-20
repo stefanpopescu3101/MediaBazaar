@@ -13,8 +13,8 @@ namespace MediaBazaarApp
          {
              if(ConnOpen())
              {
-                 query = "INSERT INTO products(name,brand,cost_price,selling_price,in_stock,max_capacity,threshold,sold,measurements,description,box_size)" +
-                     "VALUE (@name,@brand, @costPrice,@sellingPrice,@inStock,@maxCapacity,@threshold,@sold,@measurements,@description,@box_size)";
+                 query = "INSERT INTO products(name,brand,cost_price,selling_price,in_stock,max_capacity,threshold,sold,measurements,box_size)" +
+                     "VALUE (@name,@brand, @costPrice,@sellingPrice,@inStock,@maxCapacity,@threshold,@sold,@measurements,@box_size)";
                  SqlQuery(query);
 
                  AddWithValue("@name", product.Name);
@@ -27,7 +27,6 @@ namespace MediaBazaarApp
                  AddWithValue("@threshold", product.Threshold);
                  AddWithValue("@sold", product.Sold);
                 AddWithValue("@measurements", product.Measurements);
-                AddWithValue("@description", product.Description);
                 AddWithValue("@box_size", product.BoxSize);
 
                  NonQueryEx();
@@ -71,7 +70,7 @@ namespace MediaBazaarApp
                 query = "UPDATE products SET name = @name, brand = @brand, cost_price = @costPrice," +
                     " selling_price = @sellingPrice," +
                     " in_stock = @inStock, max_capacity = @maxCapacity," +
-                    " threshold = @threshold, measurements = @measurements, description = @description, box_size = @box_size WHERE id = @id";
+                    " threshold = @threshold, measurements = @measurements, box_size = @box_size WHERE id = @id";
 
                 SqlQuery(query);
                 AddWithValue("@name", product.Name);              
@@ -83,12 +82,8 @@ namespace MediaBazaarApp
                 AddWithValue("@maxCapacity", product.MaxCapacity);
                 AddWithValue("@threshold", product.Threshold);
                 AddWithValue("@measurements", product.Measurements);
-                AddWithValue("@description", product.Description);
                 AddWithValue("@box_size", product.BoxSize);
-                //AddWithValue("@sold", product.Sold);
                 AddWithValue("@id", product.ID);
-
-
 
                 NonQueryEx();
 
@@ -122,18 +117,13 @@ namespace MediaBazaarApp
                         Convert.ToInt32(reader["threshold"]),
                         Convert.ToInt32(reader["sold"]),
                        Convert.ToDecimal(reader["measurements"]),
-                        reader["description"].ToString(),
-                        reader["box_size"].ToString()
+                       reader["box_size"].ToString()
                         );
-
-
-
                     product.ID = Convert.ToInt32(reader["id"]);
                     products.Add(product);
                 }
                 Close();
                 return products;
-
             }
             else
             {

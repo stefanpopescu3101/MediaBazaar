@@ -43,6 +43,11 @@ namespace MediaBazaarApp
             this.btnTerminate = new System.Windows.Forms.Button();
             this.btnRemoveEmployee = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.lDate = new System.Windows.Forms.Label();
+            this.btnNextMonth = new System.Windows.Forms.Button();
+            this.btnPreviousMonth = new System.Windows.Forms.Button();
+            this.btnShowCalender = new System.Windows.Forms.Button();
+            this.pCalender = new System.Windows.Forms.Panel();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.cbDepartmentManager = new System.Windows.Forms.ComboBox();
             this.lDepartmentManager = new System.Windows.Forms.Label();
@@ -59,6 +64,7 @@ namespace MediaBazaarApp
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).BeginInit();
             this.groupBox2.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDepartments)).BeginInit();
             this.SuspendLayout();
@@ -206,6 +212,11 @@ namespace MediaBazaarApp
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.lDate);
+            this.tabPage2.Controls.Add(this.btnNextMonth);
+            this.tabPage2.Controls.Add(this.btnPreviousMonth);
+            this.tabPage2.Controls.Add(this.btnShowCalender);
+            this.tabPage2.Controls.Add(this.pCalender);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -213,6 +224,52 @@ namespace MediaBazaarApp
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Workshift Management";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // lDate
+            // 
+            this.lDate.AutoSize = true;
+            this.lDate.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lDate.Location = new System.Drawing.Point(419, 32);
+            this.lDate.Name = "lDate";
+            this.lDate.Size = new System.Drawing.Size(0, 38);
+            this.lDate.TabIndex = 5;
+            // 
+            // btnNextMonth
+            // 
+            this.btnNextMonth.Location = new System.Drawing.Point(961, 32);
+            this.btnNextMonth.Name = "btnNextMonth";
+            this.btnNextMonth.Size = new System.Drawing.Size(145, 29);
+            this.btnNextMonth.TabIndex = 4;
+            this.btnNextMonth.Text = "Next Month";
+            this.btnNextMonth.UseVisualStyleBackColor = true;
+            this.btnNextMonth.Click += new System.EventHandler(this.btnNextMonth_Click);
+            // 
+            // btnPreviousMonth
+            // 
+            this.btnPreviousMonth.Location = new System.Drawing.Point(798, 32);
+            this.btnPreviousMonth.Name = "btnPreviousMonth";
+            this.btnPreviousMonth.Size = new System.Drawing.Size(157, 29);
+            this.btnPreviousMonth.TabIndex = 3;
+            this.btnPreviousMonth.Text = "Previous Month";
+            this.btnPreviousMonth.UseVisualStyleBackColor = true;
+            this.btnPreviousMonth.Click += new System.EventHandler(this.btnPreviousMonth_Click);
+            // 
+            // btnShowCalender
+            // 
+            this.btnShowCalender.Location = new System.Drawing.Point(17, 32);
+            this.btnShowCalender.Name = "btnShowCalender";
+            this.btnShowCalender.Size = new System.Drawing.Size(153, 29);
+            this.btnShowCalender.TabIndex = 2;
+            this.btnShowCalender.Text = "Show Calender";
+            this.btnShowCalender.UseVisualStyleBackColor = true;
+            this.btnShowCalender.Click += new System.EventHandler(this.btnShowCalender_Click);
+            // 
+            // pCalender
+            // 
+            this.pCalender.Location = new System.Drawing.Point(17, 67);
+            this.pCalender.Name = "pCalender";
+            this.pCalender.Size = new System.Drawing.Size(1103, 639);
+            this.pCalender.TabIndex = 1;
             // 
             // tabPage3
             // 
@@ -355,6 +412,8 @@ namespace MediaBazaarApp
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDepartments)).EndInit();
@@ -393,6 +452,11 @@ namespace MediaBazaarApp
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label lDepartmentManager;
         private System.Windows.Forms.ComboBox cbDepartmentManager;
+        private System.Windows.Forms.Label lDate;
+        private System.Windows.Forms.Button btnNextMonth;
+        private System.Windows.Forms.Button btnPreviousMonth;
+        private System.Windows.Forms.Button btnShowCalender;
+        private System.Windows.Forms.Panel pCalender;
     }
 }
 
