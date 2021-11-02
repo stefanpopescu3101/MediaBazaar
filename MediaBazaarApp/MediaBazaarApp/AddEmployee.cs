@@ -47,6 +47,7 @@ namespace MediaBazaarApp
 
                 employeeManager.AddEmployee(employee);
                 employeeManager.GenerateUsernameAndPassword(employee);
+                employeeManager.SendEmail(employee);
                 MessageBox.Show("New employee has been added successfully.");
                 this.Close();
                 this.form1.UpdateDataGridView();

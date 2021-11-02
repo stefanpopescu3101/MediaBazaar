@@ -14,6 +14,7 @@ namespace MediaBazaarApp
         private EmployeeManager employeeManager;
         private EmployeesMediator employeeMediator;
 
+        public EmployeeManager EmployeeManager { get { return employeeManager; } }
         public Scheduler()
         {
             this.shiftManager = new ShiftManager();
@@ -34,18 +35,20 @@ namespace MediaBazaarApp
             return assignedEmployees;
         }
 
-        public List<WorkShift> GetAssignedEmployeesToShift(string date, string type)
+        public List<Employee> GetAssignedEmployeesToShift(string date, string type)
         {
-            List<WorkShift> shifts = new List<WorkShift>();
-            foreach (WorkShift shift in this.AllShifts)
+            List<Employee> employees = new List<Employee>();
+            foreach (WorkShift ws in AllShifts)
             {
-                if (shift.Date == date && shift.Type == type)
+                foreach (Employee emp in employeeManager.GetEmployees())
                 {
-                    shifts.Add(shift);
+                    if (ws.Date == date && ws.Type == type && ws.EmployeeId == emp.ID)
+                    {
+                        employees.Add(emp);
+                    }
                 }
             }
-            return shifts;
-
+            return employees;
         }
         public List<Employee> GetAvailableEmployees(string date, string shiftType)
         {
@@ -65,16 +68,16 @@ namespace MediaBazaarApp
 
         private bool MaximumShifts(Employee employee, string monday1, string sunday1)
         {
-            DateTime monday = DateTime.ParseExact(monday1, "MM/d/yyyy", null);
-            DateTime sunday = DateTime.ParseExact(sunday1, "MM/d/yyyy", null);
+            DateTime monday = DateTime.ParseExact(monday1, "M/d/yyyy", null);
+            DateTime sunday = DateTime.ParseExact(sunday1, "M/d/yyyy", null);
             int numberOfShifts = 0;
 
             foreach (WorkShift shift in this.AllShifts)
             {
                 if (shift.EmployeeId == employee.ID)
                 {
-                    if (DateTime.Compare(monday, DateTime.ParseExact(shift.Date, "MM/d/yyyy", null)) <= 0 &&
-                    DateTime.Compare(sunday, DateTime.ParseExact(shift.Date, "MM/d/yyyy", null)) >= 0)
+                    if (DateTime.Compare(monday, DateTime.ParseExact(shift.Date, "M/d/yyyy", null)) <= 0 &&
+                    DateTime.Compare(sunday, DateTime.ParseExact(shift.Date, "M/d/yyyy", null)) >= 0)
                     {
                         numberOfShifts++;
                     }

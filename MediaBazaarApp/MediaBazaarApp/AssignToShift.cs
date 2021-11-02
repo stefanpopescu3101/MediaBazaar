@@ -29,7 +29,7 @@ namespace MediaBazaarApp
             this.monday = monday;
             this.scheduler = scheduler;
             DisplayInfo();
-            DisplayAvailableEmployees();
+            DisplayEmployees();
         }
 
         private void DisplayInfo()
@@ -38,9 +38,10 @@ namespace MediaBazaarApp
 
         }
 
-        private void DisplayAvailableEmployees()
+        private void DisplayEmployees()
         {
             this.lbAvailablePeople.Items.Clear();
+            lbPeopleInShift.Items.Clear();
 
             List<Employee> availableEmployees = this.scheduler.GetAvailableEmployees( this.date, this.monday, this.sunday);
 
@@ -48,6 +49,52 @@ namespace MediaBazaarApp
             {
                 this.lbAvailablePeople.Items.Add("ID: " + employee.ID + " - " + employee.FirstName + " " + employee.LastName);
             }
+
+            List<Employee> peopleInShift = this.scheduler.GetAssignedEmployeesToShift(this.date, this.shiftType);
+
+            foreach (Employee employee in peopleInShift)
+            {
+                this.lbPeopleInShift.Items.Add("ID: " + employee.ID + " - " + employee.FirstName + " " + employee.LastName);
+            }
+        }
+
+        private void btnAddToShift_Click(object sender, EventArgs e)
+        {
+            if (lbAvailablePeople.SelectedIndex>-1)
+            {
+                string emp = lbAvailablePeople.SelectedItem.ToString();
+                string[] words = emp.Split(' ');
+                int id = Convert.ToInt32(words[1]);
+               Employee employee= scheduler.EmployeeManager.GetEmployee(id);
+                WorkShift workShift = new WorkShift(employee.ID, employee.Name, this.date, this.shiftType, Convert.ToDecimal(employee.HourlyWage), 8);
+                shiftM.Add(workShift);
+                lbAvailablePeople.Items.RemoveAt(lbAvailablePeople.SelectedIndex);
+
+                this.lbPeopleInShift.Items.Add(workShift);
+
+                MessageBox.Show("Employee has been assigned successfully!");
+            }
+            else { MessageBox.Show("Please select an employee first."); }
+        }
+
+        private void btnRemoveFromTheShift_Click(object sender, EventArgs e)
+        {
+            if (lbPeopleInShift.SelectedIndex>-1)
+            {
+                string emp = lbPeopleInShift.SelectedItem.ToString();
+                string[] words = emp.Split(' ');
+                int id = Convert.ToInt32(words[1]);
+                Employee employee = scheduler.EmployeeManager.GetEmployee(id);
+
+                this.shiftM.RemoveEmployeesCurrentShifts(employee, this.date);
+
+                this.lbPeopleInShift.Items.RemoveAt(lbPeopleInShift.SelectedIndex);
+                this.lbAvailablePeople.Items.Add("ID: " + employee.ID + " - " + employee.FirstName + " " + employee.LastName);
+
+                MessageBox.Show("The shift has been successfully canceled for the selected employee.");
+            }
+            else { MessageBox.Show("Please select an employee to be removed from the schedule."); }
+
         }
     }
 }

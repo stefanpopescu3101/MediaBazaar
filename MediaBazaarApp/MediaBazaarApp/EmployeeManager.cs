@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace MediaBazaarApp
 {
-    class EmployeeManager
+    public class EmployeeManager
     {
         private static int id = 0;
         List<Employee> employees;
@@ -24,6 +26,17 @@ namespace MediaBazaarApp
             emp.Password = emp.ID + id++.ToString();
             employeesMediator.UpdateUsernameAndPassword(emp);
 
+        }
+        public void SendEmail(Employee emp)
+        {
+            var smtpClient = new SmtpClient("smtp.gmail.com")
+            {
+                Port = 587,
+                Credentials = new NetworkCredential("mediabazaar@gmail.com", "prj"),
+                EnableSsl = true,
+            };
+
+            smtpClient.Send("mediabazzar@gmail.com",emp.Email , "Media Bazaar Credentials", $"Your Username is: {emp.UserName}, Password : {emp.Password}");
         }
         public Employee CheckCredentials(string username,string password)
         {

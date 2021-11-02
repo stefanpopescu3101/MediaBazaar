@@ -431,13 +431,16 @@ namespace MediaBazaarApp
                 for (int l = 0; l < 6 && j <= DateTime.DaysInMonth(indexYear, indexMonth); l++)
                 {
                     Panel p = new Panel { Dock = DockStyle.Right, Width = 180};
-                    Button button;
-                    Button button2;
-                    Button button3;
+                    Button button = new Button { Dock = DockStyle.Bottom };
+                    Button button2 = new Button { Dock = DockStyle.Bottom };
+                    Button button3 = new Button { Dock = DockStyle.Bottom };
+                    button.Tag =  new DateTime(indexYear, indexMonth, j);
+                    button2.Tag = new DateTime(indexYear, indexMonth, j);
+                    button3.Tag = new DateTime (indexYear, indexMonth, j);
                     p.Controls.Add(label=new Label { Text = (j++).ToString(), Dock = DockStyle.Top });
-                    p.Controls.Add(button= new Button { Dock = DockStyle.Bottom });
-                    p.Controls.Add(button2 = new Button { Dock = DockStyle.Bottom });
-                    p.Controls.Add(button3 = new Button { Dock = DockStyle.Bottom });
+                    p.Controls.Add(button);
+                    p.Controls.Add(button2);
+                    p.Controls.Add(button3);
                     weekPanel.Controls.Add(p);
                     button.Click += Button_Click;
                     button2.Click += Button2_Click;
@@ -454,39 +457,58 @@ namespace MediaBazaarApp
             ShowInLabel();
 
         }
+        private bool CheckIfDateInThePast(DateTime date)
+        {
+            string currentDate = DateTime.Now.ToString("MM/dd/yyyy");
+            if (DateTime.Compare(date, DateTime.ParseExact(currentDate, "MM/dd/yyyy", null)) < 0)
+            {
+                MessageBox.Show("You can not schedule employees for a date in the past.");
+                return false;
+            }
+            return true;
+        }
         private void Button_Click(object sender, EventArgs e)
         {
-            DateTime date = DateTime.ParseExact($"{indexMonth}/{label.Text}/{indexYear}", "MM/dd/yyyy", null);
+            DateTime date = (DateTime)((Button)sender).Tag;
 
             // lastMonday is always the Monday before nextSunday.
             // When date is a Sunday, lastMonday will be tomorrow.     
             int offset = date.DayOfWeek - DayOfWeek.Monday;
             DateTime lastMonday = date.AddDays(-offset);
             DateTime nextSunday = lastMonday.AddDays(6);
-            AssignToShift shift = new AssignToShift(scheduler,shiftManager,"MORNING",date.ToString("d"),lastMonday.ToString("d"),nextSunday.ToString("d"));
-            shift.ShowDialog();
+            if (CheckIfDateInThePast(date))
+            {
+                AssignToShift shift = new AssignToShift(scheduler, shiftManager, "MORNING", date.ToString("d"), lastMonday.ToString("d"), nextSunday.ToString("d"));
+                shift.ShowDialog();
+            }
         }
         private void Button2_Click(object sender, EventArgs e)
         {
-            DateTime date = DateTime.ParseExact($"{indexMonth}/{label.Text}/{indexYear}", "MM/dd/yyyy", null);
+            DateTime date = (DateTime)((Button)sender).Tag;
             // lastMonday is always the Monday before nextSunday.
             // When date is a Sunday, lastMonday will be tomorrow.     
             int offset = date.DayOfWeek - DayOfWeek.Monday;
             DateTime lastMonday = date.AddDays(-offset);
             DateTime nextSunday = lastMonday.AddDays(6);
-            AssignToShift shift = new AssignToShift(scheduler, shiftManager, "AFTERNOON", date.ToString("d"), lastMonday.ToString("d"), nextSunday.ToString("d"));
-            shift.ShowDialog();
+            if (CheckIfDateInThePast(date))
+            {
+                AssignToShift shift = new AssignToShift(scheduler, shiftManager, "AFTERNOON", date.ToString("d"), lastMonday.ToString("d"), nextSunday.ToString("d"));
+                shift.ShowDialog();
+            }
         }
         private void Button3_Click(object sender, EventArgs e)
         {
-            DateTime date = DateTime.ParseExact($"{indexMonth}/{label.Text}/{indexYear}", "MM/dd/yyyy", null);
+            DateTime date = (DateTime)((Button)sender).Tag;
             // lastMonday is always the Monday before nextSunday.
             // When date is a Sunday, lastMonday will be tomorrow.     
             int offset = date.DayOfWeek - DayOfWeek.Monday;
             DateTime lastMonday = date.AddDays(-offset);
             DateTime nextSunday = lastMonday.AddDays(6);
-            AssignToShift shift = new AssignToShift(scheduler, shiftManager, "EVENING", date.ToString("d"), lastMonday.ToString("d"), nextSunday.ToString("d"));
-            shift.ShowDialog();
+            if (CheckIfDateInThePast(date))
+            {
+                AssignToShift shift = new AssignToShift(scheduler, shiftManager, "EVENING", date.ToString("d"), lastMonday.ToString("d"), nextSunday.ToString("d"));
+                shift.ShowDialog();
+            }
         }
         private void ShowInLabel()
         {

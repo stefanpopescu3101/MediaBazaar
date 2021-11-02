@@ -120,6 +120,7 @@ namespace MediaBazaarApp
             }
             return workShifts;
         }
+      
 
         public bool CheckShiftsInTheFuture(Employee employee, string lastWorkingDate)
         {
@@ -144,13 +145,13 @@ namespace MediaBazaarApp
             return false;
         }
 
-        public bool RemoveEmployeesCurrentShifts(Employee employee)
+        public bool RemoveEmployeesCurrentShifts(Employee employee,string date)
         {
             this.Load();
 
             for (int i = 0; i < this.WorkShifts.Count; i++)
             {
-                if (this.WorkShifts[i].EmployeeId == employee.ID)
+                if (this.WorkShifts[i].EmployeeId == employee.ID && this.WorkShifts[i].Date==date)
                 {
                     this.WorkShifts[i].CancelShift();
                     this.shiftMediator.Update(WorkShifts[i]);

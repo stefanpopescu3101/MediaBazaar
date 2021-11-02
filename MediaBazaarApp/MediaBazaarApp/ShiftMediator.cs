@@ -66,7 +66,7 @@ namespace MediaBazaarApp
                 while (reader.Read())
                 {
                     WorkShift workshift = new WorkShift(
-                        Convert.ToInt32(reader["id"]),
+                        Convert.ToInt32(reader["employeeID"]),
                         reader["employeeName"].ToString(),
                         reader["Date"].ToString(),
                         (reader["type"]).ToString(),

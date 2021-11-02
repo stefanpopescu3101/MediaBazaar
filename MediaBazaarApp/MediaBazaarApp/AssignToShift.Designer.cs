@@ -35,13 +35,15 @@ namespace MediaBazaarApp
             this.lMinimum = new System.Windows.Forms.Label();
             this.btnAddToShift = new System.Windows.Forms.Button();
             this.btnRemoveFromTheShift = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbPeopleInShift
             // 
             this.lbPeopleInShift.FormattingEnabled = true;
             this.lbPeopleInShift.ItemHeight = 20;
-            this.lbPeopleInShift.Location = new System.Drawing.Point(23, 74);
+            this.lbPeopleInShift.Location = new System.Drawing.Point(526, 64);
             this.lbPeopleInShift.Name = "lbPeopleInShift";
             this.lbPeopleInShift.Size = new System.Drawing.Size(225, 364);
             this.lbPeopleInShift.TabIndex = 0;
@@ -50,7 +52,7 @@ namespace MediaBazaarApp
             // 
             this.lbAvailablePeople.FormattingEnabled = true;
             this.lbAvailablePeople.ItemHeight = 20;
-            this.lbAvailablePeople.Location = new System.Drawing.Point(553, 74);
+            this.lbAvailablePeople.Location = new System.Drawing.Point(25, 64);
             this.lbAvailablePeople.Name = "lbAvailablePeople";
             this.lbAvailablePeople.Size = new System.Drawing.Size(225, 364);
             this.lbAvailablePeople.TabIndex = 1;
@@ -58,7 +60,7 @@ namespace MediaBazaarApp
             // lDateOfShift
             // 
             this.lDateOfShift.AutoSize = true;
-            this.lDateOfShift.Location = new System.Drawing.Point(376, 28);
+            this.lDateOfShift.Location = new System.Drawing.Point(327, 26);
             this.lDateOfShift.Name = "lDateOfShift";
             this.lDateOfShift.Size = new System.Drawing.Size(41, 20);
             this.lDateOfShift.TabIndex = 2;
@@ -81,6 +83,7 @@ namespace MediaBazaarApp
             this.btnAddToShift.TabIndex = 4;
             this.btnAddToShift.Text = "Assign";
             this.btnAddToShift.UseVisualStyleBackColor = true;
+            this.btnAddToShift.Click += new System.EventHandler(this.btnAddToShift_Click);
             // 
             // btnRemoveFromTheShift
             // 
@@ -90,12 +93,35 @@ namespace MediaBazaarApp
             this.btnRemoveFromTheShift.TabIndex = 5;
             this.btnRemoveFromTheShift.Text = "Remove";
             this.btnRemoveFromTheShift.UseVisualStyleBackColor = true;
+            this.btnRemoveFromTheShift.Click += new System.EventHandler(this.btnRemoveFromTheShift_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(45, 38);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(174, 23);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Available Employees";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(548, 38);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(172, 23);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Assigned Employees\r\n";
             // 
             // AssignToShift
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnRemoveFromTheShift);
             this.Controls.Add(this.btnAddToShift);
             this.Controls.Add(this.lMinimum);
@@ -117,5 +143,7 @@ namespace MediaBazaarApp
         private System.Windows.Forms.Label lMinimum;
         private System.Windows.Forms.Button btnAddToShift;
         private System.Windows.Forms.Button btnRemoveFromTheShift;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
