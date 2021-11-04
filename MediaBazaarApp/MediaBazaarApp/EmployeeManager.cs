@@ -32,11 +32,11 @@ namespace MediaBazaarApp
             var smtpClient = new SmtpClient("smtp.gmail.com")
             {
                 Port = 587,
-                Credentials = new NetworkCredential("rwnalhabsi98@gmail.com", "Ra94703319"),
+                Credentials = new NetworkCredential("rash.software.dev@gmail.com", "project123rash"),
                 EnableSsl = true,
             };
 
-            smtpClient.Send("mediabazzar@gmail.com",emp.Email , "Media Bazaar Credentials", $"Your Username is: {emp.UserName}, Password : {emp.Password}");
+            smtpClient.Send("rash.software.dev@gmail.com", emp.Email , "Media Bazaar Credentials", $"Your Username is: {emp.UserName}, Password : {emp.Password}");
         }
         public Employee CheckCredentials(string username,string password)
         {
