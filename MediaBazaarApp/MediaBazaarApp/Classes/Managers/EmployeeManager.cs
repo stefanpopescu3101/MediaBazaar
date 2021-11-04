@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MediaBazaarApp
 {
-    class EmployeeManager
+    public class EmployeeManager
     {
         private static int id = 0;
         List<Employee> employees;
