@@ -68,13 +68,11 @@ namespace MediaBazaarApp
                Employee employee= scheduler.EmployeeManager.GetEmployee(id);
                 WorkShift workShift = new WorkShift(employee.ID, employee.Name, this.date, this.shiftType, Convert.ToDecimal(employee.HourlyWage), 8);
                 shiftM.Add(workShift);
-                lbAvailablePeople.Items.RemoveAt(lbAvailablePeople.SelectedIndex);
-
-                this.lbPeopleInShift.Items.Add(workShift);
-
+               
                 MessageBox.Show("Employee has been assigned successfully!");
             }
             else { MessageBox.Show("Please select an employee first."); }
+            DisplayEmployees();
         }
 
         private void btnRemoveFromTheShift_Click(object sender, EventArgs e)
@@ -88,12 +86,10 @@ namespace MediaBazaarApp
 
                 this.shiftM.RemoveEmployeesCurrentShifts(employee, this.date);
 
-                this.lbPeopleInShift.Items.RemoveAt(lbPeopleInShift.SelectedIndex);
-                this.lbAvailablePeople.Items.Add("ID: " + employee.ID + " - " + employee.FirstName + " " + employee.LastName);
-
                 MessageBox.Show("The shift has been successfully canceled for the selected employee.");
             }
             else { MessageBox.Show("Please select an employee to be removed from the schedule."); }
+            DisplayEmployees();
 
         }
     }

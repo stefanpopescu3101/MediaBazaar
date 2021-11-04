@@ -32,7 +32,7 @@ namespace MediaBazaarApp
             var smtpClient = new SmtpClient("smtp.gmail.com")
             {
                 Port = 587,
-                Credentials = new NetworkCredential("mediabazaar@gmail.com", "prj"),
+                Credentials = new NetworkCredential("rwnalhabsi98@gmail.com", "Ra94703319"),
                 EnableSsl = true,
             };
 
