@@ -121,7 +121,7 @@ namespace MediaBazaarApp
         public Employee(int id,string firstName, string lastName, int BSN, string email,
     string firstWorkingDate, string lastWorkingDate, string birthdate,
     string contractType, double hourlyWage, string address,
-    string department,string role)
+    string department, string departureReason, string role)
         {
             this.id = id;
             this.firstName = firstName;
@@ -135,6 +135,7 @@ namespace MediaBazaarApp
             this.hourlyWage = hourlyWage;
             this.address = address;
             this.department = department;
+            this.departureReason = departureReason;
             this.role = role;
         }
 

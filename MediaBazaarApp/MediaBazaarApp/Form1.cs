@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace MediaBazaarApp
 {
@@ -15,6 +16,8 @@ namespace MediaBazaarApp
         EmployeeManager employeeManager;
         private AddEmployee addEmployeeForm;
         private UpdateEmployee updateEmployeeForm;
+        private TerminateEmployee_sContract terminateEmployeeForm;
+        private EmployeeStatistics employeeStatisticsForm;
         DepartmentManager departmentM;
         UserManager userM;
         public string Id;
@@ -27,9 +30,8 @@ namespace MediaBazaarApp
             userM = new UserManager();
             departmentM.Load();
             UpdateListInDepartmentManagement();
-            dgvEmployees.Rows.Clear();
-            //lblSelectedId.Text = SelectedItemID();
-
+            tbSearch.Enabled = false;
+            ClearFilters();
             UpdateDataGridView();
 
             dgvEmployees.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -39,13 +41,22 @@ namespace MediaBazaarApp
         {
             cbDepartmentManager.Items.Clear();
             LoadDGVColumns();
-            
+            LoadColumnsIntoCombobox();
 
             foreach (Employee e in employeeManager.GetEmployees())
             {
-                this.dgvEmployees.Rows.Add(e.ID, e.FirstName, e.LastName, e.Bsn, e.Email, e.FirstWorkingDate, e.LastWorkingDate, e.Birthdate, e.ContractType, e.HourlyWage, e.Address, e.Department);
+                this.dgvEmployees.Rows.Add(e.ID, e.FirstName, e.LastName, e.Bsn, e.Email, e.FirstWorkingDate, e.LastWorkingDate, e.Birthdate, e.ContractType, e.HourlyWage, e.Address, e.Department, e.DepartureReason);
                 cbDepartmentManager.Items.Add(e);
                 
+            }
+
+            foreach (DataGridViewRow row in dgvEmployees.Rows)
+            {
+                if (row.Cells[12].Value != "")
+                {
+                    row.DefaultCellStyle.BackColor = Color.LightCoral;
+                }
+
             }
         }
 
@@ -53,33 +64,99 @@ namespace MediaBazaarApp
         {
             dgvEmployees.Rows.Clear();
             cbDepartmentManager.Items.Clear();
-            this.dgvEmployees.ColumnCount = 13;
+            this.dgvEmployees.ColumnCount = 14;
             this.dgvEmployees.Columns[0].Name = "ID";
             this.dgvEmployees.Columns[1].Name = "First name";
             this.dgvEmployees.Columns[2].Name = "Last name";
             this.dgvEmployees.Columns[3].Name = "BSN";
             this.dgvEmployees.Columns[4].Name = "Email";
-            this.dgvEmployees.Columns[5].Name = "First working date";
-            this.dgvEmployees.Columns[6].Name = "Last working date";
+            this.dgvEmployees.Columns[5].Name = "Start date";
+            this.dgvEmployees.Columns[6].Name = "End date";
             this.dgvEmployees.Columns[7].Name = "Birthdate";
             this.dgvEmployees.Columns[8].Name = "Contract type";
-            this.dgvEmployees.Columns[9].Name = "Hourly wage";
+            this.dgvEmployees.Columns[9].Name = "Hourly wage"; 
             this.dgvEmployees.Columns[10].Name = "Address";
             this.dgvEmployees.Columns[11].Name = "Department";
-            this.dgvEmployees.Columns[12].Name = "Role";
+            this.dgvEmployees.Columns[12].Name = "Departure reason";
+            this.dgvEmployees.Columns[13].Name = "Role";
 
         }
 
-        public void SearchEmployee()
+        public void LoadColumnsIntoCombobox()
+        {
+            cbColumnChoice.Items.Clear();
+            for (int i = 0; i < 4; i++)
+            {
+                cbColumnChoice.Items.Add(dgvEmployees.Columns[i].Name);
+            }
+        }
+
+        public void SearchEmployeeByID()
+        {
+            LoadDGVColumns();
+            if (Regex.IsMatch(tbSearch.Text, @"^\d+$"))
+            {
+                foreach (Employee e in employeeManager.GetEmployees())
+                {
+                    if (e.ID == Convert.ToInt32(tbSearch.Text))
+                    {
+                        this.dgvEmployees.Rows.Add(e.ID, e.FirstName, e.LastName, e.Bsn, e.Email, e.FirstWorkingDate, e.LastWorkingDate, e.Birthdate, e.ContractType, e.HourlyWage, e.Address, e.Department);
+                    }
+                }
+
+            }
+            else
+            {
+                ClearFilters();
+                MessageBox.Show("Please enter a number.");
+            }
+        }
+
+        public void SearchEmployeeByFirstName()
         {
             LoadDGVColumns();
 
             foreach (Employee e in employeeManager.GetEmployees())
-            
-                if(e.ID == Convert.ToInt32(tbSearch.Text))
+            {
+                if (e.FirstName == tbSearch.Text)
                 {
                     this.dgvEmployees.Rows.Add(e.ID, e.FirstName, e.LastName, e.Bsn, e.Email, e.FirstWorkingDate, e.LastWorkingDate, e.Birthdate, e.ContractType, e.HourlyWage, e.Address, e.Department);
                 }
+            }
+        }
+
+        public void SearchEmployeeByLastName()
+        {
+            LoadDGVColumns();
+
+            foreach (Employee e in employeeManager.GetEmployees())
+            {
+                if (e.LastName == tbSearch.Text)
+                {
+                    this.dgvEmployees.Rows.Add(e.ID, e.FirstName, e.LastName, e.Bsn, e.Email, e.FirstWorkingDate, e.LastWorkingDate, e.Birthdate, e.ContractType, e.HourlyWage, e.Address, e.Department);
+                }
+            }
+        }
+
+        public void SearchEmployeeByBSN()
+        {
+            LoadDGVColumns();
+
+            if (Regex.IsMatch(tbSearch.Text, @"^\d+$"))
+            {
+                foreach (Employee e in employeeManager.GetEmployees())
+                {
+                    if (e.Bsn == Convert.ToInt32(tbSearch.Text))
+                    {
+                        this.dgvEmployees.Rows.Add(e.ID, e.FirstName, e.LastName, e.Bsn, e.Email, e.FirstWorkingDate, e.LastWorkingDate, e.Birthdate, e.ContractType, e.HourlyWage, e.Address, e.Department);
+                    }
+                }
+            }
+            else
+            {
+                ClearFilters();
+                MessageBox.Show("Please enter a number.");
+            }
         }
 
         private void UpdateListInDepartmentManagement()
@@ -132,8 +209,16 @@ namespace MediaBazaarApp
 
         private void btnUpdateInfo_Click(object sender, EventArgs e)
         {
-            updateEmployeeForm = new UpdateEmployee(this,this.departmentM);
-            updateEmployeeForm.Show();
+            if(dgvEmployees.SelectedRows.Count > -1)
+            {
+                Employee employee = employeeManager.GetEmployee(Convert.ToInt32(SelectedItemID()));
+                if (employee.DepartureReason == "")
+                {
+                    updateEmployeeForm = new UpdateEmployee(this, this.departmentM);
+                    updateEmployeeForm.Show();
+                }
+                else MessageBox.Show("This employee's contract is no longer active.");
+            }
         }
 
         private void btnViewPendingList_Click(object sender, EventArgs e)
@@ -210,7 +295,20 @@ namespace MediaBazaarApp
 
         private void btnTerminate_Click(object sender, EventArgs e)
         {
-       
+            if (dgvEmployees.SelectedRows.Count > -1)
+            {
+                int r = this.dgvEmployees.SelectedCells[0].RowIndex;
+                DataGridViewRow row = this.dgvEmployees.Rows[r];
+                int id = Convert.ToInt32(row.Cells["ID"].Value);
+                Employee emp = this.employeeManager.GetEmployee(id);
+                Employee employee = employeeManager.GetEmployee(Convert.ToInt32(SelectedItemID()));
+                if (emp.DepartureReason == "")
+                {
+                    terminateEmployeeForm = new TerminateEmployee_sContract(this);
+                    terminateEmployeeForm.Show();
+                }
+                else MessageBox.Show("This employee's contract had already been terminated");
+            }
         }
 
         private void btnViewEmployeesOfDepartment_Click(object sender, EventArgs e)
@@ -290,7 +388,7 @@ namespace MediaBazaarApp
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            addEmployeeForm = new AddEmployee(this,departmentM);
+            addEmployeeForm = new AddEmployee(this, departmentM);
             addEmployeeForm.ShowDialog();
             UpdateDataGridView();
         }
@@ -362,27 +460,79 @@ namespace MediaBazaarApp
 
         private void btnSearchByID_Click(object sender, EventArgs e)
         {
-            string searchValue = tbSearch.Text;
+            string columnName = cbColumnChoice.Text;
 
-            dgvEmployees.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            try
+            if(columnName == "ID")
             {
-                foreach (DataGridViewRow row in dgvEmployees.Rows)
-                {
-                    if (row.Cells[0].Value.ToString().Equals(searchValue))
-                    {
-                        SearchEmployee();
-                        break;
-                    }
-                }
+                SearchEmployeeByID();
             }
-            catch (Exception exc)
+            else if(columnName == "First name")
             {
-                MessageBox.Show(exc.Message);
+                SearchEmployeeByFirstName();
             }
+            else if(columnName == "Last name")
+            {
+                SearchEmployeeByLastName();
+            }
+            else if(columnName == "BSN")
+            {
+                SearchEmployeeByBSN();
+            }
+
+            //this.dgvEmployees.Rows.Clear();
+            //if (searchValue != "")
+            //{
+            //    Employee emp = this.employeeManager.GetEmployee(Convert.ToInt32(searchValue));
+            //    if (emp != null)
+            //    {
+            //        this.dgvEmployees.Rows.Add(emp.ID, emp.FirstName, emp.LastName, emp.Bsn, emp.Email, emp.FirstWorkingDate, emp.LastWorkingDate, emp.Birthdate, emp.ContractType, emp.HourlyWage, emp.Address, emp.Department);
+            //    }
+            //    else MessageBox.Show("No employee found.");
+            //}
+            //else
+            //{
+            //    UpdateDataGridView();
+            //    MessageBox.Show("Enter the required data in order to search for an employee."); 
+            //}
+
+            //try
+            //{
+            //    foreach (DataGridViewRow row in dgvEmployees.Rows)
+            //    {
+            //        if (row.Cells[2].Value.ToString().Equals(searchValue))
+            //        {
+            //            SearchEmployee();
+            //            break;
+            //        }
+            //    }
+            //}
+            //catch (Exception exc)
+            //{
+            //    MessageBox.Show(exc.Message);
+            //}
+
+            //(dgvEmployees.DataSource as DataTable).DefaultView = String.Format("First name like '%'" + tbSearch.Text + "'%'");
+
+            //if (tbSearch.Text != string.Empty)
+            //{
+            //    foreach (DataGridViewRow row in dgvEmployees.Rows)
+            //    {
+            //        if (row.Cells[1].ToString().Trim().Contains(tbSearch.Text.Trim()))
+            //        {
+            //            row.Visible = true;
+            //        }
+            //        else
+            //            row.Visible = false;
+            //    }
+            //}
         }
 
         private void btnClear_Click(object sender, EventArgs e)
+        {
+            ClearFilters();
+        }
+
+        private void ClearFilters()
         {
             tbSearch.Text = "";
             UpdateDataGridView();
@@ -395,6 +545,22 @@ namespace MediaBazaarApp
 
         private void dgvEmployees_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
         {
+        }
+
+        private void cbColumnChoice_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            tbSearch.Enabled = true;
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnStatistics_Click(object sender, EventArgs e)
+        {
+            employeeStatisticsForm = new EmployeeStatistics(this);
+            employeeStatisticsForm.ShowDialog();
         }
     }
 }

@@ -17,7 +17,7 @@ namespace MediaBazaarApp
         DepartmentManager departmentManager;
 
 
-        public AddEmployee(Form1 employeeOverviewForm,DepartmentManager departmentManager)
+        public AddEmployee(Form1 employeeOverviewForm, DepartmentManager departmentManager)
         {
             InitializeComponent();
             this.form1 = employeeOverviewForm;
@@ -37,9 +37,7 @@ namespace MediaBazaarApp
         }
         private void btnAddEmployee_Click(object sender, EventArgs e)
         {
-
             int age = DateTime.Today.Year - dtpBdate.Value.Year;
-
 
             if (age >= 18)
             {

@@ -45,7 +45,6 @@ namespace MediaBazaarApp
                 if(e.ID == id)
                 {
                     return e;
-
                 }
             }
             return null;
@@ -72,6 +71,12 @@ namespace MediaBazaarApp
         {
             employee.UpdateInfo(firstName, lastName, email, contractType, address, department);
             employeesMediator.Update(employee);
+        }
+
+        public void TerminateEmployeesContract(Employee employee, string endDate, string reason)
+        {
+            employeesMediator.TerminateContract(employee, endDate, reason);
+            employee.TerminateContract(reason, endDate);
         }
     }
 }
