@@ -1,0 +1,82 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div id="page_layout">
+    <div id="table_container">
+        <div class="row">
+            <table float="left" class="col-xs-7 table-bordered table-striped table-condensed table-fixed">
+                <thead>
+                    <tr>
+                        <th class="col">Work shift ID</th>
+                        <th class="col">Period</th>
+                        <th class="col">Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="col">smth</td>
+                        <td class="col">smth</td>
+                        <td class="col">
+                            smth
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="pagination">
+
+            <a class="btn" href="index.php?page=home">Reset</a>
+            <a class="btn" href="index.php?page=home">Previous Month</a>
+            <a class="btn" href="index.php?page=home">Next Month</a>
+
+        </div>
+    </div>
+    <div id="list_container">
+        <div float="left" class="wrapper">
+            <div class="checkbox_container">
+                <div class="title">Unavailable for work shifts</div>
+                <form method="post">
+
+                    <div class='checkbox_wrap'>
+                        Monday
+                        <input type='checkbox' class='checkbox' name='days[]' value='M' />
+                    </div>
+                    <div class="checkbox_wrap">
+                        Tuesday
+                        <input type="checkbox" class="checkbox" name="days[]" value="T" />
+                    </div>
+                    <div class="checkbox_wrap">
+                        Wednesday
+                        <input type="checkbox" class="checkbox" name="days[]" value="W" />
+                    </div>
+                    <div class="checkbox_wrap">
+                        Thursday
+                        <input type="checkbox" class="checkbox" name="days[]" value="Th" />
+                    </div>
+                    <div class="checkbox_wrap">
+                        Friday
+                        <input type="checkbox" class="checkbox" name="days[]" value="F" />
+                    </div>
+                    <div class="checkbox_wrap">
+                        Saturday
+                        <input type="checkbox" class="checkbox" name="days[]" value="S" />
+                    </div>
+                    <div class="checkbox_wrap">
+                        Sunday
+                        <input type="checkbox" class="checkbox" name="days[]" value="U" />
+                    </div>
+
+                    <hr>
+                    <div class="checkbox_wrap">
+                        At night shifts
+                        <input type="checkbox" class="checkbox" name="nightShift" value="True">
+                    </div>
+                    <input id="btnSave" type="submit" value="Save" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

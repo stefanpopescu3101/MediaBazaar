@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MediaBazaarWebsite</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/style.css" />
+</head>
+<body id="home">
+        <div id="header_container">
+            <header>
+                <nav id="navbar">
+                    <h2><a asp-page="/Index"><span class="text-primary">Media</span> Bazaar</a></h2>
+                    <ul>
+                        <li><a asp-page="/Index">Home</a></li>
+                        <li><a asp-page="/Account">Account</a></li>
+                        <li><a asp-page="/UpdateCredential">Change Password</a></li>
+                        <li><a asp-page="/Login">Login </a></li>
+                        <li><a asp-page="/Logout">Logout </a></li>
+                    </ul>
+   
+                </nav>
+            </header>
+        </div>
+        @RenderBody()
+        <div>
+            @RenderSection("scripts", required: false)
+
+        </div>
+
+        <div id="footer_container" style="width: 100%; height:50px; margin-top:5000px">
+            <p align="Center">Copy right &copy; 2021</p>
+        </div>
+
+</body>
+</html>
