@@ -127,5 +127,18 @@ namespace MediaBazaarApp
             return availableEmployees;
         }
 
+        public List<Employee> Search(string item)
+        {
+            List<Employee> employees = this.employeeManager.GetEmployees();
+            List<Employee> foundemployees = new List<Employee>();
+            foreach (Employee emp in employees)
+            {
+                if (item == emp.FirstName || item== emp.LastName || item == emp.ID.ToString())
+                {
+                    foundemployees.Add(emp);
+                }
+            }
+            return foundemployees;
         }
+   }
 }
