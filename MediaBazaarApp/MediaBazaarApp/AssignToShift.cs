@@ -92,5 +92,30 @@ namespace MediaBazaarApp
             DisplayEmployees();
 
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (tbSearch.Text != null)
+            {
+              List<Employee>foundemployees = scheduler.Search(tbSearch.Text);
+                this.lbAvailablePeople.Items.Clear();
+                foreach (Employee employee in foundemployees)
+                {
+                    this.lbAvailablePeople.Items.Add("ID: " + employee.ID + " - " + employee.FirstName + " " + employee.LastName);
+                }
+
+                tbSearch.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("please fill in the text box");
+            }
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            DisplayEmployees();
+            tbSearch.Text = "";
+        }
     }
 }
