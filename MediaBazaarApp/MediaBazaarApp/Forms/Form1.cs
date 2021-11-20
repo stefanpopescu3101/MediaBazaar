@@ -23,12 +23,13 @@ namespace MediaBazaarApp
         private int indexMonth = DateTime.Now.Month;
         private int indexYear = DateTime.Now.Year;
         Label label;
-
+        DepartmentMediator med;
         public Form1()
         {
             InitializeComponent();
             employeeManager = new EmployeeManager();
-            departmentM = new DepartmentManager();
+            med = new DepartmentMediator();
+            departmentM = new DepartmentManager(med);
             userM = new UserManager();
             shiftManager = new ShiftManager();
             scheduler = new Scheduler();
