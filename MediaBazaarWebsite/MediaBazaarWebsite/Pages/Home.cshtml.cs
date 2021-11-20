@@ -18,6 +18,9 @@ namespace MediaBazaarWebsite.Pages
         public Employee Emp { get; set; }
         private LoginMediator med = new LoginMediator();
         public LoginManager manager;
+        public ShiftManager ShiftManager = new ShiftManager();
+       public List<WorkShift> workShifts = new List<WorkShift>();
+
         public HomeModel()
         {
             manager = new LoginManager(med);
@@ -32,9 +35,37 @@ namespace MediaBazaarWebsite.Pages
                 {
                     this.Emp = manager.GetEmployeeByID(Convert.ToInt32(id));
                     Name = Emp.FirstName + " " + Emp.LastName;
+          
                 }
               
             }
         }
+
+        public IActionResult OnPostReset()
+        {
+            string id = HttpContext.Session.GetString("id");
+            this.workShifts = ShiftManager.GetWorkShiftsOfCurrentMonth(Convert.ToInt32(id), DateTime.Now.Month, DateTime.Now.Year);
+            this.Emp = manager.GetEmployeeByID(Convert.ToInt32(id));
+            Name = Emp.FirstName + " " + Emp.LastName;
+            return Page();
+        }
+
+        public IActionResult OnPostPrevious()
+        {
+            string id = HttpContext.Session.GetString("id");
+            this.workShifts = ShiftManager.PreviousMonth(Convert.ToInt32(id), DateTime.Now.Month, DateTime.Now.Year);
+            this.Emp = manager.GetEmployeeByID(Convert.ToInt32(id));
+            Name = Emp.FirstName + " " + Emp.LastName;
+            return Page();
+        }
+        public IActionResult OnPostNext()
+        {
+            string id = HttpContext.Session.GetString("id");
+            this.workShifts = ShiftManager.NextMonth(Convert.ToInt32(id), DateTime.Now.Month, DateTime.Now.Year);
+            this.Emp = manager.GetEmployeeByID(Convert.ToInt32(id));
+            Name = Emp.FirstName + " " + Emp.LastName;
+            return Page();
+        }
+
     }
 }

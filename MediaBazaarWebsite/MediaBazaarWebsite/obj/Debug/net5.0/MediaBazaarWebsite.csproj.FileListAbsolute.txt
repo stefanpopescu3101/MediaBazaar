@@ -98,3 +98,7 @@ C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarWebsite\MediaBazaarWebsite\obj\Deb
 C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarWebsite\MediaBazaarWebsite\obj\Debug\net5.0\MediaBazaarWebsite.pdb
 C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarWebsite\MediaBazaarWebsite\obj\Debug\net5.0\MediaBazaarWebsite.genruntimeconfig.cache
 C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarWebsite\MediaBazaarWebsite\obj\Debug\net5.0\Razor\Pages\Home.cshtml.g.cs
+<<<<<<< HEAD
+=======
+C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarWebsite\MediaBazaarWebsite\obj\Debug\net5.0\Razor\Pages\ResetTable.cshtml.g.cs
+>>>>>>> rwn_branch
