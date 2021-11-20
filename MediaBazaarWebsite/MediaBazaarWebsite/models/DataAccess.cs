@@ -1,10 +1,8 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
-using System.Data;
-using MySql.Data.MySqlClient;
 
 namespace MediaBazaarWebsite.models
 {
@@ -57,6 +55,5 @@ namespace MediaBazaarWebsite.models
         {
             this.command = new MySqlCommand(queryText, this.connection);
         }
-
     }
 }
