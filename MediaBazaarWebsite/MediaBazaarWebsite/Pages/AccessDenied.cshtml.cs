@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace MediaBazaarWebsite.Pages
 {
-    public class LoginModel : PageModel
+    public class AccessDeniedModel : PageModel
     {
         public void OnGet()
         {

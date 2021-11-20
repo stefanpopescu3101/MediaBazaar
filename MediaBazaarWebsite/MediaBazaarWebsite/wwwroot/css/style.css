@@ -464,3 +464,9 @@ button {
     .ca:hover {
         opacity: .7;
     }
+.field-validation-error {
+    color: red;
+}
+.text-decoration {
+    color: red;
+}

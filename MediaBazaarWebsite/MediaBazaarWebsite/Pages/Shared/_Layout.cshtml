@@ -11,13 +11,19 @@
         <div id="header_container">
             <header>
                 <nav id="navbar">
-                    <h2><a asp-page="/Index"><span class="text-primary">Media</span> Bazaar</a></h2>
+                    <h2><a asp-page="/Home"><span class="text-primary">Media</span> Bazaar</a></h2>
                     <ul>
-                        <li><a asp-page="/Index">Home</a></li>
-                        <li><a asp-page="/Account">Account</a></li>
-                        <li><a asp-page="/UpdateCredential">Change Password</a></li>
-                        <li><a asp-page="/Login">Login </a></li>
-                        <li><a asp-page="/Logout">Logout </a></li>
+                        @if (!User.Identity.IsAuthenticated)
+                        {
+                            <li><a asp-page="/Index">Login </a></li>
+                        }
+                        else
+                        {
+                            <li><a asp-page="/Home">Home</a></li>
+                            <li><a asp-page="/Account">Account</a></li>
+                            <li><a asp-page="/UpdateCredential">Change Password</a></li>
+                            <li><a asp-page="/Logout">Logout </a></li>
+                        }
                     </ul>
    
                 </nav>
