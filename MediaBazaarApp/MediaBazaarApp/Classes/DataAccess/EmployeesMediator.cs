@@ -50,9 +50,7 @@ namespace MediaBazaarApp
                     AddWithValue("@address", employee.Address);
                     AddWithValue("@department", employee.Department);
                     AddWithValue("@role", employee.Role);
-
                     //employee.ID = Convert.ToInt32(command.LastInsertedId);
-
                     NonQueryEx();
                     employee.ID = Convert.ToInt32(command.LastInsertedId);
                     Close();
@@ -149,8 +147,6 @@ namespace MediaBazaarApp
                     while (dataReader.Read())
                     {
                         Employee employee = employee = new Employee(Convert.ToInt32(dataReader["id"]),dataReader["first_name"].ToString(), dataReader["last_name"].ToString(), Convert.ToInt32(dataReader["BSN"]), dataReader["email"].ToString(), dataReader["first_working_date"].ToString(), dataReader["last_working_date"].ToString(), dataReader["birthdate"].ToString(), dataReader["contract_type"].ToString(), Convert.ToDouble(dataReader["hourly_wage"]), dataReader["address"].ToString(), dataReader["department"].ToString(), dataReader["role"].ToString(),dataReader["username"].ToString(),dataReader["password"].ToString());
-
-                        //Employee employee = employee = new Employee(Convert.ToInt32(dataReader["id"]),dataReader["first_name"].ToString(), dataReader["last_name"].ToString(), Convert.ToInt32(dataReader["BSN"]), dataReader["email"].ToString(), dataReader["first_working_date"].ToString(), dataReader["last_working_date"].ToString(), dataReader["birthdate"].ToString(), dataReader["contract_type"].ToString(), Convert.ToDouble(dataReader["hourly_wage"]), dataReader["address"].ToString(), dataReader["department"].ToString(), dataReader["departure_reason"].ToString(), dataReader["role"].ToString());
                         employees.Add(employee);
                     }
                     dataReader.Close();
@@ -167,37 +163,6 @@ namespace MediaBazaarApp
             }
             return employees;
         }
-        //public List<Employee> GetEmployeesOfDepartment(Department depart)
-        //{
-        //    List<Employee> employees = new List<Employee>();
-
-        //    if (ConnOpen())
-        //    {
-        //        try
-        //        {
-        //            query = "SELECT * FROM employees WHERE department =@department";
-        //            SqlQuery(query);
-        //            this.AddWithValue("@department",depart.DepartmentName );
-        //            MySqlDataReader dataReader = command.ExecuteReader();
-        //            while (dataReader.Read())
-        //            {
-        //                Employee employee = employee = new Employee(Convert.ToInt32(dataReader["id"]), dataReader["first_name"].ToString(), dataReader["last_name"].ToString(), Convert.ToInt32(dataReader["BSN"]), dataReader["email"].ToString(), dataReader["first_working_date"].ToString(), dataReader["last_working_date"].ToString(), dataReader["birthdate"].ToString(), dataReader["contract_type"].ToString(), Convert.ToDouble(dataReader["hourly_wage"]), dataReader["address"].ToString(), dataReader["department"].ToString(), dataReader["departure_reason"].ToString(), dataReader["role"].ToString());
-        //                employees.Add(employee);
-        //            }
-        //            dataReader.Close();
-        //            return employees;
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            MessageBox.Show(ex.Message);
-        //        }
-        //        finally
-        //        {
-        //            Close();
-        //        }
-        //    }
-        //    return employees;
-        //}
         public List<Employee> GetEmployeesOfDepartment(Department depart)
         {
             List<Employee> employees = new List<Employee>();
@@ -229,7 +194,6 @@ namespace MediaBazaarApp
             }
             return employees;
         }
-
         public bool UpdateRoleAndDepartment(Employee emp, string department, string role)
         {
             if (ConnOpen())
@@ -239,28 +203,6 @@ namespace MediaBazaarApp
                 SqlQuery(query);
                 AddWithValue("@department", department);
                 AddWithValue("@role", role);
-                AddWithValue("@id", emp.ID);
-                NonQueryEx();
-
-                Close();
-                return true;
-            }
-            else
-            {
-                Close();
-                return false;
-            }
-        }
-
-        public bool TerminateContract(Employee emp, string endDate, string reason)
-        {
-            if (ConnOpen())
-            {
-                query = "UPDATE employees SET last_working_date = @endDate, departure_reason = @reason WHERE id = @id";
-
-                SqlQuery(query);
-                AddWithValue("@endDate", endDate);
-                AddWithValue("@reason", reason);
                 AddWithValue("@id", emp.ID);
                 NonQueryEx();
 

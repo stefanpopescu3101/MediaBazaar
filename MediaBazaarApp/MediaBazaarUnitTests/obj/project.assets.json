@@ -6908,19 +6908,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Stefan\\.nuget\\packages\\": {}
+    "C:\\Users\\aniak\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Stefan\\Desktop\\New folder\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarUnitTests\\MediaBazaarUnitTests.csproj",
+      "projectUniqueName": "C:\\Users\\aniak\\OneDrive\\Pulpit\\Fontys\\Sem2.2\\PRJ v2\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarUnitTests\\MediaBazaarUnitTests.csproj",
       "projectName": "MediaBazaarUnitTests",
-      "projectPath": "C:\\Users\\Stefan\\Desktop\\New folder\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarUnitTests\\MediaBazaarUnitTests.csproj",
-      "packagesPath": "C:\\Users\\Stefan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Stefan\\Desktop\\New folder\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarUnitTests\\obj\\",
+      "projectPath": "C:\\Users\\aniak\\OneDrive\\Pulpit\\Fontys\\Sem2.2\\PRJ v2\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarUnitTests\\MediaBazaarUnitTests.csproj",
+      "packagesPath": "C:\\Users\\aniak\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\aniak\\OneDrive\\Pulpit\\Fontys\\Sem2.2\\PRJ v2\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarUnitTests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Stefan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\aniak\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6934,8 +6934,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\Stefan\\Desktop\\New folder\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarApp\\MediaBazaarApp.csproj": {
-              "projectPath": "C:\\Users\\Stefan\\Desktop\\New folder\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarApp\\MediaBazaarApp.csproj"
+            "C:\\Users\\aniak\\OneDrive\\Pulpit\\Fontys\\Sem2.2\\PRJ v2\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarApp\\MediaBazaarApp.csproj": {
+              "projectPath": "C:\\Users\\aniak\\OneDrive\\Pulpit\\Fontys\\Sem2.2\\PRJ v2\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarApp\\MediaBazaarApp.csproj"
             }
           }
         }
@@ -6982,7 +6982,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

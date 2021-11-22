@@ -122,8 +122,6 @@ namespace MediaBazaarApp
     string firstWorkingDate, string lastWorkingDate, string birthdate,
     string contractType, double hourlyWage, string address,
     string department,string role,string username, string password)
-
-    //string department, string departureReason, string role)
         {
             this.id = id;
             this.firstName = firstName;
@@ -140,8 +138,6 @@ namespace MediaBazaarApp
             this.role = role;
             this.username = username;
             this.password = password;
-            //this.departureReason = departureReason;
-            this.role = role;
         }
 
 

@@ -35,8 +35,6 @@ namespace MediaBazaarApp
             this.label2 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnTerminate = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblName = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // dtpLastWorkingDate
@@ -49,11 +47,11 @@ namespace MediaBazaarApp
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(83, 62);
+            this.label1.Location = new System.Drawing.Point(30, 57);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 20);
+            this.label1.Size = new System.Drawing.Size(131, 20);
             this.label1.TabIndex = 1;
-            this.label1.Text = "End date:";
+            this.label1.Text = "Last working Date:";
             // 
             // rtbReason
             // 
@@ -90,33 +88,12 @@ namespace MediaBazaarApp
             this.btnTerminate.TabIndex = 11;
             this.btnTerminate.Text = "Done";
             this.btnTerminate.UseVisualStyleBackColor = true;
-            this.btnTerminate.Click += new System.EventHandler(this.btnTerminate_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(83, 20);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 20);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Employee:";
-            // 
-            // lblName
-            // 
-            this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(167, 20);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(46, 20);
-            this.lblName.TabIndex = 14;
-            this.lblName.Text = "name";
             // 
             // TerminateEmployee_sContract
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(509, 450);
-            this.Controls.Add(this.lblName);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnTerminate);
             this.Controls.Add(this.label2);
@@ -138,7 +115,5 @@ namespace MediaBazaarApp
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnTerminate;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lblName;
     }
 }
