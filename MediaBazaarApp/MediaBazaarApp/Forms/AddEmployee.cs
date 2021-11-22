@@ -16,8 +16,7 @@ namespace MediaBazaarApp
         EmployeeManager employeeManager;
         DepartmentManager departmentManager;
 
-
-        public AddEmployee(Form1 employeeOverviewForm,DepartmentManager departmentManager)
+        public AddEmployee(Form1 employeeOverviewForm, DepartmentManager departmentManager)
         {
             InitializeComponent();
             this.form1 = employeeOverviewForm;

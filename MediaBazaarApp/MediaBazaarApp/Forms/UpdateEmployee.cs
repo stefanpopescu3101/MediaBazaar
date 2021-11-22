@@ -26,6 +26,8 @@ namespace MediaBazaarApp
             employeeManager = new EmployeeManager();
             FillTextboxes();
             LoadDepartments();
+
+            tbID.Enabled = false;
         }
         private void LoadDepartments()
         {
@@ -38,7 +40,8 @@ namespace MediaBazaarApp
         public void FillTextboxes()
         {
             tbID.Text = form1.SelectedItemID();
-             foreach(Employee e in employeeManager.GetEmployees())
+
+            foreach(Employee e in employeeManager.GetEmployees())
             {
                 if(Convert.ToInt32(tbID.Text) == e.ID)
                 {
