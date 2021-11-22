@@ -8,6 +8,8 @@ namespace MediaBazaarApp
 {
     static class Program
     {
+        private static ProductManager productManager;
+
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>

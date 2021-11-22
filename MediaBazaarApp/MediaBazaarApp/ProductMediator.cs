@@ -3,28 +3,31 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 
 namespace MediaBazaarApp
 {
-    public class ProductMediator
+    public class ProductMediator : DataAccess
     {
-        /* public bool Add(Product product)
+         public bool Add(Product product)
          {
-             if(Connection is open)
+             if(ConnOpen())
              {
-                 query = "INSERT INTO product(name, category,cost_price,selling_price,in_stock,max_capacity,threshold,sold,size)" +
-                     "VALUE (@name, @category, @costPrice,@sellingPrice,@inStock,@maxCapacity,@threshold,@sold,@size)";
+                 query = "INSERT INTO products(name,brand,cost_price,selling_price,in_stock,max_capacity,threshold,sold,measurements,box_size)" +
+                     "VALUE (@name,@brand, @costPrice,@sellingPrice,@inStock,@maxCapacity,@threshold,@sold,@measurements,@box_size)";
                  SqlQuery(query);
 
                  AddWithValue("@name", product.Name);
-                 AddWithValue("@category", product.Category);
-                 AddWithValue("@costPrice", product.costPrice);
-                 AddWithValue("@sellingPrice", product.sellingPrice);
-                 AddWithValue("@inStock", product.sellingPrice);
-                 AddWithValue("@maxCapacity", product.maxCapacity);
-                 AddWithValue("@threshold", product.threshold);
-                 AddWithValue("@sold", product.sold);
-                 AddWithValue("@size", product.size);
+                AddWithValue("@brand", product.Brand);
+                //TO DO: AddWithValue("@category", product.);
+                 AddWithValue("@costPrice", product.CostPrice);
+                 AddWithValue("@sellingPrice", product.SellPrice);
+                 AddWithValue("@inStock", product.InStock);
+                 AddWithValue("@maxCapacity", product.MaxCapacity);
+                 AddWithValue("@threshold", product.Threshold);
+                 AddWithValue("@sold", product.Sold);
+                AddWithValue("@measurements", product.Measurements);
+                AddWithValue("@box_size", product.BoxSize);
 
                  NonQueryEx();
 
@@ -43,9 +46,9 @@ namespace MediaBazaarApp
          }
          public bool Remove(Product product)
          {
-             if (Connection is open)
+             if (ConnOpen())
              {
-                 query = "DELETE from product WHERE id = @id";
+                 query = "DELETE from products WHERE id = @id";
                  SqlQuery(query);
                  AddWithValue("@id", product.ID);
                  NonQueryEx();
@@ -62,23 +65,27 @@ namespace MediaBazaarApp
         
         public bool Update(Product product)
         {
-            if (Connection is open)
+            if (ConnOpen())
             {
-                query = "UPDATE product SET name = @name, category = @category, costPrice = @costPrice, sellingPrice = @sellingPrice, inStock = @inStock, maxCapacity = @maxCapacity, threshold = @threshold, sold = @sold, size = @size WHERE id = @id";
+                query = "UPDATE products SET name = @name, brand = @brand, cost_price = @costPrice," +
+                    " selling_price = @sellingPrice," +
+                    " in_stock = @inStock, max_capacity = @maxCapacity," +
+                    " threshold = @threshold, measurements = @measurements, box_size = @box_size WHERE id = @id";
 
                 SqlQuery(query);
-                AddWithValue("@name", product.Name);
-                AddWithValue("@category", product.Category);
+                AddWithValue("@name", product.Name);              
+                AddWithValue("brand", product.Brand);     
+              // TO DO: AddWithValue("@category", product.Category);
                 AddWithValue("@costPrice", product.CostPrice);
-                AddWithValue("@sellingPrice", product.SellingPrice);
-                AddWithValue("@inStock", product.inStock);
-                AddWithValue("@maxCapacity", product.maxCapacity);
+                AddWithValue("@sellingPrice", product.SellPrice);
+                AddWithValue("@inStock", product.InStock);
+                AddWithValue("@maxCapacity", product.MaxCapacity);
                 AddWithValue("@threshold", product.Threshold);
-                AddWithValue("@sold", product.Sold);
-                AddWithValue("@size", product.Size);
+                AddWithValue("@measurements", product.Measurements);
+                AddWithValue("@box_size", product.BoxSize);
+                AddWithValue("@id", product.ID);
 
-               
-                //Non query execute
+                NonQueryEx();
 
                 Close();
                 return true;
@@ -88,6 +95,41 @@ namespace MediaBazaarApp
                 Close();
                 return false;
             }
-        }*/
+        }
+        public List<Product> GetAll()
+        {
+            if (ConnOpen())
+            {
+                query = "SELECT * FROM products";
+                SqlQuery(query);
+
+                List<Product> products = new List<Product>();
+                MySqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    Product product = new Product(
+                        reader["name"].ToString(),
+                        reader["brand"].ToString(),
+                        Convert.ToDecimal(reader["cost_price"]),
+                        Convert.ToDecimal(reader["selling_price"]),
+                        Convert.ToInt32(reader["in_stock"]),
+                        Convert.ToInt32(reader["max_capacity"]),
+                        Convert.ToInt32(reader["threshold"]),
+                        Convert.ToInt32(reader["sold"]),
+                       Convert.ToDecimal(reader["measurements"]),
+                       reader["box_size"].ToString()
+                        );
+                    product.ID = Convert.ToInt32(reader["id"]);
+                    products.Add(product);
+                }
+                Close();
+                return products;
+            }
+            else
+            {
+                Close();
+                return null;
+            }
+        }
     }
 }

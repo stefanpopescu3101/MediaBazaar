@@ -6,15 +6,9 @@ using System.Threading.Tasks;
 
 namespace MediaBazaarApp
 {
-    public class Admin:User
+     class CapacityExeption : Exception
     {
-
-        //public Admin(string username,string password):base(username,password)
-        //{
-
-        //}
-        public Admin()
-
+        public CapacityExeption()
         {
 
         }
