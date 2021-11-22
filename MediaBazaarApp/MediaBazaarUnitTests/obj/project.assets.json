@@ -6908,19 +6908,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Rawan\\.nuget\\packages\\": {}
+    "C:\\Users\\Stefan\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Rawan\\Desktop\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarUnitTests\\MediaBazaarUnitTests.csproj",
+      "projectUniqueName": "C:\\Users\\Stefan\\Desktop\\New folder\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarUnitTests\\MediaBazaarUnitTests.csproj",
       "projectName": "MediaBazaarUnitTests",
-      "projectPath": "C:\\Users\\Rawan\\Desktop\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarUnitTests\\MediaBazaarUnitTests.csproj",
-      "packagesPath": "C:\\Users\\Rawan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Rawan\\Desktop\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarUnitTests\\obj\\",
+      "projectPath": "C:\\Users\\Stefan\\Desktop\\New folder\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarUnitTests\\MediaBazaarUnitTests.csproj",
+      "packagesPath": "C:\\Users\\Stefan\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Stefan\\Desktop\\New folder\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarUnitTests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Rawan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Stefan\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6934,8 +6934,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\Rawan\\Desktop\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarApp\\MediaBazaarApp.csproj": {
-              "projectPath": "C:\\Users\\Rawan\\Desktop\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarApp\\MediaBazaarApp.csproj"
+            "C:\\Users\\Stefan\\Desktop\\New folder\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarApp\\MediaBazaarApp.csproj": {
+              "projectPath": "C:\\Users\\Stefan\\Desktop\\New folder\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarApp\\MediaBazaarApp.csproj"
             }
           }
         }
@@ -6982,7 +6982,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

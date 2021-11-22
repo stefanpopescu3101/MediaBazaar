@@ -60,6 +60,8 @@ namespace MediaBazaarApp
             this.btnUpdateDepartment = new System.Windows.Forms.Button();
             this.btnRemoveDepartment = new System.Windows.Forms.Button();
             this.btnAddDepartment = new System.Windows.Forms.Button();
+            this.btnScheduleReset = new System.Windows.Forms.Button();
+            this.btnAutoSchedule = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).BeginInit();
@@ -212,6 +214,8 @@ namespace MediaBazaarApp
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btnAutoSchedule);
+            this.tabPage2.Controls.Add(this.btnScheduleReset);
             this.tabPage2.Controls.Add(this.lDate);
             this.tabPage2.Controls.Add(this.btnNextMonth);
             this.tabPage2.Controls.Add(this.btnPreviousMonth);
@@ -399,6 +403,26 @@ namespace MediaBazaarApp
             this.btnAddDepartment.UseVisualStyleBackColor = true;
             this.btnAddDepartment.Click += new System.EventHandler(this.btnAddDepartment_Click);
             // 
+            // btnScheduleReset
+            // 
+            this.btnScheduleReset.Location = new System.Drawing.Point(616, 32);
+            this.btnScheduleReset.Name = "btnScheduleReset";
+            this.btnScheduleReset.Size = new System.Drawing.Size(153, 29);
+            this.btnScheduleReset.TabIndex = 6;
+            this.btnScheduleReset.Text = "Reset";
+            this.btnScheduleReset.UseVisualStyleBackColor = true;
+            this.btnScheduleReset.Click += new System.EventHandler(this.btnScheduleReset_Click);
+            // 
+            // btnAutoSchedule
+            // 
+            this.btnAutoSchedule.Location = new System.Drawing.Point(197, 32);
+            this.btnAutoSchedule.Name = "btnAutoSchedule";
+            this.btnAutoSchedule.Size = new System.Drawing.Size(153, 29);
+            this.btnAutoSchedule.TabIndex = 7;
+            this.btnAutoSchedule.Text = "Auto Schedule";
+            this.btnAutoSchedule.UseVisualStyleBackColor = true;
+            this.btnAutoSchedule.Click += new System.EventHandler(this.btnAutoSchedule_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -457,6 +481,8 @@ namespace MediaBazaarApp
         private System.Windows.Forms.Button btnPreviousMonth;
         private System.Windows.Forms.Button btnShowCalender;
         private System.Windows.Forms.Panel pCalender;
+        private System.Windows.Forms.Button btnAutoSchedule;
+        private System.Windows.Forms.Button btnScheduleReset;
     }
 }
 

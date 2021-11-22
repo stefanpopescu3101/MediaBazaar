@@ -458,16 +458,7 @@ namespace MediaBazaarApp
             ShowInLabel();
 
         }
-        private bool CheckIfDateInThePast(DateTime date)
-        {
-            string currentDate = DateTime.Now.ToString("MM/dd/yyyy");
-            if (DateTime.Compare(date, DateTime.ParseExact(currentDate, "MM/dd/yyyy", null)) < 0)
-            {
-                MessageBox.Show("You can not schedule employees for a date in the past.");
-                return false;
-            }
-            return true;
-        }
+   
         private void Button_Click(object sender, EventArgs e)
         {
             DateTime date = (DateTime)((Button)sender).Tag;
@@ -477,7 +468,7 @@ namespace MediaBazaarApp
             int offset = date.DayOfWeek - DayOfWeek.Monday;
             DateTime lastMonday = date.AddDays(-offset);
             DateTime nextSunday = lastMonday.AddDays(6);
-            if (CheckIfDateInThePast(date))
+            if (CheckIfDateInThePast(DateTime.Now.Month, DateTime.Now.Year, date))
             {
                 AssignToShift shift = new AssignToShift(scheduler, shiftManager, "MORNING", date.ToString("d"), lastMonday.ToString("d"), nextSunday.ToString("d"));
                 shift.ShowDialog();
@@ -491,7 +482,7 @@ namespace MediaBazaarApp
             int offset = date.DayOfWeek - DayOfWeek.Monday;
             DateTime lastMonday = date.AddDays(-offset);
             DateTime nextSunday = lastMonday.AddDays(6);
-            if (CheckIfDateInThePast(date))
+            if (CheckIfDateInThePast(DateTime.Now.Month, DateTime.Now.Year, date))
             {
                 AssignToShift shift = new AssignToShift(scheduler, shiftManager, "AFTERNOON", date.ToString("d"), lastMonday.ToString("d"), nextSunday.ToString("d"));
                 shift.ShowDialog();
@@ -505,7 +496,7 @@ namespace MediaBazaarApp
             int offset = date.DayOfWeek - DayOfWeek.Monday;
             DateTime lastMonday = date.AddDays(-offset);
             DateTime nextSunday = lastMonday.AddDays(6);
-            if (CheckIfDateInThePast(date))
+            if (CheckIfDateInThePast(DateTime.Now.Month, DateTime.Now.Year, date))
             {
                 AssignToShift shift = new AssignToShift(scheduler, shiftManager, "EVENING", date.ToString("d"), lastMonday.ToString("d"), nextSunday.ToString("d"));
                 shift.ShowDialog();
@@ -551,6 +542,65 @@ namespace MediaBazaarApp
         private void btnNextMonth_Click(object sender, EventArgs e)
         {
             NextMonth();
+        }
+
+        private void btnAutoSchedule_Click(object sender, EventArgs e)
+        {
+            Scheduler scheduler = new Scheduler();
+
+            DateTime date = new DateTime();
+            date = DateTime.Now;
+            DateTime firstDayOfMonth = new DateTime(date.Year, date.Month, 1);
+            DateTime lastDayofMonth = firstDayOfMonth.AddMonths(1).AddDays(-1);
+
+            int offset = firstDayOfMonth.DayOfWeek - DayOfWeek.Monday;
+            DateTime lastMonday = firstDayOfMonth.AddDays(-offset);
+            DateTime nextSunday = lastMonday.AddDays(6);
+
+
+            scheduler.ScheduleWeek(lastMonday.ToString("d"), nextSunday.ToString("d"));
+
+            lastMonday = lastMonday.AddDays(7);
+            nextSunday = nextSunday.AddDays(7);
+
+            scheduler.ScheduleWeek(lastMonday.ToString("d"), nextSunday.ToString("d"));
+
+            lastMonday = lastMonday.AddDays(7);
+            nextSunday = nextSunday.AddDays(7);
+
+            scheduler.ScheduleWeek(lastMonday.ToString("d"), nextSunday.ToString("d"));
+
+            lastMonday = lastMonday.AddDays(7);
+            nextSunday = nextSunday.AddDays(7);
+
+            scheduler.ScheduleWeek(lastMonday.ToString("d"), nextSunday.ToString("d"));
+        }
+
+        private void btnScheduleReset_Click(object sender, EventArgs e)
+        {
+            Scheduler scheduler = new Scheduler();
+            scheduler.Reset();
+        }
+
+        private bool CheckIfDateInThePast(int month, int year, DateTime date)
+        {
+            if (month != 1)
+            {
+                month--;
+            }
+            else
+            {
+                month = 12;
+                year--;
+            }
+            int lasdate = DateTime.DaysInMonth(year, month);
+            string currentDate = new DateTime(year, month, lasdate).ToString("d");
+            if (DateTime.Compare(date, DateTime.ParseExact(currentDate, "M/d/yyyy", null)) < 0)
+            {
+                MessageBox.Show("You can not schedule employees for a date in the past.");
+                return false;
+            }
+            return true;
         }
     }
 }

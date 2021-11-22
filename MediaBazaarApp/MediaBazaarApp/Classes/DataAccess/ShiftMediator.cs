@@ -111,6 +111,20 @@ namespace MediaBazaarApp
             }
         }
 
-       
+        public void Reset()
+        {
+            if (ConnOpen())
+            {
+                query = "DELETE FROM workshifts ";
+                SqlQuery(query);
+                NonQueryEx();
+
+                Close();
+            }
+            else
+            {
+                Close();
+            }
+        }
     }
 }

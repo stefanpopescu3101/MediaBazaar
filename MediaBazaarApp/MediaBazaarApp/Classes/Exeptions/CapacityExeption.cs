@@ -8,9 +8,11 @@ namespace MediaBazaarApp
 {
      class CapacityExeption : Exception
     {
+
         public CapacityExeption()
         {
 
         }
+
     }
 }
