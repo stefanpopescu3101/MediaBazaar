@@ -10,26 +10,28 @@
         <div class="row">
             <table float="left" class="col-xs-7 table-bordered table-striped table-condensed table-fixed">
 
-                @foreach (var item in Model.workShifts)
-                {
-                    <thead>
-                        <tr>
-                            <th class="col">Work shift ID</th>
-                            <th class="col">Period</th>
-                            <th class="col">Date</th>
-                        </tr>
-                    </thead>
 
+                <thead>
+                    <tr>
+                        <th class="col">Work shift ID</th>
+                        <th class="col">Period</th>
+                        <th class="col">Date</th>
+                    </tr>
+                </thead>
 
+                <tbody>
 
-                    <tbody>
+                    @foreach (var item in Model.workShifts)
+                    {
+
                         <tr>
                             <td class="col">@item.ID</td>
                             <td class="col">@item.Type</td>
                             <td class="col">@item.Date </td>
                         </tr>
+                    }
                     </tbody>
-                }
+                
             </table>
         </div>
         <div class="pagination">
