@@ -13,7 +13,7 @@ using OxyPlot.Annotations;
 using OxyPlot.Axes;
 using OxyPlot.Legends;
 using OxyPlot.Series;
-using OxyPlot.Wpf;
+using OxyPlot.WindowsForms;
 
 namespace MediaBazaarApp
 {
@@ -54,15 +54,15 @@ namespace MediaBazaarApp
         }
 
         private void CreateBarChart()
-        {            
-            //var pv = new PlotView();
-            //pv.Location = new Point(0, 0);
-            //pv.Size = new Size(1100, 629);
-            //this.tabPage1.Controls.Add(pv);
-            ////this.Controls.Add(pv);
-            //pv.Model = new PlotModel();
-            //pv.Model.Title = "Number of Employees Hired & Fired in the last four months.";
-            //pv.Model.IsLegendVisible = true;
+        {
+            var pv = new PlotView();
+            pv.Location = new Point(0, 0);
+            pv.Size = new Size(1100, 629);
+            this.tabPage1.Controls.Add(pv);
+            //this.Controls.Add(pv);
+            pv.Model = new PlotModel();
+            pv.Model.Title = "Number of Employees Hired & Fired in the last four months.";
+            pv.Model.IsLegendVisible = true;
             //{
             //    Title = "BarSeries",
             //    LegendPlacement = LegendPlacement.Outside,
@@ -74,59 +74,59 @@ namespace MediaBazaarApp
             //model.Title = "BarSeries";
 
 
-            //var s1 = new BarSeries { Title = "Series 1", StrokeColor = OxyColors.Black, StrokeThickness = 1 };
-            //s1.Items.Add(new BarItem { Value = 57, Color = OxyColors.Green });
-            //s1.Items.Add(new BarItem { Value = 16, Color = OxyColors.Green });
-            //s1.Items.Add(new BarItem { Value = 33, Color = OxyColors.Green });
-            //s1.Items.Add(new BarItem { Value = 21, Color = OxyColors.Green });
+            var s1 = new BarSeries { Title = "Series 1", StrokeColor = OxyColors.Black, StrokeThickness = 1 };
+            s1.Items.Add(new BarItem { Value = 57, Color = OxyColors.Green });
+            s1.Items.Add(new BarItem { Value = 16, Color = OxyColors.Green });
+            s1.Items.Add(new BarItem { Value = 33, Color = OxyColors.Green });
+            s1.Items.Add(new BarItem { Value = 21, Color = OxyColors.Green });
 
-            //var s2 = new BarSeries { Title = "Series 2", StrokeColor = OxyColors.Black, StrokeThickness = 1 };
-            //s2.Items.Add(new BarItem { Value = 31, Color = OxyColors.Red });
-            //s2.Items.Add(new BarItem { Value = 15, Color = OxyColors.Red });
-            //s2.Items.Add(new BarItem { Value = 21, Color = OxyColors.Red });
-            //s2.Items.Add(new BarItem { Value = 8, Color = OxyColors.Red });
+            var s2 = new BarSeries { Title = "Series 2", StrokeColor = OxyColors.Black, StrokeThickness = 1 };
+            s2.Items.Add(new BarItem { Value = 31, Color = OxyColors.Red });
+            s2.Items.Add(new BarItem { Value = 15, Color = OxyColors.Red });
+            s2.Items.Add(new BarItem { Value = 21, Color = OxyColors.Red });
+            s2.Items.Add(new BarItem { Value = 8, Color = OxyColors.Red });
 
-            //var categoryAxis = new CategoryAxis { Position = AxisPosition.Left };
-            //categoryAxis.Labels.Add("September");
-            //categoryAxis.Labels.Add("October");
-            //categoryAxis.Labels.Add("November");
-            //categoryAxis.Labels.Add("December");
-            //var valueAxis = new LinearAxis { Position = AxisPosition.Bottom, MinimumPadding = 0, MaximumPadding = 0.06, AbsoluteMinimum = 0 };
-            //pv.Model.Series.Add(s1);
-            //pv.Model.Series.Add(s2);
-            //pv.Model.Axes.Add(categoryAxis);
-            //pv.Model.Axes.Add(valueAxis);
+            var categoryAxis = new CategoryAxis { Position = AxisPosition.Left };
+            categoryAxis.Labels.Add("September");
+            categoryAxis.Labels.Add("October");
+            categoryAxis.Labels.Add("November");
+            categoryAxis.Labels.Add("December");
+            var valueAxis = new LinearAxis { Position = AxisPosition.Bottom, MinimumPadding = 0, MaximumPadding = 0.06, AbsoluteMinimum = 0 };
+            pv.Model.Series.Add(s1);
+            pv.Model.Series.Add(s2);
+            pv.Model.Axes.Add(categoryAxis);
+            pv.Model.Axes.Add(valueAxis);
 
             //return pv;
         }
 
         private void CreateLineChart()
         {
-            //PlotView pv = new PlotView();
-            //pv.Location = new Point(0, 0);
-            //pv.Size = new Size(1100, 629);
-            ////this.Controls.Add(pv);
-            //this.tabPage2.Controls.Add(pv);
+            PlotView pv = new PlotView();
+            pv.Location = new Point(0, 0);
+            pv.Size = new Size(1100, 629);
+            //this.Controls.Add(pv);
+            this.tabPage2.Controls.Add(pv);
 
 
-            //pv.Model = new PlotModel { Title = "Employees' number change throughout the year" };
+            pv.Model = new PlotModel { Title = "Employees' number change throughout the year" };
 
-            //FunctionSeries fs = new FunctionSeries();
-            //fs.Points.Add(new OxyPlot.DataPoint(0, 57));
-            //fs.Points.Add(new OxyPlot.DataPoint(1, 40));
-            //fs.Points.Add(new OxyPlot.DataPoint(2, 51));
-            //fs.Points.Add(new OxyPlot.DataPoint(3, 64));
-            //fs.Points.Add(new OxyPlot.DataPoint(4, 50));
-            //fs.Points.Add(new OxyPlot.DataPoint(5, 45));
-            //fs.Points.Add(new OxyPlot.DataPoint(6, 52));
-            //fs.Points.Add(new OxyPlot.DataPoint(7, 58));
-            //fs.Points.Add(new OxyPlot.DataPoint(8, 62));
-            //fs.Points.Add(new OxyPlot.DataPoint(9, 55));
-            //fs.Points.Add(new OxyPlot.DataPoint(10, 49));
-            //fs.Points.Add(new OxyPlot.DataPoint(11, 53));
-            //pv.Model.Series.Add(fs);
+            FunctionSeries fs = new FunctionSeries();
+            fs.Points.Add(new OxyPlot.DataPoint(0, 57));
+            fs.Points.Add(new OxyPlot.DataPoint(1, 40));
+            fs.Points.Add(new OxyPlot.DataPoint(2, 51));
+            fs.Points.Add(new OxyPlot.DataPoint(3, 64));
+            fs.Points.Add(new OxyPlot.DataPoint(4, 50));
+            fs.Points.Add(new OxyPlot.DataPoint(5, 45));
+            fs.Points.Add(new OxyPlot.DataPoint(6, 52));
+            fs.Points.Add(new OxyPlot.DataPoint(7, 58));
+            fs.Points.Add(new OxyPlot.DataPoint(8, 62));
+            fs.Points.Add(new OxyPlot.DataPoint(9, 55));
+            fs.Points.Add(new OxyPlot.DataPoint(10, 49));
+            fs.Points.Add(new OxyPlot.DataPoint(11, 53));
+            pv.Model.Series.Add(fs);
 
-            // pv.Model.Series.Add(getFunction());
+            //pv.Model.Series.Add(getFunction());
             //pv.Model.Series.Add(getLine());
 
             //pv.Model.Series.Add(new FunctionSeries(Math.Exp, 0, 1, 0.1, "e(x)"));
@@ -138,21 +138,21 @@ namespace MediaBazaarApp
 
         private void CreatePieChart()
         {
-            //PlotView pv = new PlotView();
-            //pv.Location = new Point(0, 0);
-            //pv.Size = new Size(1100, 629);
-            //this.tabPage3.Controls.Add(pv);
+            PlotView pv = new PlotView();
+            pv.Location = new Point(0, 0);
+            pv.Size = new Size(1100, 629);
+            this.tabPage3.Controls.Add(pv);
 
-            //pv.Model = new PlotModel { Title = "Number of employees per department" };
+            pv.Model = new PlotModel { Title = "Number of employees per department" };
 
-            //var s1 = new PieSeries { StrokeThickness = 2.0, InsideLabelPosition = 0.8, AngleSpan = 360, StartAngle = 0 };
+            var s1 = new PieSeries { StrokeThickness = 2.0, InsideLabelPosition = 0.8, AngleSpan = 360, StartAngle = 0 };
 
-            //s1.Slices.Add(new PieSlice("HR", 7));
-            //s1.Slices.Add(new PieSlice("Logistics", 10));
-            //s1.Slices.Add(new PieSlice("Sales", 15));
-            //s1.Slices.Add(new PieSlice("Depot Workers", 25));
+            s1.Slices.Add(new PieSlice("HR", 7));
+            s1.Slices.Add(new PieSlice("Logistics", 10));
+            s1.Slices.Add(new PieSlice("Sales", 15));
+            s1.Slices.Add(new PieSlice("Depot Workers", 25));
 
-            //pv.Model.Series.Add(s1);
+            pv.Model.Series.Add(s1);
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

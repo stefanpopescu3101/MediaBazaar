@@ -11,9 +11,9 @@
           "DotNetProjects.WpfToolkit.DataVisualization": "6.0.90",
           "MySql.Data": "8.0.26",
           "OxyPlot.Core": "2.1.0",
-          "OxyPlot.Wpf": "2.1.0",
+          "OxyPlot.WindowsForms": "2.1.0",
           "System.Windows.Controls.DataVisualization.Toolkit": "4.0.0",
-          "System.Windows.Forms.DataVisualization": "1.0.0-prerelease.20110.1"
+          "System.Windows.Forms.DataVisualization": "1.0.0-prerelease.19212.2"
         },
         "runtime": {
           "MediaBazaarApp.dll": {}
@@ -122,24 +122,12 @@
           }
         }
       },
-      "OxyPlot.Wpf/2.1.0": {
-        "dependencies": {
-          "OxyPlot.Core": "2.1.0",
-          "OxyPlot.Wpf.Shared": "2.1.0"
-        },
-        "runtime": {
-          "lib/netcoreapp3.1/OxyPlot.Wpf.dll": {
-            "assemblyVersion": "2.1.0.0",
-            "fileVersion": "2.1.0.0"
-          }
-        }
-      },
-      "OxyPlot.Wpf.Shared/2.1.0": {
+      "OxyPlot.WindowsForms/2.1.0": {
         "dependencies": {
           "OxyPlot.Core": "2.1.0"
         },
         "runtime": {
-          "lib/netcoreapp3.1/OxyPlot.Wpf.Shared.dll": {
+          "lib/netcoreapp3.1/OxyPlot.WindowsForms.dll": {
             "assemblyVersion": "2.1.0.0",
             "fileVersion": "2.1.0.0"
           }
@@ -191,11 +179,11 @@
           "System.Drawing.Common": "4.7.0"
         }
       },
-      "System.Windows.Forms.DataVisualization/1.0.0-prerelease.20110.1": {
+      "System.Windows.Forms.DataVisualization/1.0.0-prerelease.19212.2": {
         "runtime": {
           "lib/netcoreapp3.0/System.Windows.Forms.DataVisualization.dll": {
             "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.20.11001"
+            "fileVersion": "1.0.19.21202"
           }
         }
       }
@@ -277,19 +265,12 @@
       "path": "oxyplot.core/2.1.0",
       "hashPath": "oxyplot.core.2.1.0.nupkg.sha512"
     },
-    "OxyPlot.Wpf/2.1.0": {
+    "OxyPlot.WindowsForms/2.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-behQPbPDbV5+OerxO1E2iKH7dNaDN4OFSCzWF8Dy296p9CG/RFd4KyOEHDmcckZ7mYp5KQ4BMLD+WtQLjDSQvQ==",
-      "path": "oxyplot.wpf/2.1.0",
-      "hashPath": "oxyplot.wpf.2.1.0.nupkg.sha512"
-    },
-    "OxyPlot.Wpf.Shared/2.1.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-ign36iiFEadBUNF7SVgsPn3DCqP1VWjISRVgEChW5M4LNyC9Lz8iOPy1mypQG/imdn0mCQppTjju+0a4k+yTsA==",
-      "path": "oxyplot.wpf.shared/2.1.0",
-      "hashPath": "oxyplot.wpf.shared.2.1.0.nupkg.sha512"
+      "sha512": "sha512-3ehmpvSbTKUOfUSeZdfIyed5kGMdgPGq/MCXi1NXqzDqQhbUZ6OwVrRnfcLKB32WtnDAzwAtchirEaAFPo5iig==",
+      "path": "oxyplot.windowsforms/2.1.0",
+      "hashPath": "oxyplot.windowsforms.2.1.0.nupkg.sha512"
     },
     "System.Buffers/4.5.1": {
       "type": "package",
@@ -375,12 +356,12 @@
       "path": "system.windows.extensions/4.7.0",
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
     },
-    "System.Windows.Forms.DataVisualization/1.0.0-prerelease.20110.1": {
+    "System.Windows.Forms.DataVisualization/1.0.0-prerelease.19212.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-1EdLFl/I5QobO4shpqUNslDGWTeRbpt3pLMSkiLQYzdWBDqf44/8TM5hXMtkA8ktHU80aVZYVEuxr8vJqcB1Ig==",
-      "path": "system.windows.forms.datavisualization/1.0.0-prerelease.20110.1",
-      "hashPath": "system.windows.forms.datavisualization.1.0.0-prerelease.20110.1.nupkg.sha512"
+      "sha512": "sha512-NsozUfyqr2DibaO8C5DnAZkeW4BAIENanVfbKkHQ836ifhPHQK5k2PAJtii+QcIL5pueYnHYE4k55kX8pUBovw==",
+      "path": "system.windows.forms.datavisualization/1.0.0-prerelease.19212.2",
+      "hashPath": "system.windows.forms.datavisualization.1.0.0-prerelease.19212.2.nupkg.sha512"
     }
   }
 }

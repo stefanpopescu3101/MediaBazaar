@@ -52,7 +52,7 @@
               "target": "Package",
               "version": "[2.1.0, )"
             },
-            "OxyPlot.Wpf": {
+            "OxyPlot.WindowsForms": {
               "target": "Package",
               "version": "[2.1.0, )"
             },

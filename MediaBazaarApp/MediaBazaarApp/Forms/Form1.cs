@@ -663,24 +663,23 @@ namespace MediaBazaarApp
 
         private void btnRemoveEmployee_Click_1(object sender, EventArgs e)
         {
-            if (dgvDepartments.SelectedCells.Count > 0)
+            if (dgvEmployees.SelectedCells.Count > -1)
             {
-                DialogResult result = MessageBox.Show("Are you sure you want to remove this department?", "", MessageBoxButtons.YesNo);
-                if (result == DialogResult.Yes)
+                DialogResult confirm = MessageBox.Show("Are you sure you want to remove this employee?", "", MessageBoxButtons.YesNo);
+
+                if (confirm == DialogResult.Yes)
                 {
-                    int r = this.dgvDepartments.SelectedCells[0].RowIndex;
-                    DataGridViewRow row = this.dgvDepartments.Rows[r];
-                    string name = row.Cells["Department Name"].Value.ToString();
-                    Department depart = this.departmentM.GetDepartment(name);
-                    this.departmentM.Remove(depart);
-                    MessageBox.Show("Removed successfully!");
-                }
-                else
-                {
-                    MessageBox.Show("Please select a department");
+                    int r = this.dgvEmployees.SelectedCells[0].RowIndex;
+                    DataGridViewRow row = this.dgvEmployees.Rows[r];
+                    int id = Convert.ToInt32(row.Cells["ID"].Value);
+                    Employee emp = this.employeeManager.GetEmployee(id);
+                    employeeManager.RemoveEmployee(emp);
+                    MessageBox.Show("The employee has been removed successfully!");
                 }
             }
-            UpdateListInDepartmentManagement();
+            else MessageBox.Show("Select the employee first.");
+
+            UpdateDataGridView();
         }
 
         private void btnAdd_Click_1(object sender, EventArgs e)
