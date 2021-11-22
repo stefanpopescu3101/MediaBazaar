@@ -15,6 +15,8 @@ namespace MediaBazaarApp
         EmployeeManager employeeManager;
         private AddEmployee addEmployeeForm;
         private UpdateEmployee updateEmployeeForm;
+        private TerminateEmployee_sContract terminateEmployeeForm;
+        private EmployeeStatistics employeeStatisticsForm;
         DepartmentManager departmentM;
         UserManager userM;
         ShiftManager shiftManager;
@@ -37,7 +39,7 @@ namespace MediaBazaarApp
             UpdateListInDepartmentManagement();
             dgvEmployees.Rows.Clear();
             //lblSelectedId.Text = SelectedItemID();
-
+            //ClearFilters();
             UpdateDataGridView();
 
             dgvEmployees.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -51,9 +53,18 @@ namespace MediaBazaarApp
 
             foreach (Employee e in employeeManager.GetEmployees())
             {
-                this.dgvEmployees.Rows.Add(e.ID, e.FirstName, e.LastName, e.Bsn, e.Email, e.FirstWorkingDate, e.LastWorkingDate, e.Birthdate, e.ContractType, e.HourlyWage, e.Address, e.Department, e.Role);
+                this.dgvEmployees.Rows.Add(e.ID, e.FirstName, e.LastName, e.Bsn, e.Email, e.FirstWorkingDate, e.LastWorkingDate, e.Birthdate, e.ContractType, e.HourlyWage, e.Address, e.Department, e.Role, e.DepartureReason);
                 cbDepartmentManager.Items.Add(e);
                 
+            }
+
+            foreach (DataGridViewRow row in dgvEmployees.Rows)
+            {
+                if (row.Cells[13].Value != "")
+                {
+                    row.DefaultCellStyle.BackColor = Color.LightCoral;
+                }
+
             }
         }
 
@@ -61,7 +72,7 @@ namespace MediaBazaarApp
         {
             dgvEmployees.Rows.Clear();
             cbDepartmentManager.Items.Clear();
-            this.dgvEmployees.ColumnCount = 13;
+            this.dgvEmployees.ColumnCount = 14;
             this.dgvEmployees.Columns[0].Name = "ID";
             this.dgvEmployees.Columns[1].Name = "First name";
             this.dgvEmployees.Columns[2].Name = "Last name";
@@ -75,6 +86,7 @@ namespace MediaBazaarApp
             this.dgvEmployees.Columns[10].Name = "Address";
             this.dgvEmployees.Columns[11].Name = "Department";
             this.dgvEmployees.Columns[12].Name = "Role";
+            this.dgvEmployees.Columns[13].Name = "Departure reason";
 
         }
 
@@ -140,8 +152,7 @@ namespace MediaBazaarApp
 
         private void btnUpdateInfo_Click(object sender, EventArgs e)
         {
-            updateEmployeeForm = new UpdateEmployee(this,this.departmentM);
-            updateEmployeeForm.Show();
+
         }
 
         private void btnViewPendingList_Click(object sender, EventArgs e)
@@ -223,7 +234,20 @@ namespace MediaBazaarApp
 
         private void btnTerminate_Click(object sender, EventArgs e)
         {
-       
+            if (dgvEmployees.SelectedRows.Count > -1)
+            {
+                int r = this.dgvEmployees.SelectedCells[0].RowIndex;
+                DataGridViewRow row = this.dgvEmployees.Rows[r];
+                int id = Convert.ToInt32(row.Cells["ID"].Value);
+                Employee emp = this.employeeManager.GetEmployee(id);
+                Employee employee = employeeManager.GetEmployee(Convert.ToInt32(SelectedItemID()));
+                if (emp.DepartureReason == "")
+                {
+                    terminateEmployeeForm = new TerminateEmployee_sContract(this);
+                    terminateEmployeeForm.Show();
+                }
+                else MessageBox.Show("This employee's contract had already been terminated");
+            }
         }
 
         private void btnViewEmployeesOfDepartment_Click(object sender, EventArgs e)
@@ -318,24 +342,7 @@ namespace MediaBazaarApp
 
         private void btnRemoveDepartment_Click(object sender, EventArgs e)
         {
-            if (dgvDepartments.SelectedCells.Count > 0)
-            {
-                DialogResult result = MessageBox.Show("Are you sure you want to remove this department?", "", MessageBoxButtons.YesNo);
-                if (result == DialogResult.Yes)
-                {
-                    int r = this.dgvDepartments.SelectedCells[0].RowIndex;
-                    DataGridViewRow row = this.dgvDepartments.Rows[r];
-                    string name = row.Cells["Department Name"].Value.ToString();
-                    Department depart = this.departmentM.GetDepartment(name);
-                    this.departmentM.Remove(depart);
-                    MessageBox.Show("Removed successfully!");
-                }
-                else
-                {
-                    MessageBox.Show("Please select a department");
-                }
-            }
-            UpdateListInDepartmentManagement();
+
            
         }
 
@@ -383,30 +390,30 @@ namespace MediaBazaarApp
 
         private void btnSearchByID_Click(object sender, EventArgs e)
         {
-            string searchValue = tbSearch.Text;
+            //string searchValue = tbSearch.Text;
 
-            dgvEmployees.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            try
-            {
-                foreach (DataGridViewRow row in dgvEmployees.Rows)
-                {
-                    if (row.Cells[0].Value.ToString().Equals(searchValue))
-                    {
-                        SearchEmployee();
-                        break;
-                    }
-                }
-            }
-            catch (Exception exc)
-            {
-                MessageBox.Show(exc.Message);
-            }
+            //dgvEmployees.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            //try
+            //{
+            //    foreach (DataGridViewRow row in dgvEmployees.Rows)
+            //    {
+            //        if (row.Cells[0].Value.ToString().Equals(searchValue))
+            //        {
+            //            SearchEmployee();
+            //            break;
+            //        }
+            //    }
+            //}
+            //catch (Exception exc)
+            //{
+            //    MessageBox.Show(exc.Message);
+            //}
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            tbSearch.Text = "";
-            UpdateDataGridView();
+            //tbSearch.Text = "";
+            //UpdateDataGridView();
         }
 
         private void dgvEmployees_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -601,6 +608,118 @@ namespace MediaBazaarApp
                 return false;
             }
             return true;
+        }
+
+        public List<Employee> SearchEmployees(string item)
+        {
+            List<Employee> employees = this.employeeManager.GetEmployees();
+            List<Employee> foundEmployees = new List<Employee>();
+
+            foreach (Employee employee in employees)
+            {
+                if (item == employee.FirstName || item == employee.LastName || item == employee.Email || item == employee.Address || item == employee.Department || item == employee.ID.ToString() || item == employee.Bsn.ToString())
+                {
+                    foundEmployees.Add(employee);
+                }
+            }
+            return foundEmployees;
+        }
+
+        private void tbSearch_TextChanged(object sender, EventArgs e)
+        {
+            LoadDGVColumns();
+
+            string text = tbSearch.Text;
+            //string wordContaining = @"([a-zA-Z]*y[a-zA-Z]*)";
+            if (text == "")
+            {
+                ClearFilters();
+            }
+            else
+            {
+                foreach (Employee employee in SearchEmployees(text))
+                {
+                    this.dgvEmployees.Rows.Add(employee.ID, employee.FirstName, employee.LastName, employee.Bsn, employee.Email, employee.FirstWorkingDate, employee.LastWorkingDate, employee.Birthdate, employee.ContractType, employee.HourlyWage, employee.Address, employee.Department);
+                }
+            }
+        }
+
+        private void ClearFilters()
+        {
+            tbSearch.Text = "";
+            UpdateDataGridView();
+        }
+
+        private void btnLoadTable_Click(object sender, EventArgs e)
+        {
+            ClearFilters();
+        }
+
+        private void btnStatistics_Click(object sender, EventArgs e)
+        {
+            employeeStatisticsForm = new EmployeeStatistics(this);
+            employeeStatisticsForm.ShowDialog();
+        }
+
+        private void btnRemoveEmployee_Click_1(object sender, EventArgs e)
+        {
+            if (dgvDepartments.SelectedCells.Count > 0)
+            {
+                DialogResult result = MessageBox.Show("Are you sure you want to remove this department?", "", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    int r = this.dgvDepartments.SelectedCells[0].RowIndex;
+                    DataGridViewRow row = this.dgvDepartments.Rows[r];
+                    string name = row.Cells["Department Name"].Value.ToString();
+                    Department depart = this.departmentM.GetDepartment(name);
+                    this.departmentM.Remove(depart);
+                    MessageBox.Show("Removed successfully!");
+                }
+                else
+                {
+                    MessageBox.Show("Please select a department");
+                }
+            }
+            UpdateListInDepartmentManagement();
+        }
+
+        private void btnAdd_Click_1(object sender, EventArgs e)
+        {
+            addEmployeeForm = new AddEmployee(this, departmentM);
+            addEmployeeForm.ShowDialog();
+            UpdateDataGridView();
+        }
+
+        private void btnUpdateInfo_Click_1(object sender, EventArgs e)
+        {
+            if (dgvEmployees.SelectedRows.Count > -1)
+            {
+                Employee employee = employeeManager.GetEmployee(Convert.ToInt32(SelectedItemID()));
+                if (employee.DepartureReason == "")
+                {
+                    updateEmployeeForm = new UpdateEmployee(this, this.departmentM);
+                    updateEmployeeForm.Show();
+                }
+                else MessageBox.Show("This employee's contract is no longer active.");
+            }
+        }
+
+        private void btnTerminate_Click_1(object sender, EventArgs e)
+        {
+            if (dgvEmployees.SelectedRows.Count > -1)
+            {
+                int r = this.dgvEmployees.SelectedCells[0].RowIndex;
+                DataGridViewRow row = this.dgvEmployees.Rows[r];
+                int id = Convert.ToInt32(row.Cells["ID"].Value);
+                Employee emp = this.employeeManager.GetEmployee(id);
+                Employee employee = employeeManager.GetEmployee(Convert.ToInt32(SelectedItemID()));
+                if (emp.DepartureReason == "")
+                {
+                    terminateEmployeeForm = new TerminateEmployee_sContract(this);
+                    terminateEmployeeForm.Show();
+                }
+                else MessageBox.Show("This employee's contract had already been terminated");
+            }
         }
     }
 }
