@@ -17,6 +17,18 @@
           "build/netstandard1.0/coverlet.collector.targets": {}
         }
       },
+      "DotNetProjects.WpfToolkit.DataVisualization/6.0.90": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.0/DotNetProjects.DataVisualization.Toolkit.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/DotNetProjects.DataVisualization.Toolkit.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
       "Google.Protobuf/3.14.0": {
         "type": "package",
         "dependencies": {
@@ -559,6 +571,46 @@
         "runtime": {
           "lib/netstandard2.0/NuGet.Frameworks.dll": {}
         }
+      },
+      "OxyPlot.Core/2.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/OxyPlot.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/OxyPlot.dll": {}
+        }
+      },
+      "OxyPlot.Wpf/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "OxyPlot.Core": "2.1.0",
+          "OxyPlot.Wpf.Shared": "2.1.0"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/OxyPlot.Wpf.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/OxyPlot.Wpf.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "OxyPlot.Wpf.Shared/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "OxyPlot.Core": "2.1.0"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/OxyPlot.Wpf.Shared.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/OxyPlot.Wpf.Shared.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
       },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
         "type": "package",
@@ -1843,6 +1895,15 @@
           "ref/netstandard1.2/System.Threading.Timer.dll": {}
         }
       },
+      "System.Windows.Controls.DataVisualization.Toolkit/4.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net40-Client/System.Windows.Controls.DataVisualization.Toolkit.dll": {}
+        },
+        "runtime": {
+          "lib/net40-Client/System.Windows.Controls.DataVisualization.Toolkit.dll": {}
+        }
+      },
       "System.Windows.Extensions/4.7.0": {
         "type": "package",
         "dependencies": {
@@ -1859,6 +1920,15 @@
             "assetType": "runtime",
             "rid": "win"
           }
+        }
+      },
+      "System.Windows.Forms.DataVisualization/1.0.0-prerelease.19212.2": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp3.0/System.Windows.Forms.DataVisualization.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/System.Windows.Forms.DataVisualization.dll": {}
         }
       },
       "System.Xml.ReaderWriter/4.3.0": {
@@ -1914,7 +1984,12 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
-          "MySql.Data": "8.0.26"
+          "DotNetProjects.WpfToolkit.DataVisualization": "6.0.90",
+          "MySql.Data": "8.0.26",
+          "OxyPlot.Core": "2.1.0",
+          "OxyPlot.Wpf": "2.1.0",
+          "System.Windows.Controls.DataVisualization.Toolkit": "4.0.0",
+          "System.Windows.Forms.DataVisualization": "1.0.0-prerelease.19212.2"
         },
         "compile": {
           "bin/placeholder/MediaBazaarApp.dll": {}
@@ -2003,6 +2078,19 @@
         "coverlet-icon.png",
         "coverlet.collector.3.0.2.nupkg.sha512",
         "coverlet.collector.nuspec"
+      ]
+    },
+    "DotNetProjects.WpfToolkit.DataVisualization/6.0.90": {
+      "sha512": "GZa9xIjHJcW1g2qv+SwbiTrN1I0gSThwaXaTo+lYyt8SX9IsU/d2VBo5pVj8v8dakfNQ2lBsJMDQISNblD4B6A==",
+      "type": "package",
+      "path": "dotnetprojects.wpftoolkit.datavisualization/6.0.90",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "dotnetprojects.wpftoolkit.datavisualization.6.0.90.nupkg.sha512",
+        "dotnetprojects.wpftoolkit.datavisualization.nuspec",
+        "lib/net40/DotNetProjects.DataVisualization.Toolkit.dll",
+        "lib/netcoreapp3.0/DotNetProjects.DataVisualization.Toolkit.dll"
       ]
     },
     "Google.Protobuf/3.14.0": {
@@ -3098,6 +3186,62 @@
         "lib/netstandard2.0/NuGet.Frameworks.xml",
         "nuget.frameworks.5.0.0.nupkg.sha512",
         "nuget.frameworks.nuspec"
+      ]
+    },
+    "OxyPlot.Core/2.1.0": {
+      "sha512": "jG+Ct3T59fXDG2LE1hyUaXqH7i+h5Nfway1iB0+0NaY2mvDsz8Row/BKjiBWCt5NHp3+q9JSMiD2wpin2hh3kw==",
+      "type": "package",
+      "path": "oxyplot.core/2.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "OxyPlot_128.png",
+        "lib/net40/OxyPlot.dll",
+        "lib/net40/OxyPlot.xml",
+        "lib/net45/OxyPlot.dll",
+        "lib/net45/OxyPlot.xml",
+        "lib/netstandard1.0/OxyPlot.dll",
+        "lib/netstandard1.0/OxyPlot.xml",
+        "lib/netstandard2.0/OxyPlot.dll",
+        "lib/netstandard2.0/OxyPlot.xml",
+        "oxyplot.core.2.1.0.nupkg.sha512",
+        "oxyplot.core.nuspec"
+      ]
+    },
+    "OxyPlot.Wpf/2.1.0": {
+      "sha512": "behQPbPDbV5+OerxO1E2iKH7dNaDN4OFSCzWF8Dy296p9CG/RFd4KyOEHDmcckZ7mYp5KQ4BMLD+WtQLjDSQvQ==",
+      "type": "package",
+      "path": "oxyplot.wpf/2.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "OxyPlot_128.png",
+        "lib/net40/OxyPlot.Wpf.dll",
+        "lib/net40/OxyPlot.Wpf.xml",
+        "lib/net45/OxyPlot.Wpf.dll",
+        "lib/net45/OxyPlot.Wpf.xml",
+        "lib/netcoreapp3.1/OxyPlot.Wpf.dll",
+        "lib/netcoreapp3.1/OxyPlot.Wpf.xml",
+        "oxyplot.wpf.2.1.0.nupkg.sha512",
+        "oxyplot.wpf.nuspec"
+      ]
+    },
+    "OxyPlot.Wpf.Shared/2.1.0": {
+      "sha512": "ign36iiFEadBUNF7SVgsPn3DCqP1VWjISRVgEChW5M4LNyC9Lz8iOPy1mypQG/imdn0mCQppTjju+0a4k+yTsA==",
+      "type": "package",
+      "path": "oxyplot.wpf.shared/2.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "OxyPlot_128.png",
+        "lib/net40/OxyPlot.Wpf.Shared.dll",
+        "lib/net40/OxyPlot.Wpf.Shared.xml",
+        "lib/net45/OxyPlot.Wpf.Shared.dll",
+        "lib/net45/OxyPlot.Wpf.Shared.xml",
+        "lib/netcoreapp3.1/OxyPlot.Wpf.Shared.dll",
+        "lib/netcoreapp3.1/OxyPlot.Wpf.Shared.xml",
+        "oxyplot.wpf.shared.2.1.0.nupkg.sha512",
+        "oxyplot.wpf.shared.nuspec"
       ]
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
@@ -6729,6 +6873,19 @@
         "system.threading.timer.nuspec"
       ]
     },
+    "System.Windows.Controls.DataVisualization.Toolkit/4.0.0": {
+      "sha512": "UqBiEXh2YmYdJE5BpJC9c1I+AzcmFlzZ1h7fn5iU2lhOLn3snSxqf46/2XHpoJetJBN4HAavqG77wzaBi5jxfQ==",
+      "type": "package",
+      "path": "system.windows.controls.datavisualization.toolkit/4.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40-Client/System.Windows.Controls.DataVisualization.Toolkit.XML",
+        "lib/net40-Client/System.Windows.Controls.DataVisualization.Toolkit.dll",
+        "system.windows.controls.datavisualization.toolkit.4.0.0.nupkg.sha512",
+        "system.windows.controls.datavisualization.toolkit.nuspec"
+      ]
+    },
     "System.Windows.Extensions/4.7.0": {
       "sha512": "CeWTdRNfRaSh0pm2gDTJFwVaXfTq6Xwv/sA887iwPTneW7oMtMlpvDIO+U60+3GWTB7Aom6oQwv5VZVUhQRdPQ==",
       "type": "package",
@@ -6748,6 +6905,22 @@
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "System.Windows.Forms.DataVisualization/1.0.0-prerelease.19212.2": {
+      "sha512": "NsozUfyqr2DibaO8C5DnAZkeW4BAIENanVfbKkHQ836ifhPHQK5k2PAJtii+QcIL5pueYnHYE4k55kX8pUBovw==",
+      "type": "package",
+      "path": "system.windows.forms.datavisualization/1.0.0-prerelease.19212.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netcoreapp3.0/System.Windows.Forms.DataVisualization.dll",
+        "lib/netcoreapp3.0/System.Windows.Forms.DataVisualization.pdb",
+        "ref/netcoreapp3.0/System.Windows.Forms.DataVisualization.dll",
+        "system.windows.forms.datavisualization.1.0.0-prerelease.19212.2.nupkg.sha512",
+        "system.windows.forms.datavisualization.nuspec"
       ]
     },
     "System.Xml.ReaderWriter/4.3.0": {
@@ -6908,19 +7081,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Rawan\\.nuget\\packages\\": {}
+    "C:\\Users\\aniak\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Rawan\\Desktop\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarUnitTests\\MediaBazaarUnitTests.csproj",
+      "projectUniqueName": "C:\\Users\\aniak\\OneDrive\\Pulpit\\Fontys\\Sem2.2\\PRJ v2\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarUnitTests\\MediaBazaarUnitTests.csproj",
       "projectName": "MediaBazaarUnitTests",
-      "projectPath": "C:\\Users\\Rawan\\Desktop\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarUnitTests\\MediaBazaarUnitTests.csproj",
-      "packagesPath": "C:\\Users\\Rawan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Rawan\\Desktop\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarUnitTests\\obj\\",
+      "projectPath": "C:\\Users\\aniak\\OneDrive\\Pulpit\\Fontys\\Sem2.2\\PRJ v2\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarUnitTests\\MediaBazaarUnitTests.csproj",
+      "packagesPath": "C:\\Users\\aniak\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\aniak\\OneDrive\\Pulpit\\Fontys\\Sem2.2\\PRJ v2\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarUnitTests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Rawan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\aniak\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6934,8 +7107,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\Rawan\\Desktop\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarApp\\MediaBazaarApp.csproj": {
-              "projectPath": "C:\\Users\\Rawan\\Desktop\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarApp\\MediaBazaarApp.csproj"
+            "C:\\Users\\aniak\\OneDrive\\Pulpit\\Fontys\\Sem2.2\\PRJ v2\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarApp\\MediaBazaarApp.csproj": {
+              "projectPath": "C:\\Users\\aniak\\OneDrive\\Pulpit\\Fontys\\Sem2.2\\PRJ v2\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarApp\\MediaBazaarApp.csproj"
             }
           }
         }
@@ -6982,8 +7155,20 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'System.Windows.Controls.DataVisualization.Toolkit 4.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "System.Windows.Controls.DataVisualization.Toolkit",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
 }

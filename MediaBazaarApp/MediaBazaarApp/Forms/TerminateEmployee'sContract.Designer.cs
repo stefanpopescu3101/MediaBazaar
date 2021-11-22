@@ -35,6 +35,8 @@ namespace MediaBazaarApp
             this.label2 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnTerminate = new System.Windows.Forms.Button();
+            this.lblName = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // dtpLastWorkingDate
@@ -88,12 +90,33 @@ namespace MediaBazaarApp
             this.btnTerminate.TabIndex = 11;
             this.btnTerminate.Text = "Done";
             this.btnTerminate.UseVisualStyleBackColor = true;
+            this.btnTerminate.Click += new System.EventHandler(this.btnTerminate_Click);
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(167, 21);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(46, 20);
+            this.lblName.TabIndex = 16;
+            this.lblName.Text = "name";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(83, 21);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(78, 20);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "Employee:";
             // 
             // TerminateEmployee_sContract
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(509, 450);
+            this.Controls.Add(this.lblName);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnTerminate);
             this.Controls.Add(this.label2);
@@ -115,5 +138,7 @@ namespace MediaBazaarApp
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnTerminate;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label label3;
     }
 }

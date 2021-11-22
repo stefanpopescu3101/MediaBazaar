@@ -117,5 +117,6 @@ namespace MediaBazaarApp
             DisplayEmployees();
             tbSearch.Text = "";
         }
+       
     }
 }
