@@ -87,7 +87,6 @@ C:\Users\aniak\OneDrive\Pulpit\Fontys\Sem2.2\PRJ v2\prj-s2-cb05\MediaBazaarApp\M
 C:\Users\aniak\OneDrive\Pulpit\Fontys\Sem2.2\PRJ v2\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\bin\Debug\net5.0-windows\MySql.Data.dll
 C:\Users\aniak\OneDrive\Pulpit\Fontys\Sem2.2\PRJ v2\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\bin\Debug\net5.0-windows\Ubiety.Dns.Core.dll
 C:\Users\aniak\OneDrive\Pulpit\Fontys\Sem2.2\PRJ v2\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\bin\Debug\net5.0-windows\Zstandard.Net.dll
-C:\Users\aniak\OneDrive\Pulpit\Fontys\Sem2.2\PRJ v2\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\obj\Debug\net5.0-windows\MediaBazaarApp.csprojAssemblyReference.cache
 C:\Users\aniak\OneDrive\Pulpit\Fontys\Sem2.2\PRJ v2\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\obj\Debug\net5.0-windows\MediaBazaarApp.AddEmployee.resources
 C:\Users\aniak\OneDrive\Pulpit\Fontys\Sem2.2\PRJ v2\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\obj\Debug\net5.0-windows\MediaBazaarApp.AddProduct.resources
 C:\Users\aniak\OneDrive\Pulpit\Fontys\Sem2.2\PRJ v2\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\obj\Debug\net5.0-windows\MediaBazaarApp.EditProduct.resources
@@ -118,3 +117,6 @@ C:\Users\aniak\OneDrive\Pulpit\Fontys\Sem2.2\PRJ v2\prj-s2-cb05\MediaBazaarApp\M
 C:\Users\aniak\OneDrive\Pulpit\Fontys\Sem2.2\PRJ v2\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\bin\Debug\net5.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\aniak\OneDrive\Pulpit\Fontys\Sem2.2\PRJ v2\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\bin\Debug\net5.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\aniak\OneDrive\Pulpit\Fontys\Sem2.2\PRJ v2\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\obj\Debug\net5.0-windows\MediaBazaarApp.EmployeeStatistics.resources
+C:\Users\aniak\OneDrive\Pulpit\Fontys\Sem2.2\PRJ v2\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\bin\Debug\net5.0-windows\OxyPlot.dll
+C:\Users\aniak\OneDrive\Pulpit\Fontys\Sem2.2\PRJ v2\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\bin\Debug\net5.0-windows\OxyPlot.WindowsForms.dll
+C:\Users\aniak\OneDrive\Pulpit\Fontys\Sem2.2\PRJ v2\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\obj\Debug\net5.0-windows\MediaBazaarApp.csprojAssemblyReference.cache

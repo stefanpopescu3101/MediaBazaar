@@ -44,6 +44,14 @@
               "target": "Package",
               "version": "[8.0.26, )"
             },
+            "OxyPlot.Core": {
+              "target": "Package",
+              "version": "[2.1.0, )"
+            },
+            "OxyPlot.WindowsForms": {
+              "target": "Package",
+              "version": "[2.1.0, )"
+            },
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.7.0, )"

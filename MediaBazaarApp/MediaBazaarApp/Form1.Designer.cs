@@ -31,16 +31,13 @@ namespace MediaBazaarApp
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnStatistics = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.dgvEmployees = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cbColumnChoice = new System.Windows.Forms.ComboBox();
-            this.btnSearchByID = new System.Windows.Forms.Button();
             this.tbSearch = new System.Windows.Forms.TextBox();
-            this.btnClear = new System.Windows.Forms.Button();
             this.btnUpdateInfo = new System.Windows.Forms.Button();
             this.btnTerminate = new System.Windows.Forms.Button();
             this.btnRemoveEmployee = new System.Windows.Forms.Button();
@@ -57,7 +54,7 @@ namespace MediaBazaarApp
             this.btnUpdateDepartment = new System.Windows.Forms.Button();
             this.btnRemoveDepartment = new System.Windows.Forms.Button();
             this.btnAddDepartment = new System.Windows.Forms.Button();
-            this.btnStatistics = new System.Windows.Forms.Button();
+            this.btnLoadTable = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).BeginInit();
@@ -79,6 +76,7 @@ namespace MediaBazaarApp
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btnLoadTable);
             this.tabPage1.Controls.Add(this.btnStatistics);
             this.tabPage1.Controls.Add(this.btnAdd);
             this.tabPage1.Controls.Add(this.btnLogout);
@@ -95,6 +93,16 @@ namespace MediaBazaarApp
             this.tabPage1.Text = "Employee Management";
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // btnStatistics
+            // 
+            this.btnStatistics.Location = new System.Drawing.Point(20, 656);
+            this.btnStatistics.Name = "btnStatistics";
+            this.btnStatistics.Size = new System.Drawing.Size(213, 37);
+            this.btnStatistics.TabIndex = 12;
+            this.btnStatistics.Text = "View statistics";
+            this.btnStatistics.UseVisualStyleBackColor = true;
+            this.btnStatistics.Click += new System.EventHandler(this.btnStatistics_Click);
             // 
             // btnAdd
             // 
@@ -134,14 +142,10 @@ namespace MediaBazaarApp
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.cbColumnChoice);
-            this.groupBox2.Controls.Add(this.btnSearchByID);
             this.groupBox2.Controls.Add(this.tbSearch);
-            this.groupBox2.Controls.Add(this.btnClear);
-            this.groupBox2.Location = new System.Drawing.Point(20, 6);
+            this.groupBox2.Location = new System.Drawing.Point(274, 17);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(996, 92);
+            this.groupBox2.Size = new System.Drawing.Size(742, 81);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Search employee";
@@ -155,51 +159,15 @@ namespace MediaBazaarApp
             this.label3.Size = new System.Drawing.Size(0, 20);
             this.label3.TabIndex = 11;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 41);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 20);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Search based on:";
-            // 
-            // cbColumnChoice
-            // 
-            this.cbColumnChoice.FormattingEnabled = true;
-            this.cbColumnChoice.Location = new System.Drawing.Point(154, 39);
-            this.cbColumnChoice.Name = "cbColumnChoice";
-            this.cbColumnChoice.Size = new System.Drawing.Size(151, 28);
-            this.cbColumnChoice.TabIndex = 9;
-            this.cbColumnChoice.SelectedIndexChanged += new System.EventHandler(this.cbColumnChoice_SelectedIndexChanged);
-            // 
-            // btnSearchByID
-            // 
-            this.btnSearchByID.Location = new System.Drawing.Point(740, 37);
-            this.btnSearchByID.Name = "btnSearchByID";
-            this.btnSearchByID.Size = new System.Drawing.Size(110, 29);
-            this.btnSearchByID.TabIndex = 6;
-            this.btnSearchByID.Text = "Search";
-            this.btnSearchByID.UseVisualStyleBackColor = true;
-            this.btnSearchByID.Click += new System.EventHandler(this.btnSearchByID_Click);
-            // 
             // tbSearch
             // 
-            this.tbSearch.Location = new System.Drawing.Point(349, 38);
+            this.tbSearch.Location = new System.Drawing.Point(18, 38);
             this.tbSearch.Name = "tbSearch";
-            this.tbSearch.Size = new System.Drawing.Size(376, 27);
+            this.tbSearch.Size = new System.Drawing.Size(652, 27);
             this.tbSearch.TabIndex = 3;
+            this.tbSearch.TextChanged += new System.EventHandler(this.tbSearch_TextChanged);
             this.tbSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
-            // 
-            // btnClear
-            // 
-            this.btnClear.Location = new System.Drawing.Point(856, 37);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(120, 29);
-            this.btnClear.TabIndex = 8;
-            this.btnClear.Text = "Clear filters";
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            this.tbSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbSearch_KeyUp);
             // 
             // btnUpdateInfo
             // 
@@ -369,15 +337,15 @@ namespace MediaBazaarApp
             this.btnAddDepartment.UseVisualStyleBackColor = true;
             this.btnAddDepartment.Click += new System.EventHandler(this.btnAddDepartment_Click);
             // 
-            // btnStatistics
+            // btnLoadTable
             // 
-            this.btnStatistics.Location = new System.Drawing.Point(20, 656);
-            this.btnStatistics.Name = "btnStatistics";
-            this.btnStatistics.Size = new System.Drawing.Size(213, 37);
-            this.btnStatistics.TabIndex = 12;
-            this.btnStatistics.Text = "View statistics";
-            this.btnStatistics.UseVisualStyleBackColor = true;
-            this.btnStatistics.Click += new System.EventHandler(this.btnStatistics_Click);
+            this.btnLoadTable.Location = new System.Drawing.Point(20, 17);
+            this.btnLoadTable.Name = "btnLoadTable";
+            this.btnLoadTable.Size = new System.Drawing.Size(237, 81);
+            this.btnLoadTable.TabIndex = 13;
+            this.btnLoadTable.Text = "Load Employees List";
+            this.btnLoadTable.UseVisualStyleBackColor = true;
+            this.btnLoadTable.Click += new System.EventHandler(this.btnLoadTable_Click);
             // 
             // Form1
             // 
@@ -404,7 +372,6 @@ namespace MediaBazaarApp
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btnSearchByID;
         private System.Windows.Forms.TextBox tbSearch;
 
         private System.Windows.Forms.Button btnUpdateInfo;
@@ -421,7 +388,6 @@ namespace MediaBazaarApp
         private System.Windows.Forms.Label label2;
 
         private System.Windows.Forms.DataGridView dgvEmployees;
-        private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
@@ -430,9 +396,8 @@ namespace MediaBazaarApp
         private System.Windows.Forms.Label lDepartmentManager;
         private System.Windows.Forms.ComboBox cbDepartmentManager;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cbColumnChoice;
         private System.Windows.Forms.Button btnStatistics;
+        private System.Windows.Forms.Button btnLoadTable;
     }
 }
 

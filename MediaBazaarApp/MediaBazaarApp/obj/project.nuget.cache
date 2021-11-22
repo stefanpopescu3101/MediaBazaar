@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "VA1nxdj7Ob1kGNMRXs9hXQhShJ3bx44XGlR8XnNvHLmRuHwMojwkshxo2lFPB+F20IApvkKpwhhBWgZIwoH0FA==",
+  "dgSpecHash": "FSwWCMGD8Sk9SzN9CVc+j9lOOmBtlUoErTZA2SOMrtmYr8xLTtrX8MX0YuIhZc++T86G31VZn8qGnlCoj5su5g==",
   "success": true,
   "projectFilePath": "C:\\Users\\aniak\\OneDrive\\Pulpit\\Fontys\\Sem2.2\\PRJ v2\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarApp\\MediaBazaarApp.csproj",
   "expectedPackageFiles": [
@@ -13,6 +13,8 @@
     "C:\\Users\\aniak\\.nuget\\packages\\microsoft.win32.registry\\4.6.0\\microsoft.win32.registry.4.6.0.nupkg.sha512",
     "C:\\Users\\aniak\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\aniak\\.nuget\\packages\\mysql.data\\8.0.26\\mysql.data.8.0.26.nupkg.sha512",
+    "C:\\Users\\aniak\\.nuget\\packages\\oxyplot.core\\2.1.0\\oxyplot.core.2.1.0.nupkg.sha512",
+    "C:\\Users\\aniak\\.nuget\\packages\\oxyplot.windowsforms\\2.1.0\\oxyplot.windowsforms.2.1.0.nupkg.sha512",
     "C:\\Users\\aniak\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.6.0\\runtime.native.system.data.sqlclient.sni.4.6.0.nupkg.sha512",
     "C:\\Users\\aniak\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\aniak\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",

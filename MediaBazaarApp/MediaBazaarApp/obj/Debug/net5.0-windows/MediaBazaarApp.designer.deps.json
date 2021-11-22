@@ -133,6 +133,25 @@
           }
         }
       },
+      "OxyPlot.Core/2.1.0": {
+        "runtime": {
+          "lib/netstandard2.0/OxyPlot.dll": {
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "2.1.0.0"
+          }
+        }
+      },
+      "OxyPlot.WindowsForms/2.1.0": {
+        "dependencies": {
+          "OxyPlot.Core": "2.1.0"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/OxyPlot.WindowsForms.dll": {
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "2.1.0.0"
+          }
+        }
+      },
       "runtime.native.System.Data.SqlClient.sni/4.6.0": {
         "dependencies": {
           "runtime.win-arm64.runtime.native.System.Data.SqlClient.sni": "4.4.0",
@@ -430,6 +449,20 @@
       "sha512": "sha512-iOxE24dI01JZlZ1EObkz9WwYMzX+0RnBf5a11OkPDCOGv2Yo0tTWmwAJfVXkuuSD47XngOir7l7+xZZ56lZyAA==",
       "path": "mysql.data/8.0.26",
       "hashPath": "mysql.data.8.0.26.nupkg.sha512"
+    },
+    "OxyPlot.Core/2.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-jG+Ct3T59fXDG2LE1hyUaXqH7i+h5Nfway1iB0+0NaY2mvDsz8Row/BKjiBWCt5NHp3+q9JSMiD2wpin2hh3kw==",
+      "path": "oxyplot.core/2.1.0",
+      "hashPath": "oxyplot.core.2.1.0.nupkg.sha512"
+    },
+    "OxyPlot.WindowsForms/2.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3ehmpvSbTKUOfUSeZdfIyed5kGMdgPGq/MCXi1NXqzDqQhbUZ6OwVrRnfcLKB32WtnDAzwAtchirEaAFPo5iig==",
+      "path": "oxyplot.windowsforms/2.1.0",
+      "hashPath": "oxyplot.windowsforms.2.1.0.nupkg.sha512"
     },
     "runtime.native.System.Data.SqlClient.sni/4.6.0": {
       "type": "package",

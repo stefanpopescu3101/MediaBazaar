@@ -135,6 +135,30 @@
           "lib/net5.0/Zstandard.Net.dll": {}
         }
       },
+      "OxyPlot.Core/2.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/OxyPlot.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/OxyPlot.dll": {}
+        }
+      },
+      "OxyPlot.WindowsForms/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "OxyPlot.Core": "2.1.0"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/OxyPlot.WindowsForms.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/OxyPlot.WindowsForms.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
+      },
       "runtime.native.System.Data.SqlClient.sni/4.6.0": {
         "type": "package",
         "dependencies": {
@@ -606,6 +630,44 @@
         "lib/netstandard2.1/Zstandard.Net.dll",
         "mysql.data.8.0.26.nupkg.sha512",
         "mysql.data.nuspec"
+      ]
+    },
+    "OxyPlot.Core/2.1.0": {
+      "sha512": "jG+Ct3T59fXDG2LE1hyUaXqH7i+h5Nfway1iB0+0NaY2mvDsz8Row/BKjiBWCt5NHp3+q9JSMiD2wpin2hh3kw==",
+      "type": "package",
+      "path": "oxyplot.core/2.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "OxyPlot_128.png",
+        "lib/net40/OxyPlot.dll",
+        "lib/net40/OxyPlot.xml",
+        "lib/net45/OxyPlot.dll",
+        "lib/net45/OxyPlot.xml",
+        "lib/netstandard1.0/OxyPlot.dll",
+        "lib/netstandard1.0/OxyPlot.xml",
+        "lib/netstandard2.0/OxyPlot.dll",
+        "lib/netstandard2.0/OxyPlot.xml",
+        "oxyplot.core.2.1.0.nupkg.sha512",
+        "oxyplot.core.nuspec"
+      ]
+    },
+    "OxyPlot.WindowsForms/2.1.0": {
+      "sha512": "3ehmpvSbTKUOfUSeZdfIyed5kGMdgPGq/MCXi1NXqzDqQhbUZ6OwVrRnfcLKB32WtnDAzwAtchirEaAFPo5iig==",
+      "type": "package",
+      "path": "oxyplot.windowsforms/2.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "OxyPlot_128.png",
+        "lib/net40/OxyPlot.WindowsForms.dll",
+        "lib/net40/OxyPlot.WindowsForms.xml",
+        "lib/net45/OxyPlot.WindowsForms.dll",
+        "lib/net45/OxyPlot.WindowsForms.xml",
+        "lib/netcoreapp3.1/OxyPlot.WindowsForms.dll",
+        "lib/netcoreapp3.1/OxyPlot.WindowsForms.xml",
+        "oxyplot.windowsforms.2.1.0.nupkg.sha512",
+        "oxyplot.windowsforms.nuspec"
       ]
     },
     "runtime.native.System.Data.SqlClient.sni/4.6.0": {
@@ -1163,6 +1225,8 @@
   "projectFileDependencyGroups": {
     "net5.0-windows7.0": [
       "MySql.Data >= 8.0.26",
+      "OxyPlot.Core >= 2.1.0",
+      "OxyPlot.WindowsForms >= 2.1.0",
       "System.Data.SqlClient >= 4.7.0",
       "System.Windows.Controls.DataVisualization.Toolkit >= 4.0.0",
       "System.Windows.Forms.DataVisualization >= 1.0.0-prerelease.20110.1"
@@ -1210,6 +1274,14 @@
           "MySql.Data": {
             "target": "Package",
             "version": "[8.0.26, )"
+          },
+          "OxyPlot.Core": {
+            "target": "Package",
+            "version": "[2.1.0, )"
+          },
+          "OxyPlot.WindowsForms": {
+            "target": "Package",
+            "version": "[2.1.0, )"
           },
           "System.Data.SqlClient": {
             "target": "Package",

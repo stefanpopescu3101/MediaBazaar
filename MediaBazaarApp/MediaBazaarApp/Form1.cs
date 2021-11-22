@@ -30,7 +30,6 @@ namespace MediaBazaarApp
             userM = new UserManager();
             departmentM.Load();
             UpdateListInDepartmentManagement();
-            tbSearch.Enabled = false;
             ClearFilters();
             UpdateDataGridView();
 
@@ -41,7 +40,7 @@ namespace MediaBazaarApp
         {
             cbDepartmentManager.Items.Clear();
             LoadDGVColumns();
-            LoadColumnsIntoCombobox();
+            //LoadColumnsIntoCombobox();
 
             foreach (Employee e in employeeManager.GetEmployees())
             {
@@ -80,83 +79,6 @@ namespace MediaBazaarApp
             this.dgvEmployees.Columns[12].Name = "Departure reason";
             this.dgvEmployees.Columns[13].Name = "Role";
 
-        }
-
-        public void LoadColumnsIntoCombobox()
-        {
-            cbColumnChoice.Items.Clear();
-            for (int i = 0; i < 4; i++)
-            {
-                cbColumnChoice.Items.Add(dgvEmployees.Columns[i].Name);
-            }
-        }
-
-        public void SearchEmployeeByID()
-        {
-            LoadDGVColumns();
-            if (Regex.IsMatch(tbSearch.Text, @"^\d+$"))
-            {
-                foreach (Employee e in employeeManager.GetEmployees())
-                {
-                    if (e.ID == Convert.ToInt32(tbSearch.Text))
-                    {
-                        this.dgvEmployees.Rows.Add(e.ID, e.FirstName, e.LastName, e.Bsn, e.Email, e.FirstWorkingDate, e.LastWorkingDate, e.Birthdate, e.ContractType, e.HourlyWage, e.Address, e.Department);
-                    }
-                }
-
-            }
-            else
-            {
-                ClearFilters();
-                MessageBox.Show("Please enter a number.");
-            }
-        }
-
-        public void SearchEmployeeByFirstName()
-        {
-            LoadDGVColumns();
-
-            foreach (Employee e in employeeManager.GetEmployees())
-            {
-                if (e.FirstName == tbSearch.Text)
-                {
-                    this.dgvEmployees.Rows.Add(e.ID, e.FirstName, e.LastName, e.Bsn, e.Email, e.FirstWorkingDate, e.LastWorkingDate, e.Birthdate, e.ContractType, e.HourlyWage, e.Address, e.Department);
-                }
-            }
-        }
-
-        public void SearchEmployeeByLastName()
-        {
-            LoadDGVColumns();
-
-            foreach (Employee e in employeeManager.GetEmployees())
-            {
-                if (e.LastName == tbSearch.Text)
-                {
-                    this.dgvEmployees.Rows.Add(e.ID, e.FirstName, e.LastName, e.Bsn, e.Email, e.FirstWorkingDate, e.LastWorkingDate, e.Birthdate, e.ContractType, e.HourlyWage, e.Address, e.Department);
-                }
-            }
-        }
-
-        public void SearchEmployeeByBSN()
-        {
-            LoadDGVColumns();
-
-            if (Regex.IsMatch(tbSearch.Text, @"^\d+$"))
-            {
-                foreach (Employee e in employeeManager.GetEmployees())
-                {
-                    if (e.Bsn == Convert.ToInt32(tbSearch.Text))
-                    {
-                        this.dgvEmployees.Rows.Add(e.ID, e.FirstName, e.LastName, e.Bsn, e.Email, e.FirstWorkingDate, e.LastWorkingDate, e.Birthdate, e.ContractType, e.HourlyWage, e.Address, e.Department);
-                    }
-                }
-            }
-            else
-            {
-                ClearFilters();
-                MessageBox.Show("Please enter a number.");
-            }
         }
 
         private void UpdateListInDepartmentManagement()
@@ -460,76 +382,17 @@ namespace MediaBazaarApp
 
         private void btnSearchByID_Click(object sender, EventArgs e)
         {
-            string columnName = cbColumnChoice.Text;
+            //LoadDGVColumns();
 
-            if(columnName == "ID")
-            {
-                SearchEmployeeByID();
-            }
-            else if(columnName == "First name")
-            {
-                SearchEmployeeByFirstName();
-            }
-            else if(columnName == "Last name")
-            {
-                SearchEmployeeByLastName();
-            }
-            else if(columnName == "BSN")
-            {
-                SearchEmployeeByBSN();
-            }
-
-            //this.dgvEmployees.Rows.Clear();
-            //if (searchValue != "")
+            //foreach (Employee employee in SearchEmployees(tbSearch.Text))
             //{
-            //    Employee emp = this.employeeManager.GetEmployee(Convert.ToInt32(searchValue));
-            //    if (emp != null)
-            //    {
-            //        this.dgvEmployees.Rows.Add(emp.ID, emp.FirstName, emp.LastName, emp.Bsn, emp.Email, emp.FirstWorkingDate, emp.LastWorkingDate, emp.Birthdate, emp.ContractType, emp.HourlyWage, emp.Address, emp.Department);
-            //    }
-            //    else MessageBox.Show("No employee found.");
-            //}
-            //else
-            //{
-            //    UpdateDataGridView();
-            //    MessageBox.Show("Enter the required data in order to search for an employee."); 
-            //}
-
-            //try
-            //{
-            //    foreach (DataGridViewRow row in dgvEmployees.Rows)
-            //    {
-            //        if (row.Cells[2].Value.ToString().Equals(searchValue))
-            //        {
-            //            SearchEmployee();
-            //            break;
-            //        }
-            //    }
-            //}
-            //catch (Exception exc)
-            //{
-            //    MessageBox.Show(exc.Message);
-            //}
-
-            //(dgvEmployees.DataSource as DataTable).DefaultView = String.Format("First name like '%'" + tbSearch.Text + "'%'");
-
-            //if (tbSearch.Text != string.Empty)
-            //{
-            //    foreach (DataGridViewRow row in dgvEmployees.Rows)
-            //    {
-            //        if (row.Cells[1].ToString().Trim().Contains(tbSearch.Text.Trim()))
-            //        {
-            //            row.Visible = true;
-            //        }
-            //        else
-            //            row.Visible = false;
-            //    }
+            //    this.dgvEmployees.Rows.Add(employee.ID, employee.FirstName, employee.LastName, employee.Bsn, employee.Email, employee.FirstWorkingDate, employee.LastWorkingDate, employee.Birthdate, employee.ContractType, employee.HourlyWage, employee.Address, employee.Department);                
             //}
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            ClearFilters();
+            //ClearFilters();
         }
 
         private void ClearFilters()
@@ -549,7 +412,7 @@ namespace MediaBazaarApp
 
         private void cbColumnChoice_SelectedIndexChanged(object sender, EventArgs e)
         {
-            tbSearch.Enabled = true;
+
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
@@ -561,6 +424,50 @@ namespace MediaBazaarApp
         {
             employeeStatisticsForm = new EmployeeStatistics(this);
             employeeStatisticsForm.ShowDialog();
+        }
+
+        private void tbSearch_TextChanged(object sender, EventArgs e)
+        {
+            LoadDGVColumns();
+
+            string text = tbSearch.Text;
+            //string wordContaining = @"([a-zA-Z]*y[a-zA-Z]*)";
+            if(text == "")
+            {
+                ClearFilters();
+            }
+            else
+            {
+                foreach (Employee employee in SearchEmployees(text))
+                {
+                    this.dgvEmployees.Rows.Add(employee.ID, employee.FirstName, employee.LastName, employee.Bsn, employee.Email, employee.FirstWorkingDate, employee.LastWorkingDate, employee.Birthdate, employee.ContractType, employee.HourlyWage, employee.Address, employee.Department);
+                }
+            }
+        }
+
+        public List<Employee> SearchEmployees(string item)
+        {
+            List<Employee> employees = this.employeeManager.GetEmployees();
+            List<Employee> foundEmployees = new List<Employee>();
+
+            foreach (Employee employee in employees)
+            {
+                if(item == employee.FirstName|| item == employee.LastName || item == employee.Email || item == employee.Address || item == employee.Department || item == employee.ID.ToString() || item == employee.Bsn.ToString())
+                {
+                    foundEmployees.Add(employee);
+                }
+            }
+            return foundEmployees;
+        }
+
+        private void tbSearch_KeyUp(object sender, KeyEventArgs e)
+        {
+            
+        }
+
+        private void btnLoadTable_Click(object sender, EventArgs e)
+        {
+            ClearFilters();
         }
     }
 }
