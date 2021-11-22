@@ -34,7 +34,6 @@ namespace MediaBazaarApp
             this.btnLoadTable = new System.Windows.Forms.Button();
             this.btnStatistics = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.btnLogout = new System.Windows.Forms.Button();
             this.dgvEmployees = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -87,7 +86,6 @@ namespace MediaBazaarApp
             this.tabPage1.Controls.Add(this.btnLoadTable);
             this.tabPage1.Controls.Add(this.btnStatistics);
             this.tabPage1.Controls.Add(this.btnAdd);
-            this.tabPage1.Controls.Add(this.btnLogout);
             this.tabPage1.Controls.Add(this.dgvEmployees);
             this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Controls.Add(this.btnUpdateInfo);
@@ -132,15 +130,6 @@ namespace MediaBazaarApp
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click_1);
             // 
-            // btnLogout
-            // 
-            this.btnLogout.Location = new System.Drawing.Point(1034, 18);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(100, 29);
-            this.btnLogout.TabIndex = 19;
-            this.btnLogout.Text = "Log out";
-            this.btnLogout.UseVisualStyleBackColor = true;
-            // 
             // dgvEmployees
             // 
             this.dgvEmployees.AllowUserToAddRows = false;
@@ -160,7 +149,7 @@ namespace MediaBazaarApp
             this.groupBox2.Controls.Add(this.tbSearch);
             this.groupBox2.Location = new System.Drawing.Point(267, 29);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(742, 81);
+            this.groupBox2.Size = new System.Drawing.Size(790, 81);
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Search employee";
@@ -177,7 +166,7 @@ namespace MediaBazaarApp
             // 
             this.tbSearch.Location = new System.Drawing.Point(18, 38);
             this.tbSearch.Name = "tbSearch";
-            this.tbSearch.Size = new System.Drawing.Size(652, 27);
+            this.tbSearch.Size = new System.Drawing.Size(755, 27);
             this.tbSearch.TabIndex = 3;
             this.tbSearch.TextChanged += new System.EventHandler(this.tbSearch_TextChanged);
             // 
@@ -472,7 +461,6 @@ namespace MediaBazaarApp
         private System.Windows.Forms.Button btnLoadTable;
         private System.Windows.Forms.Button btnStatistics;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.DataGridView dgvEmployees;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label3;

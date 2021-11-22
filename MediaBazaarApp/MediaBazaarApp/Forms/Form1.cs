@@ -720,5 +720,7 @@ namespace MediaBazaarApp
                 else MessageBox.Show("This employee's contract had already been terminated");
             }
         }
+
+    
     }
 }

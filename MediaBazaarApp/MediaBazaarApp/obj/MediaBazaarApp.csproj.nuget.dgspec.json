@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\aniak\\OneDrive\\Pulpit\\Fontys\\Sem2.2\\PRJ v2\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarApp\\MediaBazaarApp.csproj": {}
+    "C:\\Users\\Rawan\\Desktop\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarApp\\MediaBazaarApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\aniak\\OneDrive\\Pulpit\\Fontys\\Sem2.2\\PRJ v2\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarApp\\MediaBazaarApp.csproj": {
+    "C:\\Users\\Rawan\\Desktop\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarApp\\MediaBazaarApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\aniak\\OneDrive\\Pulpit\\Fontys\\Sem2.2\\PRJ v2\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarApp\\MediaBazaarApp.csproj",
+        "projectUniqueName": "C:\\Users\\Rawan\\Desktop\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarApp\\MediaBazaarApp.csproj",
         "projectName": "MediaBazaarApp",
-        "projectPath": "C:\\Users\\aniak\\OneDrive\\Pulpit\\Fontys\\Sem2.2\\PRJ v2\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarApp\\MediaBazaarApp.csproj",
-        "packagesPath": "C:\\Users\\aniak\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\aniak\\OneDrive\\Pulpit\\Fontys\\Sem2.2\\PRJ v2\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarApp\\obj\\",
+        "projectPath": "C:\\Users\\Rawan\\Desktop\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarApp\\MediaBazaarApp.csproj",
+        "packagesPath": "C:\\Users\\Rawan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Rawan\\Desktop\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\aniak\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Rawan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -83,7 +83,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -108,3 +108,9 @@ C:\Users\aniak\OneDrive\Pulpit\Fontys\Sem2.2\PRJ v2\prj-s2-cb05\MediaBazaarApp\M
 C:\Users\aniak\OneDrive\Pulpit\Fontys\Sem2.2\PRJ v2\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\bin\Debug\netcoreapp3.1\System.Windows.Forms.DataVisualization.dll
 C:\Users\aniak\OneDrive\Pulpit\Fontys\Sem2.2\PRJ v2\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\obj\Debug\netcoreapp3.1\MediaBazaarApp.csprojAssemblyReference.cache
 C:\Users\aniak\OneDrive\Pulpit\Fontys\Sem2.2\PRJ v2\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\bin\Debug\netcoreapp3.1\OxyPlot.WindowsForms.dll
+C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\bin\Debug\netcoreapp3.1\DotNetProjects.DataVisualization.Toolkit.dll
+C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\bin\Debug\netcoreapp3.1\OxyPlot.dll
+C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\bin\Debug\netcoreapp3.1\OxyPlot.WindowsForms.dll
+C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\bin\Debug\netcoreapp3.1\System.Windows.Controls.DataVisualization.Toolkit.dll
+C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\bin\Debug\netcoreapp3.1\System.Windows.Forms.DataVisualization.dll
+C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\obj\Debug\netcoreapp3.1\MediaBazaarApp.EmployeeStatistics.resources
