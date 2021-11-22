@@ -123,24 +123,12 @@
           }
         }
       },
-      "OxyPlot.Wpf/2.1.0": {
-        "dependencies": {
-          "OxyPlot.Core": "2.1.0",
-          "OxyPlot.Wpf.Shared": "2.1.0"
-        },
-        "runtime": {
-          "lib/netcoreapp3.1/OxyPlot.Wpf.dll": {
-            "assemblyVersion": "2.1.0.0",
-            "fileVersion": "2.1.0.0"
-          }
-        }
-      },
-      "OxyPlot.Wpf.Shared/2.1.0": {
+      "OxyPlot.WindowsForms/2.1.0": {
         "dependencies": {
           "OxyPlot.Core": "2.1.0"
         },
         "runtime": {
-          "lib/netcoreapp3.1/OxyPlot.Wpf.Shared.dll": {
+          "lib/netcoreapp3.1/OxyPlot.WindowsForms.dll": {
             "assemblyVersion": "2.1.0.0",
             "fileVersion": "2.1.0.0"
           }
@@ -390,19 +378,12 @@
       "path": "oxyplot.core/2.1.0",
       "hashPath": "oxyplot.core.2.1.0.nupkg.sha512"
     },
-    "OxyPlot.Wpf/2.1.0": {
+    "OxyPlot.WindowsForms/2.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-behQPbPDbV5+OerxO1E2iKH7dNaDN4OFSCzWF8Dy296p9CG/RFd4KyOEHDmcckZ7mYp5KQ4BMLD+WtQLjDSQvQ==",
-      "path": "oxyplot.wpf/2.1.0",
-      "hashPath": "oxyplot.wpf.2.1.0.nupkg.sha512"
-    },
-    "OxyPlot.Wpf.Shared/2.1.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-ign36iiFEadBUNF7SVgsPn3DCqP1VWjISRVgEChW5M4LNyC9Lz8iOPy1mypQG/imdn0mCQppTjju+0a4k+yTsA==",
-      "path": "oxyplot.wpf.shared/2.1.0",
-      "hashPath": "oxyplot.wpf.shared.2.1.0.nupkg.sha512"
+      "sha512": "sha512-3ehmpvSbTKUOfUSeZdfIyed5kGMdgPGq/MCXi1NXqzDqQhbUZ6OwVrRnfcLKB32WtnDAzwAtchirEaAFPo5iig==",
+      "path": "oxyplot.windowsforms/2.1.0",
+      "hashPath": "oxyplot.windowsforms.2.1.0.nupkg.sha512"
     },
     "System.Buffers/4.5.1": {
       "type": "package",

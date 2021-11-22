@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "y2Heg8OJMwctSUOMxD561G+0wwO5ekL3Nceoys/kQhspz3hO5iqrTLKJ/ptupNdUmMw7KYMCiyU4EdWu87kM5Q==",
+  "dgSpecHash": "AosyZiRhkh/nPwTKOUX4p13C649GtInHuVoMbQQiMRCKUfUTO6pp/QS1Em+y8VwnOVClj+eo19YsaH/IUBNUhA==",
   "success": true,
   "projectFilePath": "C:\\Users\\aniak\\OneDrive\\Pulpit\\Fontys\\Sem2.2\\PRJ v2\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarUnitTests\\MediaBazaarUnitTests.csproj",
   "expectedPackageFiles": [
@@ -27,8 +27,7 @@
     "C:\\Users\\aniak\\.nuget\\packages\\newtonsoft.json\\9.0.1\\newtonsoft.json.9.0.1.nupkg.sha512",
     "C:\\Users\\aniak\\.nuget\\packages\\nuget.frameworks\\5.0.0\\nuget.frameworks.5.0.0.nupkg.sha512",
     "C:\\Users\\aniak\\.nuget\\packages\\oxyplot.core\\2.1.0\\oxyplot.core.2.1.0.nupkg.sha512",
-    "C:\\Users\\aniak\\.nuget\\packages\\oxyplot.wpf\\2.1.0\\oxyplot.wpf.2.1.0.nupkg.sha512",
-    "C:\\Users\\aniak\\.nuget\\packages\\oxyplot.wpf.shared\\2.1.0\\oxyplot.wpf.shared.2.1.0.nupkg.sha512",
+    "C:\\Users\\aniak\\.nuget\\packages\\oxyplot.windowsforms\\2.1.0\\oxyplot.windowsforms.2.1.0.nupkg.sha512",
     "C:\\Users\\aniak\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\aniak\\.nuget\\packages\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\aniak\\.nuget\\packages\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
