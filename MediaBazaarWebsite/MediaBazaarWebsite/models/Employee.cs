@@ -96,6 +96,10 @@ namespace MediaBazaarWebsite.models
         {
             get { return role; } set { role = value; }
         }
+        public string UnAvailableDay
+        {
+            get;set;
+        }
         public Employee(string firstName, string lastName, int BSN, string email,
             string firstWorkingDate, string lastWorkingDate, string birthdate,
             string contractType, double hourlyWage, string address,
@@ -118,10 +122,10 @@ namespace MediaBazaarWebsite.models
             this.department = department;
             this.role = role;
         }
-        public Employee(int id,string firstName, string lastName, int BSN, string email,
+        public Employee(int id, string firstName, string lastName, int BSN, string email,
     string firstWorkingDate, string lastWorkingDate, string birthdate,
     string contractType, double hourlyWage, string address,
-    string department,string role,string username, string password)
+    string department, string departure_reason, string role, string username, string password, string un)
         {
             this.id = id;
             this.firstName = firstName;
@@ -135,9 +139,11 @@ namespace MediaBazaarWebsite.models
             this.hourlyWage = hourlyWage;
             this.address = address;
             this.department = department;
+            this.departureReason = departure_reason;
             this.role = role;
             this.username = username;
             this.password = password;
+            this.UnAvailableDay = un;
         }
 
         public void TerminateContract(string reason, string lastWorkingDate)

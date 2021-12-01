@@ -23,7 +23,7 @@ namespace MediaBazaarApp
 
         private double hourlyWage;
         private string departureReason;
-        //private int shiftsPerWeek;
+        private int shiftsPerWeek;
         private string address;
 
         private string department;
@@ -80,10 +80,10 @@ namespace MediaBazaarApp
         {
             get { return hourlyWage; }
         }
-        //public int ShiftsPerWeek
-        //{
-        //    get { return shiftsPerWeek; }
-        //}
+        public int ShiftsPerWeek
+        {
+            get { return shiftsPerWeek; }
+        }
         public string Address
         {
             get { return address; }

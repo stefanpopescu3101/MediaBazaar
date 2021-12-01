@@ -52,42 +52,38 @@
         <div float="left" class="wrapper">
             <div class="checkbox_container">
                 <div class="title">Unavailable for work shifts</div>
-                <form method="post">
+                <p class="text-decoration">@ViewData["Message"]</p>
+                <form method="post" asp-page-handler="Unavailable">
 
                     <div class='checkbox_wrap'>
                         Monday
-                        <input type='checkbox' class='checkbox' name='days[]' value='M' />
+                        <input type='checkbox' class='checkbox' asp-for="Monday"  />
                     </div>
                     <div class="checkbox_wrap">
                         Tuesday
-                        <input type="checkbox" class="checkbox" name="days[]" value="T" />
+                        <input type="checkbox" class="checkbox" asp-for="Tuesday"  />
                     </div>
                     <div class="checkbox_wrap">
                         Wednesday
-                        <input type="checkbox" class="checkbox" name="days[]" value="W" />
+                        <input type="checkbox" class="checkbox" asp-for="Wednesday"  />
                     </div>
                     <div class="checkbox_wrap">
                         Thursday
-                        <input type="checkbox" class="checkbox" name="days[]" value="Th" />
+                        <input type="checkbox" class="checkbox" asp-for="Thursday"  />
                     </div>
                     <div class="checkbox_wrap">
                         Friday
-                        <input type="checkbox" class="checkbox" name="days[]" value="F" />
+                        <input type="checkbox" class="checkbox" asp-for="Friday" />
                     </div>
                     <div class="checkbox_wrap">
                         Saturday
-                        <input type="checkbox" class="checkbox" name="days[]" value="S" />
+                        <input type="checkbox" class="checkbox" asp-for="Saturday"  />
                     </div>
                     <div class="checkbox_wrap">
                         Sunday
-                        <input type="checkbox" class="checkbox" name="days[]" value="U" />
+                        <input type="checkbox" class="checkbox" asp-for="Sunday"  />
                     </div>
 
-                    <hr>
-                    <div class="checkbox_wrap">
-                        At night shifts
-                        <input type="checkbox" class="checkbox" name="nightShift" value="True">
-                    </div>
                     <input id="btnSave" type="submit" value="Save" />
                 </form>
             </div>
