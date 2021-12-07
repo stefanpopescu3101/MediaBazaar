@@ -125,7 +125,7 @@ namespace MediaBazaarWebsite.models
         public Employee(int id, string firstName, string lastName, int BSN, string email,
     string firstWorkingDate, string lastWorkingDate, string birthdate,
     string contractType, double hourlyWage, string address,
-    string department, string departure_reason, string role, string username, string password, string un)
+    string department, string departure_reason, string role, string username, string password)
         {
             this.id = id;
             this.firstName = firstName;
@@ -143,7 +143,7 @@ namespace MediaBazaarWebsite.models
             this.role = role;
             this.username = username;
             this.password = password;
-            this.UnAvailableDay = un;
+     
         }
 
         public void TerminateContract(string reason, string lastWorkingDate)

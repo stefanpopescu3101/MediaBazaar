@@ -9,5 +9,6 @@ namespace MediaBazaarWebsite.models
     {
         List<Employee> GetEmployees();
         bool UpdateUavailblityOfWorkshifts(Employee employee);
+        public bool GetUnavailableDay(Employee employee);
     }
 }

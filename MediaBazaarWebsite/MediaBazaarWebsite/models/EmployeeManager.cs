@@ -42,5 +42,9 @@ namespace MediaBazaarWebsite.models
             }
             return null;
         }
+        public void GetUnavailableDay(Employee e)
+        {
+            med.GetUnavailableDay(e);
+        }
     }
 }

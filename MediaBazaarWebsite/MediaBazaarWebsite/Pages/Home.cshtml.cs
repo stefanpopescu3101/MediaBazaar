@@ -52,7 +52,7 @@ namespace MediaBazaarWebsite.Pages
                 {
                     this.Emp = manager.GetEmployeeByID(Convert.ToInt32(id));
                     Name = Emp.FirstName + " " + Emp.LastName;
-          
+                    empManager.GetUnavailableDay(Emp);
                 }
                 if (this.Emp.UnAvailableDay=="Monday")
                 {
