@@ -6,88 +6,87 @@
 
 <div id="page_layout">
     <div id="table_container">
-        <h3 style="margin-left:20px">Welcome  @Model.Name</h3>
-        <div class="row">
-            <table float="left" class="col-xs-7 table-bordered table-striped table-condensed table-fixed">
-
-
-                <thead>
-                    <tr>
-                        <th class="col">Work shift ID</th>
-                        <th class="col">Period</th>
-                        <th class="col">Date</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-
-                    @foreach (var item in Model.workShifts)
-                    {
-
+        <h3 style="margin-left:20px">Welcome  @Model.Name</h3>      
+        <div class="row" >
+                <table float="left" >
+                    <thead>
                         <tr>
-                            <td class="col">@item.ID</td>
-                            <td class="col">@item.Type</td>
-                            <td class="col">@item.Date </td>
+                            <th class="col">Work shift ID</th>
+                            <th class="col">Period</th>
+                            <th class="col">Date</th>
                         </tr>
-                    }
+                    </thead>
+
+                    <tbody >
+
+                        @foreach (var item in Model.workShifts)
+                        {
+
+                            <tr>
+                                <td class="col">@item.ID</td>
+                                <td class="col">@item.Type</td>
+                                <td class="col">@item.Date </td>
+                            </tr>
+                        }
                     </tbody>
-                
-            </table>
+
+                </table>       
+
         </div>
-        <div class="pagination">
-            <form method="post" asp-page-handler="Reset">
-                <button class="btn"> Show </button>
-            </form>
-            <form method="post" asp-page-handler="Previous">
-                <button class="btn"> Previous Month </button>
-            </form>
-            <form method="post" asp-page-handler="Next">
-                <button class="btn"> Next Month </button>
-            </form>
-
-</div>
-
-    </div>
-    <div id="list_container">
-        <div float="left" class="wrapper">
-            <div class="checkbox_container">
-                <div class="title">Unavailable for work shifts</div>
-                <p class="text-decoration">@ViewData["Message"]</p>
-                <form method="post" asp-page-handler="Unavailable">
-
-                    <div class='checkbox_wrap'>
-                        Monday
-                        <input type='checkbox' class='checkbox' asp-for="Monday"  />
-                    </div>
-                    <div class="checkbox_wrap">
-                        Tuesday
-                        <input type="checkbox" class="checkbox" asp-for="Tuesday"  />
-                    </div>
-                    <div class="checkbox_wrap">
-                        Wednesday
-                        <input type="checkbox" class="checkbox" asp-for="Wednesday"  />
-                    </div>
-                    <div class="checkbox_wrap">
-                        Thursday
-                        <input type="checkbox" class="checkbox" asp-for="Thursday"  />
-                    </div>
-                    <div class="checkbox_wrap">
-                        Friday
-                        <input type="checkbox" class="checkbox" asp-for="Friday" />
-                    </div>
-                    <div class="checkbox_wrap">
-                        Saturday
-                        <input type="checkbox" class="checkbox" asp-for="Saturday"  />
-                    </div>
-                    <div class="checkbox_wrap">
-                        Sunday
-                        <input type="checkbox" class="checkbox" asp-for="Sunday"  />
-                    </div>
-
-                    <input id="btnSave" type="submit" value="Save" />
+            <div class="pagination">
+                <form method="post" asp-page-handler="Reset">
+                    <button class="btn"> Show </button>
                 </form>
+                <form method="post" asp-page-handler="Previous">
+                    <button class="btn"> Previous Month </button>
+                </form>
+                <form method="post" asp-page-handler="Next">
+                    <button class="btn"> Next Month </button>
+                </form>
+
+            </div>
+
+        </div>
+        <div id="list_container">
+            <div float="left" class="wrapper">
+                <div class="checkbox_container">
+                    <div class="title">Unavailable for work shifts</div>
+                    <p class="text-decoration">@ViewData["Message"]</p>
+                    <form method="post" asp-page-handler="Unavailable">
+
+                        <div class='checkbox_wrap'>
+                            Monday
+                            <input type='checkbox' class='checkbox' asp-for="Monday" />
+                        </div>
+                        <div class="checkbox_wrap">
+                            Tuesday
+                            <input type="checkbox" class="checkbox" asp-for="Tuesday" />
+                        </div>
+                        <div class="checkbox_wrap">
+                            Wednesday
+                            <input type="checkbox" class="checkbox" asp-for="Wednesday" />
+                        </div>
+                        <div class="checkbox_wrap">
+                            Thursday
+                            <input type="checkbox" class="checkbox" asp-for="Thursday" />
+                        </div>
+                        <div class="checkbox_wrap">
+                            Friday
+                            <input type="checkbox" class="checkbox" asp-for="Friday" />
+                        </div>
+                        <div class="checkbox_wrap">
+                            Saturday
+                            <input type="checkbox" class="checkbox" asp-for="Saturday" />
+                        </div>
+                        <div class="checkbox_wrap">
+                            Sunday
+                            <input type="checkbox" class="checkbox" asp-for="Sunday" />
+                        </div>
+
+                        <input id="btnSave" type="submit" value="Save" />
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
