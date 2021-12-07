@@ -13,6 +13,7 @@ namespace MediaBazaarWebsite.models
         {
             this.mediator = mediator;
             employees = new List<Employee>();
+            Load();
         }
 
         public void Load()
