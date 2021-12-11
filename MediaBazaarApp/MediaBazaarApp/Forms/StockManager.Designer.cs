@@ -29,17 +29,24 @@ namespace MediaBazaarApp
         /// </summary>
         private void InitializeComponent()
         {
-
-            this.DGVProducts = new System.Windows.Forms.DataGridView();
-            this.cBShelfCategories = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnAddProduct = new System.Windows.Forms.Button();
-            this.btnClear = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnRemoveProduct = new System.Windows.Forms.Button();
-            this.btnLogout = new System.Windows.Forms.Button();
+            this.components = new System.ComponentModel.Container();
             this.label2 = new System.Windows.Forms.Label();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnReject = new System.Windows.Forms.Button();
+            this.btnAccept = new System.Windows.Forms.Button();
+            this.dataGridViewRequests = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RequestAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SentTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductNameR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnViewProduct = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.btnRemoveProduct = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnAddProduct = new System.Windows.Forms.Button();
+            this.DGVProducts = new System.Windows.Forms.DataGridView();
             this.ProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductBrand = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,9 +58,179 @@ namespace MediaBazaarApp
             this.ProductSold = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Measurements = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BoxSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
-
+            this.timerTable = new System.Windows.Forms.Timer(this.components);
+            this.tabControl1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRequests)).BeginInit();
+            this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVProducts)).BeginInit();
             this.SuspendLayout();
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(591, 23);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(223, 38);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Stock Manager:";
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Multiline = true;
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1371, 608);
+            this.tabControl1.TabIndex = 9;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.btnReject);
+            this.tabPage2.Controls.Add(this.btnAccept);
+            this.tabPage2.Controls.Add(this.dataGridViewRequests);
+            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1363, 575);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btnReject
+            // 
+            this.btnReject.Location = new System.Drawing.Point(719, 320);
+            this.btnReject.Name = "btnReject";
+            this.btnReject.Size = new System.Drawing.Size(229, 86);
+            this.btnReject.TabIndex = 2;
+            this.btnReject.Text = "Reject Request";
+            this.btnReject.UseVisualStyleBackColor = true;
+            this.btnReject.Click += new System.EventHandler(this.btnReject_Click);
+            // 
+            // btnAccept
+            // 
+            this.btnAccept.Location = new System.Drawing.Point(397, 320);
+            this.btnAccept.Name = "btnAccept";
+            this.btnAccept.Size = new System.Drawing.Size(229, 86);
+            this.btnAccept.TabIndex = 1;
+            this.btnAccept.Text = "Accept Request";
+            this.btnAccept.UseVisualStyleBackColor = true;
+            this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
+            // 
+            // dataGridViewRequests
+            // 
+            this.dataGridViewRequests.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewRequests.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.RequestAmount,
+            this.SentTime,
+            this.ProductNameR});
+            this.dataGridViewRequests.Location = new System.Drawing.Point(397, 46);
+            this.dataGridViewRequests.Name = "dataGridViewRequests";
+            this.dataGridViewRequests.RowHeadersWidth = 51;
+            this.dataGridViewRequests.RowTemplate.Height = 29;
+            this.dataGridViewRequests.Size = new System.Drawing.Size(551, 205);
+            this.dataGridViewRequests.TabIndex = 0;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 125;
+            // 
+            // RequestAmount
+            // 
+            this.RequestAmount.HeaderText = "Request Amount";
+            this.RequestAmount.MinimumWidth = 6;
+            this.RequestAmount.Name = "RequestAmount";
+            this.RequestAmount.ReadOnly = true;
+            this.RequestAmount.Width = 125;
+            // 
+            // SentTime
+            // 
+            this.SentTime.HeaderText = "Sent Time";
+            this.SentTime.MinimumWidth = 6;
+            this.SentTime.Name = "SentTime";
+            this.SentTime.ReadOnly = true;
+            this.SentTime.Width = 125;
+            // 
+            // ProductNameR
+            // 
+            this.ProductNameR.HeaderText = "Product Name";
+            this.ProductNameR.MinimumWidth = 6;
+            this.ProductNameR.Name = "ProductNameR";
+            this.ProductNameR.ReadOnly = true;
+            this.ProductNameR.Width = 125;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.btnViewProduct);
+            this.tabPage1.Controls.Add(this.btnLogout);
+            this.tabPage1.Controls.Add(this.btnRemoveProduct);
+            this.tabPage1.Controls.Add(this.btnUpdate);
+            this.tabPage1.Controls.Add(this.btnAddProduct);
+            this.tabPage1.Controls.Add(this.DGVProducts);
+            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1363, 575);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // btnViewProduct
+            // 
+            this.btnViewProduct.Location = new System.Drawing.Point(982, 433);
+            this.btnViewProduct.Name = "btnViewProduct";
+            this.btnViewProduct.Size = new System.Drawing.Size(198, 87);
+            this.btnViewProduct.TabIndex = 18;
+            this.btnViewProduct.Text = "View";
+            this.btnViewProduct.UseVisualStyleBackColor = true;
+            this.btnViewProduct.Click += new System.EventHandler(this.btnViewProduct_Click);
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.Location = new System.Drawing.Point(1251, 488);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(104, 57);
+            this.btnLogout.TabIndex = 17;
+            this.btnLogout.Text = "Log out";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
+            // btnRemoveProduct
+            // 
+            this.btnRemoveProduct.Location = new System.Drawing.Point(511, 433);
+            this.btnRemoveProduct.Name = "btnRemoveProduct";
+            this.btnRemoveProduct.Size = new System.Drawing.Size(198, 87);
+            this.btnRemoveProduct.TabIndex = 16;
+            this.btnRemoveProduct.Text = "Remove Product";
+            this.btnRemoveProduct.UseVisualStyleBackColor = true;
+            this.btnRemoveProduct.Click += new System.EventHandler(this.btnRemoveProduct_Click_1);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(744, 433);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(198, 87);
+            this.btnUpdate.TabIndex = 15;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            // 
+            // btnAddProduct
+            // 
+            this.btnAddProduct.Location = new System.Drawing.Point(262, 433);
+            this.btnAddProduct.Name = "btnAddProduct";
+            this.btnAddProduct.Size = new System.Drawing.Size(198, 87);
+            this.btnAddProduct.TabIndex = 13;
+            this.btnAddProduct.Text = "Add Product";
+            this.btnAddProduct.UseVisualStyleBackColor = true;
+            this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click_1);
             // 
             // DGVProducts
             // 
@@ -71,98 +248,12 @@ namespace MediaBazaarApp
             this.ProductSold,
             this.Measurements,
             this.BoxSize});
-            this.DGVProducts.Location = new System.Drawing.Point(46, 92);
+            this.DGVProducts.Location = new System.Drawing.Point(30, 29);
             this.DGVProducts.Name = "DGVProducts";
             this.DGVProducts.ReadOnly = true;
             this.DGVProducts.RowHeadersWidth = 51;
             this.DGVProducts.Size = new System.Drawing.Size(1304, 375);
-            this.DGVProducts.TabIndex = 0;
-            // 
-            // cBShelfCategories
-            // 
-            this.cBShelfCategories.FormattingEnabled = true;
-            this.cBShelfCategories.Location = new System.Drawing.Point(70, 499);
-            this.cBShelfCategories.Name = "cBShelfCategories";
-            this.cBShelfCategories.Size = new System.Drawing.Size(151, 28);
-            this.cBShelfCategories.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 502);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 20);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Shelf:";
-            // 
-            // btnAddProduct
-            // 
-            this.btnAddProduct.Location = new System.Drawing.Point(278, 496);
-            this.btnAddProduct.Name = "btnAddProduct";
-            this.btnAddProduct.Size = new System.Drawing.Size(198, 87);
-            this.btnAddProduct.TabIndex = 3;
-            this.btnAddProduct.Text = "Add Product";
-            this.btnAddProduct.UseVisualStyleBackColor = true;
-            this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click);
-            // 
-            // btnClear
-            // 
-            this.btnClear.Location = new System.Drawing.Point(70, 533);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(151, 32);
-            this.btnClear.TabIndex = 4;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Location = new System.Drawing.Point(760, 496);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(198, 87);
-            this.btnUpdate.TabIndex = 5;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // btnRemoveProduct
-            // 
-            this.btnRemoveProduct.Location = new System.Drawing.Point(527, 496);
-            this.btnRemoveProduct.Name = "btnRemoveProduct";
-            this.btnRemoveProduct.Size = new System.Drawing.Size(198, 87);
-            this.btnRemoveProduct.TabIndex = 6;
-            this.btnRemoveProduct.Text = "Remove Product";
-            this.btnRemoveProduct.UseVisualStyleBackColor = true;
-            this.btnRemoveProduct.Click += new System.EventHandler(this.btnRemoveProduct_Click);
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.Location = new System.Drawing.Point(1267, 551);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(104, 57);
-            this.btnLogout.TabIndex = 7;
-            this.btnLogout.Text = "Log out";
-            this.btnLogout.UseVisualStyleBackColor = true;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(591, 23);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(223, 38);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Stock Manager:";
-            // 
-            // btnViewProduct
-            // 
-            this.btnViewProduct.Location = new System.Drawing.Point(998, 496);
-            this.btnViewProduct.Name = "btnViewProduct";
-            this.btnViewProduct.Size = new System.Drawing.Size(198, 87);
-            this.btnViewProduct.TabIndex = 9;
-            this.btnViewProduct.Text = "View";
-            this.btnViewProduct.UseVisualStyleBackColor = true;
-            this.btnViewProduct.Click += new System.EventHandler(this.btnViewProduct_Click);
+            this.DGVProducts.TabIndex = 10;
             // 
             // ProductID
             // 
@@ -227,7 +318,6 @@ namespace MediaBazaarApp
             this.ProductThershold.Name = "ProductThershold";
             this.ProductThershold.ReadOnly = true;
             this.ProductThershold.Width = 125;
-
             // 
             // ProductSold
             // 
@@ -239,7 +329,6 @@ namespace MediaBazaarApp
             // 
             // Measurements
             // 
-
             this.Measurements.HeaderText = "Measurements";
             this.Measurements.MinimumWidth = 6;
             this.Measurements.Name = "Measurements";
@@ -254,54 +343,47 @@ namespace MediaBazaarApp
             this.BoxSize.ReadOnly = true;
             this.BoxSize.Width = 125;
             // 
-
+            // timerTable
+            // 
+            this.timerTable.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // StockManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-
             this.ClientSize = new System.Drawing.Size(1383, 620);
-            this.Controls.Add(this.btnViewProduct);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label2);
-
-            this.Controls.Add(this.btnLogout);
-            this.Controls.Add(this.btnRemoveProduct);
-            this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.btnAddProduct);
-            this.Controls.Add(this.label1);
-
-            this.Controls.Add(this.cBShelfCategories);
-            this.Controls.Add(this.DGVProducts);
-
             this.Name = "StockManager";
             this.Text = "StockManager";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.StockManager_FormClosed);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRequests)).EndInit();
+            this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGVProducts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
-            this.PerformLayout();
-
 
         }
 
         #endregion
 
-
-
-        private System.Windows.Forms.DataGridView DGVProducts;
-        private System.Windows.Forms.ComboBox cBShelfCategories;
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnAddProduct;
-        private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button btnRemoveProduct;
-        private System.Windows.Forms.Button btnLogout;
-
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.DataGridView dataGridViewRequests;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RequestAmount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SentTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductNameR;
+        private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Button btnViewProduct;
-
+        private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Button btnRemoveProduct;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnAddProduct;
+        private System.Windows.Forms.DataGridView DGVProducts;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductBrand;
@@ -313,6 +395,8 @@ namespace MediaBazaarApp
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductSold;
         private System.Windows.Forms.DataGridViewTextBoxColumn Measurements;
         private System.Windows.Forms.DataGridViewTextBoxColumn BoxSize;
-
+        private System.Windows.Forms.Button btnReject;
+        private System.Windows.Forms.Button btnAccept;
+        private System.Windows.Forms.Timer timerTable;
     }
 }

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using MediaBazaarApp.Classes.Enums;
 
 namespace MediaBazaarApp
 {
@@ -17,35 +18,79 @@ namespace MediaBazaarApp
             dataAccess = new DataAccess();
         }
 
-        public bool AddShelf(Shelf shelf)
+        public bool IsProductOnShelf(int shelfID, int productID)
         {
             if (ConnOpen())
             {
-                try
+                query = "SELECT count(*) FROM product_shelves WHERE `shelf_ID` = @Shelf AND `product_ID` = @Product";
+                SqlQuery(query);
+                AddWithValue("@Shelf", shelfID);
+                AddWithValue("@Product", productID);
+
+                int amount = 0;
+
+                MySqlDataReader dataReader = command.ExecuteReader();
+                while (dataReader.Read())
                 {
-                    query = "INSERT INTO shelves (shelf_id, shelf_category, shelf_capacity) VALUES (@id, @category, @capacity)";
-
-                    dataAccess.SqlQuery(query);
-
-                    AddWithValue("@id", shelf.ID);
-                    AddWithValue("@category", shelf.Category);
-                    AddWithValue("@capacity", shelf.Capacity);
-
-
-                    NonQueryEx();
+                    amount = Convert.ToInt32(dataReader["count(*)"]);
+                }
+                if (amount > 0)
+                {
                     Close();
                     return true;
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                    return false;
-                }
-
+                Close();
             }
-            else return false;
+            else
+            {
+                Close();
+                return false;
+            }
+            return false;
         }
 
+        public void UpdateProductOnShelf(int shelfID, int productID, int amount)
+        {
+            if (ConnOpen())
+            {
+                query = "UPDATE `product_shelves` set amount=amount+@amount WHERE shelf_ID = @shelf_ID and product_ID=@product_ID;";
+
+                SqlQuery(query);
+
+                AddWithValue("@shelf_ID", shelfID);
+                AddWithValue("@product_ID", productID);
+                AddWithValue("@amount", amount);
+                NonQueryEx();
+
+                Close();
+            }
+            else
+            {
+                Close();
+            }
+    }
+            public bool AddShelff(Shelf shelf)
+        {
+            if (ConnOpen())
+            {
+                query = "INSERT INTO shelvess ( Floor) VALUES ( @Floor)";
+
+                SqlQuery(query);
+
+                // AddWithValue("@id", shelf.ID);
+                AddWithValue("@Floor", shelf.Floors);
+
+                NonQueryEx();
+                shelf.ID = Convert.ToInt32(command.LastInsertedId);
+                Close();
+                return true;
+            }
+            else
+            {
+                Close();
+                return false;
+            }
+        }
         public void RemoveShelf(int id)
         {
             Close();
@@ -69,37 +114,108 @@ namespace MediaBazaarApp
             }
         }
 
-
-        public List<Shelf> GetShelves()
+        public void AddProductToShelf(int shelfID, int productID, int amount)
         {
-            List<Shelf> shelves = new List<Shelf>();
-
             if (ConnOpen())
             {
-                try
-                {
-                    query = "SELECT * FROM shelves";
-                    SqlQuery(query);
+                query = "INSERT INTO product_shelves (shelf_ID,product_ID,amount) VALUES (@Shelf,@Product,@Amount)";
 
-                    MySqlDataReader dataReader = command.ExecuteReader();
-                    while (dataReader.Read())
-                    {
-                        Shelf shelf = shelf = new Shelf(Convert.ToInt32(dataReader["id"]), dataReader["shelf_category"].ToString(), Convert.ToInt32(dataReader["shelf_capacity"]));
-                        shelves.Add(shelf);
-                    }
-                    dataReader.Close();
-                    return shelves;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                finally
-                {
-                    Close();
-                }
+                SqlQuery(query);
+
+                AddWithValue("@Shelf", shelfID);
+                AddWithValue("@Product", productID);
+                AddWithValue("@Amount", amount);
+
+                NonQueryEx();
+                Close();
             }
-            return shelves;
+            else
+            {
+                Close();
+            }
+        }
+        public void RemoveProductFromShelf(int shelfID, int productID, int amount)
+        {
+            if (ConnOpen())
+            {
+                query = "UPDATE `product_shelves` SET shelf_ID = @shelf_ID,product_ID=@product_ID ,amount =@amount, WHERE `id` = @id;";
+
+             SqlQuery(query);
+
+                AddWithValue("@shelf_ID", shelfID);
+                AddWithValue("@product_ID", productID);
+                AddWithValue("@amount", amount);
+                NonQueryEx();
+
+                Close();
+            }
+            else
+            {
+                Close();
+            }
+        }
+
+
+       
+        public List<Shelf> GetShelvess()
+        {
+            if (ConnOpen())
+            {
+
+                query = "SELECT * FROM shelvess";
+                SqlQuery(query);
+                List<Shelf> shelves = new List<Shelf>();
+                MySqlDataReader dataReader = command.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    Shelf shelf = new Shelf((Floors)Enum.Parse(typeof(Floors), dataReader["Floor"].ToString()));
+                    shelf.ID = Convert.ToInt32(dataReader["id"]);
+                    shelves.Add(shelf);
+
+                }
+                Close();
+                return shelves;
+
+
+            }
+            else
+            {
+                Close();
+                return null;
+            }
+
+        }
+
+        public List<string> ShowProductsInShelf(int shelfID)
+        {
+            if (ConnOpen())
+            {
+
+                query = "select distinct p.id as ProductID,p.name as Product,ps.amount as Count from product_shelves as ps inner " +
+                    "join shelvess as s on s.id = ps.shelf_ID inner join products as p on p.id = ps.product_ID where s.id = @shelf";
+                SqlQuery(query);
+                AddWithValue("@Shelf", shelfID);
+                List<String> items = new List<String>();
+                MySqlDataReader dataReader = command.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    //if(dataReader["Count"] > 5)
+                    //{
+
+                    //}
+                    //Shelf shelf = new Shelf((Floors)Enum.Parse(typeof(Floors), dataReader["Floor"].ToString()));
+                    items.Add(dataReader["ProductID"]+" "+ dataReader["Product"]+" "+dataReader["Count"]);
+                }
+               Close();
+                return items;
+
+
+            }
+            else
+            {
+                Close();
+                return null;
+            }
         }
     }
 }

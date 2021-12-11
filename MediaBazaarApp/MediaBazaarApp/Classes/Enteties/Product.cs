@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MediaBazaarApp.Classes.Enums;
 
 namespace MediaBazaarApp
 {
@@ -20,7 +21,8 @@ namespace MediaBazaarApp
         public decimal Measurements { get; private set; }
        
         public string BoxSize { get; private set; }
-
+        public int ShelfId { get;  set; }
+        public int ShelfFloor { get; set; }
 
         public Product (string name, string brand ,decimal costPrice, decimal sellPrice, int inStock, int maxCapacity, int threshold, int sold, decimal measurements, string boxSize)
         {
@@ -34,6 +36,17 @@ namespace MediaBazaarApp
             this.Sold = sold;
             this.Measurements = measurements;
             this.BoxSize = boxSize;
+        }
+
+        public Product(Shelf shelf , Floors floors)
+        {
+            this.ShelfId = shelf.ID;
+           // this.ShelfFloor = ;
+        }
+        public Product(int shelfId, int shelfFloor)
+        {
+            this.ShelfId = shelfId;
+            this.ShelfFloor = shelfFloor;
         }
 
         public void EditProduct(string name, string brand,decimal costPrice, decimal sellPrice,int maxCapacity, int threshold,decimal measurements,string boxSize)
@@ -51,6 +64,10 @@ namespace MediaBazaarApp
         public override string ToString()
         {
             return $"ID: {this.ID}; Name: {this.Name}";
+        }
+        public void RestockProduct(int quantity)
+        {
+            this.InStock += quantity;
         }
     }
 }

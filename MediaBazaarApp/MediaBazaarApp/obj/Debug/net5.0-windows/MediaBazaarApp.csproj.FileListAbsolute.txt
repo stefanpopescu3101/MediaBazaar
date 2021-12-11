@@ -148,3 +148,6 @@ C:\Users\aniak\OneDrive\Pulpit\Fontys\Sem2.2\PRJ v2\prj-s2-cb05\MediaBazaarApp\M
 C:\Users\aniak\OneDrive\Pulpit\Fontys\Sem2.2\PRJ v2\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\obj\Debug\net5.0-windows\MediaBazaarApp.pdb
 C:\Users\aniak\OneDrive\Pulpit\Fontys\Sem2.2\PRJ v2\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\obj\Debug\net5.0-windows\MediaBazaarApp.genruntimeconfig.cache
 >>>>>>> 9b46c4b50e757bcdf480b13acd7c133a8421300d
+C:\HRISTO TANCHEV\Fontaka\Semester 2 take 2\PRJ\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\obj\Debug\net5.0-windows\MediaBazaarApp.ManipulateShelves.resources
+C:\HRISTO TANCHEV\Fontaka\Semester 2 take 2\PRJ\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\obj\Debug\net5.0-windows\MediaBazaarApp.Forms.AddingProductToShelfs.resources
+C:\HRISTO TANCHEV\Fontaka\Semester 2 take 2\PRJ\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\obj\Debug\net5.0-windows\MediaBazaarApp.Forms.ReturnProductToStorage.resources

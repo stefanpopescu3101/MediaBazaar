@@ -29,7 +29,7 @@ namespace MediaBazaarApp
 
         public void AddWithValue(string parameterName, object value)
         {
-            this.command.Parameters.AddWithValue(parameterName, value);
+             this.command.Parameters.AddWithValue(parameterName, value);
         }
 
         public void NonQueryEx()
