@@ -209,7 +209,8 @@ namespace MediaBazaarApp.Forms
             // 
             // btnSendRestockRequest
             // 
-            this.btnSendRestockRequest.Location = new System.Drawing.Point(284, 466);
+            this.btnSendRestockRequest.Enabled = false;
+            this.btnSendRestockRequest.Location = new System.Drawing.Point(807, 425);
             this.btnSendRestockRequest.Name = "btnSendRestockRequest";
             this.btnSendRestockRequest.Size = new System.Drawing.Size(133, 64);
             this.btnSendRestockRequest.TabIndex = 6;

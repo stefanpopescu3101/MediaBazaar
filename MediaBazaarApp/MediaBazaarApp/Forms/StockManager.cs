@@ -257,5 +257,10 @@ namespace MediaBazaarApp
         {
 
         }
+
+        private void tabControl1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

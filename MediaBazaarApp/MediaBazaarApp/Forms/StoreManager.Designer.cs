@@ -196,6 +196,7 @@ namespace MediaBazaarApp
             // 
             // cbExistingFloor
             // 
+            this.cbExistingFloor.Enabled = false;
             this.cbExistingFloor.FormattingEnabled = true;
             this.cbExistingFloor.Location = new System.Drawing.Point(10, 354);
             this.cbExistingFloor.Name = "cbExistingFloor";
@@ -248,6 +249,7 @@ namespace MediaBazaarApp
             // 
             // btnReturnProduct
             // 
+            this.btnReturnProduct.Enabled = false;
             this.btnReturnProduct.Location = new System.Drawing.Point(702, 148);
             this.btnReturnProduct.Name = "btnReturnProduct";
             this.btnReturnProduct.Size = new System.Drawing.Size(149, 56);

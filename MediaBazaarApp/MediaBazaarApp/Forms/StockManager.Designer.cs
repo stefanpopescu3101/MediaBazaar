@@ -78,14 +78,15 @@ namespace MediaBazaarApp
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1371, 608);
             this.tabControl1.TabIndex = 9;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged_1);
             // 
             // tabPage2
             // 
@@ -97,11 +98,12 @@ namespace MediaBazaarApp
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1363, 575);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.Text = "Restock Request";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // btnReject
             // 
+            this.btnReject.Enabled = false;
             this.btnReject.Location = new System.Drawing.Point(719, 320);
             this.btnReject.Name = "btnReject";
             this.btnReject.Size = new System.Drawing.Size(229, 86);
@@ -112,6 +114,7 @@ namespace MediaBazaarApp
             // 
             // btnAccept
             // 
+            this.btnAccept.Enabled = false;
             this.btnAccept.Location = new System.Drawing.Point(397, 320);
             this.btnAccept.Name = "btnAccept";
             this.btnAccept.Size = new System.Drawing.Size(229, 86);
@@ -180,7 +183,7 @@ namespace MediaBazaarApp
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1363, 575);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.Text = "Stock Manipulation";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // btnViewProduct
