@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MediaBazaarApp.Classes.Enums;
+using MediaBazaarApp.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,40 +16,44 @@ namespace MediaBazaarApp
     {
 
         ShelfManager shelfManager;
+        Shelf s  ;
+        ProductManager pm = new ProductManager();
 
         public ManipulateShelves()
         {
             InitializeComponent();
             shelfManager = new ShelfManager();
+            shelfManager.LoadShelfs();
+            this.LoadS();
+            cbFloor.DataSource = Enum.GetValues(typeof(Floors));
+            cbExistingFloor.DataSource = Enum.GetValues(typeof(Floors));
         }
 
 
         public void UpdateDataGridView()
         {
-            dtgvManipulateShelf.Rows.Clear();
-            
-            this.dtgvManipulateShelf.Columns[0].Name = "ID";
-            this.dtgvManipulateShelf.Columns[1].Name = "Category";
-            this.dtgvManipulateShelf.Columns[2].Name = "Capacity";
-           
-
-            foreach (Shelf shelf in shelfManager.GetShelves())
-            {
-                this.dtgvManipulateShelf.Rows.Add(shelf.ID, shelf.Category, shelf.Capacity);
-                
-            }
         }
-
-        private void btnAddShelf_Click(object sender, EventArgs e)
+        private void LoadS()
         {
-            Shelf shelf = new Shelf(cmbShelfCategory.Text, Convert.ToInt32(tbShelfCapacity.Text));
+            dtgvManipulateShelf.Rows.Clear();
 
-            shelfManager.AddShelf(shelf);
-            MessageBox.Show("New shelf has been added successfully!");
-            this.Close();
-
+            this.dtgvManipulateShelf.Columns[0].Name = "ID";
+            this.dtgvManipulateShelf.Columns[1].Name = "Floor";
+            foreach(Shelf s in shelfManager.GetShelvess())
+            {
+                this.dtgvManipulateShelf.Rows.Add(s.ID, s.Floors);
+            }
+            List<Product> products = new List<Product>();
+            //if (this.cbExistingFloor.SelectedItem.ToString() == null)
+            //{
+            //    products = this.pm.GetListProd();
+            //}
+            //else
+            //{
+            //    Shelf shelf = cbExistingFloor.SelectedItem as Shelf;
+            //    products = this.pm.GetProductBySpesificShelf(shelf);
+            //}
         }
-
         private void btnRemoveShelf_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(dtgvManipulateShelf.CurrentCell.Value);
@@ -55,10 +61,75 @@ namespace MediaBazaarApp
             shelfManager.RemoveShelf(id);
             UpdateDataGridView();
         }
-
-        private void button3_Click(object sender, EventArgs e)
+        private void ManipulateShelves_Load(object sender, EventArgs e)
         {
+        }
 
+        private void btnAddShelf_Click_1(object sender, EventArgs e)
+        {
+                if (cbFloor.Text != "")
+                {
+                    DialogResult r = MessageBox.Show("Are you sure you want to create a new shelf on this floor?", "", MessageBoxButtons.YesNo);
+                    if(r == DialogResult.Yes)
+                    {
+                        Shelf s = new Shelf((Floors)cbFloor.SelectedIndex);
+                        this.shelfManager.AddShelf(s);
+                        MessageBox.Show("Shelf added");
+                        dtgvManipulateShelf.Rows.Clear();
+                        LoadS();
+                    }
+                }
+                else
+                {
+                   MessageBox.Show("Please select a floor!");
+  
+                }         
+        }
+        private void groupBox1_Enter_1(object sender, EventArgs e)
+        {
+        }
+        private void btnAddProduct2Shelfs_Click(object sender, EventArgs e)
+        {
+            if(this.dtgvManipulateShelf.SelectedCells.Count > 0)
+            {
+              int id = Convert.ToInt32(dtgvManipulateShelf.Rows[dtgvManipulateShelf.CurrentCell.RowIndex].Cells[0].Value);
+              AddingProductToShelfs ap = new AddingProductToShelfs(id);
+
+
+                
+
+                ap.ShowDialog();
+              this.LoadS();
+                loadProducts(id);
+            }
+            else { MessageBox.Show("Please select a shelf to move product to!"); }
+          
+        }
+        private void dtgvManipulateShelf_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int id = Convert.ToInt32(dtgvManipulateShelf.Rows[dtgvManipulateShelf.CurrentCell.RowIndex].Cells[0].Value);
+            loadProducts(id);
+
+        }
+        private void btnReturnProduct_Click(object sender, EventArgs e)
+        {
+            if (this.dtgvManipulateShelf.SelectedCells.Count > 0)
+            {
+                int id = Convert.ToInt32(dtgvManipulateShelf.Rows[dtgvManipulateShelf.CurrentCell.RowIndex].Cells[0].Value);
+                ReturnProductToStorage rp = new ReturnProductToStorage(pm,id);
+                DialogResult r = rp.ShowDialog();
+                this.LoadS();
+            }
+            else { MessageBox.Show("Please select a shelf to move product to!"); }
+        }
+
+        private void loadProducts(int id)
+        {
+            lbProductsOnShelf.Items.Clear();
+            foreach (var item in shelfManager.GetItemsOnShelf(id))
+            {
+                lbProductsOnShelf.Items.Add(item);
+            }
         }
     }
 }
