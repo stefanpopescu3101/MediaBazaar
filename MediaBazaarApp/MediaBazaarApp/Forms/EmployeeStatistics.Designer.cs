@@ -32,8 +32,11 @@ namespace MediaBazaarApp
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnShowEmp = new System.Windows.Forms.Button();
+            this.cbEmployees = new System.Windows.Forms.ComboBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -60,6 +63,8 @@ namespace MediaBazaarApp
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btnShowEmp);
+            this.tabPage2.Controls.Add(this.cbEmployees);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -67,6 +72,25 @@ namespace MediaBazaarApp
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Employees Overview";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btnShowEmp
+            // 
+            this.btnShowEmp.Location = new System.Drawing.Point(182, 3);
+            this.btnShowEmp.Name = "btnShowEmp";
+            this.btnShowEmp.Size = new System.Drawing.Size(94, 29);
+            this.btnShowEmp.TabIndex = 1;
+            this.btnShowEmp.Text = "Show";
+            this.btnShowEmp.UseVisualStyleBackColor = true;
+            this.btnShowEmp.Click += new System.EventHandler(this.btnShowEmp_Click);
+            // 
+            // cbEmployees
+            // 
+            this.cbEmployees.FormattingEnabled = true;
+            this.cbEmployees.Location = new System.Drawing.Point(25, 4);
+            this.cbEmployees.Name = "cbEmployees";
+            this.cbEmployees.Size = new System.Drawing.Size(151, 28);
+            this.cbEmployees.TabIndex = 0;
+            this.cbEmployees.SelectedIndexChanged += new System.EventHandler(this.cbEmployees_SelectedIndexChanged);
             // 
             // tabPage3
             // 
@@ -82,12 +106,13 @@ namespace MediaBazaarApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1130, 686);
+            this.ClientSize = new System.Drawing.Size(1130, 706);
             this.Controls.Add(this.tabControl1);
             this.Name = "EmployeeStatistics";
             this.Text = "EmployeeStatistics";
             this.Load += new System.EventHandler(this.EmployeeStatistics_Load);
             this.tabControl1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -103,5 +128,7 @@ namespace MediaBazaarApp
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Button btnShowEmp;
+        private System.Windows.Forms.ComboBox cbEmployees;
     }
 }

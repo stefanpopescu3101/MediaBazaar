@@ -25,6 +25,7 @@ namespace MediaBazaarApp
             employeesMediator.UpdateUsernameAndPassword(emp);
 
         }
+
         public Employee CheckCredentials(string username,string password)
         {
             foreach (Employee emp in employees)

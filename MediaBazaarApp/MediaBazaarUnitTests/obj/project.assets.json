@@ -1972,6 +1972,7 @@
           "MySql.Data": "8.0.26",
           "OxyPlot.Core": "2.1.0",
           "OxyPlot.WindowsForms": "2.1.0",
+          "System.Collections": "4.3.0",
           "System.Windows.Controls.DataVisualization.Toolkit": "4.0.0",
           "System.Windows.Forms.DataVisualization": "1.0.0-prerelease.19212.2"
         },

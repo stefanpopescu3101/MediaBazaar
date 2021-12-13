@@ -56,6 +56,10 @@
               "target": "Package",
               "version": "[2.1.0, )"
             },
+            "System.Collections": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            },
             "System.Windows.Controls.DataVisualization.Toolkit": {
               "target": "Package",
               "version": "[4.0.0, )"
