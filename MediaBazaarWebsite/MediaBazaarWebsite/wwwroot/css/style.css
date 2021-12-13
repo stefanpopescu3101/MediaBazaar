@@ -472,3 +472,55 @@ button {
 .text-decoration {
     color: red;
 }
+
+table, th, td {
+    border: 1px solid black;
+    border-radius:3px;
+    padding:4px 7px 2px 4px;
+}
+table {
+    width: 60%;
+    border-collapse: collapse;
+    margin-left: 100px;
+    margin-top: 50px;
+}
+    table th {
+        background: #333;
+        color:snow;
+    }
+    table td{
+        background:snow;
+    }
+
+/*.scroller {
+    min-height: 400px;
+    overflow-y: scroll;
+    max-height: 80px;
+}*/
+
+
+.info_container input[type=text], .info_container input[type=email] {
+    width: 40%;
+    padding: 10px 14px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: inline-block;
+    margin-left: 20px;
+    margin-right: 1px;
+}
+.info_container {
+    border-radius: 5px;
+    border: 1px solid rgb(12, 11, 11);
+    background-color: #f2f2f2;
+    padding: 18px;
+    margin-left: 20px;
+    margin-right: 300px;
+    margin-top: 20px;
+    margin-bottom: 100px;
+}
+.label {
+    color: #333;
+    font-size: 20px;
+}

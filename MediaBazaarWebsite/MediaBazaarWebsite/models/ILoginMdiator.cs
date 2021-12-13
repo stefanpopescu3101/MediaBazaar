@@ -9,5 +9,6 @@ namespace MediaBazaarWebsite.models
     {
         public List<Employee> GetEmployees();
         public Employee GetEmployee(string password, string username);
+        public bool UpdatePassword(Employee employee);
     }
 }

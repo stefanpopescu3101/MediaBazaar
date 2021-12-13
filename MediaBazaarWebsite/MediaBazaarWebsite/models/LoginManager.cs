@@ -13,6 +13,7 @@ namespace MediaBazaarWebsite.models
         {
             this.mediator = mediator;
             employees = new List<Employee>();
+            Load();
         }
 
         public void Load()
@@ -60,6 +61,14 @@ namespace MediaBazaarWebsite.models
                 }
             }
             return null;
+        }
+
+        public Employee UpdatePassword(int id, string newPassword)
+        {
+            Employee employee = GetEmployeeByID(id);
+            employee.UpdatePassword(newPassword);
+            mediator.UpdatePassword(employee);
+            return employee;
         }
     }
 }

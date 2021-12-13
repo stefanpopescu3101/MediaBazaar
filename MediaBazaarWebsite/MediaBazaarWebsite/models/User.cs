@@ -11,7 +11,6 @@ namespace MediaBazaarWebsite.models
         protected string username;
         protected string password;
 
-
         public User()
         {
             //this.username = username;

@@ -3,78 +3,48 @@
 @{ ViewData["Title"] = "Account page";
 }
 
-<title> Profile Information </title>
-<form action="handlers/UpdateInfo.php" method="POST" enctype="multipart/form-data">
-    <div class="Edit">
-        <h1> Editable Information </h1>
-        <label for="email">Email:</label>
+<section class="form_container">
+    <title> Profile Information </title>
+    <form method="POST" class="info_container">
+        <h1> Personal Information </h1>
+        <label class="label" asp-for="Emp.FirstName">First name:</label><br>
+        <input type="text"
+              asp-for="Emp.FirstName" disabled><br><br>
+        <label class="label" asp-for="Emp.LastName">Family name:</label><br>
+        <input type="text"
+               asp-for="Emp.LastName" disabled><br><br>
+        <label class="label" asp-for="Emp.Email">Email:</label><br>
         <input type="email"
-               class="input"  name="email"><br><br>
-        <label for="address">Address:</label>
+              asp-for="Emp.Email" disabled><br><br>
+        <label class="label" asp-for="Emp.Address">Address:</label><br>
         <input type="text"
-               class="input" name="address"><br><br>
-        <label for="address">Address Number:</label>
+              asp-for="Emp.Address" disabled><br><br>
+        <label class="label" asp-for="Emp.Bsn">BSN :</label><br>
         <input type="text"
-               class="input"  name="addressnum"><br><br>
-        <label for="city">Place of residence:</label>
+               asp-for="Emp.Bsn" disabled><br><br>
+        <label class="label" asp-for="Emp.UserName">Username:</label><br>
         <input type="text"
-               class="input"  name="town"><br><br>
-        <label for="country">Country:</label>
+              asp-for="Emp.UserName" disabled><br><br>
+        <label class="label" asp-for="Emp.Birthdate"> Birthday:</label><br>
         <input type="text"
-               class="input"  name="country"><br><br>
-        <label for="zipcode">ZipCode:</label>
-        <input type="text"
-               class="input"  name="zipCode"><br><br>
-        <label for="fname">First name:</label>
-        <input type="text"
-               class="input"  name="firstName"><br><br>
-        <label for="famname">Family name:</label>
-        <input type="text"
-               class="input"  name="familyName"><br><br>
-
-        <button  name="Update" value="Update" style="margin:5px">
-            Edit
-        </button>
-
-    </div>
-
-    <div class="Non-editable">
-        <h1>Non-edtitable Information</h1>
-        <label>Username:</label>
-        <input type="text"
-               class="input" name="username" disabled><br><br>
-        <label> Birthday:</label>
-        <input type="text"
-               class="input" name="dateOfBirth" disabled><br><br>
-        <label> Date of first working day:</label>
-        <input type="text"
-               class="input" disabled><br><br>
-        <label> Date of last working day:</label>
-        <input type="text"
-               class="input"  disabled><br><br>
-        <label> Hourly wage:</label>
-        <input type="text"
-               class="input" disabled><br><br>
-        <label> Account number:</label>
-        <input type="text"
-               class="input"  disabled><br><br>
-        <label> Kind of contract:</label>
-        <input type="text"
-               class="input"  disabled><br><br>
-
-    </div>
-    <div class="ProfilePic">
-        <img scr="def" id="photo">
-
-        <input type="file" name="photo" id="file">
-        <label for="file" id="uploadbtn">
-            Choose Profile Picture </label> <br>
-
-            <input type="submit" id="submit" value="Submit">
-            <label for=submit id="submitbtn">
-                Upload Picture
-            </label>
+              asp-for="Emp.Birthdate" disabled><br><br>
+        <label class="label" asp-for="Emp.FirstWorkingDate"> Date of first working day:</label><br>
+        <input type="text" asp-for="Emp.FirstWorkingDate"
+               disabled><br><br>
+        <label class="label" asp-for="Emp.LastWorkingDate"> Date of last working day:</label><br>
+        <input type="text" asp-for="Emp.LastWorkingDate"
+               disabled><br><br>
+        <label class="label" asp-for="Emp.HourlyWage"> Hourly wage:</label><br>
+        <input type="text" asp-for="Emp.HourlyWage"
+               disabled><br><br>
+        <label class="label" asp-for="Emp.Role"> Role :</label><br>
+        <input type="text" asp-for="Emp.Role"
+               disabled><br><br>
+        <label class="label" asp-for="Emp.ContractType"> Type of contract:</label><br>
+        <input type="text" asp-for="Emp.ContractType"
+               disabled><br><br>
 
 
-    </div>
-</form>
+
+    </form>
+    </section>
