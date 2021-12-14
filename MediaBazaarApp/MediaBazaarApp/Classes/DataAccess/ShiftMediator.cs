@@ -5,16 +5,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+
 namespace MediaBazaarApp
 {
-    public class ShiftMediator:DataAccess
+    public class ShiftMediator : DataAccess
     {
         public bool Add(WorkShift shift)
         {
             if (ConnOpen())
             {
                 query = "INSERT INTO workshifts (employeeID, employeeName, type, Date, wageForShift, hoursWorked)" +
-                    "VAlUES (@employeeID, @employeeName, @type, @Date, @wageForShift, @hoursWorked)";
+                "VAlUES (@employeeID, @employeeName, @type, @Date, @wageForShift, @hoursWorked)";
                 SqlQuery(query);
                 AddWithValue("@employeeID", shift.EmployeeId);
                 AddWithValue("@employeeName", shift.EmployeeName);
@@ -25,7 +27,13 @@ namespace MediaBazaarApp
                 NonQueryEx();
                 shift.ID = Convert.ToInt32(command.LastInsertedId);
 
+<<<<<<< HEAD
                 Close();
+=======
+
+
+                connection.Close();
+>>>>>>> 0a1efad913d38203112f2f979009be34510b642c
                 return true;
             }
             else
@@ -34,6 +42,8 @@ namespace MediaBazaarApp
                 return false;
             }
         }
+
+
 
         public bool Remove(WorkShift shift)
         {
@@ -44,6 +54,8 @@ namespace MediaBazaarApp
                 AddWithValue("@workshift_id", shift.ID);
                 NonQueryEx();
 
+
+
                 Close();
                 return true;
             }
@@ -54,6 +66,8 @@ namespace MediaBazaarApp
             }
         }
 
+
+
         public List<WorkShift> GetAll()
         {
             if (ConnOpen())
@@ -61,25 +75,33 @@ namespace MediaBazaarApp
                 query = "SELECT * FROM workshifts";
                 SqlQuery(query);
 
+
+
                 List<WorkShift> workshifts = new List<WorkShift>();
                 MySqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
                     WorkShift workshift = new WorkShift(
-                        Convert.ToInt32(reader["employeeID"]),
-                        reader["employeeName"].ToString(),
-                        reader["Date"].ToString(),
-                        (reader["type"]).ToString(),
-                        Convert.ToDecimal(reader["wageForShift"]),
-                        Convert.ToInt32(reader["hoursWorked"]));
+                    Convert.ToInt32(reader["employeeID"]),
+                    reader["employeeName"].ToString(),
+                    reader["Date"].ToString(),
+                    (reader["type"]).ToString(),
+                    Convert.ToDecimal(reader["wageForShift"]),
+                    Convert.ToInt32(reader["hoursWorked"]));
+
+
 
                     workshift.ID = Convert.ToInt32(reader["id"]);
                     if (reader["Cancelled"].ToString() == "True") { workshift.CancelShift(); }
+
+
 
                     workshifts.Add(workshift);
                 }
                 Close();
                 return workshifts;
+
+
 
             }
             else
@@ -89,6 +111,8 @@ namespace MediaBazaarApp
             }
         }
 
+
+
         //Method for shift cancellation
         public bool Update(WorkShift shift)
         {
@@ -96,10 +120,14 @@ namespace MediaBazaarApp
             {
                 query = "UPDATE workshifts SET Cancelled = @Cancelled WHERE id = @id";
 
+
+
                 SqlQuery(query);
                 AddWithValue("@Cancelled", "True");
                 AddWithValue("@id", shift.ID);
                 NonQueryEx();
+
+
 
                 Close();
                 return true;
@@ -111,6 +139,8 @@ namespace MediaBazaarApp
             }
         }
 
+
+
         public void Reset()
         {
             if (ConnOpen())
@@ -118,6 +148,8 @@ namespace MediaBazaarApp
                 query = "DELETE FROM workshifts ";
                 SqlQuery(query);
                 NonQueryEx();
+
+
 
                 Close();
             }

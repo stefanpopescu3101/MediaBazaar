@@ -7,45 +7,48 @@
 <div id="page_layout">
     <div id="table_container">
         <h3 style="margin-left:20px">Welcome  @Model.Name</h3>
-        <div class="row">
-            <table float="left" class="col-xs-7 table-bordered table-striped table-condensed table-fixed">
+       
+        <div class="row" >
+                <table float="left" >
 
 
-                <thead>
-                    <tr>
-                        <th class="col">Work shift ID</th>
-                        <th class="col">Period</th>
-                        <th class="col">Date</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-
-                    @foreach (var item in Model.workShifts)
-                    {
-
+                    <thead>
                         <tr>
-                            <td class="col">@item.ID</td>
-                            <td class="col">@item.Type</td>
-                            <td class="col">@item.Date </td>
+                            <th class="col">Work shift ID</th>
+                            <th class="col">Period</th>
+                            <th class="col">Date</th>
                         </tr>
-                    }
-                    </tbody>
-                
-            </table>
-        </div>
-        <div class="pagination">
-            <form method="post" asp-page-handler="Reset">
-                <button class="btn"> Show </button>
-            </form>
-            <form method="post" asp-page-handler="Previous">
-                <button class="btn"> Previous Month </button>
-            </form>
-            <form method="post" asp-page-handler="Next">
-                <button class="btn"> Next Month </button>
-            </form>
+                    </thead>
 
-</div>
+                    <tbody >
+
+                        @foreach (var item in Model.workShifts)
+                        {
+
+                            <tr>
+                                <td class="col">@item.ID</td>
+                                <td class="col">@item.Type</td>
+                                <td class="col">@item.Date </td>
+                            </tr>
+                        }
+                    </tbody>
+
+                </table>
+        
+        </div>
+            <div class="pagination">
+                <form method="post" asp-page-handler="Reset">
+                    <button class="btn"> Show </button>
+                </form>
+                <form method="post" asp-page-handler="Previous">
+                    <button class="btn"> Previous Month </button>
+                </form>
+                <form method="post" asp-page-handler="Next">
+                    <button class="btn"> Next Month </button>
+                </form>
+
+            </div>
+
 
     </div>
     <div id="list_container">
@@ -93,8 +96,8 @@
                 </form>
 
 
+
             </div>
         </div>
     </div>
-</div>
 

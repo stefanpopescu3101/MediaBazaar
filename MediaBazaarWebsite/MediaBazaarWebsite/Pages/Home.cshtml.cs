@@ -14,6 +14,20 @@ namespace MediaBazaarWebsite.Pages
     public class HomeModel : PageModel
     {
         [BindProperty]
+        public bool Monday { get; set; }
+        [BindProperty]
+        public bool Tuesday { get; set; }
+        [BindProperty]
+        public bool Wednesday { get; set; }
+        [BindProperty]
+        public bool Thursday { get; set; }
+        [BindProperty]
+        public bool Friday { get; set; }
+        [BindProperty]
+        public bool Saturday { get; set; }
+        [BindProperty]
+        public bool Sunday { get; set; }
+        [BindProperty]
         public string Name { get; set; }
         public Employee Emp { get; set; }
         [BindProperty]
@@ -23,8 +37,14 @@ namespace MediaBazaarWebsite.Pages
         public LoginManager manager;
 
         public ShiftManager ShiftManager = new ShiftManager();
+
        public List<WorkShift> workShifts = new List<WorkShift>();
         public List<UnavailableShift> unavailableShifts = new List<UnavailableShift>();
+
+        //public List<WorkShift> workShifts = new List<WorkShift>();
+        //public List<Employee> employees = new List<Employee>();
+        //private EmployeeMediator med2 = new EmployeeMediator();
+        //public EmployeeManager empManager;
 
         public HomeModel()
         {
@@ -41,9 +61,9 @@ namespace MediaBazaarWebsite.Pages
                 {
                     this.Emp = manager.GetEmployeeByID(Convert.ToInt32(id));
                     Name = Emp.FirstName + " " + Emp.LastName;
-          
+           
                 }
-              
+             
             }
         }
 
@@ -88,6 +108,7 @@ namespace MediaBazaarWebsite.Pages
             this.Unavailable = new UnavailableShift(Convert.ToInt32(id), date);
             this.ShiftManager.AddUnavailableShift(Unavailable);
             return Page();
+
 
         }
 

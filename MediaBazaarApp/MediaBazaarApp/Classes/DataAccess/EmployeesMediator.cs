@@ -32,10 +32,10 @@ namespace MediaBazaarApp
             {
                 try
                 {
-                    query = "INSERT INTO employees (id, first_name, last_name, BSN, email, first_working_date, last_working_date, birthdate, contract_type, hourly_wage, departure_reason, shifts_per_week, address, department, role) VALUES (@id, @firstName, @lastName, @BSN, @email, @firstWorkingDate, @lastWorkingDate, @birthdate, @contractType, @hourlyWage, @departureReason, @shiftsPerWeek, @address, @department, @role)";
+                    query = "INSERT INTO employees (first_name, last_name, BSN, email, first_working_date, last_working_date, birthdate, contract_type, hourly_wage, departure_reason, shifts_per_week, address, department, role) VALUES ( @firstName, @lastName, @BSN, @email, @firstWorkingDate, @lastWorkingDate, @birthdate, @contractType, @hourlyWage, @departureReason, @shiftsPerWeek, @address, @department, @role)";
 
                     SqlQuery(query);
-                    AddWithValue("@id", employee.ID);
+                
                     AddWithValue("@firstName", employee.FirstName);
                     AddWithValue("@lastName", employee.LastName);
                     AddWithValue("@BSN", employee.Bsn);
@@ -53,6 +53,10 @@ namespace MediaBazaarApp
                     //employee.ID = Convert.ToInt32(command.LastInsertedId);
                     NonQueryEx();
                     employee.ID = Convert.ToInt32(command.LastInsertedId);
+                    query = "INSERT INTO unavailability (employee_id) VALUES (@employee_id)";
+                    SqlQuery(query);
+                    AddWithValue("@employee_id", employee.ID);
+                    NonQueryEx();
                     Close();
                     return true;
                 }
