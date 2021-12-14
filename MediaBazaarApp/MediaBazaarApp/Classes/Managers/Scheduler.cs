@@ -66,6 +66,7 @@ namespace MediaBazaarApp
             return employees;
         }
 
+        
 
         public void ScheduleWeek(string monday1, string sunday1)
         {
@@ -93,53 +94,59 @@ namespace MediaBazaarApp
                 {
                     foreach (Employee employee in availableEmployees)
                     {
-                        if (employeesMorning < 8)
+                        if (shiftManager.CheckAvailability(employee.ID, monday.ToString("d"))==true)
                         {
-                            if (employee.ContractType == "Full Time")
+                            if (employeesMorning < 8)
                             {
-                                WorkShift shift = new WorkShift(employee.ID, employee.Name, monday.ToString("d"), "MORNING", Convert.ToDecimal(employee.HourlyWage), 8);
-                                sm.Add(shift);
-                                employeesMorning++;
+                                if (employee.ContractType == "Full Time")
+                                {
+                                    WorkShift shift = new WorkShift(employee.ID, employee.Name, monday.ToString("d"), "MORNING", Convert.ToDecimal(employee.HourlyWage), 8);
+                                    sm.Add(shift);
+                                    employeesMorning++;
+                                }
+                                else
+                                {
+                                    WorkShift shift = new WorkShift(employee.ID, employee.Name, monday.ToString("d"), "MORNING", Convert.ToDecimal(employee.HourlyWage), 6);
+                                    sm.Add(shift);
+                                    employeesMorning++;
+                                }
                             }
-                            else
+
+                            if (employeesAfternoon < 8)
                             {
-                                WorkShift shift = new WorkShift(employee.ID, employee.Name, monday.ToString("d"), "MORNING", Convert.ToDecimal(employee.HourlyWage), 6);
-                                sm.Add(shift);
-                                employeesMorning++;
+                                if (employee.ContractType == "Full Time")
+                                {
+                                    WorkShift shift = new WorkShift(employee.ID, employee.Name, monday.ToString("d"), "AFTERNOON", Convert.ToDecimal(employee.HourlyWage), 8);
+                                    sm.Add(shift);
+                                    employeesAfternoon++;
+                                }
+                                else
+                                {
+                                    WorkShift shift = new WorkShift(employee.ID, employee.Name, monday.ToString("d"), "AFTERNOON", Convert.ToDecimal(employee.HourlyWage), 6);
+                                    sm.Add(shift);
+                                    employeesAfternoon++;
+                                }
                             }
+
+                            if (employeesEvening < 8)
+                            {
+                                if (employee.ContractType == "Full Time")
+                                {
+                                    WorkShift shift = new WorkShift(employee.ID, employee.Name, monday.ToString("d"), "EVENING", Convert.ToDecimal(employee.HourlyWage), 8);
+                                    sm.Add(shift);
+                                    employeesEvening++;
+                                }
+                                else
+                                {
+                                    WorkShift shift = new WorkShift(employee.ID, employee.Name, monday.ToString("d"), "EVENING", Convert.ToDecimal(employee.HourlyWage), 6);
+                                    sm.Add(shift);
+                                    employeesEvening++;
+                                }
+                            }
+
                         }
 
-                        if (employeesAfternoon < 8)
-                        {
-                            if (employee.ContractType == "Full Time")
-                            {
-                                WorkShift shift = new WorkShift(employee.ID, employee.Name, monday.ToString("d"), "AFTERNOON", Convert.ToDecimal(employee.HourlyWage), 8);
-                                sm.Add(shift);
-                                employeesAfternoon++;
-                            }
-                            else
-                            {
-                                WorkShift shift = new WorkShift(employee.ID, employee.Name, monday.ToString("d"), "AFTERNOON", Convert.ToDecimal(employee.HourlyWage), 6);
-                                sm.Add(shift);
-                                employeesAfternoon++;
-                            }
-                        }
-
-                        if (employeesEvening < 8)
-                        {
-                            if (employee.ContractType == "Full Time")
-                            {
-                                WorkShift shift = new WorkShift(employee.ID, employee.Name, monday.ToString("d"), "EVENING", Convert.ToDecimal(employee.HourlyWage), 8);
-                                sm.Add(shift);
-                                employeesEvening++;
-                            }
-                            else
-                            {
-                                WorkShift shift = new WorkShift(employee.ID, employee.Name, monday.ToString("d"), "EVENING", Convert.ToDecimal(employee.HourlyWage), 6);
-                                sm.Add(shift);
-                                employeesEvening++;
-                            }
-                        }
+                        
 
 
                     }

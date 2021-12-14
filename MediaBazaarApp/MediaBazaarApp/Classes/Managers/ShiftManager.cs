@@ -160,6 +160,15 @@ namespace MediaBazaarApp
             return true;
         }
 
+        public bool CheckAvailability(int id, string date)
+        {
+            if (shiftMediator.CheckAvailability(id, date)==true)
+            {
+                return true;
+            }
+            return false;
+        }
+
         public bool Load()
         {
             this.WorkShifts = this.shiftMediator.GetAll();

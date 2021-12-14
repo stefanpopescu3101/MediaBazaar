@@ -46,7 +46,7 @@ namespace MediaBazaarApp
                     AddWithValue("@contractType", employee.ContractType);
                     AddWithValue("@hourlyWage", employee.HourlyWage);
                     AddWithValue("@departureReason", employee.DepartureReason);
-                    AddWithValue("@shiftsPerWeek", employee.ShiftsPerWeek);
+                  //  AddWithValue("@shiftsPerWeek", employee.ShiftsPerWeek);
                     AddWithValue("@address", employee.Address);
                     AddWithValue("@department", employee.Department);
                     AddWithValue("@role", employee.Role);
@@ -161,7 +161,9 @@ namespace MediaBazaarApp
                     Close();
                 }
             }
+            
             return employees;
+            
         }
         public List<Employee> GetEmployeesOfDepartment(Department depart)
         {

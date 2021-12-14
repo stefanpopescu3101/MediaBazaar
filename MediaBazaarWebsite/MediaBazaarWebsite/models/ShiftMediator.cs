@@ -47,6 +47,57 @@ namespace MediaBazaarWebsite.models
             }
         }
 
+
+        public List<UnavailableShift> GetAllUnavailable()
+        {
+            if (ConnOpen())
+            {
+                query = "SELECT * FROM unavailability ";
+                SqlQuery(query);
+                List<UnavailableShift> unavailableShifts = new List<UnavailableShift>();
+                MySqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    UnavailableShift unavailableShift = new UnavailableShift(
+                        Convert.ToInt32(reader["employee_id"]), reader["unavailableDay"].ToString()
+                        );
+
+                    
+                    unavailableShifts.Add(unavailableShift);
+                }
+                Close();
+                return unavailableShifts;
+
+            }
+            else
+            {
+                Close();
+                return null;
+            }
+        }
+
+        public bool AddUnavailableShift(UnavailableShift unavailableShift)
+        {
+            if(ConnOpen())
+            {
+                query = "INSERT INTO unavailability (employee_id, unavailableDay) VALUES (@ID, @unavailableDay)";
+                SqlQuery(query);
+
+                AddWithValue("@ID", unavailableShift.EmployeeId);
+                AddWithValue("@unavailableDay", unavailableShift.UnavailableDay);
+
+                NonQueryEx();
+
+                Close();
+                return true;
+            }
+            else
+            {
+                Close();
+                return false;
+            }
+        }
+
       
       
 

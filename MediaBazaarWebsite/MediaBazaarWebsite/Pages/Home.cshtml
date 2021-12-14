@@ -52,44 +52,47 @@
         <div float="left" class="wrapper">
             <div class="checkbox_container">
                 <div class="title">Unavailable for work shifts</div>
-                <form method="post">
+                <table float="left" class="col-xs-7 table-bordered table-striped table-condensed table-fixed">
 
-                    <div class='checkbox_wrap'>
-                        Monday
-                        <input type='checkbox' class='checkbox' name='days[]' value='M' />
-                    </div>
-                    <div class="checkbox_wrap">
-                        Tuesday
-                        <input type="checkbox" class="checkbox" name="days[]" value="T" />
-                    </div>
-                    <div class="checkbox_wrap">
-                        Wednesday
-                        <input type="checkbox" class="checkbox" name="days[]" value="W" />
-                    </div>
-                    <div class="checkbox_wrap">
-                        Thursday
-                        <input type="checkbox" class="checkbox" name="days[]" value="Th" />
-                    </div>
-                    <div class="checkbox_wrap">
-                        Friday
-                        <input type="checkbox" class="checkbox" name="days[]" value="F" />
-                    </div>
-                    <div class="checkbox_wrap">
-                        Saturday
-                        <input type="checkbox" class="checkbox" name="days[]" value="S" />
-                    </div>
-                    <div class="checkbox_wrap">
-                        Sunday
-                        <input type="checkbox" class="checkbox" name="days[]" value="U" />
-                    </div>
 
-                    <hr>
-                    <div class="checkbox_wrap">
-                        At night shifts
-                        <input type="checkbox" class="checkbox" name="nightShift" value="True">
-                    </div>
-                    <input id="btnSave" type="submit" value="Save" />
+                    <thead>
+                        <tr>
+                            <th class="col">Employee ID</th>
+
+                            <th class="col">Date</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        @foreach (var item in Model.unavailableShifts)
+                        {
+
+                            <tr>
+                                <td class="col">@item.EmployeeId</td>
+                                <td class="col">@item.UnavailableDay</td>
+
+                            </tr>
+                        }
+                    </tbody>
+
+                </table>
+
+                <form method="post" asp-page-handler="Show">
+
+
+                    <input id="btnSave" type="submit" value="Show" />
                 </form>
+
+
+
+                <form method="post" asp-page-handler="Confirm">
+                    
+                    <pre> <input type="date"  asp-for="UnavailableDate">   <button class="btn btnTest"> Confirm </button> </pre>
+          
+                </form>
+
+
             </div>
         </div>
     </div>

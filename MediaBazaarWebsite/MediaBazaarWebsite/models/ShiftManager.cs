@@ -9,13 +9,17 @@ namespace MediaBazaarWebsite.models
    public class ShiftManager
     {
         public List<WorkShift> WorkShifts { get; private set; }
+
+        public List<UnavailableShift> UnavailableShifts { get; private set; }
         private ShiftMediator shiftMediator;
 
         public ShiftManager()
         {
             this.WorkShifts = new List<WorkShift>();
+            this.UnavailableShifts = new List<UnavailableShift>();
             this.shiftMediator = new ShiftMediator();
             this.Load();
+            this.LoadUnavailable();
         }
 
       
@@ -31,6 +35,17 @@ namespace MediaBazaarWebsite.models
                 }
             }
             return activeShifts;
+        }
+
+        public List<UnavailableShift> GetUnavailableShifts()
+        {
+            List<UnavailableShift> unavailableShifts = new List<UnavailableShift>();
+            foreach(UnavailableShift unavailableShift in this.UnavailableShifts)
+            {
+                unavailableShifts.Add(unavailableShift);
+            }
+
+            return unavailableShifts;
         }
         public List<WorkShift> GetWorkShiftsOfCurrentMonth(int id ,int month, int year)
         {
@@ -108,6 +123,33 @@ namespace MediaBazaarWebsite.models
         }
 
 
+        public List<UnavailableShift> GetUnavailableShiftsEmployee(int id)
+        {
+            
+            List<UnavailableShift> unavailableShifts = new List<UnavailableShift>();
+            foreach (UnavailableShift shift in GetUnavailableShifts())
+            {
+                if (shift.EmployeeId == id)
+                {
+                    unavailableShifts.Add(shift);
+                }
+            }
+            return unavailableShifts;
+        }
+
+        public bool AddUnavailableShift(UnavailableShift shift)
+        {
+            if(shift!=null)
+            {
+                this.UnavailableShifts.Add(shift);
+                this.shiftMediator.AddUnavailableShift(shift);
+                return true;
+            }
+
+            return false;
+        }
+
+
 
         public bool Load()
         {
@@ -117,6 +159,17 @@ namespace MediaBazaarWebsite.models
                 return true;
             }
             else { return false; }
+        }
+
+        public bool LoadUnavailable()
+        {
+            this.UnavailableShifts = this.shiftMediator.GetAllUnavailable();
+            if(this.UnavailableShifts != null)
+            {
+                return true;
+            }
+
+            return false;
         }
 
       

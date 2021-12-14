@@ -25,12 +25,12 @@ namespace MediaBazaarApp
                 NonQueryEx();
                 shift.ID = Convert.ToInt32(command.LastInsertedId);
 
-                connection.Close();
+                Close();
                 return true;
             }
             else
             {
-                connection.Close();
+                Close();
                 return false;
             }
         }
@@ -124,6 +124,51 @@ namespace MediaBazaarApp
             else
             {
                 Close();
+            }
+        }
+
+        public bool CheckAvailability(int id, string date)
+        {
+            if(ConnOpen())
+            {
+                query = "SELECT * from unavailability WHERE unavailableDay=@date and employee_id=@ID";
+                SqlQuery(query);
+
+                AddWithValue("@ID", id);
+                AddWithValue("@date", date);
+
+                List<string> test = new List<string>();
+                MySqlDataReader reader = command.ExecuteReader();
+
+                while(reader.Read())
+                {
+                    test.Add(reader["employeeId"].ToString());
+                }
+
+                if(test.Count==0)
+                {
+                    Close();
+                    return true;
+                    
+                    
+                }
+                else
+                {
+                    Close();
+                    return false;
+                    
+
+                    
+                }
+
+                
+
+            }
+            else
+            {
+                Close();
+                return false;
+                
             }
         }
     }
