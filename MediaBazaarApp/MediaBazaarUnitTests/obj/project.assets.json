@@ -7047,47 +7047,20 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
     "C:\\Users\\Stefan\\.nuget\\packages\\": {}
-=======
-    "C:\\Users\\Hristo\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
->>>>>>> 0a1efad913d38203112f2f979009be34510b642c
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\Stefan\\Desktop\\New folder\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarUnitTests\\MediaBazaarUnitTests.csproj",
       "projectName": "MediaBazaarUnitTests",
       "projectPath": "C:\\Users\\Stefan\\Desktop\\New folder\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarUnitTests\\MediaBazaarUnitTests.csproj",
       "packagesPath": "C:\\Users\\Stefan\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Stefan\\Desktop\\New folder\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarUnitTests\\obj\\",
-=======
-      "projectUniqueName": "C:\\HRISTO TANCHEV\\Fontaka\\Semester 2 take 2\\PRJ\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarUnitTests\\MediaBazaarUnitTests.csproj",
-      "projectName": "MediaBazaarUnitTests",
-      "projectPath": "C:\\HRISTO TANCHEV\\Fontaka\\Semester 2 take 2\\PRJ\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarUnitTests\\MediaBazaarUnitTests.csproj",
-      "packagesPath": "C:\\Users\\Hristo\\.nuget\\packages\\",
-      "outputPath": "C:\\HRISTO TANCHEV\\Fontaka\\Semester 2 take 2\\PRJ\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarUnitTests\\obj\\",
->>>>>>> 0a1efad913d38203112f2f979009be34510b642c
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-<<<<<<< HEAD
         "C:\\Users\\Stefan\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-=======
-        "C:\\Users\\Hristo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
->>>>>>> 0a1efad913d38203112f2f979009be34510b642c
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -7100,13 +7073,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-<<<<<<< HEAD
             "C:\\Users\\Stefan\\Desktop\\New folder\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarApp\\MediaBazaarApp.csproj": {
               "projectPath": "C:\\Users\\Stefan\\Desktop\\New folder\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarApp\\MediaBazaarApp.csproj"
-=======
-            "C:\\HRISTO TANCHEV\\Fontaka\\Semester 2 take 2\\PRJ\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarApp\\MediaBazaarApp.csproj": {
-              "projectPath": "C:\\HRISTO TANCHEV\\Fontaka\\Semester 2 take 2\\PRJ\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarApp\\MediaBazaarApp.csproj"
->>>>>>> 0a1efad913d38203112f2f979009be34510b642c
             }
           }
         }
@@ -7153,15 +7121,17 @@
             "privateAssets": "all"
           }
         },
-<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
-=======
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
->>>>>>> 0a1efad913d38203112f2f979009be34510b642c
       }
     }
   },
   "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\Stefan\\Desktop\\New folder\\prj-s2-cb05\\MediaBazaarApp\\MediaBazaarUnitTests\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    },
     {
       "code": "NU1701",
       "level": "Warning",

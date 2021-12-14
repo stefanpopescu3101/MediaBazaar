@@ -27,13 +27,8 @@ namespace MediaBazaarApp
                 NonQueryEx();
                 shift.ID = Convert.ToInt32(command.LastInsertedId);
 
-<<<<<<< HEAD
                 Close();
-=======
 
-
-                connection.Close();
->>>>>>> 0a1efad913d38203112f2f979009be34510b642c
                 return true;
             }
             else
