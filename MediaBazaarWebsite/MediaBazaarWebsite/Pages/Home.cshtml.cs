@@ -13,20 +13,7 @@ namespace MediaBazaarWebsite.Pages
     [Authorize]
     public class HomeModel : PageModel
     {
-        [BindProperty]
-        public bool Monday { get; set; }
-        [BindProperty]
-        public bool Tuesday { get; set; }
-        [BindProperty]
-        public bool Wednesday { get; set; }
-        [BindProperty]
-        public bool Thursday { get; set; }
-        [BindProperty]
-        public bool Friday { get; set; }
-        [BindProperty]
-        public bool Saturday { get; set; }
-        [BindProperty]
-        public bool Sunday { get; set; }
+    
         [BindProperty]
         public string Name { get; set; }
         public Employee Emp { get; set; }
