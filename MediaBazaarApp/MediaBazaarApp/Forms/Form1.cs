@@ -342,7 +342,23 @@ namespace MediaBazaarApp
 
         private void btnRemoveDepartment_Click(object sender, EventArgs e)
         {
-
+            if (dgvDepartments.SelectedCells.Count > -1)
+            {
+                cbDepartmentManager.Items.Clear();
+                int r = this.dgvDepartments.SelectedCells[0].RowIndex;
+                DataGridViewRow row = this.dgvDepartments.Rows[r];
+                string name = row.Cells["Department Name"].Value.ToString();
+                Department depart = this.departmentM.GetDepartment(name);
+                if (!departmentM.Remove(depart))
+                {
+                    MessageBox.Show("unseccussfull action");
+                }
+                else
+                {
+                    UpdateListInDepartmentManagement();
+                    UpdateDataGridView();
+                }
+            }
            
         }
 
@@ -354,9 +370,15 @@ namespace MediaBazaarApp
                 int r = this.dgvDepartments.SelectedCells[0].RowIndex;
                 DataGridViewRow row = this.dgvDepartments.Rows[r];
                 string name = row.Cells["Department Name"].Value.ToString();
+                int id =Convert.ToInt32( row.Cells["Manager ID"].Value.ToString());
                 Department depart = this.departmentM.GetDepartment(name);
                 tbDepartmentName.Text = depart.DepartmentName;
                 lDepartmentManager.Text = depart.ManagerName;
+               Employee emp= employeeManager.GetEmployee(id);
+                if (employeeManager.GetEmployeeOfDepartment(depart).Contains(emp))
+                {
+                    MessageBox.Show("Please select another manager for this department as employee with this name is no longer in this department!");
+                }
                 foreach (Employee employee in employeeManager.GetEmployeeOfDepartment(depart))
                 {
                     cbDepartmentManager.Items.Add(employee);

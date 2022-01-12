@@ -167,3 +167,5 @@ C:\HRISTO TANCHEV\Fontaka\Semester 2 take 2\PRJ\prj-s2-cb05\MediaBazaarApp\Media
 >>>>>>> 0a1efad913d38203112f2f979009be34510b642c
 C:\Users\Stefan\Desktop\New folder\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\obj\Debug\netcoreapp3.1\MediaBazaarApp.Forms.AddingProductToShelfs.resources
 C:\Users\Stefan\Desktop\New folder\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\obj\Debug\netcoreapp3.1\MediaBazaarApp.Forms.ReturnProductToStorage.resources
+C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\obj\Debug\netcoreapp3.1\MediaBazaarApp.Forms.AddingProductToShelfs.resources
+C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\obj\Debug\netcoreapp3.1\MediaBazaarApp.Forms.ReturnProductToStorage.resources

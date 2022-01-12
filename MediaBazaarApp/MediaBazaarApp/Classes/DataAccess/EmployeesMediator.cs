@@ -46,11 +46,11 @@ namespace MediaBazaarApp
                     AddWithValue("@contractType", employee.ContractType);
                     AddWithValue("@hourlyWage", employee.HourlyWage);
                     AddWithValue("@departureReason", employee.DepartureReason);
-                  //  AddWithValue("@shiftsPerWeek", employee.ShiftsPerWeek);
+                    AddWithValue("@shiftsPerWeek", employee.ShiftsPerWeek);
                     AddWithValue("@address", employee.Address);
                     AddWithValue("@department", employee.Department);
                     AddWithValue("@role", employee.Role);
-                    //employee.ID = Convert.ToInt32(command.LastInsertedId);
+                   // employee.ID = Convert.ToInt32(command.LastInsertedId);
                     NonQueryEx();
                     employee.ID = Convert.ToInt32(command.LastInsertedId);
                     query = "INSERT INTO unavailability (employee_id) VALUES (@employee_id)";

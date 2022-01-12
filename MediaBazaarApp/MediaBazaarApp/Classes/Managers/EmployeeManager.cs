@@ -16,6 +16,7 @@ namespace MediaBazaarApp
         {
             employees = new List<Employee>();
             employeesMediator = new EmployeesMediator();
+            Load();
         }
         public void GenerateUsernameAndPassword(Employee emp)
         {
@@ -60,7 +61,10 @@ namespace MediaBazaarApp
             }
             return null;
         }
-
+        public List<Employee> GetAllEmployees()
+        {
+            return employees;
+        }
         public List<Employee> GetEmployees()
         {
             employees = employeesMediator.GetEmployees();
