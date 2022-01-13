@@ -32,7 +32,6 @@ namespace MediaBazaarApp
             this.lbPeopleInShift = new System.Windows.Forms.ListBox();
             this.lbAvailablePeople = new System.Windows.Forms.ListBox();
             this.lDateOfShift = new System.Windows.Forms.Label();
-            this.lMinimum = new System.Windows.Forms.Label();
             this.btnAddToShift = new System.Windows.Forms.Button();
             this.btnRemoveFromTheShift = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -68,15 +67,6 @@ namespace MediaBazaarApp
             this.lDateOfShift.Size = new System.Drawing.Size(41, 20);
             this.lDateOfShift.TabIndex = 2;
             this.lDateOfShift.Text = "Date";
-            // 
-            // lMinimum
-            // 
-            this.lMinimum.AutoSize = true;
-            this.lMinimum.Location = new System.Drawing.Point(327, 58);
-            this.lMinimum.Name = "lMinimum";
-            this.lMinimum.Size = new System.Drawing.Size(151, 20);
-            this.lMinimum.TabIndex = 3;
-            this.lMinimum.Text = "Maximum :{  } people";
             // 
             // btnAddToShift
             // 
@@ -157,7 +147,6 @@ namespace MediaBazaarApp
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnRemoveFromTheShift);
             this.Controls.Add(this.btnAddToShift);
-            this.Controls.Add(this.lMinimum);
             this.Controls.Add(this.lDateOfShift);
             this.Controls.Add(this.lbAvailablePeople);
             this.Controls.Add(this.lbPeopleInShift);
@@ -173,7 +162,6 @@ namespace MediaBazaarApp
         private System.Windows.Forms.ListBox lbPeopleInShift;
         private System.Windows.Forms.ListBox lbAvailablePeople;
         private System.Windows.Forms.Label lDateOfShift;
-        private System.Windows.Forms.Label lMinimum;
         private System.Windows.Forms.Button btnAddToShift;
         private System.Windows.Forms.Button btnRemoveFromTheShift;
         private System.Windows.Forms.Label label1;

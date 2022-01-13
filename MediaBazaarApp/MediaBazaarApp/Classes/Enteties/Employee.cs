@@ -99,7 +99,7 @@ namespace MediaBazaarApp
         public Employee(string firstName, string lastName, int BSN, string email,
             string firstWorkingDate, string lastWorkingDate, string birthdate,
             string contractType, double hourlyWage, string address,
-            string department,string role)
+            string department, string departure_reason, string role)
 
         {
             this.firstName = firstName;
@@ -116,12 +116,13 @@ namespace MediaBazaarApp
 
             this.address = address;
             this.department = department;
+            this.departureReason = departure_reason;
             this.role = role;
         }
         public Employee(int id,string firstName, string lastName, int BSN, string email,
     string firstWorkingDate, string lastWorkingDate, string birthdate,
     string contractType, double hourlyWage, string address,
-    string department,string role,string username, string password)
+    string department, string departure_reason,string role,string username, string password)
         {
             this.id = id;
             this.firstName = firstName;
@@ -135,13 +136,33 @@ namespace MediaBazaarApp
             this.hourlyWage = hourlyWage;
             this.address = address;
             this.department = department;
+            this.departureReason = departure_reason;
             this.role = role;
             this.username = username;
             this.password = password;
         }
 
+        public Employee(string firstName, string lastName, int BSN, string email,
+string firstWorkingDate, string lastWorkingDate, string birthdate,
+string contractType, double hourlyWage, string address,
+string department, string role)
+        {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.BSN = BSN;
+            this.email = email;
+            this.firstWorkingDate = firstWorkingDate;
+            this.lastWorkingDate = lastWorkingDate;
+            this.birthdate = birthdate;
+            this.contractType = contractType;
+            this.hourlyWage = hourlyWage;
+            this.address = address;
+            this.department = department;
+            this.role = role;
+        }
 
-      
+
+
 
         //public void EditDetails(string firstName, string lastName, int BSN, string email,
         //    string firstWorkingDate, string lastWorkingDate, string birthdate,

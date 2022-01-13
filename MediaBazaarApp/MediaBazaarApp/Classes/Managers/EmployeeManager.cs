@@ -16,6 +16,7 @@ namespace MediaBazaarApp
         {
             employees = new List<Employee>();
             employeesMediator = new EmployeesMediator();
+            Load();
         }
         public void GenerateUsernameAndPassword(Employee emp)
         {
@@ -48,15 +49,6 @@ namespace MediaBazaarApp
             employees.Remove(emp);
         }
 
-        //public Employee GetEmployee(int id)
-        //{
-        //    foreach (Employee emp in employees)
-        //    {
-        //        if (emp.ID==id)
-        //        {
-        //            return emp;
-
-
         public Employee GetEmployee(int id)
         {
             foreach(Employee e in GetEmployees())
@@ -69,7 +61,10 @@ namespace MediaBazaarApp
             }
             return null;
         }
-
+        public List<Employee> GetAllEmployees()
+        {
+            return employees;
+        }
         public List<Employee> GetEmployees()
         {
             employees = employeesMediator.GetEmployees();
@@ -95,6 +90,12 @@ namespace MediaBazaarApp
         {
             employee.UpdateInfo(firstName, lastName, email, contractType, address, department);
             employeesMediator.Update(employee);
+        }
+
+        public void TerminateEmployeesContract(Employee employee, string endDate, string reason)
+        {
+            employeesMediator.TerminateContract(employee, endDate, reason);
+            employee.TerminateContract(reason, endDate);
         }
     }
 }

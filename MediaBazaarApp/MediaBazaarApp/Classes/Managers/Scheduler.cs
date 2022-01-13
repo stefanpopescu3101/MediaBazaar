@@ -66,6 +66,105 @@ namespace MediaBazaarApp
             return employees;
         }
 
+        
+
+        public void ScheduleWeek(string monday1, string sunday1)
+        {
+            List<Employee> availableEmployees = new List<Employee>();
+            ShiftManager sm = new ShiftManager();
+            int employeesMorning;
+            int employeesAfternoon;
+            int employeesEvening;
+
+
+
+            DateTime monday = DateTime.ParseExact(monday1, "d", null);
+            DateTime actualDay = monday;
+            DateTime sunday = DateTime.ParseExact(sunday1, "d", null);
+
+            while (monday <= sunday)
+            {
+                availableEmployees = GetAvailableEmployees(actualDay.ToString("d"), monday.ToString("d"), sunday.ToString("d"));
+
+                employeesMorning = 0;
+                employeesAfternoon = 0;
+                employeesEvening = 0;
+
+                if (availableEmployees != null)
+                {
+                    foreach (Employee employee in availableEmployees)
+                    {
+                        if (shiftManager.CheckAvailability(employee.ID, monday.ToString("d"))==true)
+                        {
+                            if (employeesMorning < 8)
+                            {
+                                if (employee.ContractType == "Full Time")
+                                {
+                                    WorkShift shift = new WorkShift(employee.ID, employee.Name, monday.ToString("d"), "MORNING", Convert.ToDecimal(employee.HourlyWage), 8);
+                                    sm.Add(shift);
+                                    employeesMorning++;
+                                }
+                                else
+                                {
+                                    WorkShift shift = new WorkShift(employee.ID, employee.Name, monday.ToString("d"), "MORNING", Convert.ToDecimal(employee.HourlyWage), 6);
+                                    sm.Add(shift);
+                                    employeesMorning++;
+                                }
+                            }
+
+                            if (employeesAfternoon < 8)
+                            {
+                                if (employee.ContractType == "Full Time")
+                                {
+                                    WorkShift shift = new WorkShift(employee.ID, employee.Name, monday.ToString("d"), "AFTERNOON", Convert.ToDecimal(employee.HourlyWage), 8);
+                                    sm.Add(shift);
+                                    employeesAfternoon++;
+                                }
+                                else
+                                {
+                                    WorkShift shift = new WorkShift(employee.ID, employee.Name, monday.ToString("d"), "AFTERNOON", Convert.ToDecimal(employee.HourlyWage), 6);
+                                    sm.Add(shift);
+                                    employeesAfternoon++;
+                                }
+                            }
+
+                            if (employeesEvening < 8)
+                            {
+                                if (employee.ContractType == "Full Time")
+                                {
+                                    WorkShift shift = new WorkShift(employee.ID, employee.Name, monday.ToString("d"), "EVENING", Convert.ToDecimal(employee.HourlyWage), 8);
+                                    sm.Add(shift);
+                                    employeesEvening++;
+                                }
+                                else
+                                {
+                                    WorkShift shift = new WorkShift(employee.ID, employee.Name, monday.ToString("d"), "EVENING", Convert.ToDecimal(employee.HourlyWage), 6);
+                                    sm.Add(shift);
+                                    employeesEvening++;
+                                }
+                            }
+
+                        }
+
+                        
+
+
+                    }
+                }
+
+
+
+                monday = monday.AddDays(1);
+
+            }
+        }
+
+        public void Reset()
+        {
+            ShiftManager sm = new ShiftManager();
+            sm.Reset();
+        }
+
         private bool MaximumShifts(Employee employee, string monday1, string sunday1)
         {
             DateTime monday = DateTime.ParseExact(monday1, "M/d/yyyy", null);
@@ -108,7 +207,7 @@ namespace MediaBazaarApp
             }
             return true;
         }
-        public List<Employee> GetAvailableEmployees( string date, string monday, string sunday)
+        public List<Employee> GetAvailableEmployees(string date, string monday, string sunday)
         {
             List<Employee> employees = this.employeeManager.GetEmployees();
             List<Employee> availableEmployees = new List<Employee>();
@@ -116,29 +215,28 @@ namespace MediaBazaarApp
             {
                 if (!this.MaximumShifts(employee, monday, sunday))
                 {
-                 
-                        if (this.CheckEmployeesShiftsForToday(employee.ID, date))
-                        {
-                            availableEmployees.Add(employee);
-                        }
-                    
+
+                    if (this.CheckEmployeesShiftsForToday(employee.ID, date))
+                    {
+                        availableEmployees.Add(employee);
+                    }
+
                 }
             }
             return availableEmployees;
         }
-
         public List<Employee> Search(string item)
         {
             List<Employee> employees = this.employeeManager.GetEmployees();
             List<Employee> foundemployees = new List<Employee>();
             foreach (Employee emp in employees)
             {
-                if (item == emp.FirstName || item== emp.LastName || item == emp.ID.ToString())
+                if (item == emp.FirstName || item == emp.LastName || item == emp.ID.ToString())
                 {
                     foundemployees.Add(emp);
                 }
             }
             return foundemployees;
         }
-   }
+    }
 }

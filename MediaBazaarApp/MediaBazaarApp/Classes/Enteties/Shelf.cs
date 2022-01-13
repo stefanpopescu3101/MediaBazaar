@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MediaBazaarApp.Classes.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MediaBazaarApp
 {
-    class Shelf
+   public class Shelf
     {
         private string shelfCategory;
         private int shelfCapacity;
@@ -14,7 +15,7 @@ namespace MediaBazaarApp
 
         public int ID
         {
-            get { return shelfID; }
+            get;  set;
         }
         public string Category
         {
@@ -22,8 +23,10 @@ namespace MediaBazaarApp
         }
         public int Capacity
         {
-            get { return shelfCapacity; }
+            get; set;
         }
+        public Floors Floors { get; set; }
+        public List<Product> products = new List<Product>();
 
         public Shelf(string shelfCategory, int shelfCapacity)
         {
@@ -37,9 +40,35 @@ namespace MediaBazaarApp
             this.shelfCategory = shelfCategory;
             this.shelfCapacity = shelfCapacity;
         }
+        public Shelf(int shelfID, Floors floors)
+        {
+            this.shelfID = shelfID;
+            Floors = floors;
+            
+        }
+        public Shelf( Floors floors)
+        {
+            
+            Floors = floors;
+
+        }
+        public Shelf() { }
 
 
+        public void AddProductToShelf(Product p)
+        {
+            products.Add(p);
+        }
 
+        public List<Product> ReturnProducts()
+        {
+            return products; 
+        }
+
+        public Product[] ReturnProducts2()
+        {
+            return products.ToArray();
+        }
 
 
     }

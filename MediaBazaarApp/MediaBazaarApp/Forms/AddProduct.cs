@@ -45,15 +45,20 @@ namespace MediaBazaarApp
                         throw new CapacityExeption();
                     }
                     Product product = new Product(name, brand, boughtFor, sellingPrice, inStock, maxCapacity, threshold,0, measurements, boxSize);
-                    this.productManager.Add(product);
-
-
-                    DialogResult box = MessageBox.Show("Product has been added successfully.");
-                    if (box == DialogResult.OK)
+                  if(!this.productManager.Add(product))
                     {
-                        this.DialogResult = DialogResult.OK;
-                        this.Close();
+                        MessageBox.Show("This product exists!");
                     }
+                    else
+                    {
+                        DialogResult box = MessageBox.Show("Product has been added successfully.");
+                        if (box == DialogResult.OK)
+                        {
+                            this.DialogResult = DialogResult.OK;
+                            this.Close();
+                        }
+                    }
+
                 }
                 catch(CapacityExeption)
                 {
