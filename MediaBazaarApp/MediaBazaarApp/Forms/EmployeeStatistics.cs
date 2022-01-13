@@ -465,7 +465,7 @@ namespace MediaBazaarApp
             plotShifts.Size = new Size(1100, 629);
             this.tabPage2.Controls.Add(plotShifts);
 
-            plotShifts.Model = new PlotModel { Title = "Number of hours worked by employee - " + id };
+            plotShifts.Model = new PlotModel { Title = "Number of hours worked by employee ID: " + id };
 
             var categoryAxis = new CategoryAxis { Position = AxisPosition.Left };
             categoryAxis.Labels.Add("MORNING");
