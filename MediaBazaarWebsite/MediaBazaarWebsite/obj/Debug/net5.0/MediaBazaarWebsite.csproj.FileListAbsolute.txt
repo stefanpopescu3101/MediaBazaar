@@ -102,6 +102,7 @@ C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarWebsite\MediaBazaarWebsite\obj\Deb
 =======
 C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarWebsite\MediaBazaarWebsite\obj\Debug\net5.0\Razor\Pages\ResetTable.cshtml.g.cs
 >>>>>>> rwn_branch
+<<<<<<< HEAD
 C:\Users\Stefan\Desktop\New folder\prj-s2-cb05\MediaBazaarWebsite\MediaBazaarWebsite\bin\Debug\net5.0\appsettings.Development.json
 C:\Users\Stefan\Desktop\New folder\prj-s2-cb05\MediaBazaarWebsite\MediaBazaarWebsite\bin\Debug\net5.0\appsettings.json
 C:\Users\Stefan\Desktop\New folder\prj-s2-cb05\MediaBazaarWebsite\MediaBazaarWebsite\bin\Debug\net5.0\MediaBazaarWebsite.exe
@@ -158,3 +159,5 @@ C:\Users\Stefan\Desktop\New folder\prj-s2-cb05\MediaBazaarWebsite\MediaBazaarWeb
 C:\Users\Stefan\Desktop\New folder\prj-s2-cb05\MediaBazaarWebsite\MediaBazaarWebsite\obj\Debug\net5.0\ref\MediaBazaarWebsite.dll
 C:\Users\Stefan\Desktop\New folder\prj-s2-cb05\MediaBazaarWebsite\MediaBazaarWebsite\obj\Debug\net5.0\MediaBazaarWebsite.pdb
 C:\Users\Stefan\Desktop\New folder\prj-s2-cb05\MediaBazaarWebsite\MediaBazaarWebsite\obj\Debug\net5.0\MediaBazaarWebsite.genruntimeconfig.cache
+=======
+>>>>>>> hristo_prj

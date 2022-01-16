@@ -849,11 +849,19 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\Rawan\\.nuget\\packages\\": {}
+=======
+    "C:\\Users\\Hristo\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+>>>>>>> hristo_prj
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\Rawan\\Desktop\\prj-s2-cb05\\MediaBazaarWebsite\\MediaBazaarWebsite\\MediaBazaarWebsite.csproj",
       "projectName": "MediaBazaarWebsite",
       "projectPath": "C:\\Users\\Rawan\\Desktop\\prj-s2-cb05\\MediaBazaarWebsite\\MediaBazaarWebsite\\MediaBazaarWebsite.csproj",
@@ -863,6 +871,24 @@
       "configFilePaths": [
         "C:\\Users\\Rawan\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+=======
+      "projectUniqueName": "C:\\HRISTO TANCHEV\\Fontaka\\Semester 2 take 2\\PRJ\\prj-s2-cb05\\MediaBazaarWebsite\\MediaBazaarWebsite\\MediaBazaarWebsite.csproj",
+      "projectName": "MediaBazaarWebsite",
+      "projectPath": "C:\\HRISTO TANCHEV\\Fontaka\\Semester 2 take 2\\PRJ\\prj-s2-cb05\\MediaBazaarWebsite\\MediaBazaarWebsite\\MediaBazaarWebsite.csproj",
+      "packagesPath": "C:\\Users\\Hristo\\.nuget\\packages\\",
+      "outputPath": "C:\\HRISTO TANCHEV\\Fontaka\\Semester 2 take 2\\PRJ\\prj-s2-cb05\\MediaBazaarWebsite\\MediaBazaarWebsite\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\Hristo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+>>>>>>> hristo_prj
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -910,7 +936,11 @@
             "privateAssets": "all"
           }
         },
+<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+=======
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+>>>>>>> hristo_prj
       }
     }
   }

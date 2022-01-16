@@ -27,13 +27,17 @@ namespace MediaBazaarApp
                 NonQueryEx();
                 shift.ID = Convert.ToInt32(command.LastInsertedId);
 
+
                 Close();
+
 
                 return true;
             }
             else
             {
+
                 Close();
+
                 return false;
             }
         }
@@ -154,6 +158,7 @@ namespace MediaBazaarApp
             }
         }
 
+
         public bool CheckAvailability(int id, string date)
         {
             if(ConnOpen())
@@ -198,5 +203,6 @@ namespace MediaBazaarApp
                 
             }
         }
+
     }
 }

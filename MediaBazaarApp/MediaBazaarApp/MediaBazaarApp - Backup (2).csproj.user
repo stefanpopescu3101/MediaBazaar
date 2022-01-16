@@ -2,43 +2,41 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
-    <Compile Update="Forms\AddEmployee.cs">
+    <Compile Update="AddEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\AddingProductToShelfs.cs">
+    <Compile Update="AddProduct.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\AddProduct.cs">
+    <Compile Update="EditProduct.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\AssignToShift.cs">
+    <Compile Update="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\EditProduct.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Forms\EmployeeStatistics.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Forms\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Forms\LogInForm.cs">
+    <Compile Update="LogInForm.cs">
       <SubType>Form</SubType>
     </Compile>
 <<<<<<< HEAD
-    <Compile Update="Forms\ReturnProductToStorage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Forms\StockManager.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Update="ProductDescription.cs">
 =======
-    <Compile Update="Forms\StockManager.cs">
+    <Compile Update="PendingList.cs">
+>>>>>>> hristo_prj
       <SubType>Form</SubType>
     </Compile>
->>>>>>> hristo_prj
-    <Compile Update="Forms\StoreManager.cs">
+    <Compile Update="StockManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="StoreManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="TerminateEmployee%27sContract.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UpdateEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ViewProductForm.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

@@ -64,7 +64,9 @@ namespace MediaBazaarApp
 
             foreach (Product p in productManager.GetProducts())
             {
-               this.DGVProducts.Rows.Add(p.ID, p.Name, p.Brand, p.CostPrice + " €", p.SellPrice + " €", p.InStock, p.MaxCapacity, p.Threshold, p.Sold, p.Measurements, p.BoxSize + " cm³");
+
+               this.DGVProducts.Rows.Add(p.ID, p.Name, p.Brand, p.CostPrice + " €", p.SellPrice + " €", p.InStock, p.MaxCapacity, p.Threshold, p.Sold);
+
             }
           
             foreach (DataGridViewRow row in DGVProducts.Rows)
@@ -79,28 +81,33 @@ namespace MediaBazaarApp
 
         }
 
-        private void btnRemoveProduct_Click_1(object sender, EventArgs e)
-        {
-            if (this.DGVProducts.SelectedCells.Count > 0)
-            {
-                DialogResult result = MessageBox.Show("Are you sure you want to delete this product?", "", MessageBoxButtons.YesNo);
-                if (result == DialogResult.Yes)
-                {
-                    Product product = this.GetProduct();
-                    this.productManager.Remove(product);
 
-                    this.LoadAllProducts();
-                    MessageBox.Show("Product has been removed successfully.");
-                }
-            }
-            else { MessageBox.Show("Please select a product from the table."); }
-        }
+        //private void btnRemoveProduct_Click_1(object sender, EventArgs e)
+        //{
+        //    //if (this.DGVProducts.SelectedCells.Count > 0)
+        //    //{
+        //    //    DialogResult result = MessageBox.Show("Are you sure you want to delete this product?", "", MessageBoxButtons.YesNo);
+        //    //    if (result == DialogResult.Yes)
+        //    //    {
+        //    //        Product product = this.GetProduct();
+        //    //        this.productManager.Remove(product);
+
+        //    //        this.LoadAllProducts();
+        //    //        MessageBox.Show("Product has been removed successfully.");
+        //    //    }
+        //    //}
+        //    //else { MessageBox.Show("Please select a product from the table."); }
+        //}
+
 
         private Product GetProduct()
         {
             int selectedRowIndex = this.DGVProducts.SelectedCells[0].RowIndex;
             DataGridViewRow selectedRow = this.DGVProducts.Rows[selectedRowIndex];
-            Product product = this.productManager.Get(Convert.ToInt32(selectedRow.Cells["ID"].Value));
+
+            Product product = this.productManager.Get(Convert.ToInt32(selectedRow.Cells["ProductID"].Value));
+
+
             return product;
         }
 
@@ -121,20 +128,22 @@ namespace MediaBazaarApp
 
        
 
-        private void btnViewProduct_Click_1(object sender, EventArgs e)
-        {
-            if (this.DGVProducts.SelectedCells.Count > 0)
-            {
-                Product product = this.GetProduct();
 
-                ViewProductForm form = new ViewProductForm(product);
-                DialogResult result = form.ShowDialog();
-                if (result == DialogResult.OK)
-                {
-                    this.LoadAllProducts();
-                }
-            }
-        }
+        //private void btnViewProduct_Click_1(object sender, EventArgs e)
+        //{
+        //    if (this.DGVProducts.SelectedCells.Count > 0)
+        //    {
+        //        Product product = this.GetProduct();
+
+        //        ViewProductForm form = new ViewProductForm(product);
+        //        DialogResult result = form.ShowDialog();
+        //        if (result == DialogResult.OK)
+        //        {
+        //            this.LoadAllProducts();
+        //        }
+        //    }
+        //}
+
 
         private void DGVProducts_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -146,10 +155,7 @@ namespace MediaBazaarApp
             this.Close();
         }
 
-        private void btnViewProduct_Click(object sender, EventArgs e)
-        {
 
-        }
         private void GridViewConfiguration()
         {
             this.dataGridViewRequests.ColumnCount = 4;
@@ -184,6 +190,9 @@ namespace MediaBazaarApp
                         product.RestockProduct(quantity);
                         this.productManager.Update(product);
                         MessageBox.Show("Request accepted successfully");
+
+                        LoadAllProducts();
+
                     }
                     else { MessageBox.Show("Failed"); }
                 }
@@ -263,11 +272,5 @@ namespace MediaBazaarApp
 
         }
 
-        private void btnProductStatistics_Click(object sender, EventArgs e)
-        {
-            ProductStatistics productStatistics = new ProductStatistics();
-            productStatistics.ShowDialog();
-
-        }
     }
 }

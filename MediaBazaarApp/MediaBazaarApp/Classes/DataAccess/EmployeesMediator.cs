@@ -50,7 +50,9 @@ namespace MediaBazaarApp
                     AddWithValue("@address", employee.Address);
                     AddWithValue("@department", employee.Department);
                     AddWithValue("@role", employee.Role);
+
                    // employee.ID = Convert.ToInt32(command.LastInsertedId);
+
                     NonQueryEx();
                     employee.ID = Convert.ToInt32(command.LastInsertedId);
                     query = "INSERT INTO unavailability (employee_id) VALUES (@employee_id)";
@@ -165,9 +167,11 @@ namespace MediaBazaarApp
                     Close();
                 }
             }
+
             
             return employees;
             
+
         }
         public List<Employee> GetEmployeesOfDepartment(Department depart)
         {

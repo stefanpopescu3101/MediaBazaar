@@ -66,7 +66,7 @@ namespace MediaBazaarApp
             return employees;
         }
 
-        
+
 
         public void ScheduleWeek(string monday1, string sunday1)
         {
@@ -94,6 +94,7 @@ namespace MediaBazaarApp
                 {
                     foreach (Employee employee in availableEmployees)
                     {
+
                         if (shiftManager.CheckAvailability(employee.ID, monday.ToString("d"))==true)
                         {
                             if (employeesMorning < 8)
@@ -147,6 +148,7 @@ namespace MediaBazaarApp
                         }
 
                         
+
 
 
                     }

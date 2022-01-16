@@ -32,19 +32,17 @@ namespace MediaBazaarApp
             this.dtgvManipulateShelf = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Floor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tbShelfCapacity = new System.Windows.Forms.TextBox();
-            this.cmbShelfCategory = new System.Windows.Forms.ComboBox();
+
             this.btnAddShelf = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+
             this.cbFloor = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnAddProduct2Shelfs = new System.Windows.Forms.Button();
             this.lbProductsOnShelf = new System.Windows.Forms.ListBox();
-            this.cbExistingFloor = new System.Windows.Forms.ComboBox();
+
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
+
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnReturnProduct = new System.Windows.Forms.Button();
@@ -84,65 +82,25 @@ namespace MediaBazaarApp
             this.Floor.ReadOnly = true;
             this.Floor.Width = 125;
             // 
-            // tbShelfCapacity
-            // 
-            this.tbShelfCapacity.Enabled = false;
-            this.tbShelfCapacity.Location = new System.Drawing.Point(23, 147);
-            this.tbShelfCapacity.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tbShelfCapacity.Name = "tbShelfCapacity";
-            this.tbShelfCapacity.Size = new System.Drawing.Size(138, 27);
-            this.tbShelfCapacity.TabIndex = 4;
-            // 
-            // cmbShelfCategory
-            // 
-            this.cmbShelfCategory.Enabled = false;
-            this.cmbShelfCategory.FormattingEnabled = true;
-            this.cmbShelfCategory.Items.AddRange(new object[] {
-            "Chargers",
-            "Phones",
-            "Laptops",
-            "TVs"});
-            this.cmbShelfCategory.Location = new System.Drawing.Point(23, 73);
-            this.cmbShelfCategory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cmbShelfCategory.Name = "cmbShelfCategory";
-            this.cmbShelfCategory.Size = new System.Drawing.Size(138, 28);
-            this.cmbShelfCategory.TabIndex = 3;
-            // 
+
             // btnAddShelf
             // 
-            this.btnAddShelf.Location = new System.Drawing.Point(36, 288);
+            this.btnAddShelf.Location = new System.Drawing.Point(51, 167);
             this.btnAddShelf.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAddShelf.Name = "btnAddShelf";
-            this.btnAddShelf.Size = new System.Drawing.Size(138, 31);
+            this.btnAddShelf.Size = new System.Drawing.Size(138, 69);
+
             this.btnAddShelf.TabIndex = 5;
             this.btnAddShelf.Text = "ADD";
             this.btnAddShelf.UseVisualStyleBackColor = true;
             this.btnAddShelf.Click += new System.EventHandler(this.btnAddShelf_Click_1);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Enabled = false;
-            this.label2.Location = new System.Drawing.Point(23, 124);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 20);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Capacity : ";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Enabled = false;
-            this.label1.Location = new System.Drawing.Point(23, 50);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 20);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Category : ";
-            // 
+
             // cbFloor
             // 
             this.cbFloor.FormattingEnabled = true;
-            this.cbFloor.Location = new System.Drawing.Point(23, 218);
+            this.cbFloor.Location = new System.Drawing.Point(38, 97);
+
             this.cbFloor.Name = "cbFloor";
             this.cbFloor.Size = new System.Drawing.Size(151, 28);
             this.cbFloor.TabIndex = 0;
@@ -150,7 +108,9 @@ namespace MediaBazaarApp
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(23, 190);
+
+            this.label3.Location = new System.Drawing.Point(38, 74);
+
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 20);
             this.label3.TabIndex = 10;
@@ -160,16 +120,14 @@ namespace MediaBazaarApp
             // 
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.cbFloor);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.label2);
+
             this.groupBox1.Controls.Add(this.btnAddShelf);
-            this.groupBox1.Controls.Add(this.cmbShelfCategory);
-            this.groupBox1.Controls.Add(this.tbShelfCapacity);
-            this.groupBox1.Location = new System.Drawing.Point(37, 47);
+            this.groupBox1.Location = new System.Drawing.Point(27, 87);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(229, 349);
+            this.groupBox1.Size = new System.Drawing.Size(229, 265);
+
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add shelf :";
@@ -194,22 +152,13 @@ namespace MediaBazaarApp
             this.lbProductsOnShelf.Size = new System.Drawing.Size(353, 264);
             this.lbProductsOnShelf.TabIndex = 8;
             // 
-            // cbExistingFloor
-            // 
-            this.cbExistingFloor.Enabled = false;
-            this.cbExistingFloor.FormattingEnabled = true;
-            this.cbExistingFloor.Location = new System.Drawing.Point(10, 354);
-            this.cbExistingFloor.Name = "cbExistingFloor";
-            this.cbExistingFloor.Size = new System.Drawing.Size(148, 28);
-            this.cbExistingFloor.TabIndex = 9;
-            // 
+
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.dtgvManipulateShelf);
-            this.groupBox2.Controls.Add(this.cbExistingFloor);
+
             this.groupBox2.Controls.Add(this.btnAddProduct2Shelfs);
             this.groupBox2.Controls.Add(this.btnReturnProduct);
             this.groupBox2.Controls.Add(this.lbProductsOnShelf);
@@ -220,15 +169,7 @@ namespace MediaBazaarApp
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Manipulating Shelfs";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(10, 331);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(113, 20);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Shelfs per floor:";
-            // 
+
             // label5
             // 
             this.label5.AutoSize = true;
@@ -249,7 +190,7 @@ namespace MediaBazaarApp
             // 
             // btnReturnProduct
             // 
-            this.btnReturnProduct.Enabled = false;
+
             this.btnReturnProduct.Location = new System.Drawing.Point(702, 148);
             this.btnReturnProduct.Name = "btnReturnProduct";
             this.btnReturnProduct.Size = new System.Drawing.Size(149, 56);
@@ -281,22 +222,20 @@ namespace MediaBazaarApp
         #endregion
 
         private System.Windows.Forms.DataGridView dtgvManipulateShelf;
-        private System.Windows.Forms.TextBox tbShelfCapacity;
-        private System.Windows.Forms.ComboBox cmbShelfCategory;
+
         private System.Windows.Forms.Button btnAddShelf;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+
         private System.Windows.Forms.ComboBox cbFloor;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnAddProduct2Shelfs;
         private System.Windows.Forms.ListBox lbProductsOnShelf;
-        private System.Windows.Forms.ComboBox cbExistingFloor;
+
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Floor;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnReturnProduct;
-        private System.Windows.Forms.Label label6;
+
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
     }

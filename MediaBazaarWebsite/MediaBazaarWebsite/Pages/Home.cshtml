@@ -49,6 +49,7 @@
 
             </div>
 
+<<<<<<< HEAD
 
     </div>
     <div id="list_container">
@@ -97,6 +98,48 @@
 
 
 
+=======
+        </div>
+        <div id="list_container">
+            <div float="left" class="wrapper">
+                <div class="checkbox_container">
+                    <div class="title">Unavailable for work shifts</div>
+                    <p class="text-decoration">@ViewData["Message"]</p>
+                    <form method="post" asp-page-handler="Unavailable">
+
+                        <div class='checkbox_wrap'>
+                            Monday
+                            <input type='checkbox' class='checkbox' asp-for="Monday" />
+                        </div>
+                        <div class="checkbox_wrap">
+                            Tuesday
+                            <input type="checkbox" class="checkbox" asp-for="Tuesday" />
+                        </div>
+                        <div class="checkbox_wrap">
+                            Wednesday
+                            <input type="checkbox" class="checkbox" asp-for="Wednesday" />
+                        </div>
+                        <div class="checkbox_wrap">
+                            Thursday
+                            <input type="checkbox" class="checkbox" asp-for="Thursday" />
+                        </div>
+                        <div class="checkbox_wrap">
+                            Friday
+                            <input type="checkbox" class="checkbox" asp-for="Friday" />
+                        </div>
+                        <div class="checkbox_wrap">
+                            Saturday
+                            <input type="checkbox" class="checkbox" asp-for="Saturday" />
+                        </div>
+                        <div class="checkbox_wrap">
+                            Sunday
+                            <input type="checkbox" class="checkbox" asp-for="Sunday" />
+                        </div>
+
+                        <input id="btnSave" type="submit" value="Save" />
+                    </form>
+                </div>
+>>>>>>> hristo_prj
             </div>
         </div>
     </div>

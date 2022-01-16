@@ -49,7 +49,10 @@ namespace MediaBazaarApp
         {
             foreach (RestockRequest request in this.GetAll())
             {
-                if (request.ID == id) { return request; }
+
+                if (request.ID == id) 
+                { return request; }
+
             }
             return null;
         }
@@ -58,7 +61,9 @@ namespace MediaBazaarApp
         {
             foreach (RestockRequest restockRequest in this.GetAll())
             {
-                if (restockRequest.ProductId == request.ProductId) { return true; }
+
+                if (restockRequest.ProductId != request.ProductId) { return true; }
+
             }
             return false;
 

@@ -4,10 +4,17 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
+<<<<<<< HEAD
       <x>279</x>
       <y>519</y>
       <w>111</w>
       <h>54</h>
+=======
+      <x>792</x>
+      <y>522</y>
+      <w>222</w>
+      <h>108</h>
+>>>>>>> hristo_prj
     </coordinates>
     <panel_attributes>/User/
 --
@@ -23,10 +30,17 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
+<<<<<<< HEAD
       <x>381</x>
       <y>441</y>
       <w>111</w>
       <h>39</h>
+=======
+      <x>996</x>
+      <y>366</y>
+      <w>222</w>
+      <h>78</h>
+>>>>>>> hristo_prj
     </coordinates>
     <panel_attributes>EmployeeManager
 --
@@ -39,10 +53,17 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
+<<<<<<< HEAD
       <x>135</x>
       <y>489</y>
       <w>93</w>
       <h>93</h>
+=======
+      <x>510</x>
+      <y>462</y>
+      <w>186</w>
+      <h>186</h>
+>>>>>>> hristo_prj
     </coordinates>
     <panel_attributes>Product
 --
@@ -67,10 +88,17 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
+<<<<<<< HEAD
       <x>504</x>
       <y>789</y>
       <w>63</w>
       <h>21</h>
+=======
+      <x>1062</x>
+      <y>990</y>
+      <w>126</w>
+      <h>54</h>
+>>>>>>> hristo_prj
     </coordinates>
     <panel_attributes>StockManager
 --
@@ -82,6 +110,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
+<<<<<<< HEAD
       <x>498</x>
       <y>444</y>
       <w>66</w>
@@ -90,6 +119,16 @@
     <panel_attributes>DepartmentManager
 --
 --
+=======
+      <x>1230</x>
+      <y>372</y>
+      <w>132</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>DepartmentManager
+--
+--
+>>>>>>> hristo_prj
 +DepartmentManager()
 
 </panel_attributes>
@@ -98,10 +137,17 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
+<<<<<<< HEAD
       <x>417</x>
       <y>600</y>
       <w>84</w>
       <h>123</h>
+=======
+      <x>1068</x>
+      <y>684</y>
+      <w>168</w>
+      <h>246</h>
+>>>>>>> hristo_prj
     </coordinates>
     <panel_attributes>Employee
 --
@@ -132,10 +178,17 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
+<<<<<<< HEAD
       <x>279</x>
       <y>786</y>
       <w>69</w>
       <h>21</h>
+=======
+      <x>612</x>
+      <y>984</y>
+      <w>138</w>
+      <h>42</h>
+>>>>>>> hristo_prj
     </coordinates>
     <panel_attributes>GeneralManager
 --
@@ -147,10 +200,17 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
+<<<<<<< HEAD
       <x>429</x>
       <y>789</y>
       <w>69</w>
       <h>21</h>
+=======
+      <x>840</x>
+      <y>990</y>
+      <w>138</w>
+      <h>42</h>
+>>>>>>> hristo_prj
     </coordinates>
     <panel_attributes>HrManager
 --
@@ -160,10 +220,17 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
+<<<<<<< HEAD
       <x>129</x>
       <y>429</y>
       <w>63</w>
       <h>27</h>
+=======
+      <x>558</x>
+      <y>354</y>
+      <w>126</w>
+      <h>54</h>
+>>>>>>> hristo_prj
     </coordinates>
     <panel_attributes>ProductManager
 --
@@ -177,10 +244,17 @@
   <element>
     <id>Relation</id>
     <coordinates>
+<<<<<<< HEAD
       <x>330</x>
       <y>570</y>
       <w>135</w>
       <h>36</h>
+=======
+      <x>894</x>
+      <y>624</y>
+      <w>270</w>
+      <h>72</h>
+>>>>>>> hristo_prj
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;30.0;430.0;30.0;430.0;100.0</additional_attributes>
@@ -188,10 +262,17 @@
   <element>
     <id>Relation</id>
     <coordinates>
+<<<<<<< HEAD
       <x>465</x>
       <y>477</y>
       <w>30</w>
       <h>129</h>
+=======
+      <x>1164</x>
+      <y>438</y>
+      <w>60</w>
+      <h>258</h>
+>>>>>>> hristo_prj
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=0..n
@@ -201,10 +282,17 @@ m1=0..n
   <element>
     <id>Relation</id>
     <coordinates>
+<<<<<<< HEAD
       <x>177</x>
       <y>453</y>
       <w>27</w>
       <h>42</h>
+=======
+      <x>618</x>
+      <y>402</y>
+      <w>54</w>
+      <h>72</h>
+>>>>>>> hristo_prj
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=0..n
@@ -214,10 +302,17 @@ m1=0..n
   <element>
     <id>UMLNote</id>
     <coordinates>
+<<<<<<< HEAD
       <x>528</x>
       <y>636</y>
       <w>69</w>
       <h>27</h>
+=======
+      <x>1290</x>
+      <y>756</y>
+      <w>138</w>
+      <h>54</h>
+>>>>>>> hristo_prj
     </coordinates>
     <panel_attributes>Note..
 bg=blue
@@ -230,6 +325,7 @@ possible future changes.</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
+<<<<<<< HEAD
       <x>459</x>
       <y>720</y>
       <w>9</w>
@@ -237,14 +333,30 @@ possible future changes.</panel_attributes>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
+=======
+      <x>1044</x>
+      <y>924</y>
+      <w>126</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>190.0;10.0;10.0;20.0</additional_attributes>
+>>>>>>> hristo_prj
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
+<<<<<<< HEAD
       <x>423</x>
       <y>756</y>
       <w>123</w>
       <h>39</h>
+=======
+      <x>900</x>
+      <y>924</y>
+      <w>246</w>
+      <h>78</h>
+>>>>>>> hristo_prj
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;20.0;390.0;20.0;390.0;110.0</additional_attributes>
@@ -252,10 +364,17 @@ possible future changes.</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
+<<<<<<< HEAD
       <x>309</x>
       <y>756</y>
       <w>123</w>
       <h>36</h>
+=======
+      <x>672</x>
+      <y>924</y>
+      <w>246</w>
+      <h>72</h>
+>>>>>>> hristo_prj
     </coordinates>
     <panel_attributes/>
     <additional_attributes>390.0;20.0;10.0;20.0;10.0;100.0</additional_attributes>
@@ -263,10 +382,17 @@ possible future changes.</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
+<<<<<<< HEAD
       <x>345</x>
       <y>756</y>
       <w>123</w>
       <h>39</h>
+=======
+      <x>672</x>
+      <y>924</y>
+      <w>246</w>
+      <h>78</h>
+>>>>>>> hristo_prj
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;20.0;390.0;20.0;390.0;110.0</additional_attributes>
@@ -274,10 +400,17 @@ possible future changes.</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
+<<<<<<< HEAD
       <x>582</x>
       <y>789</y>
       <w>63</w>
       <h>21</h>
+=======
+      <x>1218</x>
+      <y>990</y>
+      <w>126</w>
+      <h>54</h>
+>>>>>>> hristo_prj
     </coordinates>
     <panel_attributes>StoreEmployee
 --
@@ -289,10 +422,17 @@ possible future changes.</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
+<<<<<<< HEAD
       <x>504</x>
       <y>756</y>
       <w>123</w>
       <h>39</h>
+=======
+      <x>1062</x>
+      <y>924</y>
+      <w>246</w>
+      <h>78</h>
+>>>>>>> hristo_prj
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;20.0;390.0;20.0;390.0;110.0</additional_attributes>
@@ -300,10 +440,17 @@ possible future changes.</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
+<<<<<<< HEAD
       <x>243</x>
       <y>594</y>
       <w>69</w>
       <h>21</h>
+=======
+      <x>720</x>
+      <y>672</y>
+      <w>138</w>
+      <h>42</h>
+>>>>>>> hristo_prj
     </coordinates>
     <panel_attributes>Admin
 --
@@ -313,10 +460,17 @@ possible future changes.</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
+<<<<<<< HEAD
       <x>270</x>
       <y>573</y>
       <w>69</w>
       <h>27</h>
+=======
+      <x>774</x>
+      <y>630</y>
+      <w>138</w>
+      <h>54</h>
+>>>>>>> hristo_prj
     </coordinates>
     <panel_attributes/>
     <additional_attributes>210.0;20.0;10.0;20.0;10.0;70.0</additional_attributes>
@@ -324,10 +478,17 @@ possible future changes.</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
+<<<<<<< HEAD
       <x>192</x>
       <y>594</y>
       <w>42</w>
       <h>21</h>
+=======
+      <x>618</x>
+      <y>672</y>
+      <w>84</w>
+      <h>42</h>
+>>>>>>> hristo_prj
     </coordinates>
     <panel_attributes>Note..
 bg=blue
@@ -337,10 +498,17 @@ Admins are us</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
+<<<<<<< HEAD
       <x>522</x>
       <y>462</y>
       <w>15</w>
       <h>69</h>
+=======
+      <x>1278</x>
+      <y>408</y>
+      <w>30</w>
+      <h>138</h>
+>>>>>>> hristo_prj
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=0..n</panel_attributes>
@@ -349,10 +517,17 @@ m1=0..n</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
+<<<<<<< HEAD
       <x>504</x>
       <y>354</y>
       <w>54</w>
       <h>36</h>
+=======
+      <x>318</x>
+      <y>504</y>
+      <w>126</w>
+      <h>72</h>
+>>>>>>> hristo_prj
     </coordinates>
     <panel_attributes>DepartmentMediator
 --
@@ -408,6 +583,7 @@ m1=0..n</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
+<<<<<<< HEAD
       <x>366</x>
       <y>294</y>
       <w>174</w>
@@ -445,6 +621,12 @@ m1=0..n</panel_attributes>
       <y>387</y>
       <w>48</w>
       <h>63</h>
+=======
+      <x>438</x>
+      <y>528</y>
+      <w>84</w>
+      <h>30</h>
+>>>>>>> hristo_prj
     </coordinates>
     <panel_attributes>lt=&lt;-
 -departmentMediator</panel_attributes>
@@ -477,18 +659,31 @@ m1=0..n</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
+<<<<<<< HEAD
       <x>492</x>
       <y>525</y>
       <w>66</w>
       <h>36</h>
+=======
+      <x>312</x>
+      <y>354</y>
+      <w>126</w>
+      <h>54</h>
+>>>>>>> hristo_prj
     </coordinates>
     <panel_attributes>Department
 --
+<<<<<<< HEAD
 -departmentName:string
 -managerID:int
 -managerName:string
 --
 +Department()
+=======
+--
++StoreManager()
+
+>>>>>>> hristo_prj
 
 </panel_attributes>
     <additional_attributes/>
@@ -496,10 +691,17 @@ m1=0..n</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
+<<<<<<< HEAD
       <x>498</x>
       <y>558</y>
       <w>33</w>
       <h>75</h>
+=======
+      <x>372</x>
+      <y>402</y>
+      <w>42</w>
+      <h>114</h>
+>>>>>>> hristo_prj
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=0..n</panel_attributes>
@@ -508,6 +710,7 @@ m1=0..n</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
+<<<<<<< HEAD
       <x>699</x>
       <y>354</y>
       <w>54</w>
@@ -592,11 +795,40 @@ m1=0..n</panel_attributes>
 --
 --
 +RequestManager()</panel_attributes>
+=======
+      <x>1242</x>
+      <y>192</y>
+      <w>108</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>DepartmentMediator
+--
++DepartmentMediator()</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
+      <x>894</x>
+      <y>0</y>
+      <w>144</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>/DataAcess/
+--
+#connection:MySqlConnection
+#command:MySqlCommand
+#dataReader:MySqlDataReader
+#query:string
+--
++DataAcess()</panel_attributes>
+>>>>>>> hristo_prj
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+<<<<<<< HEAD
       <x>702</x>
       <y>435</y>
       <w>54</w>
@@ -606,11 +838,23 @@ m1=0..n</panel_attributes>
 --
 --
 +ShiftManager()</panel_attributes>
+=======
+      <x>1038</x>
+      <y>186</y>
+      <w>108</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>EmployeeMediator
+--
+--
++EmployeeMediator()</panel_attributes>
+>>>>>>> hristo_prj
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
+<<<<<<< HEAD
       <x>642</x>
       <y>435</y>
       <w>54</w>
@@ -620,6 +864,17 @@ m1=0..n</panel_attributes>
 --
 --
 +ShelfManager()</panel_attributes>
+=======
+      <x>588</x>
+      <y>186</y>
+      <w>108</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>ProductMediator
+--
+--
++ProductMediator()</panel_attributes>
+>>>>>>> hristo_prj
     <additional_attributes/>
   </element>
   <element>
@@ -661,6 +916,7 @@ m1=0..n</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
+<<<<<<< HEAD
       <x>573</x>
       <y>498</y>
       <w>48</w>
@@ -670,12 +926,24 @@ m1=0..n</panel_attributes>
 --
 --
 +RestockRequest()
+=======
+      <x>336</x>
+      <y>186</y>
+      <w>108</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>StoreMediator
+--
+--
++StoreMediator()
+>>>>>>> hristo_prj
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
+<<<<<<< HEAD
       <x>594</x>
       <y>468</y>
       <w>15</w>
@@ -699,10 +967,20 @@ m1=0..n</panel_attributes>
 +Workshift()
 </panel_attributes>
     <additional_attributes/>
+=======
+      <x>966</x>
+      <y>72</y>
+      <w>348</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0;560.0;100.0;560.0;200.0</additional_attributes>
+>>>>>>> hristo_prj
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
+<<<<<<< HEAD
       <x>726</x>
       <y>468</y>
       <w>15</w>
@@ -726,10 +1004,20 @@ m1=0..n</panel_attributes>
 +Shelf()
 </panel_attributes>
     <additional_attributes/>
+=======
+      <x>1086</x>
+      <y>126</y>
+      <w>18</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+>>>>>>> hristo_prj
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
+<<<<<<< HEAD
       <x>666</x>
       <y>468</y>
       <w>15</w>
@@ -751,10 +1039,20 @@ m1=0..n</panel_attributes>
 --
 +Schedular()</panel_attributes>
     <additional_attributes/>
+=======
+      <x>636</x>
+      <y>120</y>
+      <w>348</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>560.0;20.0;10.0;20.0;10.0;110.0</additional_attributes>
+>>>>>>> hristo_prj
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
+<<<<<<< HEAD
       <x>747</x>
       <y>426</y>
       <w>63</w>
@@ -763,10 +1061,20 @@ m1=0..n</panel_attributes>
     <panel_attributes>lt=&lt;-
 m1=0..n</panel_attributes>
     <additional_attributes>10.0;240.0;190.0;10.0</additional_attributes>
+=======
+      <x>390</x>
+      <y>120</y>
+      <w>264</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>420.0;20.0;10.0;20.0;10.0;110.0</additional_attributes>
+>>>>>>> hristo_prj
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
+<<<<<<< HEAD
       <x>744</x>
       <y>408</y>
       <w>45</w>
@@ -775,10 +1083,21 @@ m1=0..n</panel_attributes>
     <panel_attributes>lt=&lt;-
 -shiftManager</panel_attributes>
     <additional_attributes>10.0;90.0;130.0;10.0</additional_attributes>
+=======
+      <x>1290</x>
+      <y>258</y>
+      <w>96</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+-departmentMediator</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;190.0</additional_attributes>
+>>>>>>> hristo_prj
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
+<<<<<<< HEAD
       <x>438</x>
       <y>384</y>
       <w>351</w>
@@ -787,10 +1106,21 @@ m1=0..n</panel_attributes>
     <panel_attributes>lt=&lt;-
 -employeeMediator</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;50.0;1150.0;50.0</additional_attributes>
+=======
+      <x>618</x>
+      <y>252</y>
+      <w>78</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+-productMediator</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;170.0</additional_attributes>
+>>>>>>> hristo_prj
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
+<<<<<<< HEAD
       <x>474</x>
       <y>402</y>
       <w>315</w>
@@ -815,10 +1145,21 @@ Entertainment
 Health
 Media</panel_attributes>
     <additional_attributes/>
+=======
+      <x>378</x>
+      <y>252</y>
+      <w>72</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+-storeMediator</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;170.0</additional_attributes>
+>>>>>>> hristo_prj
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
+<<<<<<< HEAD
       <x>666</x>
       <y>522</y>
       <w>9</w>
@@ -827,5 +1168,46 @@ Media</panel_attributes>
     <panel_attributes>lt=&lt;.
 </panel_attributes>
     <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+=======
+      <x>1086</x>
+      <y>252</y>
+      <w>90</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+-employeeMediator</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;190.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1218</x>
+      <y>534</y>
+      <w>132</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>Department
+--
+-departmentName:string
+-managerID:int
+-managerName:string
+--
++Department()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1230</x>
+      <y>600</y>
+      <w>66</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n</panel_attributes>
+    <additional_attributes>10.0;220.0;90.0;220.0;90.0;10.0</additional_attributes>
+>>>>>>> hristo_prj
   </element>
 </diagram>

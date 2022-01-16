@@ -160,6 +160,7 @@ namespace MediaBazaarApp
             return true;
         }
 
+
         public bool CheckAvailability(int id, string date)
         {
             if (shiftMediator.CheckAvailability(id, date)==true)
@@ -168,6 +169,7 @@ namespace MediaBazaarApp
             }
             return false;
         }
+
 
         public bool Load()
         {

@@ -34,16 +34,10 @@ namespace MediaBazaarApp
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.tbName = new System.Windows.Forms.TextBox();
             this.tbSellingPrice = new System.Windows.Forms.TextBox();
             this.tbBoughtFor = new System.Windows.Forms.TextBox();
             this.tbBrand = new System.Windows.Forms.TextBox();
-            this.tbMeasurements = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cbSize = new System.Windows.Forms.ComboBox();
-            this.cbCategory = new System.Windows.Forms.ComboBox();
             this.btnAddP = new System.Windows.Forms.Button();
             this.btnCloseWind = new System.Windows.Forms.Button();
             this.tbInStock = new System.Windows.Forms.TextBox();
@@ -91,15 +85,6 @@ namespace MediaBazaarApp
             this.label15.TabIndex = 70;
             this.label15.Text = "Brand:";
             // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(15, 221);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(108, 20);
-            this.label14.TabIndex = 69;
-            this.label14.Text = "Measurements:";
-            // 
             // tbName
             // 
             this.tbName.Location = new System.Drawing.Point(129, 61);
@@ -128,58 +113,11 @@ namespace MediaBazaarApp
             this.tbBrand.Size = new System.Drawing.Size(161, 27);
             this.tbBrand.TabIndex = 65;
             // 
-            // tbMeasurements
-            // 
-            this.tbMeasurements.Location = new System.Drawing.Point(129, 221);
-            this.tbMeasurements.Name = "tbMeasurements";
-            this.tbMeasurements.Size = new System.Drawing.Size(161, 27);
-            this.tbMeasurements.TabIndex = 64;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(46, 323);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(72, 20);
-            this.label7.TabIndex = 63;
-            this.label7.Text = "Category:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(76, 272);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(39, 20);
-            this.label6.TabIndex = 62;
-            this.label6.Text = "Size:";
-            // 
-            // cbSize
-            // 
-            this.cbSize.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbSize.FormattingEnabled = true;
-            this.cbSize.Items.AddRange(new object[] {
-            "Big",
-            "Medium",
-            "Small\t"});
-            this.cbSize.Location = new System.Drawing.Point(129, 269);
-            this.cbSize.Name = "cbSize";
-            this.cbSize.Size = new System.Drawing.Size(161, 28);
-            this.cbSize.TabIndex = 61;
-            // 
-            // cbCategory
-            // 
-            this.cbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbCategory.FormattingEnabled = true;
-            this.cbCategory.Location = new System.Drawing.Point(129, 320);
-            this.cbCategory.Name = "cbCategory";
-            this.cbCategory.Size = new System.Drawing.Size(161, 28);
-            this.cbCategory.TabIndex = 60;
-            // 
             // btnAddP
             // 
-            this.btnAddP.Location = new System.Drawing.Point(25, 379);
+            this.btnAddP.Location = new System.Drawing.Point(12, 252);
             this.btnAddP.Name = "btnAddP";
-            this.btnAddP.Size = new System.Drawing.Size(132, 40);
+            this.btnAddP.Size = new System.Drawing.Size(172, 71);
             this.btnAddP.TabIndex = 76;
             this.btnAddP.Text = "Done";
             this.btnAddP.UseVisualStyleBackColor = true;
@@ -187,7 +125,7 @@ namespace MediaBazaarApp
             // 
             // btnCloseWind
             // 
-            this.btnCloseWind.Location = new System.Drawing.Point(531, 375);
+            this.btnCloseWind.Location = new System.Drawing.Point(523, 275);
             this.btnCloseWind.Name = "btnCloseWind";
             this.btnCloseWind.Size = new System.Drawing.Size(94, 48);
             this.btnCloseWind.TabIndex = 77;
@@ -259,7 +197,8 @@ namespace MediaBazaarApp
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 
-            this.ClientSize = new System.Drawing.Size(637, 439);
+            this.ClientSize = new System.Drawing.Size(629, 335);
+
             this.Controls.Add(this.label5);
 
             this.Controls.Add(this.label4);
@@ -274,16 +213,10 @@ namespace MediaBazaarApp
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.label14);
             this.Controls.Add(this.tbName);
             this.Controls.Add(this.tbSellingPrice);
             this.Controls.Add(this.tbBoughtFor);
             this.Controls.Add(this.tbBrand);
-            this.Controls.Add(this.tbMeasurements);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.cbSize);
-            this.Controls.Add(this.cbCategory);
             this.Name = "AddProduct";
             this.Text = "Add Product";
 
@@ -299,16 +232,10 @@ namespace MediaBazaarApp
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox tbName;
         private System.Windows.Forms.TextBox tbSellingPrice;
         private System.Windows.Forms.TextBox tbBoughtFor;
         private System.Windows.Forms.TextBox tbBrand;
-        private System.Windows.Forms.TextBox tbMeasurements;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox cbSize;
-        private System.Windows.Forms.ComboBox cbCategory;
         private System.Windows.Forms.Button btnAddP;
         private System.Windows.Forms.Button btnCloseWind;
         private System.Windows.Forms.TextBox tbInStock;

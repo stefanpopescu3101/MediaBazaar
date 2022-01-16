@@ -17,18 +17,24 @@
   </ItemGroup>
 
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Update="Forms\ProductStatistics.cs">
       <SubType>Form</SubType>
     </Compile>
+=======
+>>>>>>> hristo_prj
     <Compile Update="Forms\TerminateEmployee%27sContract.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\UpdateEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
+<<<<<<< HEAD
     <Compile Update="Forms\ViewProductForm.cs">
       <SubType>Form</SubType>
     </Compile>
+=======
+>>>>>>> hristo_prj
   </ItemGroup>
 
 </Project>
