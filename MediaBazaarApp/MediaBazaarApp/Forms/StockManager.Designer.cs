@@ -32,14 +32,6 @@ namespace MediaBazaarApp
             this.components = new System.ComponentModel.Container();
             this.label2 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.btnReject = new System.Windows.Forms.Button();
-            this.btnAccept = new System.Windows.Forms.Button();
-            this.dataGridViewRequests = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RequestAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SentTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductNameR = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnViewProduct = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
@@ -58,12 +50,21 @@ namespace MediaBazaarApp
             this.ProductSold = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Measurements = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BoxSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnReject = new System.Windows.Forms.Button();
+            this.btnAccept = new System.Windows.Forms.Button();
+            this.dataGridViewRequests = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RequestAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SentTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductNameR = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timerTable = new System.Windows.Forms.Timer(this.components);
+            this.btnProductStatistics = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRequests)).BeginInit();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVProducts)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRequests)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -88,90 +89,9 @@ namespace MediaBazaarApp
             this.tabControl1.TabIndex = 9;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged_1);
             // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.btnReject);
-            this.tabPage2.Controls.Add(this.btnAccept);
-            this.tabPage2.Controls.Add(this.dataGridViewRequests);
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1363, 575);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Restock Request";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // btnReject
-            // 
-            this.btnReject.Enabled = false;
-            this.btnReject.Location = new System.Drawing.Point(719, 320);
-            this.btnReject.Name = "btnReject";
-            this.btnReject.Size = new System.Drawing.Size(229, 86);
-            this.btnReject.TabIndex = 2;
-            this.btnReject.Text = "Reject Request";
-            this.btnReject.UseVisualStyleBackColor = true;
-            this.btnReject.Click += new System.EventHandler(this.btnReject_Click);
-            // 
-            // btnAccept
-            // 
-            this.btnAccept.Enabled = false;
-            this.btnAccept.Location = new System.Drawing.Point(397, 320);
-            this.btnAccept.Name = "btnAccept";
-            this.btnAccept.Size = new System.Drawing.Size(229, 86);
-            this.btnAccept.TabIndex = 1;
-            this.btnAccept.Text = "Accept Request";
-            this.btnAccept.UseVisualStyleBackColor = true;
-            this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
-            // 
-            // dataGridViewRequests
-            // 
-            this.dataGridViewRequests.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewRequests.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.RequestAmount,
-            this.SentTime,
-            this.ProductNameR});
-            this.dataGridViewRequests.Location = new System.Drawing.Point(397, 46);
-            this.dataGridViewRequests.Name = "dataGridViewRequests";
-            this.dataGridViewRequests.RowHeadersWidth = 51;
-            this.dataGridViewRequests.RowTemplate.Height = 29;
-            this.dataGridViewRequests.Size = new System.Drawing.Size(551, 205);
-            this.dataGridViewRequests.TabIndex = 0;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 6;
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 125;
-            // 
-            // RequestAmount
-            // 
-            this.RequestAmount.HeaderText = "Request Amount";
-            this.RequestAmount.MinimumWidth = 6;
-            this.RequestAmount.Name = "RequestAmount";
-            this.RequestAmount.ReadOnly = true;
-            this.RequestAmount.Width = 125;
-            // 
-            // SentTime
-            // 
-            this.SentTime.HeaderText = "Sent Time";
-            this.SentTime.MinimumWidth = 6;
-            this.SentTime.Name = "SentTime";
-            this.SentTime.ReadOnly = true;
-            this.SentTime.Width = 125;
-            // 
-            // ProductNameR
-            // 
-            this.ProductNameR.HeaderText = "Product Name";
-            this.ProductNameR.MinimumWidth = 6;
-            this.ProductNameR.Name = "ProductNameR";
-            this.ProductNameR.ReadOnly = true;
-            this.ProductNameR.Width = 125;
-            // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btnProductStatistics);
             this.tabPage1.Controls.Add(this.btnViewProduct);
             this.tabPage1.Controls.Add(this.btnLogout);
             this.tabPage1.Controls.Add(this.btnRemoveProduct);
@@ -346,9 +266,101 @@ namespace MediaBazaarApp
             this.BoxSize.ReadOnly = true;
             this.BoxSize.Width = 125;
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.btnReject);
+            this.tabPage2.Controls.Add(this.btnAccept);
+            this.tabPage2.Controls.Add(this.dataGridViewRequests);
+            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1363, 575);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Restock Request";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btnReject
+            // 
+            this.btnReject.Enabled = false;
+            this.btnReject.Location = new System.Drawing.Point(719, 320);
+            this.btnReject.Name = "btnReject";
+            this.btnReject.Size = new System.Drawing.Size(229, 86);
+            this.btnReject.TabIndex = 2;
+            this.btnReject.Text = "Reject Request";
+            this.btnReject.UseVisualStyleBackColor = true;
+            this.btnReject.Click += new System.EventHandler(this.btnReject_Click);
+            // 
+            // btnAccept
+            // 
+            this.btnAccept.Enabled = false;
+            this.btnAccept.Location = new System.Drawing.Point(397, 320);
+            this.btnAccept.Name = "btnAccept";
+            this.btnAccept.Size = new System.Drawing.Size(229, 86);
+            this.btnAccept.TabIndex = 1;
+            this.btnAccept.Text = "Accept Request";
+            this.btnAccept.UseVisualStyleBackColor = true;
+            this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
+            // 
+            // dataGridViewRequests
+            // 
+            this.dataGridViewRequests.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewRequests.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.RequestAmount,
+            this.SentTime,
+            this.ProductNameR});
+            this.dataGridViewRequests.Location = new System.Drawing.Point(397, 46);
+            this.dataGridViewRequests.Name = "dataGridViewRequests";
+            this.dataGridViewRequests.RowHeadersWidth = 51;
+            this.dataGridViewRequests.RowTemplate.Height = 29;
+            this.dataGridViewRequests.Size = new System.Drawing.Size(551, 205);
+            this.dataGridViewRequests.TabIndex = 0;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 125;
+            // 
+            // RequestAmount
+            // 
+            this.RequestAmount.HeaderText = "Request Amount";
+            this.RequestAmount.MinimumWidth = 6;
+            this.RequestAmount.Name = "RequestAmount";
+            this.RequestAmount.ReadOnly = true;
+            this.RequestAmount.Width = 125;
+            // 
+            // SentTime
+            // 
+            this.SentTime.HeaderText = "Sent Time";
+            this.SentTime.MinimumWidth = 6;
+            this.SentTime.Name = "SentTime";
+            this.SentTime.ReadOnly = true;
+            this.SentTime.Width = 125;
+            // 
+            // ProductNameR
+            // 
+            this.ProductNameR.HeaderText = "Product Name";
+            this.ProductNameR.MinimumWidth = 6;
+            this.ProductNameR.Name = "ProductNameR";
+            this.ProductNameR.ReadOnly = true;
+            this.ProductNameR.Width = 125;
+            // 
             // timerTable
             // 
             this.timerTable.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // btnProductStatistics
+            // 
+            this.btnProductStatistics.Location = new System.Drawing.Point(6, 532);
+            this.btnProductStatistics.Name = "btnProductStatistics";
+            this.btnProductStatistics.Size = new System.Drawing.Size(213, 37);
+            this.btnProductStatistics.TabIndex = 22;
+            this.btnProductStatistics.Text = "View statistics";
+            this.btnProductStatistics.UseVisualStyleBackColor = true;
+            this.btnProductStatistics.Click += new System.EventHandler(this.btnProductStatistics_Click);
             // 
             // StockManager
             // 
@@ -361,10 +373,10 @@ namespace MediaBazaarApp
             this.Text = "StockManager";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.StockManager_FormClosed);
             this.tabControl1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRequests)).EndInit();
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGVProducts)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRequests)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -401,5 +413,6 @@ namespace MediaBazaarApp
         private System.Windows.Forms.Button btnReject;
         private System.Windows.Forms.Button btnAccept;
         private System.Windows.Forms.Timer timerTable;
+        private System.Windows.Forms.Button btnProductStatistics;
     }
 }

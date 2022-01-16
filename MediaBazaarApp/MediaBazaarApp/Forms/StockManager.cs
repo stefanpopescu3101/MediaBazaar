@@ -262,5 +262,12 @@ namespace MediaBazaarApp
         {
 
         }
+
+        private void btnProductStatistics_Click(object sender, EventArgs e)
+        {
+            ProductStatistics productStatistics = new ProductStatistics();
+            productStatistics.ShowDialog();
+
+        }
     }
 }

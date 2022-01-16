@@ -169,3 +169,7 @@ C:\Users\Stefan\Desktop\New folder\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\obj
 C:\Users\Stefan\Desktop\New folder\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\obj\Debug\netcoreapp3.1\MediaBazaarApp.Forms.ReturnProductToStorage.resources
 C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\obj\Debug\netcoreapp3.1\MediaBazaarApp.Forms.AddingProductToShelfs.resources
 C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\obj\Debug\netcoreapp3.1\MediaBazaarApp.Forms.ReturnProductToStorage.resources
+<<<<<<< HEAD
+=======
+C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarApp\MediaBazaarApp\obj\Debug\netcoreapp3.1\MediaBazaarApp.ProductStatistics.resources
+>>>>>>> rwn_branch
