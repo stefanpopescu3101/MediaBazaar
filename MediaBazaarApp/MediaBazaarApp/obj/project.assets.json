@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "net5.0-windows7.0": {
+    ".NETCoreApp,Version=v3.1": {
       "BouncyCastle.NetCore/1.8.5": {
         "type": "package",
         "compile": {
@@ -10,6 +10,18 @@
         "runtime": {
           "lib/netstandard2.0/BouncyCastle.Crypto.dll": {}
         }
+      },
+      "DotNetProjects.WpfToolkit.DataVisualization/6.0.90": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.0/DotNetProjects.DataVisualization.Toolkit.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/DotNetProjects.DataVisualization.Toolkit.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
       },
       "Google.Protobuf/3.14.0": {
         "type": "package",
@@ -102,15 +114,39 @@
           "System.Text.Encoding.CodePages": "4.4.0"
         },
         "compile": {
-          "lib/net5.0/MySql.Data.dll": {},
-          "lib/net5.0/Ubiety.Dns.Core.dll": {},
-          "lib/net5.0/Zstandard.Net.dll": {}
+          "lib/netstandard2.1/MySql.Data.dll": {},
+          "lib/netstandard2.1/Ubiety.Dns.Core.dll": {},
+          "lib/netstandard2.1/Zstandard.Net.dll": {}
         },
         "runtime": {
-          "lib/net5.0/MySql.Data.dll": {},
-          "lib/net5.0/Ubiety.Dns.Core.dll": {},
-          "lib/net5.0/Zstandard.Net.dll": {}
+          "lib/netstandard2.1/MySql.Data.dll": {},
+          "lib/netstandard2.1/Ubiety.Dns.Core.dll": {},
+          "lib/netstandard2.1/Zstandard.Net.dll": {}
         }
+      },
+      "OxyPlot.Core/2.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/OxyPlot.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/OxyPlot.dll": {}
+        }
+      },
+      "OxyPlot.WindowsForms/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "OxyPlot.Core": "2.1.0"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/OxyPlot.WindowsForms.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/OxyPlot.WindowsForms.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
       },
       "System.Buffers/4.5.1": {
         "type": "package",
@@ -258,6 +294,15 @@
           }
         }
       },
+      "System.Windows.Controls.DataVisualization.Toolkit/4.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net40-Client/System.Windows.Controls.DataVisualization.Toolkit.dll": {}
+        },
+        "runtime": {
+          "lib/net40-Client/System.Windows.Controls.DataVisualization.Toolkit.dll": {}
+        }
+      },
       "System.Windows.Extensions/4.7.0": {
         "type": "package",
         "dependencies": {
@@ -274,6 +319,15 @@
             "assetType": "runtime",
             "rid": "win"
           }
+        }
+      },
+      "System.Windows.Forms.DataVisualization/1.0.0-prerelease.19212.2": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp3.0/System.Windows.Forms.DataVisualization.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/System.Windows.Forms.DataVisualization.dll": {}
         }
       }
     }
@@ -302,6 +356,19 @@
         "lib/netstandard2.0/BouncyCastle.Crypto.xml",
         "lib/xamarinios/BouncyCastle.Crypto.dll",
         "lib/xamarinios/BouncyCastle.Crypto.xml"
+      ]
+    },
+    "DotNetProjects.WpfToolkit.DataVisualization/6.0.90": {
+      "sha512": "GZa9xIjHJcW1g2qv+SwbiTrN1I0gSThwaXaTo+lYyt8SX9IsU/d2VBo5pVj8v8dakfNQ2lBsJMDQISNblD4B6A==",
+      "type": "package",
+      "path": "dotnetprojects.wpftoolkit.datavisualization/6.0.90",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "dotnetprojects.wpftoolkit.datavisualization.6.0.90.nupkg.sha512",
+        "dotnetprojects.wpftoolkit.datavisualization.nuspec",
+        "lib/net40/DotNetProjects.DataVisualization.Toolkit.dll",
+        "lib/netcoreapp3.0/DotNetProjects.DataVisualization.Toolkit.dll"
       ]
     },
     "Google.Protobuf/3.14.0": {
@@ -456,6 +523,44 @@
         "lib/netstandard2.1/Zstandard.Net.dll",
         "mysql.data.8.0.26.nupkg.sha512",
         "mysql.data.nuspec"
+      ]
+    },
+    "OxyPlot.Core/2.1.0": {
+      "sha512": "jG+Ct3T59fXDG2LE1hyUaXqH7i+h5Nfway1iB0+0NaY2mvDsz8Row/BKjiBWCt5NHp3+q9JSMiD2wpin2hh3kw==",
+      "type": "package",
+      "path": "oxyplot.core/2.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "OxyPlot_128.png",
+        "lib/net40/OxyPlot.dll",
+        "lib/net40/OxyPlot.xml",
+        "lib/net45/OxyPlot.dll",
+        "lib/net45/OxyPlot.xml",
+        "lib/netstandard1.0/OxyPlot.dll",
+        "lib/netstandard1.0/OxyPlot.xml",
+        "lib/netstandard2.0/OxyPlot.dll",
+        "lib/netstandard2.0/OxyPlot.xml",
+        "oxyplot.core.2.1.0.nupkg.sha512",
+        "oxyplot.core.nuspec"
+      ]
+    },
+    "OxyPlot.WindowsForms/2.1.0": {
+      "sha512": "3ehmpvSbTKUOfUSeZdfIyed5kGMdgPGq/MCXi1NXqzDqQhbUZ6OwVrRnfcLKB32WtnDAzwAtchirEaAFPo5iig==",
+      "type": "package",
+      "path": "oxyplot.windowsforms/2.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "OxyPlot_128.png",
+        "lib/net40/OxyPlot.WindowsForms.dll",
+        "lib/net40/OxyPlot.WindowsForms.xml",
+        "lib/net45/OxyPlot.WindowsForms.dll",
+        "lib/net45/OxyPlot.WindowsForms.xml",
+        "lib/netcoreapp3.1/OxyPlot.WindowsForms.dll",
+        "lib/netcoreapp3.1/OxyPlot.WindowsForms.xml",
+        "oxyplot.windowsforms.2.1.0.nupkg.sha512",
+        "oxyplot.windowsforms.nuspec"
       ]
     },
     "System.Buffers/4.5.1": {
@@ -811,6 +916,19 @@
         "version.txt"
       ]
     },
+    "System.Windows.Controls.DataVisualization.Toolkit/4.0.0": {
+      "sha512": "UqBiEXh2YmYdJE5BpJC9c1I+AzcmFlzZ1h7fn5iU2lhOLn3snSxqf46/2XHpoJetJBN4HAavqG77wzaBi5jxfQ==",
+      "type": "package",
+      "path": "system.windows.controls.datavisualization.toolkit/4.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40-Client/System.Windows.Controls.DataVisualization.Toolkit.XML",
+        "lib/net40-Client/System.Windows.Controls.DataVisualization.Toolkit.dll",
+        "system.windows.controls.datavisualization.toolkit.4.0.0.nupkg.sha512",
+        "system.windows.controls.datavisualization.toolkit.nuspec"
+      ]
+    },
     "System.Windows.Extensions/4.7.0": {
       "sha512": "CeWTdRNfRaSh0pm2gDTJFwVaXfTq6Xwv/sA887iwPTneW7oMtMlpvDIO+U60+3GWTB7Aom6oQwv5VZVUhQRdPQ==",
       "type": "package",
@@ -831,11 +949,32 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "System.Windows.Forms.DataVisualization/1.0.0-prerelease.19212.2": {
+      "sha512": "NsozUfyqr2DibaO8C5DnAZkeW4BAIENanVfbKkHQ836ifhPHQK5k2PAJtii+QcIL5pueYnHYE4k55kX8pUBovw==",
+      "type": "package",
+      "path": "system.windows.forms.datavisualization/1.0.0-prerelease.19212.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netcoreapp3.0/System.Windows.Forms.DataVisualization.dll",
+        "lib/netcoreapp3.0/System.Windows.Forms.DataVisualization.pdb",
+        "ref/netcoreapp3.0/System.Windows.Forms.DataVisualization.dll",
+        "system.windows.forms.datavisualization.1.0.0-prerelease.19212.2.nupkg.sha512",
+        "system.windows.forms.datavisualization.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
-    "net5.0-windows7.0": [
-      "MySql.Data >= 8.0.26"
+    ".NETCoreApp,Version=v3.1": [
+      "DotNetProjects.WpfToolkit.DataVisualization >= 6.0.90",
+      "MySql.Data >= 8.0.26",
+      "OxyPlot.Core >= 2.1.0",
+      "OxyPlot.WindowsForms >= 2.1.0",
+      "System.Windows.Controls.DataVisualization.Toolkit >= 4.0.0",
+      "System.Windows.Forms.DataVisualization >= 1.0.0-prerelease.19212.2"
     ]
   },
   "packageFolders": {
@@ -865,15 +1004,15 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net5.0-windows7.0"
+        "netcoreapp3.1"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net5.0-windows7.0": {
-          "targetAlias": "net5.0-windows",
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {}
         }
       },
@@ -884,12 +1023,32 @@
       }
     },
     "frameworks": {
-      "net5.0-windows7.0": {
-        "targetAlias": "net5.0-windows",
+      "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
+          "DotNetProjects.WpfToolkit.DataVisualization": {
+            "target": "Package",
+            "version": "[6.0.90, )"
+          },
           "MySql.Data": {
             "target": "Package",
             "version": "[8.0.26, )"
+          },
+          "OxyPlot.Core": {
+            "target": "Package",
+            "version": "[2.1.0, )"
+          },
+          "OxyPlot.WindowsForms": {
+            "target": "Package",
+            "version": "[2.1.0, )"
+          },
+          "System.Windows.Controls.DataVisualization.Toolkit": {
+            "target": "Package",
+            "version": "[4.0.0, )"
+          },
+          "System.Windows.Forms.DataVisualization": {
+            "target": "Package",
+            "version": "[1.0.0-prerelease.19212.2, )"
           }
         },
         "imports": [
@@ -913,5 +1072,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'System.Windows.Controls.DataVisualization.Toolkit 4.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "System.Windows.Controls.DataVisualization.Toolkit",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
 }

@@ -31,18 +31,24 @@ namespace MediaBazaarApp
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnLoadTable = new System.Windows.Forms.Button();
+            this.btnStatistics = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.btnLogout = new System.Windows.Forms.Button();
             this.dgvEmployees = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnSearchByID = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.tbSearch = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnClear = new System.Windows.Forms.Button();
             this.btnUpdateInfo = new System.Windows.Forms.Button();
             this.btnTerminate = new System.Windows.Forms.Button();
             this.btnRemoveEmployee = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnAutoSchedule = new System.Windows.Forms.Button();
+            this.btnScheduleReset = new System.Windows.Forms.Button();
+            this.lDate = new System.Windows.Forms.Label();
+            this.btnNextMonth = new System.Windows.Forms.Button();
+            this.btnPreviousMonth = new System.Windows.Forms.Button();
+            this.btnShowCalender = new System.Windows.Forms.Button();
+            this.pCalender = new System.Windows.Forms.Panel();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.cbDepartmentManager = new System.Windows.Forms.ComboBox();
             this.lDepartmentManager = new System.Windows.Forms.Label();
@@ -59,6 +65,7 @@ namespace MediaBazaarApp
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).BeginInit();
             this.groupBox2.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDepartments)).BeginInit();
             this.SuspendLayout();
@@ -76,8 +83,9 @@ namespace MediaBazaarApp
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btnLoadTable);
+            this.tabPage1.Controls.Add(this.btnStatistics);
             this.tabPage1.Controls.Add(this.btnAdd);
-            this.tabPage1.Controls.Add(this.btnLogout);
             this.tabPage1.Controls.Add(this.dgvEmployees);
             this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Controls.Add(this.btnUpdateInfo);
@@ -92,120 +100,115 @@ namespace MediaBazaarApp
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
+            // btnLoadTable
+            // 
+            this.btnLoadTable.Location = new System.Drawing.Point(13, 29);
+            this.btnLoadTable.Name = "btnLoadTable";
+            this.btnLoadTable.Size = new System.Drawing.Size(237, 81);
+            this.btnLoadTable.TabIndex = 22;
+            this.btnLoadTable.Text = "Load Employees List";
+            this.btnLoadTable.UseVisualStyleBackColor = true;
+            this.btnLoadTable.Click += new System.EventHandler(this.btnLoadTable_Click);
+            // 
+            // btnStatistics
+            // 
+            this.btnStatistics.Location = new System.Drawing.Point(13, 668);
+            this.btnStatistics.Name = "btnStatistics";
+            this.btnStatistics.Size = new System.Drawing.Size(213, 37);
+            this.btnStatistics.TabIndex = 21;
+            this.btnStatistics.Text = "View statistics";
+            this.btnStatistics.UseVisualStyleBackColor = true;
+            this.btnStatistics.Click += new System.EventHandler(this.btnStatistics_Click);
+            // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(498, 41);
+            this.btnAdd.Location = new System.Drawing.Point(572, 668);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(101, 37);
-            this.btnAdd.TabIndex = 11;
+            this.btnAdd.TabIndex = 20;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.Location = new System.Drawing.Point(1041, 6);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(100, 29);
-            this.btnLogout.TabIndex = 10;
-            this.btnLogout.Text = "Log out";
-            this.btnLogout.UseVisualStyleBackColor = true;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click_1);
             // 
             // dgvEmployees
             // 
+            this.dgvEmployees.AllowUserToAddRows = false;
+            this.dgvEmployees.AllowUserToDeleteRows = false;
             this.dgvEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmployees.Location = new System.Drawing.Point(20, 113);
+            this.dgvEmployees.DataMember = " ";
+            this.dgvEmployees.Location = new System.Drawing.Point(13, 125);
             this.dgvEmployees.Name = "dgvEmployees";
             this.dgvEmployees.RowHeadersWidth = 51;
             this.dgvEmployees.RowTemplate.Height = 29;
-            this.dgvEmployees.Size = new System.Drawing.Size(1044, 543);
-            this.dgvEmployees.TabIndex = 9;
-            this.dgvEmployees.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmployees_CellContentClick);
-            this.dgvEmployees.RowStateChanged += new System.Windows.Forms.DataGridViewRowStateChangedEventHandler(this.dgvEmployees_RowStateChanged);
+            this.dgvEmployees.Size = new System.Drawing.Size(1044, 537);
+            this.dgvEmployees.TabIndex = 18;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btnSearchByID);
+            this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.tbSearch);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.btnClear);
-            this.groupBox2.Location = new System.Drawing.Point(20, 6);
+            this.groupBox2.Location = new System.Drawing.Point(267, 29);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(444, 92);
-            this.groupBox2.TabIndex = 7;
+            this.groupBox2.Size = new System.Drawing.Size(790, 81);
+            this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Search By ID";
+            this.groupBox2.Text = "Search employee";
             // 
-            // btnSearchByID
+            // label3
             // 
-            this.btnSearchByID.Location = new System.Drawing.Point(202, 39);
-            this.btnSearchByID.Name = "btnSearchByID";
-            this.btnSearchByID.Size = new System.Drawing.Size(96, 29);
-            this.btnSearchByID.TabIndex = 6;
-            this.btnSearchByID.Text = "Search";
-            this.btnSearchByID.UseVisualStyleBackColor = true;
-            this.btnSearchByID.Click += new System.EventHandler(this.btnSearchByID_Click);
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(334, 41);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(0, 20);
+            this.label3.TabIndex = 11;
             // 
             // tbSearch
             // 
-            this.tbSearch.Location = new System.Drawing.Point(45, 39);
+            this.tbSearch.Location = new System.Drawing.Point(18, 38);
             this.tbSearch.Name = "tbSearch";
-            this.tbSearch.Size = new System.Drawing.Size(134, 27);
+            this.tbSearch.Size = new System.Drawing.Size(755, 27);
             this.tbSearch.TabIndex = 3;
-            this.tbSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 39);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(31, 20);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "ID :";
-            // 
-            // btnClear
-            // 
-            this.btnClear.Location = new System.Drawing.Point(318, 39);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(93, 29);
-            this.btnClear.TabIndex = 8;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            this.tbSearch.TextChanged += new System.EventHandler(this.tbSearch_TextChanged);
             // 
             // btnUpdateInfo
             // 
-            this.btnUpdateInfo.Location = new System.Drawing.Point(605, 41);
+            this.btnUpdateInfo.Location = new System.Drawing.Point(679, 668);
             this.btnUpdateInfo.Name = "btnUpdateInfo";
             this.btnUpdateInfo.Size = new System.Drawing.Size(101, 37);
-            this.btnUpdateInfo.TabIndex = 4;
+            this.btnUpdateInfo.TabIndex = 16;
             this.btnUpdateInfo.Text = "Update ";
             this.btnUpdateInfo.UseVisualStyleBackColor = true;
-            this.btnUpdateInfo.Click += new System.EventHandler(this.btnUpdateInfo_Click);
+            this.btnUpdateInfo.Click += new System.EventHandler(this.btnUpdateInfo_Click_1);
             // 
             // btnTerminate
             // 
-            this.btnTerminate.Location = new System.Drawing.Point(712, 41);
+            this.btnTerminate.Location = new System.Drawing.Point(893, 668);
             this.btnTerminate.Name = "btnTerminate";
-            this.btnTerminate.Size = new System.Drawing.Size(101, 37);
-            this.btnTerminate.TabIndex = 1;
-            this.btnTerminate.Text = "Terminate";
+            this.btnTerminate.Size = new System.Drawing.Size(164, 37);
+            this.btnTerminate.TabIndex = 14;
+            this.btnTerminate.Text = "Terminate contract";
             this.btnTerminate.UseVisualStyleBackColor = true;
-            this.btnTerminate.Click += new System.EventHandler(this.btnTerminate_Click);
+            this.btnTerminate.Click += new System.EventHandler(this.btnTerminate_Click_1);
             // 
             // btnRemoveEmployee
             // 
-            this.btnRemoveEmployee.Location = new System.Drawing.Point(819, 41);
+            this.btnRemoveEmployee.Location = new System.Drawing.Point(786, 668);
             this.btnRemoveEmployee.Name = "btnRemoveEmployee";
             this.btnRemoveEmployee.Size = new System.Drawing.Size(101, 37);
-            this.btnRemoveEmployee.TabIndex = 2;
+            this.btnRemoveEmployee.TabIndex = 15;
             this.btnRemoveEmployee.Text = "Remove";
             this.btnRemoveEmployee.UseVisualStyleBackColor = true;
-            this.btnRemoveEmployee.Click += new System.EventHandler(this.btnRemoveEmployee_Click);
+            this.btnRemoveEmployee.Click += new System.EventHandler(this.btnRemoveEmployee_Click_1);
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btnAutoSchedule);
+            this.tabPage2.Controls.Add(this.btnScheduleReset);
+            this.tabPage2.Controls.Add(this.lDate);
+            this.tabPage2.Controls.Add(this.btnNextMonth);
+            this.tabPage2.Controls.Add(this.btnPreviousMonth);
+            this.tabPage2.Controls.Add(this.btnShowCalender);
+            this.tabPage2.Controls.Add(this.pCalender);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -213,6 +216,72 @@ namespace MediaBazaarApp
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Workshift Management";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btnAutoSchedule
+            // 
+            this.btnAutoSchedule.Location = new System.Drawing.Point(197, 32);
+            this.btnAutoSchedule.Name = "btnAutoSchedule";
+            this.btnAutoSchedule.Size = new System.Drawing.Size(153, 29);
+            this.btnAutoSchedule.TabIndex = 7;
+            this.btnAutoSchedule.Text = "Auto Schedule";
+            this.btnAutoSchedule.UseVisualStyleBackColor = true;
+            this.btnAutoSchedule.Click += new System.EventHandler(this.btnAutoSchedule_Click);
+            // 
+            // btnScheduleReset
+            // 
+            this.btnScheduleReset.Location = new System.Drawing.Point(616, 32);
+            this.btnScheduleReset.Name = "btnScheduleReset";
+            this.btnScheduleReset.Size = new System.Drawing.Size(153, 29);
+            this.btnScheduleReset.TabIndex = 6;
+            this.btnScheduleReset.Text = "Reset";
+            this.btnScheduleReset.UseVisualStyleBackColor = true;
+            this.btnScheduleReset.Click += new System.EventHandler(this.btnScheduleReset_Click);
+            // 
+            // lDate
+            // 
+            this.lDate.AutoSize = true;
+            this.lDate.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lDate.Location = new System.Drawing.Point(419, 32);
+            this.lDate.Name = "lDate";
+            this.lDate.Size = new System.Drawing.Size(0, 38);
+            this.lDate.TabIndex = 5;
+            // 
+            // btnNextMonth
+            // 
+            this.btnNextMonth.Location = new System.Drawing.Point(961, 32);
+            this.btnNextMonth.Name = "btnNextMonth";
+            this.btnNextMonth.Size = new System.Drawing.Size(145, 29);
+            this.btnNextMonth.TabIndex = 4;
+            this.btnNextMonth.Text = "Next Month";
+            this.btnNextMonth.UseVisualStyleBackColor = true;
+            this.btnNextMonth.Click += new System.EventHandler(this.btnNextMonth_Click);
+            // 
+            // btnPreviousMonth
+            // 
+            this.btnPreviousMonth.Location = new System.Drawing.Point(798, 32);
+            this.btnPreviousMonth.Name = "btnPreviousMonth";
+            this.btnPreviousMonth.Size = new System.Drawing.Size(157, 29);
+            this.btnPreviousMonth.TabIndex = 3;
+            this.btnPreviousMonth.Text = "Previous Month";
+            this.btnPreviousMonth.UseVisualStyleBackColor = true;
+            this.btnPreviousMonth.Click += new System.EventHandler(this.btnPreviousMonth_Click);
+            // 
+            // btnShowCalender
+            // 
+            this.btnShowCalender.Location = new System.Drawing.Point(17, 32);
+            this.btnShowCalender.Name = "btnShowCalender";
+            this.btnShowCalender.Size = new System.Drawing.Size(153, 29);
+            this.btnShowCalender.TabIndex = 2;
+            this.btnShowCalender.Text = "Show Calender";
+            this.btnShowCalender.UseVisualStyleBackColor = true;
+            this.btnShowCalender.Click += new System.EventHandler(this.btnShowCalender_Click);
+            // 
+            // pCalender
+            // 
+            this.pCalender.Location = new System.Drawing.Point(17, 67);
+            this.pCalender.Name = "pCalender";
+            this.pCalender.Size = new System.Drawing.Size(1103, 639);
+            this.pCalender.TabIndex = 1;
             // 
             // tabPage3
             // 
@@ -355,6 +424,8 @@ namespace MediaBazaarApp
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDepartments)).EndInit();
@@ -366,14 +437,6 @@ namespace MediaBazaarApp
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btnSearchByID;
-        private System.Windows.Forms.TextBox tbSearch;
-        private System.Windows.Forms.Label label1;
-
-        private System.Windows.Forms.Button btnUpdateInfo;
-        private System.Windows.Forms.Button btnTerminate;
-        private System.Windows.Forms.Button btnRemoveEmployee;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.DataGridView dgvDepartments;
@@ -383,16 +446,28 @@ namespace MediaBazaarApp
         private System.Windows.Forms.Button btnAddDepartment;
         private System.Windows.Forms.Button btnClearD;
         private System.Windows.Forms.Label label2;
-
-        private System.Windows.Forms.DataGridView dgvEmployees;
-        private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox tbDepartmentName;
-        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label lDepartmentManager;
         private System.Windows.Forms.ComboBox cbDepartmentManager;
+        private System.Windows.Forms.Label lDate;
+        private System.Windows.Forms.Button btnNextMonth;
+        private System.Windows.Forms.Button btnPreviousMonth;
+        private System.Windows.Forms.Button btnShowCalender;
+        private System.Windows.Forms.Panel pCalender;
+        private System.Windows.Forms.Button btnAutoSchedule;
+        private System.Windows.Forms.Button btnScheduleReset;
+        private System.Windows.Forms.Button btnLoadTable;
+        private System.Windows.Forms.Button btnStatistics;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.DataGridView dgvEmployees;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox tbSearch;
+        private System.Windows.Forms.Button btnUpdateInfo;
+        private System.Windows.Forms.Button btnTerminate;
+        private System.Windows.Forms.Button btnRemoveEmployee;
     }
 }
 

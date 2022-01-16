@@ -18,13 +18,13 @@ namespace MediaBazaarApp
         public int MaxCapacity { get; private set; }
         public int Threshold { get; private set; }
         public int Sold { get; private set; }
-        public decimal Measurements { get; private set; }
+       // public decimal Measurements { get; private set; }
        
-        public string BoxSize { get; private set; }
+      
         public int ShelfId { get;  set; }
         public int ShelfFloor { get; set; }
 
-        public Product (string name, string brand ,decimal costPrice, decimal sellPrice, int inStock, int maxCapacity, int threshold, int sold, decimal measurements, string boxSize)
+        public Product (string name, string brand ,decimal costPrice, decimal sellPrice, int inStock, int maxCapacity, int threshold, int sold/*, decimal measurements, string boxSize*/)
         {
             this.Name = name;
             this.Brand = brand;
@@ -34,8 +34,8 @@ namespace MediaBazaarApp
             this.MaxCapacity = maxCapacity;
             this.Threshold = threshold;
             this.Sold = sold;
-            this.Measurements = measurements;
-            this.BoxSize = boxSize;
+           // this.Measurements = measurements;
+           // this.BoxSize = boxSize;
         }
 
         public Product(Shelf shelf , Floors floors)
@@ -49,7 +49,7 @@ namespace MediaBazaarApp
             this.ShelfFloor = shelfFloor;
         }
 
-        public void EditProduct(string name, string brand,decimal costPrice, decimal sellPrice,int maxCapacity, int threshold,decimal measurements,string boxSize)
+        public void EditProduct(string name, string brand,decimal costPrice, decimal sellPrice,int maxCapacity, int threshold/*,decimal measurements*/)
         {
             this.Name = name;
             this.Brand = brand;
@@ -57,17 +57,28 @@ namespace MediaBazaarApp
             this.SellPrice = sellPrice;
             this.MaxCapacity = maxCapacity;
             this.Threshold = threshold;
-            this.Measurements = measurements;
-            this.BoxSize = boxSize;
+           // this.Measurements = measurements;
+           
         }
 
         public override string ToString()
         {
-            return $"ID: {this.ID}; Name: {this.Name}";
+            return $"ID: {this.ID} Name: {this.Name} Quantity: {this.InStock}";
         }
         public void RestockProduct(int quantity)
         {
             this.InStock += quantity;
+        }
+        public bool CheckQuantity()
+        {
+            if(this.InStock < 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }

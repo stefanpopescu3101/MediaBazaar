@@ -1,0 +1,50 @@
+﻿@page
+@model MediaBazaarWebsite.Pages.AccountModel
+@{ ViewData["Title"] = "Account page";
+}
+
+<section class="form_container">
+    <title> Profile Information </title>
+    <form method="POST" class="info_container">
+        <h1> Personal Information </h1>
+        <label class="label" asp-for="Emp.FirstName">First name:</label><br>
+        <input type="text"
+              asp-for="Emp.FirstName" disabled><br><br>
+        <label class="label" asp-for="Emp.LastName">Family name:</label><br>
+        <input type="text"
+               asp-for="Emp.LastName" disabled><br><br>
+        <label class="label" asp-for="Emp.Email">Email:</label><br>
+        <input type="email"
+              asp-for="Emp.Email" disabled><br><br>
+        <label class="label" asp-for="Emp.Address">Address:</label><br>
+        <input type="text"
+              asp-for="Emp.Address" disabled><br><br>
+        <label class="label" asp-for="Emp.Bsn">BSN :</label><br>
+        <input type="text"
+               asp-for="Emp.Bsn" disabled><br><br>
+        <label class="label" asp-for="Emp.UserName">Username:</label><br>
+        <input type="text"
+              asp-for="Emp.UserName" disabled><br><br>
+        <label class="label" asp-for="Emp.Birthdate"> Birthday:</label><br>
+        <input type="text"
+              asp-for="Emp.Birthdate" disabled><br><br>
+        <label class="label" asp-for="Emp.FirstWorkingDate"> Date of first working day:</label><br>
+        <input type="text" asp-for="Emp.FirstWorkingDate"
+               disabled><br><br>
+        <label class="label" asp-for="Emp.LastWorkingDate"> Date of last working day:</label><br>
+        <input type="text" asp-for="Emp.LastWorkingDate"
+               disabled><br><br>
+        <label class="label" asp-for="Emp.HourlyWage"> Hourly wage:</label><br>
+        <input type="text" asp-for="Emp.HourlyWage"
+               disabled><br><br>
+        <label class="label" asp-for="Emp.Role"> Role :</label><br>
+        <input type="text" asp-for="Emp.Role"
+               disabled><br><br>
+        <label class="label" asp-for="Emp.ContractType"> Type of contract:</label><br>
+        <input type="text" asp-for="Emp.ContractType"
+               disabled><br><br>
+
+
+
+    </form>
+    </section>

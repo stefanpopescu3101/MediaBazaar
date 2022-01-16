@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -15,9 +16,9 @@ namespace MediaBazaarApp
     public partial class ManipulateShelves : Form
     {
 
-        ShelfManager shelfManager;
-        Shelf s  ;
-        ProductManager pm = new ProductManager();
+        private ShelfManager shelfManager;
+       // private Shelf s  ;
+        private  ProductManager pm = new ProductManager();
 
         public ManipulateShelves()
         {
@@ -26,7 +27,7 @@ namespace MediaBazaarApp
             shelfManager.LoadShelfs();
             this.LoadS();
             cbFloor.DataSource = Enum.GetValues(typeof(Floors));
-            cbExistingFloor.DataSource = Enum.GetValues(typeof(Floors));
+            
         }
 
 
@@ -113,14 +114,25 @@ namespace MediaBazaarApp
         }
         private void btnReturnProduct_Click(object sender, EventArgs e)
         {
-            if (this.dtgvManipulateShelf.SelectedCells.Count > 0)
+            if(lbProductsOnShelf.SelectedIndex == -1)
             {
-                int id = Convert.ToInt32(dtgvManipulateShelf.Rows[dtgvManipulateShelf.CurrentCell.RowIndex].Cells[0].Value);
-                ReturnProductToStorage rp = new ReturnProductToStorage(pm,id);
-                DialogResult r = rp.ShowDialog();
-                this.LoadS();
+                MessageBox.Show("Please select a item you want to renturn from the list!");
             }
-            else { MessageBox.Show("Please select a shelf to move product to!"); }
+            else
+            {
+                DialogResult dialogResult = MessageBox.Show("Are you sure you want to return all of the selected products back to depot?", "", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    var result = Regex.Match(lbProductsOnShelf.SelectedItem.ToString(), @"^([\w\-]+)");
+                    int id = Convert.ToInt32(dtgvManipulateShelf.Rows[dtgvManipulateShelf.CurrentCell.RowIndex].Cells[0].Value);
+                    int prodID = Convert.ToInt32(result.Value);
+                    string[] words = lbProductsOnShelf.SelectedItem.ToString().Split(' ');
+                    shelfManager.AddProductToshelf(id, prodID, -Convert.ToInt32(words[words.Length - 1]));
+                    loadProducts(id);
+                }
+               
+            }
+           
         }
 
         private void loadProducts(int id)

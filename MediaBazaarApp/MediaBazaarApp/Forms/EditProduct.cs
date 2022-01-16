@@ -25,7 +25,7 @@ namespace MediaBazaarApp
         private void btnEditProduct_Click(object sender, EventArgs e)
         {
             if(tbProductName.Text != "" || tbProductBoughtFor.Text != "" || tbProductSellingFor.Text != "" || tbProductBrand.Text != "" ||
-                cbProductSize.Text != "" || tbThreshold.Text != "" || tbMaxCapacity.Text != "" || tbMeasurements.Text != "")
+                tbThreshold.Text != "" || tbMaxCapacity.Text != "")
             {
                 int maxCapacity = 0;
                 int threshold = 0;
@@ -39,8 +39,9 @@ namespace MediaBazaarApp
                     }
 
 
-                    this.product.EditProduct(tbProductName.Name, tbProductBrand.Text, Convert.ToDecimal(tbProductBoughtFor.Text),Convert.ToDecimal(tbProductSellingFor.Text),Convert.ToInt32(tbMaxCapacity.Text),
-                        Convert.ToInt32(tbThreshold.Text),Convert.ToDecimal(tbMeasurements.Text), cbProductSize.Text);
+                    this.product.EditProduct(tbProductName.Name, tbProductBrand.Text, Convert.ToDecimal(tbProductBoughtFor.Text),
+                        Convert.ToDecimal(tbProductSellingFor.Text),Convert.ToInt32(tbMaxCapacity.Text),
+                        Convert.ToInt32(tbThreshold.Text));
 
                     this.productManager.Update(this.product);
                     DialogResult box = MessageBox.Show("Data has been edited successfully.");
@@ -68,8 +69,8 @@ namespace MediaBazaarApp
             this.tbProductSellingFor.Text = product.SellPrice.ToString();
             this.tbMaxCapacity.Text = product.MaxCapacity.ToString();
             this.tbThreshold.Text = product.Threshold.ToString();
-            this.cbProductSize.Text = product.BoxSize.ToString();
-            this.tbMeasurements.Text = product.Measurements.ToString();
+          //  this.cbProductSize.Text = product.BoxSize.ToString();
+          //  this.tbMeasurements.Text = product.Measurements.ToString();
             
 
         }
@@ -77,6 +78,13 @@ namespace MediaBazaarApp
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+     
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

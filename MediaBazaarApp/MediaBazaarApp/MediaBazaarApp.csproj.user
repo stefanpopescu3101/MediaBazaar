@@ -11,19 +11,19 @@
     <Compile Update="Forms\AddProduct.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\AssignToShift.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\EditProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\EmployeeStatistics.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\LogInForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Forms\ReturnProductToStorage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Forms\StockManager.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\StockManager.cs">

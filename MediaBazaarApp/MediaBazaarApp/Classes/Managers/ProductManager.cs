@@ -45,17 +45,17 @@ namespace MediaBazaarApp
             }
           
         }
-        public bool Remove(Product product)
-        {
-            if (this.Get(product.ID) != null)
-            {
-                this.Products.Remove(product);
-                this.productMediator.Remove(product);
-                return true;
-            }
-            else { return false; }
+        //public bool Remove(Product product)
+        //{
+        //    if (this.Get(product.ID) != null)
+        //    {
+        //        this.Products.Remove(product);
+        //        this.productMediator.Remove(product);
+        //        return true;
+        //    }
+        //    else { return false; }
 
-        }
+        //}
 
     
         
@@ -131,6 +131,7 @@ namespace MediaBazaarApp
 
         public Product[] GetProducts()
         {
+            Load();
             return Products.ToArray();
         }
         public List<Product> GetListProd()

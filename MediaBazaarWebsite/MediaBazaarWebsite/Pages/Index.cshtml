@@ -1,0 +1,25 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Login page";
+}
+@section scripts{
+
+    <partial name="_ValidationScriptsPartial" />
+
+}
+<div>
+    <center>
+        <form class="login_container" method="post">
+            <label class="label" asp-for="login.Username">Username:</label>
+            <br /><span asp-validation-for="login.Username"></span><br />
+            <input type="text" id="username" asp-for="login.Username" /><br>
+            <label class="label" asp-for="login.Password">Password:</label>
+            <br /><span asp-validation-for="login.Password"></span><br />
+            <input type="password" id="password" asp-for="login.Password" /><br>
+            <input id="btn" type="submit" value="Login">
+
+        </form>
+        <p class="text-decoration">@ViewData["Message"]</p>
+    </center>
+</div>

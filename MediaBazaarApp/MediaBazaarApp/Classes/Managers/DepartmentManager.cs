@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MediaBazaarApp.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,14 +11,14 @@ namespace MediaBazaarApp
     {
         List<Department> departments;
 
-        DepartmentMediator mediator;
+        IDepartmentMediator mediator;
 
 
-        public DepartmentManager()
+        public DepartmentManager(IDepartmentMediator mediator)
         {
             departments = new List<Department>();
 
-            mediator = new DepartmentMediator();
+           this. mediator = mediator;
 
         }
 

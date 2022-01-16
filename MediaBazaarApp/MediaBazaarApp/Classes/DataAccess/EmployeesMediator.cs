@@ -32,10 +32,10 @@ namespace MediaBazaarApp
             {
                 try
                 {
-                    query = "INSERT INTO employees (id, first_name, last_name, BSN, email, first_working_date, last_working_date, birthdate, contract_type, hourly_wage, departure_reason, shifts_per_week, address, department, role) VALUES (@id, @firstName, @lastName, @BSN, @email, @firstWorkingDate, @lastWorkingDate, @birthdate, @contractType, @hourlyWage, @departureReason, @shiftsPerWeek, @address, @department, @role)";
+                    query = "INSERT INTO employees (first_name, last_name, BSN, email, first_working_date, last_working_date, birthdate, contract_type, hourly_wage, departure_reason, shifts_per_week, address, department, role) VALUES ( @firstName, @lastName, @BSN, @email, @firstWorkingDate, @lastWorkingDate, @birthdate, @contractType, @hourlyWage, @departureReason, @shiftsPerWeek, @address, @department, @role)";
 
                     SqlQuery(query);
-                    AddWithValue("@id", employee.ID);
+                
                     AddWithValue("@firstName", employee.FirstName);
                     AddWithValue("@lastName", employee.LastName);
                     AddWithValue("@BSN", employee.Bsn);
@@ -53,6 +53,10 @@ namespace MediaBazaarApp
                     //employee.ID = Convert.ToInt32(command.LastInsertedId);
                     NonQueryEx();
                     employee.ID = Convert.ToInt32(command.LastInsertedId);
+                    query = "INSERT INTO unavailability (employee_id) VALUES (@employee_id)";
+                    SqlQuery(query);
+                    AddWithValue("@employee_id", employee.ID);
+                    NonQueryEx();
                     Close();
                     return true;
                 }
@@ -146,7 +150,7 @@ namespace MediaBazaarApp
                     MySqlDataReader dataReader = command.ExecuteReader();
                     while (dataReader.Read())
                     {
-                        Employee employee = employee = new Employee(Convert.ToInt32(dataReader["id"]),dataReader["first_name"].ToString(), dataReader["last_name"].ToString(), Convert.ToInt32(dataReader["BSN"]), dataReader["email"].ToString(), dataReader["first_working_date"].ToString(), dataReader["last_working_date"].ToString(), dataReader["birthdate"].ToString(), dataReader["contract_type"].ToString(), Convert.ToDouble(dataReader["hourly_wage"]), dataReader["address"].ToString(), dataReader["department"].ToString(), dataReader["role"].ToString(),dataReader["username"].ToString(),dataReader["password"].ToString());
+                        Employee employee = employee = new Employee(Convert.ToInt32(dataReader["id"]),dataReader["first_name"].ToString(), dataReader["last_name"].ToString(), Convert.ToInt32(dataReader["BSN"]), dataReader["email"].ToString(), dataReader["first_working_date"].ToString(), dataReader["last_working_date"].ToString(), dataReader["birthdate"].ToString(), dataReader["contract_type"].ToString(), Convert.ToDouble(dataReader["hourly_wage"]), dataReader["address"].ToString(), dataReader["department"].ToString(), dataReader["departure_reason"].ToString(), dataReader["role"].ToString(),dataReader["username"].ToString(),dataReader["password"].ToString());
                         employees.Add(employee);
                     }
                     dataReader.Close();
@@ -177,7 +181,7 @@ namespace MediaBazaarApp
                     MySqlDataReader dataReader = command.ExecuteReader();
                     while (dataReader.Read())
                     {
-                        Employee employee = employee = new Employee(Convert.ToInt32(dataReader["id"]), dataReader["first_name"].ToString(), dataReader["last_name"].ToString(), Convert.ToInt32(dataReader["BSN"]), dataReader["email"].ToString(), dataReader["first_working_date"].ToString(), dataReader["last_working_date"].ToString(), dataReader["birthdate"].ToString(), dataReader["contract_type"].ToString(), Convert.ToDouble(dataReader["hourly_wage"]), dataReader["address"].ToString(), dataReader["department"].ToString(), dataReader["role"].ToString(),dataReader["username"].ToString(),dataReader["password"].ToString());
+                        Employee employee = employee = new Employee(Convert.ToInt32(dataReader["id"]), dataReader["first_name"].ToString(), dataReader["last_name"].ToString(), Convert.ToInt32(dataReader["BSN"]), dataReader["email"].ToString(), dataReader["first_working_date"].ToString(), dataReader["last_working_date"].ToString(), dataReader["birthdate"].ToString(), dataReader["contract_type"].ToString(), Convert.ToDouble(dataReader["hourly_wage"]), dataReader["address"].ToString(), dataReader["department"].ToString(), dataReader["departure_reason"].ToString(), dataReader["role"].ToString(),dataReader["username"].ToString(),dataReader["password"].ToString());
                         employees.Add(employee);
                     }
                     dataReader.Close();
@@ -203,6 +207,28 @@ namespace MediaBazaarApp
                 SqlQuery(query);
                 AddWithValue("@department", department);
                 AddWithValue("@role", role);
+                AddWithValue("@id", emp.ID);
+                NonQueryEx();
+
+                Close();
+                return true;
+            }
+            else
+            {
+                Close();
+                return false;
+            }
+        }
+
+        public bool TerminateContract(Employee emp, string endDate, string reason)
+        {
+            if (ConnOpen())
+            {
+                query = "UPDATE employees SET last_working_date = @endDate, departure_reason = @reason WHERE id = @id";
+
+                SqlQuery(query);
+                AddWithValue("@endDate", endDate);
+                AddWithValue("@reason", reason);
                 AddWithValue("@id", emp.ID);
                 NonQueryEx();
 

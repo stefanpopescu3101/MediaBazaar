@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using MediaBazaarApp.Interfaces;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MediaBazaarApp
 {
-    public class DepartmentMediator:DataAccess
+    public class DepartmentMediator:DataAccess,IDepartmentMediator
     {
 
         public bool Add(Department department)

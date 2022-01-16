@@ -37,7 +37,7 @@ namespace MediaBazaarApp.Forms
         {
 
             this.DGVProducts.Rows.Clear();
-            this.DGVProducts.ColumnCount = 11;
+            this.DGVProducts.ColumnCount = 9;
             this.DGVProducts.Columns[0].Name = "ID";
             this.DGVProducts.Columns[1].Name = "Name";
             this.DGVProducts.Columns[2].Name = "Brand";
@@ -47,12 +47,12 @@ namespace MediaBazaarApp.Forms
             this.DGVProducts.Columns[6].Name = "Max Capacity";
             this.DGVProducts.Columns[7].Name = "Threshold";
             this.DGVProducts.Columns[8].Name = "Sold";
-            this.DGVProducts.Columns[9].Name = "Measurements";
-            this.DGVProducts.Columns[10].Name = "Box Size";
+           // this.DGVProducts.Columns[9].Name = "Measurements";
+          //  this.DGVProducts.Columns[10].Name = "Box Size";
 
             foreach (Product p in productManager.GetProducts())
             {
-                this.DGVProducts.Rows.Add(p.ID, p.Name, p.Brand, p.CostPrice + " €", p.SellPrice + " €", p.InStock, p.MaxCapacity, p.Threshold, p.Sold, p.Measurements, p.BoxSize + " cm³");
+                this.DGVProducts.Rows.Add(p.ID, p.Name, p.Brand, p.CostPrice + " €", p.SellPrice + " €", p.InStock, p.MaxCapacity, p.Threshold, p.Sold);
             }
             foreach (DataGridViewRow row in DGVProducts.Rows)
 
@@ -85,19 +85,26 @@ namespace MediaBazaarApp.Forms
         {
           if(this.DGVProducts.SelectedCells.Count > 0)
             {
+                DialogResult dialogResult = MessageBox.Show($"Are you sure you want to store {numericUpDown1.Value} amount of this product on shelf ID:{s} ?", "", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    int selectedRowIndex = this.DGVProducts.SelectedCells[0].RowIndex;
+                    DataGridViewRow selectedRow = this.DGVProducts.Rows[selectedRowIndex];
 
-                int p = this.GetProduct();
-                if(numericUpDown1.Value > 5)
-                {
-                    MessageBox.Show("Shelf can not contain more than 5 types of items per shelf!");
+                    int p = this.GetProduct();
+                    int stockAmount = Convert.ToInt32(selectedRow.Cells["In Stock"].Value);
+                    if ((stockAmount - numericUpDown1.Value) >= 0)
+                    {
+
+                        shelfManager.AddProductToshelf(s, p, Convert.ToInt32(numericUpDown1.Value));
+                        this.Close();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Not enough of this item is in stock!");
+                    }
                 }
-                else
-                {
-                    shelfManager.AddProductToshelf(s, p, Convert.ToInt32(numericUpDown1.Value));
-                  //productManager.GetShelfFields();
-                  this.Close();
-                }
-                
             }
             else
             {
@@ -113,7 +120,7 @@ namespace MediaBazaarApp.Forms
                 if (product.InStock < product.MaxCapacity)
                 {
                     RestockRequest restockRequest = new RestockRequest(product);
-                    if (requestManager.CheckRequestAlreadySent(restockRequest))
+                    if (!requestManager.CheckRequestAlreadySent(restockRequest))
                     {
                         requestManager.Add(new RestockRequest(product));
                         MessageBox.Show("Restock request has been sent successfully! ");

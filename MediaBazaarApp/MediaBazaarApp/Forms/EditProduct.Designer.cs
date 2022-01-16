@@ -31,10 +31,6 @@ namespace MediaBazaarApp
         {
             this.label9 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.cbProductCategory = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.cbProductSize = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,8 +44,6 @@ namespace MediaBazaarApp
             this.tbThreshold = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.tbMeasurements = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label9
@@ -64,51 +58,13 @@ namespace MediaBazaarApp
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(671, 421);
+            this.btnCancel.Location = new System.Drawing.Point(660, 351);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(94, 29);
             this.btnCancel.TabIndex = 27;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // cbProductCategory
-            // 
-            this.cbProductCategory.FormattingEnabled = true;
-            this.cbProductCategory.Location = new System.Drawing.Point(134, 323);
-            this.cbProductCategory.Name = "cbProductCategory";
-            this.cbProductCategory.Size = new System.Drawing.Size(203, 28);
-            this.cbProductCategory.TabIndex = 43;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(54, 331);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(72, 20);
-            this.label8.TabIndex = 42;
-            this.label8.Text = "Category:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(80, 270);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(39, 20);
-            this.label7.TabIndex = 41;
-            this.label7.Text = "Size:";
-            // 
-            // cbProductSize
-            // 
-            this.cbProductSize.FormattingEnabled = true;
-            this.cbProductSize.Items.AddRange(new object[] {
-            "Big",
-            "Medium",
-            "Small"});
-            this.cbProductSize.Location = new System.Drawing.Point(134, 267);
-            this.cbProductSize.Name = "cbProductSize";
-            this.cbProductSize.Size = new System.Drawing.Size(203, 28);
-            this.cbProductSize.TabIndex = 40;
             // 
             // label4
             // 
@@ -180,7 +136,7 @@ namespace MediaBazaarApp
             // 
             // btnEditProduct
             // 
-            this.btnEditProduct.Location = new System.Drawing.Point(32, 394);
+            this.btnEditProduct.Location = new System.Drawing.Point(549, 205);
             this.btnEditProduct.Name = "btnEditProduct";
             this.btnEditProduct.Size = new System.Drawing.Size(136, 56);
             this.btnEditProduct.TabIndex = 44;
@@ -220,38 +176,16 @@ namespace MediaBazaarApp
             this.label10.TabIndex = 48;
             this.label10.Text = "Low quantity alert:";
             // 
-            // tbMeasurements
-            // 
-            this.tbMeasurements.Location = new System.Drawing.Point(508, 167);
-            this.tbMeasurements.Name = "tbMeasurements";
-            this.tbMeasurements.Size = new System.Drawing.Size(203, 27);
-            this.tbMeasurements.TabIndex = 49;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(394, 171);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(108, 20);
-            this.label11.TabIndex = 50;
-            this.label11.Text = "Measurements:";
-            // 
             // EditProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(798, 470);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.tbMeasurements);
+            this.ClientSize = new System.Drawing.Size(766, 392);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.tbThreshold);
             this.Controls.Add(this.tbMaxCapacity);
             this.Controls.Add(this.btnEditProduct);
-            this.Controls.Add(this.cbProductCategory);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.cbProductSize);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -273,10 +207,6 @@ namespace MediaBazaarApp
 
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.ComboBox cbProductCategory;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox cbProductSize;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -290,7 +220,5 @@ namespace MediaBazaarApp
         private System.Windows.Forms.TextBox tbThreshold;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox tbMeasurements;
-        private System.Windows.Forms.Label label11;
     }
 }
