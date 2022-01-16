@@ -45,6 +45,19 @@ namespace MediaBazaarApp
             }
           
         }
+<<<<<<< HEAD
+        //public bool Remove(Product product)
+        //{
+        //    if (this.Get(product.ID) != null)
+        //    {
+        //        this.Products.Remove(product);
+        //        this.productMediator.Remove(product);
+        //        return true;
+        //    }
+        //    else { return false; }
+
+        //}
+=======
 
         //public bool Remove(Product product)
         //{
@@ -58,6 +71,7 @@ namespace MediaBazaarApp
 
         //}
 
+>>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
 
     
         
@@ -133,9 +147,13 @@ namespace MediaBazaarApp
 
         public Product[] GetProducts()
         {
+<<<<<<< HEAD
+            Load();
+=======
 
             Load();
 
+>>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
             return Products.ToArray();
         }
         public List<Product> GetListProd()

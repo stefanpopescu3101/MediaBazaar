@@ -13,10 +13,15 @@ namespace MediaBazaarApp
         {
             if (ConnOpen())
             {
+<<<<<<< HEAD
+                query = "INSERT INTO products(name,brand,cost_price,selling_price,in_stock,max_capacity,threshold,sold)" +
+                    "VALUE (@name,@brand, @costPrice,@sellingPrice,@inStock,@maxCapacity,@threshold,@sold)";
+=======
 
                 query = "INSERT INTO products(name,brand,cost_price,selling_price,in_stock,max_capacity,threshold,sold)" +
                     "VALUE (@name,@brand, @costPrice,@sellingPrice,@inStock,@maxCapacity,@threshold,@sold)";
 
+>>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
                 SqlQuery(query);
 
                 AddWithValue("@name", product.Name);
@@ -28,10 +33,15 @@ namespace MediaBazaarApp
                 AddWithValue("@maxCapacity", product.MaxCapacity);
                 AddWithValue("@threshold", product.Threshold);
                 AddWithValue("@sold", product.Sold);
+<<<<<<< HEAD
+             //   AddWithValue("@measurements", product.Measurements);
+               // AddWithValue("@box_size", product.BoxSize);
+=======
 
              //   AddWithValue("@measurements", product.Measurements);
                // AddWithValue("@box_size", product.BoxSize);
 
+>>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
 
                 NonQueryEx();
 
@@ -115,11 +125,17 @@ namespace MediaBazaarApp
         {
             if (ConnOpen())
             {
+<<<<<<< HEAD
+                query = "UPDATE `products` SET `in_stock` = `in_stock`+@amount WHERE `id` = @id;";
+                SqlQuery(query);
+                AddWithValue("amount", -moved);
+=======
 
                 query = "UPDATE `products` SET `in_stock` = `in_stock`+@amount WHERE `id` = @id;";
                 SqlQuery(query);
                 AddWithValue("amount", -moved);
 
+>>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
                 AddWithValue("id", id);
                 NonQueryEx();
 
@@ -151,7 +167,10 @@ namespace MediaBazaarApp
         //    }
         //}
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
         //public bool Remove(Product product)
         // {
         //     if (ConnOpen())
@@ -171,7 +190,10 @@ namespace MediaBazaarApp
         //         return false;
         //     }
         // }
+<<<<<<< HEAD
+=======
 
+>>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
         
         public bool Update(Product product)
         {
@@ -180,9 +202,13 @@ namespace MediaBazaarApp
                 query = "UPDATE products SET name = @name, brand = @brand, cost_price = @costPrice," +
                     " selling_price = @sellingPrice," +
                     " in_stock = @inStock, max_capacity = @maxCapacity," +
+<<<<<<< HEAD
+                    " threshold = @threshold WHERE id = @id";
+=======
 
                     " threshold = @threshold WHERE id = @id";
 
+>>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
 
                 SqlQuery(query);
                 AddWithValue("@name", product.Name);              
@@ -193,10 +219,15 @@ namespace MediaBazaarApp
                 AddWithValue("@inStock", product.InStock);
                 AddWithValue("@maxCapacity", product.MaxCapacity);
                 AddWithValue("@threshold", product.Threshold);
+<<<<<<< HEAD
+               // AddWithValue("@measurements", product.Measurements);
+               // AddWithValue("@box_size", product.BoxSize);
+=======
 
                // AddWithValue("@measurements", product.Measurements);
                // AddWithValue("@box_size", product.BoxSize);
 
+>>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
                 AddWithValue("@id", product.ID);
 
                 NonQueryEx();
@@ -229,10 +260,15 @@ namespace MediaBazaarApp
                         Convert.ToInt32(reader["in_stock"]),
                         Convert.ToInt32(reader["max_capacity"]),
                         Convert.ToInt32(reader["threshold"]),
+<<<<<<< HEAD
+                        Convert.ToInt32(reader["sold"])
+                      
+=======
 
                         Convert.ToInt32(reader["sold"])
                       
 
+>>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
                         );
                     product.ID = Convert.ToInt32(reader["id"]);
                     products.Add(product);

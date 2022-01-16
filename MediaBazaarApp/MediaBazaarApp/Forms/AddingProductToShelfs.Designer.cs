@@ -59,6 +59,8 @@ namespace MediaBazaarApp.Forms
             this.ProductMaxCapacity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductThershold = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductSold = new System.Windows.Forms.DataGridViewTextBoxColumn();
+<<<<<<< HEAD
+=======
 
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -134,6 +136,7 @@ namespace MediaBazaarApp.Forms
             this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click_1);
             // 
 
+>>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
             this.btnAdd = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -158,9 +161,13 @@ namespace MediaBazaarApp.Forms
             this.ProductInStock,
             this.ProductMaxCapacity,
             this.ProductThershold,
+<<<<<<< HEAD
+            this.ProductSold});
+=======
 
             this.ProductSold});
 
+>>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
             this.DGVProducts.Location = new System.Drawing.Point(34, 22);
             this.DGVProducts.Name = "DGVProducts";
             this.DGVProducts.ReadOnly = true;
@@ -341,19 +348,30 @@ namespace MediaBazaarApp.Forms
             this.ProductSold.ReadOnly = true;
             this.ProductSold.Width = 125;
             // 
+<<<<<<< HEAD
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.DarkSeaGreen;
+=======
 
             // btnAdd
             // 
             this.btnAdd.BackColor = System.Drawing.Color.DarkSeaGreen;
 
+>>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
             this.btnAdd.Location = new System.Drawing.Point(34, 416);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(175, 62);
             this.btnAdd.TabIndex = 2;
+<<<<<<< HEAD
+            this.btnAdd.Text = "Add Products To Shelf";
+            this.btnAdd.UseVisualStyleBackColor = false;
+=======
 
             this.btnAdd.Text = "Add Products To Shelf";
             this.btnAdd.UseVisualStyleBackColor = false;
 
+>>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // label1
@@ -361,11 +379,17 @@ namespace MediaBazaarApp.Forms
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(34, 490);
             this.label1.Name = "label1";
+<<<<<<< HEAD
+            this.label1.Size = new System.Drawing.Size(214, 60);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Make sure you select a prodcut\r\nand select amount\r\n before you click the button";
+=======
 
             this.label1.Size = new System.Drawing.Size(214, 60);
             this.label1.TabIndex = 3;
             this.label1.Text = "Make sure you select a prodcut\r\nand select amount\r\n before you click the button";
 
+>>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
             // 
             // btnCancel
             // 
@@ -377,7 +401,10 @@ namespace MediaBazaarApp.Forms
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+<<<<<<< HEAD
+=======
 
+>>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
             // btnSendRestockRequest
             // 
             this.btnSendRestockRequest.BackColor = System.Drawing.Color.IndianRed;
@@ -392,7 +419,10 @@ namespace MediaBazaarApp.Forms
             // numericUpDown1
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(229, 445);
+<<<<<<< HEAD
+=======
 
+>>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
             this.numericUpDown1.Minimum = new decimal(new int[] {
             1,
             0,
@@ -407,7 +437,10 @@ namespace MediaBazaarApp.Forms
             0,
             0});
             // 
+<<<<<<< HEAD
+=======
 
+>>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
             // label2
             // 
             this.label2.AutoSize = true;
@@ -416,16 +449,23 @@ namespace MediaBazaarApp.Forms
             this.label2.Size = new System.Drawing.Size(65, 20);
             this.label2.TabIndex = 7;
             this.label2.Text = "Amount:";
+<<<<<<< HEAD
+=======
 
+>>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
             // 
             // AddingProductToShelfs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(972, 579);
+<<<<<<< HEAD
+            this.Controls.Add(this.label2);
+=======
 
             this.Controls.Add(this.label2);
 
+>>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
             this.Controls.Add(this.btnSendRestockRequest);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.btnCancel);
@@ -484,7 +524,10 @@ namespace MediaBazaarApp.Forms
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSendRestockRequest;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
+<<<<<<< HEAD
+=======
 
+>>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductBrand;
@@ -494,8 +537,12 @@ namespace MediaBazaarApp.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductMaxCapacity;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductThershold;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductSold;
+<<<<<<< HEAD
+        private System.Windows.Forms.Label label2;
+=======
 
         private System.Windows.Forms.Label label2;
 
+>>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
     }
 }

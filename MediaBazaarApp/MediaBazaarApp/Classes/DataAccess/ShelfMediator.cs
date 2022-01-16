@@ -204,9 +204,13 @@ namespace MediaBazaarApp
 
                     //}
                     //Shelf shelf = new Shelf((Floors)Enum.Parse(typeof(Floors), dataReader["Floor"].ToString()));
+<<<<<<< HEAD
+                    items.Add(dataReader["ProductID"]+" "+ " Name:" +dataReader["Product"]+" "+ "Quantity: "+dataReader["Count"]);
+=======
 
                     items.Add(dataReader["ProductID"]+" "+ " Name:" +dataReader["Product"]+" "+ "Quantity: "+dataReader["Count"]);
 
+>>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
                 }
                Close();
                 return items;

@@ -342,7 +342,10 @@ namespace MediaBazaarApp
 
         private void btnRemoveDepartment_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
+=======
 
+>>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
             if (dgvDepartments.SelectedCells.Count > -1)
             {
                 cbDepartmentManager.Items.Clear();
@@ -360,7 +363,10 @@ namespace MediaBazaarApp
                     UpdateDataGridView();
                 }
             }
+<<<<<<< HEAD
+=======
 
+>>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
            
         }
 
@@ -372,7 +378,10 @@ namespace MediaBazaarApp
                 int r = this.dgvDepartments.SelectedCells[0].RowIndex;
                 DataGridViewRow row = this.dgvDepartments.Rows[r];
                 string name = row.Cells["Department Name"].Value.ToString();
+<<<<<<< HEAD
+=======
 
+>>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
                 int id =Convert.ToInt32( row.Cells["Manager ID"].Value.ToString());
                 Department depart = this.departmentM.GetDepartment(name);
                 tbDepartmentName.Text = depart.DepartmentName;
@@ -382,7 +391,10 @@ namespace MediaBazaarApp
                 {
                     MessageBox.Show("Please select another manager for this department as employee with this name is no longer in this department!");
                 }
+<<<<<<< HEAD
+=======
 
+>>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
                 foreach (Employee employee in employeeManager.GetEmployeeOfDepartment(depart))
                 {
                     cbDepartmentManager.Items.Add(employee);

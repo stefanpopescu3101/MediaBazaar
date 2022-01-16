@@ -7,9 +7,13 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+<<<<<<< HEAD
+using System.Text.RegularExpressions;
+=======
 
 using System.Text.RegularExpressions;
 
+>>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -18,11 +22,17 @@ namespace MediaBazaarApp
     public partial class ManipulateShelves : Form
     {
 
+<<<<<<< HEAD
+        private ShelfManager shelfManager;
+       // private Shelf s  ;
+        private  ProductManager pm = new ProductManager();
+=======
 
         private ShelfManager shelfManager;
        // private Shelf s  ;
         private  ProductManager pm = new ProductManager();
 
+>>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
 
         public ManipulateShelves()
         {
@@ -31,9 +41,13 @@ namespace MediaBazaarApp
             shelfManager.LoadShelfs();
             this.LoadS();
             cbFloor.DataSource = Enum.GetValues(typeof(Floors));
+<<<<<<< HEAD
+            
+=======
 
             
 
+>>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
         }
 
 
@@ -120,7 +134,10 @@ namespace MediaBazaarApp
         }
         private void btnReturnProduct_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
+=======
 
+>>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
             if(lbProductsOnShelf.SelectedIndex == -1)
             {
                 MessageBox.Show("Please select a item you want to renturn from the list!");
@@ -140,7 +157,10 @@ namespace MediaBazaarApp
                
             }
            
+<<<<<<< HEAD
+=======
 
+>>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
         }
 
         private void loadProducts(int id)

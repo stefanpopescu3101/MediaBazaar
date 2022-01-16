@@ -20,13 +20,19 @@ namespace MediaBazaarApp
         public int Sold { get; private set; }
        // public decimal Measurements { get; private set; }
        
+<<<<<<< HEAD
+=======
 
+>>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
       
         public int ShelfId { get;  set; }
         public int ShelfFloor { get; set; }
 
         public Product (string name, string brand ,decimal costPrice, decimal sellPrice, int inStock, int maxCapacity, int threshold, int sold/*, decimal measurements, string boxSize*/)
+<<<<<<< HEAD
+=======
 
+>>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
         {
             this.Name = name;
             this.Brand = brand;
@@ -51,9 +57,13 @@ namespace MediaBazaarApp
             this.ShelfFloor = shelfFloor;
         }
 
+<<<<<<< HEAD
+        public void EditProduct(string name, string brand,decimal costPrice, decimal sellPrice,int maxCapacity, int threshold/*,decimal measurements*/)
+=======
 
         public void EditProduct(string name, string brand,decimal costPrice, decimal sellPrice,int maxCapacity, int threshold/*,decimal measurements*/)
 
+>>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
         {
             this.Name = name;
             this.Brand = brand;
@@ -68,6 +78,8 @@ namespace MediaBazaarApp
         public override string ToString()
         {
             return $"ID: {this.ID} Name: {this.Name} Quantity: {this.InStock}";
+<<<<<<< HEAD
+=======
         }
         public void RestockProduct(int quantity)
         {
@@ -83,10 +95,22 @@ namespace MediaBazaarApp
             {
                 return true;
             }
+>>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
         }
         public void RestockProduct(int quantity)
         {
             this.InStock += quantity;
+        }
+        public bool CheckQuantity()
+        {
+            if(this.InStock < 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }

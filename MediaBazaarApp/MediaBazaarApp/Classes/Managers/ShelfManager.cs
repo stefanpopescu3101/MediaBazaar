@@ -81,14 +81,23 @@ namespace MediaBazaarApp
             //bool temp = shelfMediator.IsProductOnShelf(shelfId, productId);
             //shelfMediator.AddProductToShelf(shelfId, productId, amount);
             //productManager.AddRemoveStock(amount, productId, true);
+<<<<<<< HEAD
+            bool isOnShelf = shelfMediator.IsProductOnShelf(shelfId, productId);
+            if (amount < 0 && isOnShelf)
+            {
+=======
 
             bool isOnShelf = shelfMediator.IsProductOnShelf(shelfId, productId);
             if(amount < 0 && isOnShelf) {
+>>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
                 shelfMediator.UpdateProductOnShelf(shelfId, productId, amount);
                 productManager.AddRemoveStock(amount, productId, false);
             }
             else if (isOnShelf)
+<<<<<<< HEAD
+=======
 
+>>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
             {
                 shelfMediator.UpdateProductOnShelf(shelfId, productId, amount);
                 productManager.AddRemoveStock(amount, productId, true);
@@ -100,13 +109,16 @@ namespace MediaBazaarApp
             }
         }
 
+<<<<<<< HEAD
+=======
        
 
+>>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
         public Shelf GetShelfByID(int ID)
         {
-            foreach(Shelf s in shelves)
+            foreach (Shelf s in shelves)
             {
-                if(s.ID == ID)
+                if (s.ID == ID)
                 {
                     return s;
                 }

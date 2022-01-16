@@ -27,17 +27,25 @@ namespace MediaBazaarApp
                 NonQueryEx();
                 shift.ID = Convert.ToInt32(command.LastInsertedId);
 
+                Close();
 
+<<<<<<< HEAD
+=======
                 Close();
 
 
+>>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
                 return true;
             }
             else
             {
+<<<<<<< HEAD
+                Close();
+=======
 
                 Close();
 
+>>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
                 return false;
             }
         }
@@ -158,7 +166,10 @@ namespace MediaBazaarApp
             }
         }
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
         public bool CheckAvailability(int id, string date)
         {
             if(ConnOpen())
@@ -203,6 +214,9 @@ namespace MediaBazaarApp
                 
             }
         }
+<<<<<<< HEAD
+=======
 
+>>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
     }
 }

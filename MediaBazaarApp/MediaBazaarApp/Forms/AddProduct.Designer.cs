@@ -29,7 +29,6 @@ namespace MediaBazaarApp
         /// </summary>
         private void InitializeComponent()
         {
-
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -180,7 +179,6 @@ namespace MediaBazaarApp
             this.tbMaxCapacity.Name = "tbMaxCapacity";
             this.tbMaxCapacity.Size = new System.Drawing.Size(161, 27);
             this.tbMaxCapacity.TabIndex = 82;
-
             // 
             // label5
             // 
@@ -196,11 +194,14 @@ namespace MediaBazaarApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
+            this.ClientSize = new System.Drawing.Size(629, 335);
+=======
 
             this.ClientSize = new System.Drawing.Size(629, 335);
 
+>>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
             this.Controls.Add(this.label5);
-
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tbMaxCapacity);
             this.Controls.Add(this.label3);
@@ -219,7 +220,6 @@ namespace MediaBazaarApp
             this.Controls.Add(this.tbBrand);
             this.Name = "AddProduct";
             this.Text = "Add Product";
-
             this.ResumeLayout(false);
             this.PerformLayout();
 

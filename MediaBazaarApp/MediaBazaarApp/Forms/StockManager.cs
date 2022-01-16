@@ -64,9 +64,13 @@ namespace MediaBazaarApp
 
             foreach (Product p in productManager.GetProducts())
             {
+<<<<<<< HEAD
+               this.DGVProducts.Rows.Add(p.ID, p.Name, p.Brand, p.CostPrice + " €", p.SellPrice + " €", p.InStock, p.MaxCapacity, p.Threshold, p.Sold);
+=======
 
                this.DGVProducts.Rows.Add(p.ID, p.Name, p.Brand, p.CostPrice + " €", p.SellPrice + " €", p.InStock, p.MaxCapacity, p.Threshold, p.Sold);
 
+>>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
             }
           
             foreach (DataGridViewRow row in DGVProducts.Rows)
@@ -81,7 +85,10 @@ namespace MediaBazaarApp
 
         }
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
         //private void btnRemoveProduct_Click_1(object sender, EventArgs e)
         //{
         //    //if (this.DGVProducts.SelectedCells.Count > 0)
@@ -98,16 +105,24 @@ namespace MediaBazaarApp
         //    //}
         //    //else { MessageBox.Show("Please select a product from the table."); }
         //}
+<<<<<<< HEAD
+=======
 
+>>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
 
         private Product GetProduct()
         {
             int selectedRowIndex = this.DGVProducts.SelectedCells[0].RowIndex;
             DataGridViewRow selectedRow = this.DGVProducts.Rows[selectedRowIndex];
+<<<<<<< HEAD
+            Product product = this.productManager.Get(Convert.ToInt32(selectedRow.Cells["ProductID"].Value));
+
+=======
 
             Product product = this.productManager.Get(Convert.ToInt32(selectedRow.Cells["ProductID"].Value));
 
 
+>>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
             return product;
         }
 
@@ -128,7 +143,10 @@ namespace MediaBazaarApp
 
        
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
         //private void btnViewProduct_Click_1(object sender, EventArgs e)
         //{
         //    if (this.DGVProducts.SelectedCells.Count > 0)
@@ -143,7 +161,10 @@ namespace MediaBazaarApp
         //        }
         //    }
         //}
+<<<<<<< HEAD
+=======
 
+>>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
 
         private void DGVProducts_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -155,7 +176,11 @@ namespace MediaBazaarApp
             this.Close();
         }
 
+<<<<<<< HEAD
+      
+=======
 
+>>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
         private void GridViewConfiguration()
         {
             this.dataGridViewRequests.ColumnCount = 4;
@@ -190,9 +215,13 @@ namespace MediaBazaarApp
                         product.RestockProduct(quantity);
                         this.productManager.Update(product);
                         MessageBox.Show("Request accepted successfully");
+<<<<<<< HEAD
+                        LoadAllProducts();
+=======
 
                         LoadAllProducts();
 
+>>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
                     }
                     else { MessageBox.Show("Failed"); }
                 }
@@ -272,5 +301,13 @@ namespace MediaBazaarApp
 
         }
 
+<<<<<<< HEAD
+        private void BtnProductStats_Click(object sender, EventArgs e)
+        {
+            ProductStatistics ps = new ProductStatistics();
+            ps.ShowDialog();
+        }
+=======
+>>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
     }
 }
