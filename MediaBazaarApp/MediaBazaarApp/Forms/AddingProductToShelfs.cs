@@ -37,13 +37,7 @@ namespace MediaBazaarApp.Forms
         {
 
             this.DGVProducts.Rows.Clear();
-<<<<<<< HEAD
             this.DGVProducts.ColumnCount = 9;
-=======
-
-            this.DGVProducts.ColumnCount = 9;
-
->>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
             this.DGVProducts.Columns[0].Name = "ID";
             this.DGVProducts.Columns[1].Name = "Name";
             this.DGVProducts.Columns[2].Name = "Brand";
@@ -53,20 +47,12 @@ namespace MediaBazaarApp.Forms
             this.DGVProducts.Columns[6].Name = "Max Capacity";
             this.DGVProducts.Columns[7].Name = "Threshold";
             this.DGVProducts.Columns[8].Name = "Sold";
-<<<<<<< HEAD
-=======
-
->>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
            // this.DGVProducts.Columns[9].Name = "Measurements";
           //  this.DGVProducts.Columns[10].Name = "Box Size";
 
             foreach (Product p in productManager.GetProducts())
             {
                 this.DGVProducts.Rows.Add(p.ID, p.Name, p.Brand, p.CostPrice + " €", p.SellPrice + " €", p.InStock, p.MaxCapacity, p.Threshold, p.Sold);
-<<<<<<< HEAD
-=======
-
->>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
             }
             foreach (DataGridViewRow row in DGVProducts.Rows)
 
@@ -99,10 +85,6 @@ namespace MediaBazaarApp.Forms
         {
           if(this.DGVProducts.SelectedCells.Count > 0)
             {
-<<<<<<< HEAD
-=======
-
->>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
                 DialogResult dialogResult = MessageBox.Show($"Are you sure you want to store {numericUpDown1.Value} amount of this product on shelf ID:{s} ?", "", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
@@ -123,10 +105,6 @@ namespace MediaBazaarApp.Forms
                         MessageBox.Show("Not enough of this item is in stock!");
                     }
                 }
-<<<<<<< HEAD
-=======
-
->>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
             }
             else
             {
@@ -142,13 +120,7 @@ namespace MediaBazaarApp.Forms
                 if (product.InStock < product.MaxCapacity)
                 {
                     RestockRequest restockRequest = new RestockRequest(product);
-<<<<<<< HEAD
                     if (!requestManager.CheckRequestAlreadySent(restockRequest))
-=======
-
-                    if (!requestManager.CheckRequestAlreadySent(restockRequest))
-
->>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
                     {
                         requestManager.Add(new RestockRequest(product));
                         MessageBox.Show("Restock request has been sent successfully! ");

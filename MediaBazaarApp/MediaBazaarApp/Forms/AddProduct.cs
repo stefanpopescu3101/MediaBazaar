@@ -44,13 +44,7 @@ namespace MediaBazaarApp
                     {
                         throw new CapacityExeption();
                     }
-<<<<<<< HEAD
                     Product product = new Product(name, brand, boughtFor, sellingPrice, inStock, maxCapacity, threshold,0);
-=======
-
-                    Product product = new Product(name, brand, boughtFor, sellingPrice, inStock, maxCapacity, threshold,0);
-
->>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
                   if(!this.productManager.Add(product))
                     {
                         MessageBox.Show("This product exists!");

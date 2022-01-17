@@ -39,17 +39,9 @@ namespace MediaBazaarApp
                     }
 
 
-<<<<<<< HEAD
                     this.product.EditProduct(tbProductName.Name, tbProductBrand.Text, Convert.ToDecimal(tbProductBoughtFor.Text),
                         Convert.ToDecimal(tbProductSellingFor.Text),Convert.ToInt32(tbMaxCapacity.Text),
                         Convert.ToInt32(tbThreshold.Text));
-=======
-
-                    this.product.EditProduct(tbProductName.Name, tbProductBrand.Text, Convert.ToDecimal(tbProductBoughtFor.Text),
-                        Convert.ToDecimal(tbProductSellingFor.Text),Convert.ToInt32(tbMaxCapacity.Text),
-                        Convert.ToInt32(tbThreshold.Text));
-
->>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
 
                     this.productManager.Update(this.product);
                     DialogResult box = MessageBox.Show("Data has been edited successfully.");

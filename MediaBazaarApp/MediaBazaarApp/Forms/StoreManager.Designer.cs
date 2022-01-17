@@ -32,25 +32,13 @@ namespace MediaBazaarApp
             this.dtgvManipulateShelf = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Floor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-<<<<<<< HEAD
             this.btnAddShelf = new System.Windows.Forms.Button();
-=======
-
-            this.btnAddShelf = new System.Windows.Forms.Button();
-
->>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
             this.cbFloor = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnAddProduct2Shelfs = new System.Windows.Forms.Button();
             this.lbProductsOnShelf = new System.Windows.Forms.ListBox();
-<<<<<<< HEAD
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-=======
-
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-
->>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnReturnProduct = new System.Windows.Forms.Button();
@@ -90,37 +78,21 @@ namespace MediaBazaarApp
             this.Floor.ReadOnly = true;
             this.Floor.Width = 125;
             // 
-<<<<<<< HEAD
-=======
-
->>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
             // btnAddShelf
             // 
             this.btnAddShelf.Location = new System.Drawing.Point(51, 167);
             this.btnAddShelf.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAddShelf.Name = "btnAddShelf";
             this.btnAddShelf.Size = new System.Drawing.Size(138, 69);
-<<<<<<< HEAD
-=======
-
->>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
             this.btnAddShelf.TabIndex = 5;
             this.btnAddShelf.Text = "ADD";
             this.btnAddShelf.UseVisualStyleBackColor = true;
             this.btnAddShelf.Click += new System.EventHandler(this.btnAddShelf_Click_1);
             // 
-<<<<<<< HEAD
-=======
-
->>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
             // cbFloor
             // 
             this.cbFloor.FormattingEnabled = true;
             this.cbFloor.Location = new System.Drawing.Point(38, 97);
-<<<<<<< HEAD
-=======
-
->>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
             this.cbFloor.Name = "cbFloor";
             this.cbFloor.Size = new System.Drawing.Size(151, 28);
             this.cbFloor.TabIndex = 0;
@@ -128,13 +100,7 @@ namespace MediaBazaarApp
             // label3
             // 
             this.label3.AutoSize = true;
-<<<<<<< HEAD
             this.label3.Location = new System.Drawing.Point(38, 74);
-=======
-
-            this.label3.Location = new System.Drawing.Point(38, 74);
-
->>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 20);
             this.label3.TabIndex = 10;
@@ -144,20 +110,12 @@ namespace MediaBazaarApp
             // 
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.cbFloor);
-<<<<<<< HEAD
-=======
-
->>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
             this.groupBox1.Controls.Add(this.btnAddShelf);
             this.groupBox1.Location = new System.Drawing.Point(27, 87);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Size = new System.Drawing.Size(229, 265);
-<<<<<<< HEAD
-=======
-
->>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add shelf :";
@@ -182,19 +140,11 @@ namespace MediaBazaarApp
             this.lbProductsOnShelf.Size = new System.Drawing.Size(353, 264);
             this.lbProductsOnShelf.TabIndex = 8;
             // 
-<<<<<<< HEAD
-=======
-
->>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.dtgvManipulateShelf);
-<<<<<<< HEAD
-=======
-
->>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
             this.groupBox2.Controls.Add(this.btnAddProduct2Shelfs);
             this.groupBox2.Controls.Add(this.btnReturnProduct);
             this.groupBox2.Controls.Add(this.lbProductsOnShelf);
@@ -205,10 +155,6 @@ namespace MediaBazaarApp
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Manipulating Shelfs";
             // 
-<<<<<<< HEAD
-=======
-
->>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
             // label5
             // 
             this.label5.AutoSize = true;
@@ -229,10 +175,6 @@ namespace MediaBazaarApp
             // 
             // btnReturnProduct
             // 
-<<<<<<< HEAD
-=======
-
->>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
             this.btnReturnProduct.Location = new System.Drawing.Point(702, 148);
             this.btnReturnProduct.Name = "btnReturnProduct";
             this.btnReturnProduct.Size = new System.Drawing.Size(149, 56);
@@ -264,30 +206,16 @@ namespace MediaBazaarApp
         #endregion
 
         private System.Windows.Forms.DataGridView dtgvManipulateShelf;
-<<<<<<< HEAD
         private System.Windows.Forms.Button btnAddShelf;
-=======
-
-        private System.Windows.Forms.Button btnAddShelf;
-
->>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
         private System.Windows.Forms.ComboBox cbFloor;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnAddProduct2Shelfs;
         private System.Windows.Forms.ListBox lbProductsOnShelf;
-<<<<<<< HEAD
-=======
-
->>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Floor;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnReturnProduct;
-<<<<<<< HEAD
-=======
-
->>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
     }

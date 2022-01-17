@@ -160,10 +160,6 @@ namespace MediaBazaarApp
             return true;
         }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
         public bool CheckAvailability(int id, string date)
         {
             if (shiftMediator.CheckAvailability(id, date)==true)
@@ -173,10 +169,6 @@ namespace MediaBazaarApp
             return false;
         }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
         public bool Load()
         {
             this.WorkShifts = this.shiftMediator.GetAll();

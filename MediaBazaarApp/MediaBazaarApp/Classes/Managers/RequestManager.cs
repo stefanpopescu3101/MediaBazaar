@@ -49,15 +49,8 @@ namespace MediaBazaarApp
         {
             foreach (RestockRequest request in this.GetAll())
             {
-<<<<<<< HEAD
                 if (request.ID == id) 
                 { return request; }
-=======
-
-                if (request.ID == id) 
-                { return request; }
-
->>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
             }
             return null;
         }
@@ -66,13 +59,7 @@ namespace MediaBazaarApp
         {
             foreach (RestockRequest restockRequest in this.GetAll())
             {
-<<<<<<< HEAD
                 if (restockRequest.ProductId != request.ProductId) { return true; }
-=======
-
-                if (restockRequest.ProductId != request.ProductId) { return true; }
-
->>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
             }
             return false;
 

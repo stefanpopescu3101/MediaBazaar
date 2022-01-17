@@ -16,13 +16,7 @@ namespace MediaBazaarApp
         {
             employees = new List<Employee>();
             employeesMediator = new EmployeesMediator();
-<<<<<<< HEAD
             Load();
-=======
-
-            Load();
-
->>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
         }
         public void GenerateUsernameAndPassword(Employee emp)
         {
@@ -67,18 +61,10 @@ namespace MediaBazaarApp
             }
             return null;
         }
-<<<<<<< HEAD
-=======
-
->>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
         public List<Employee> GetAllEmployees()
         {
             return employees;
         }
-<<<<<<< HEAD
-=======
-
->>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
         public List<Employee> GetEmployees()
         {
             employees = employeesMediator.GetEmployees();

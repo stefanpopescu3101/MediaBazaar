@@ -194,13 +194,7 @@ namespace MediaBazaarApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(629, 335);
-=======
-
-            this.ClientSize = new System.Drawing.Size(629, 335);
-
->>>>>>> e561cfc5031bfd1997a021dc691e0ced067c89aa
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tbMaxCapacity);
