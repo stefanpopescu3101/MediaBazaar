@@ -22,8 +22,8 @@ namespace MediaBazaarWebsite.Pages
         public UnavailableShift Unavailable { get; set; }
         private LoginMediator med = new LoginMediator();
         public LoginManager manager;
-
-        public ShiftManager ShiftManager = new ShiftManager();
+        ShiftMediator shiftMediator = new ShiftMediator();
+        public ShiftManager ShiftManager;
 
        public List<WorkShift> workShifts = new List<WorkShift>();
         public List<UnavailableShift> unavailableShifts = new List<UnavailableShift>();
@@ -37,6 +37,7 @@ namespace MediaBazaarWebsite.Pages
         {
             manager = new LoginManager(med);
             manager.Load();
+            ShiftManager = new ShiftManager(shiftMediator);
         }
         public void OnGet()
         {

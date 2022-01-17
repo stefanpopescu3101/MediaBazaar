@@ -12,13 +12,13 @@ namespace MediaBazaarWebsite.models
 
         public List<UnavailableShift> UnavailableShifts { get; private set; }
 
-        private ShiftMediator shiftMediator;
+        private IWorkshiftMediator shiftMediator;
 
-        public ShiftManager()
+        public ShiftManager(IWorkshiftMediator shiftMediator)
         {
             this.WorkShifts = new List<WorkShift>();
             this.UnavailableShifts = new List<UnavailableShift>();
-            this.shiftMediator = new ShiftMediator();
+            this.shiftMediator = shiftMediator;
             this.Load();
             this.LoadUnavailable();
         }
@@ -95,7 +95,10 @@ namespace MediaBazaarWebsite.models
             }
             return workShiftsOfCurrentMonth;
         }
-
+        public void AddWorkshift(WorkShift w)
+        {
+            WorkShifts.Add(w);
+        }
         public List<WorkShift> NextMonth(int id, int month, int year)
         {
             if (month != 12)

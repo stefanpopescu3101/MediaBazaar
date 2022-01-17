@@ -1,6 +1,0 @@
-C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarWebsite\WebsiteUnitTests\bin\Debug\netcoreapp3.1\CoverletSourceRootsMapping
-C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarWebsite\WebsiteUnitTests\obj\Debug\netcoreapp3.1\WebsiteUnitTests.csproj.AssemblyReference.cache
-C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarWebsite\WebsiteUnitTests\obj\Debug\netcoreapp3.1\WebsiteUnitTests.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarWebsite\WebsiteUnitTests\obj\Debug\netcoreapp3.1\WebsiteUnitTests.AssemblyInfoInputs.cache
-C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarWebsite\WebsiteUnitTests\obj\Debug\netcoreapp3.1\WebsiteUnitTests.AssemblyInfo.cs
-C:\Users\Rawan\Desktop\prj-s2-cb05\MediaBazaarWebsite\WebsiteUnitTests\obj\Debug\netcoreapp3.1\WebsiteUnitTests.csproj.CoreCompileInputs.cache

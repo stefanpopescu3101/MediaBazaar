@@ -26,6 +26,10 @@ namespace MediaBazaarWebsite.models
             return this.employees;
         }
 
+        public void AddEmployee(Employee emp)
+        {
+            employees.Add(emp);
+        }
         public bool checkIfExists(string password, string username)
         {
             foreach (Employee emp in GetEmployees())

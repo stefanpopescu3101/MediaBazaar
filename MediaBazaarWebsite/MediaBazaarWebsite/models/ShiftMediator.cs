@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MediaBazaarWebsite.models
 {
-    public class ShiftMediator:DataAccess
+    public class ShiftMediator:DataAccess,IWorkshiftMediator
     {
       
 

@@ -6,7 +6,7 @@
       "version": "3.1.0"
     },
     "additionalProbingPaths": [
-      "C:\\Users\\aniak\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Rawan\\.dotnet\\store\\|arch|\\|tfm|",
       "C:\\Users\\aniak\\.nuget\\packages"
     ],
     "configProperties": {

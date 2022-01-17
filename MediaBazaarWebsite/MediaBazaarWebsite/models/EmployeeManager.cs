@@ -26,6 +26,10 @@ namespace MediaBazaarWebsite.models
             return employees;
         }
 
+        public void AddEmployee(Employee emp)
+        {
+            employees.Add(emp);
+        }
         public void UpdateUnavailablityOfWorkshifts(Employee emp)
         {
             med.UpdateUavailblityOfWorkshifts(emp);
