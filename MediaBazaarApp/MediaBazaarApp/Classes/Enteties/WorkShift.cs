@@ -29,6 +29,13 @@ namespace MediaBazaarApp
             this.Cancelled = false;
         }
 
+        public WorkShift(int employeeId, string type, int hours)
+        {
+            this.EmployeeId = employeeId;
+            this.Type = type;
+            this.HoursWorked = hours;
+        }
+
         public bool CancelShift()
         {
             if (!this.Cancelled)

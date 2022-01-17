@@ -28,6 +28,7 @@ namespace MediaBazaarApp
 
         private string department;
         private string role;
+        private int hours;
 
         public string DepartureReason
         {
@@ -96,6 +97,21 @@ namespace MediaBazaarApp
         {
             get { return role; } set { role = value; }
         }
+        public int Hours
+        {
+            get { return hours; }
+        }
+        public string FullName
+        {
+            get { return firstName + " " + lastName; }
+        }
+
+        public Employee(int id, int hours)
+        {
+            this.id = id;
+            this.hours = hours;
+        }
+
         public Employee(string firstName, string lastName, int BSN, string email,
             string firstWorkingDate, string lastWorkingDate, string birthdate,
             string contractType, double hourlyWage, string address,
