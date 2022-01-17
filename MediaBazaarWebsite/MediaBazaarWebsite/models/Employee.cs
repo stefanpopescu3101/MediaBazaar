@@ -165,6 +165,11 @@ namespace MediaBazaarWebsite.models
             this.department = department;
         }
 
+        public void UpdatePassword(string newPassword)
+        {
+            this.Password = newPassword;
+        }
+
         public override string ToString()
         {
             return "ID:" + " " + this.id + " " + "Name: " + this.firstName + " " + this.lastName  + " Contract: " + this.contractType;

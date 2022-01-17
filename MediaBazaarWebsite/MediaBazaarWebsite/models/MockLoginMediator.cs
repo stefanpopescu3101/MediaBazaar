@@ -17,5 +17,10 @@ namespace MediaBazaarWebsite.models
             List<Employee> emp = new List<Employee>();
             return emp;
         }
+
+        public bool UpdatePassword(Employee employee)
+        {
+            return true;
+        }
     }
 }

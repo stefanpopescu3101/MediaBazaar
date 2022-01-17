@@ -73,5 +73,26 @@ namespace MediaBazaarWebsite.models
                 return null;
             }
         }
+
+        public bool UpdatePassword(Employee employee)
+        {
+            if (ConnOpen())
+            {
+                query = "UPDATE employees SET password = @password WHERE id = @id";
+
+                SqlQuery(query);
+                AddWithValue("@id", employee.ID);
+                AddWithValue("@password", employee.Password);
+                NonQueryEx();
+
+                Close();
+                return true;
+            }
+            else
+            {
+                Close();
+                return true;
+            }
+        }
     }
 }
