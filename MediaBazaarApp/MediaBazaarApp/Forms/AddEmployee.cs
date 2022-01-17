@@ -40,8 +40,11 @@ namespace MediaBazaarApp
 
             int age = DateTime.Today.Year - dtpBdate.Value.Year;
 
-
-            if (age >= 18)
+            if (tbFirstName.Text == "" || tbSurname.Text == "" || tbBSN.Text == "" || tbEmail.Text == "" || cbContractType.Text == "" || tbHourlyWage.Text == "" || tbAddress.Text == "" || cbDepartment.Text == "" || cbRole.Text == "")
+            {
+                MessageBox.Show("Please fill the required fields.");
+            }
+            else if (age >= 18)
             {
                 Employee employee = new Employee(tbFirstName.Text, tbSurname.Text, Convert.ToInt32(tbBSN.Text), tbEmail.Text, dtpFirstDate.Text, dtpLastWorkingDate.Text, dtpBdate.Text, cbContractType.Text, Convert.ToInt32(tbHourlyWage.Text), tbAddress.Text, cbDepartment.Text,cbRole.Text);
 
