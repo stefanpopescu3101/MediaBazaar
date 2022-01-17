@@ -473,14 +473,8 @@ button {
     color: red;
 }
 
-<<<<<<< HEAD
-
-
-
-=======
->>>>>>> hristo_prj
 table, th, td {
-    border: 1px solid black;
+    border: 2px solid black;
     border-radius:3px;
     padding:4px 7px 2px 4px;
 }
@@ -529,8 +523,4 @@ table {
 .label {
     color: #333;
     font-size: 20px;
-<<<<<<< HEAD
-
-=======
->>>>>>> hristo_prj
 }

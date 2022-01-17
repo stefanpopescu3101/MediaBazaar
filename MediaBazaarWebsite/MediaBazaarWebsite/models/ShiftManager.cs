@@ -9,25 +9,18 @@ namespace MediaBazaarWebsite.models
    public class ShiftManager
     {
         public List<WorkShift> WorkShifts { get; private set; }
-<<<<<<< HEAD
 
         public List<UnavailableShift> UnavailableShifts { get; private set; }
-=======
->>>>>>> hristo_prj
+
         private ShiftMediator shiftMediator;
 
         public ShiftManager()
         {
             this.WorkShifts = new List<WorkShift>();
-<<<<<<< HEAD
             this.UnavailableShifts = new List<UnavailableShift>();
             this.shiftMediator = new ShiftMediator();
             this.Load();
             this.LoadUnavailable();
-=======
-            this.shiftMediator = new ShiftMediator();
-            this.Load();
->>>>>>> hristo_prj
         }
 
       
@@ -44,7 +37,6 @@ namespace MediaBazaarWebsite.models
             }
             return activeShifts;
         }
-<<<<<<< HEAD
 
         public List<UnavailableShift> GetUnavailableShifts()
         {
@@ -56,8 +48,7 @@ namespace MediaBazaarWebsite.models
 
             return unavailableShifts;
         }
-=======
->>>>>>> hristo_prj
+
         public List<WorkShift> GetWorkShiftsOfCurrentMonth(int id ,int month, int year)
         {
             string date = new DateTime(year, month, 1).ToString("d");
@@ -133,8 +124,6 @@ namespace MediaBazaarWebsite.models
             return workShiftsOfCurrentMonth;
         }
 
-
-<<<<<<< HEAD
         public List<UnavailableShift> GetUnavailableShiftsEmployee(int id)
         {
             
@@ -161,10 +150,6 @@ namespace MediaBazaarWebsite.models
             return false;
         }
 
-
-=======
->>>>>>> hristo_prj
-
         public bool Load()
         {
             this.WorkShifts = this.shiftMediator.GetAll();
@@ -175,7 +160,6 @@ namespace MediaBazaarWebsite.models
             else { return false; }
         }
 
-<<<<<<< HEAD
         public bool LoadUnavailable()
         {
             this.UnavailableShifts = this.shiftMediator.GetAllUnavailable();
@@ -186,9 +170,6 @@ namespace MediaBazaarWebsite.models
 
             return false;
         }
-
-=======
->>>>>>> hristo_prj
       
     }
 }

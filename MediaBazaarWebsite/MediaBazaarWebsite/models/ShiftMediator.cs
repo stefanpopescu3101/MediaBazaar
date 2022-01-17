@@ -47,7 +47,6 @@ namespace MediaBazaarWebsite.models
             }
         }
 
-<<<<<<< HEAD
 
         public List<UnavailableShift> GetAllUnavailable()
         {
@@ -99,8 +98,6 @@ namespace MediaBazaarWebsite.models
             }
         }
 
-=======
->>>>>>> hristo_prj
       
       
 
