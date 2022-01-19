@@ -9,6 +9,8 @@ namespace MediaBazaarApp
 {
    public class Product
     {
+        public delegate void OutOfStockHandle(Product p);
+        public event OutOfStockHandle ProductOutOfStock;
         public int ID { get; set; }
         public string Name { get; private set; }
         public string Brand { get; private set; }
@@ -71,14 +73,17 @@ namespace MediaBazaarApp
         }
         public bool CheckQuantity()
         {
-            if(this.InStock < 0)
+            if (this.ProductOutOfStock != null)
             {
-                return false;
+                if (this.InStock < this.Threshold)
+                {
+                    this.ProductOutOfStock(this);
+                    return true;
+                }
+                else { return false; }
             }
-            else
-            {
-                return true;
-            }
+            return false;
         }
     }
-}
+    }
+

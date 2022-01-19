@@ -13,9 +13,11 @@ namespace MediaBazaarApp
     public partial class AddProduct : Form
     {
         private ProductManager productManager = new ProductManager();
+        private RequestManager requestManager;
         public AddProduct()
         {
             InitializeComponent();
+            this.requestManager = new RequestManager();
         }
 
         private void btnAddP_Click(object sender, EventArgs e)
@@ -52,12 +54,21 @@ namespace MediaBazaarApp
                     else
                     {
                         DialogResult box = MessageBox.Show("Product has been added successfully.");
+                        product.ProductOutOfStock += SendRestockRequest;
+                        if (product.CheckQuantity())
+                        {
+                            MessageBox.Show("Instock quantity is lower than than threshold value of the product, so an automatic restock request has been sent.");
+                        }
                         if (box == DialogResult.OK)
                         {
                             this.DialogResult = DialogResult.OK;
                             this.Close();
                         }
+                        product.ProductOutOfStock -= SendRestockRequest;
+                      
                     }
+                   
+                   
 
                 }
                 catch(CapacityExeption)
@@ -74,6 +85,11 @@ namespace MediaBazaarApp
         private void btnCloseWind_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        private void SendRestockRequest(Product product)
+        {
+            RestockRequest request = new RestockRequest(product);
+            requestManager.Add(request);
         }
     }
 }

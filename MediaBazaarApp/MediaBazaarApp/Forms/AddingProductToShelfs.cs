@@ -90,7 +90,7 @@ namespace MediaBazaarApp.Forms
                 {
                     int selectedRowIndex = this.DGVProducts.SelectedCells[0].RowIndex;
                     DataGridViewRow selectedRow = this.DGVProducts.Rows[selectedRowIndex];
-
+                  
                     int p = this.GetProduct();
                     int stockAmount = Convert.ToInt32(selectedRow.Cells["In Stock"].Value);
                     if ((stockAmount - numericUpDown1.Value) >= 0)
@@ -102,8 +102,20 @@ namespace MediaBazaarApp.Forms
                     }
                     else
                     {
-                        MessageBox.Show("Not enough of this item is in stock!");
+                       MessageBox.Show("Not enough of this item is in stock!");
                     }
+                    Product product = productManager.Get(p);
+                    product.ProductOutOfStock += SendRestockRequest;
+                    if (product.CheckQuantity())
+                    {
+                        MessageBox.Show("Instock quantity is lower than than threshold value of the product, so an automatic restock request has been sent.");
+                    }
+                    if (dialogResult == DialogResult.OK)
+                    {
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+                    }
+                    product.ProductOutOfStock -= SendRestockRequest;
                 }
             }
             else
@@ -111,7 +123,11 @@ namespace MediaBazaarApp.Forms
                 MessageBox.Show("Error");
             }
         }
-
+        private void SendRestockRequest(Product product)
+        {
+            RestockRequest request = new RestockRequest(product);
+            requestManager.Add(request);
+        }
         private void btnSendRestockRequest_Click(object sender, EventArgs e)
         {
             if (this.DGVProducts.SelectedCells.Count > 0)
